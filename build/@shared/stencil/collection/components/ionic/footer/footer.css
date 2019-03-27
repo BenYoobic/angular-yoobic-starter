@@ -1,0 +1,22 @@
+.footer-ios yoo-ion-toolbar:first-child {
+  --border-width: 0.55px 0 0; }
+
+.footer-ios[no-border] yoo-ion-toolbar:first-child {
+  --border-width: 0; }
+
+:host, yoo-ion-footer {
+  display: block;
+  position: relative;
+  order: 1;
+  width: 100%;
+  z-index: 11; }
+
+yoo-ion-footer {
+  border-top: 1px solid var(--footer-border-top-color, #E6E6E6);
+  background: var(--light, #FFFFFF);
+  z-index: 1; }
+  yoo-ion-footer.no-border {
+    border-top: none; }
+
+yoo-ion-footer.iphone-x:not(.tabbar) {
+  padding-bottom: var(--padding-20, 1.25rem) !important; }

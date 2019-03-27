@@ -1,0 +1,315 @@
+@mixin color($color, $color-20, $color-05) {
+    .outer-container {
+        background-color: cssvar(light);
+        z-index: 2;
+        .dropdown {
+            border-color: cssvar($color-20);
+            &.active {
+                color: cssvar($color);
+            }
+        }
+        .inner-container {
+            color: cssvar(stable);
+            &.active-line,
+            &.active {
+                .text-container {
+                    color: cssvar(black);
+                }
+            }
+            &.active-line {
+                border-bottom: 2px solid cssvar($color);
+            }
+        }
+        .active-bar {
+            background-color: cssvar($color);
+        }
+    }
+}
+@mixin negative-color($color, $color-20, $color-05) {
+    .outer-container {
+        background-color: cssvar(dark);
+        .dropdown {
+            border-color: cssvar($color-20);
+            background-color: cssvar(dark);
+            color: cssvar(light);
+            &.active {
+                border-color: cssvar($color);
+            }
+        }
+        .inner-container {
+            border-bottom-color: cssvar(dark);
+            color: cssvar(dark-10);
+            &.active {
+                border-bottom-color: cssvar($color);
+                color: cssvar(light);
+            }
+
+        }
+        .active-bar {
+            background-color: cssvar($color);
+        }
+    }
+}
+
+:host {
+    --width-outer-container: 100%;
+}
+
+:host {
+    height: 48px;
+    .outer-container {
+        display: flex;
+        position: relative;
+        flex-direction: row;
+        align-items: center;
+        width: cssvar(width-outer-container);
+        height: 50px;
+        transition: 0.3s;
+        line-height: normal;
+        opacity: 1;
+        &.loading {
+            opacity: 0;
+        }
+        &.scroll {
+            min-height: 2rem;
+            padding: 0rem;
+        }
+        .dropdown {
+            position: relative;
+            width: 100%;
+            padding: 0.5rem 1rem;
+            border-bottom: 1px solid cssvar(stable);
+            line-height: 1.5;
+            &:hover {
+                cursor: pointer;
+            }
+            &.active {
+                color: ccsvar(stable);
+            }
+        }
+        yoo-tappable {
+            height: 100%;
+        }
+        .inner-container {
+            display: flex;
+            position: relative;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            padding-right: 1rem;
+            color: cssvar(stable-alt);
+            font-size: cssvar(font-l);
+            font-weight: 400;
+            box-sizing: border-box;
+            .icon {
+                padding: 0.1rem;
+            }
+            &.line {
+                border-bottom: 1px solid cssvar(stable-light);
+            }
+            &.active {
+                color: cssvar(text-color);
+                font-weight: 600;
+            }
+            &.last {
+                padding-right: 0;
+            }
+            &:hover {
+                cursor: pointer;
+            }
+            &#dropdown {
+                padding-right: 0rem;
+                padding-left: 1rem;
+            }
+            &.block-color {
+                border-bottom: 1px solid cssvar(stable-light) !important;
+            }
+            &.inside-slide {
+                .text-container {
+                    padding-top: cssvar(padding-15);
+                    padding-bottom: cssvar(padding-15);
+                    .wrap-title {
+                        margin-top: -0.75rem;
+                        white-space: pre-wrap;
+                    }
+                }
+            }
+            .notification {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 0.3125rem;
+                height: 0.3125rem;
+                margin-top: cssvar(padding-15);
+                margin-right: cssvar(padding-5);
+                border-radius: 0.15625rem;
+                background-color: cssvar(danger);
+            }
+            .text-container {
+                display: flex;
+                position: relative;
+                flex: 1;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: 100%;
+                padding-right: cssvar(padding-15);
+                padding-left: cssvar(padding-15);
+                border-bottom: 2px solid transparent;
+                text-align: center;
+                white-space: nowrap;
+                overflow: hidden;
+                .dot {
+                    @include tap-animation-dot("success", "");
+                }
+                &.active {
+                    border-bottom: none;
+                }
+                &.font-size-9 {
+                    font-size: cssvar(font-m);
+                    ;
+                }
+                &.font-size-8 {
+                    font-size: cssvar(font-s);
+                }
+                &.font-size-7 {
+                    font-size: cssvar(font-xs);
+                }
+            }
+        }
+        yoo-button {
+            position: absolute;
+            top: 48px;
+            right: 0px;
+        }
+        .active-bar {
+            display: none;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 2px;
+            background-color: cssvar(succes);
+            z-index: 2;
+        }
+    }
+    .nav-line {
+        display: flex;
+        flex: 1;
+        flex-direction: row;
+        height: 2px;
+        border: solid 1px #ececec;
+    }
+}
+
+:host(.small) {
+    .outer-container {
+        height: 36px;
+        .inner-container {
+            font-size: cssvar(font-s);
+            font-weight: 300;
+            &.font-size-9 {
+                font-size: cssvar(font-s);
+            }
+            &.active-line {
+                border-bottom-width: 1px !important;
+            }
+        }
+        .active-bar {
+            height: 1px !important;
+        }
+    }
+}
+
+:host(.items-center) {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    .outer-container {
+        justify-content: center;
+        width: max-content;
+        yoo-tappable {
+            width: auto;
+        }
+        .inner-container {
+            justify-content: center;
+            padding-right: 0;
+        }
+    }
+}
+
+:host(.items-space-around) {
+    .outer-container {
+        justify-content: space-around;
+        .inner-container {
+            justify-content: center;
+            width: 100%;
+            padding-right: 0;
+        }
+    }
+}
+
+:host(.items-full-width) {
+    .outer-container {
+        justify-content: space-between;
+        padding-right: 0.625rem;
+        padding-left: 0.625rem;
+    }
+}
+
+:host(.boost) {
+    @include color(danger-light, danger-light, danger-light);
+}
+
+:host(.operations) {
+    @include color(success, success-20, success-05);
+}
+
+:host(.swipeable) {
+    height: 100%;
+    .outer-container {
+        min-height: 6.875rem;
+        margin-top: 0;
+        background: cssvar(stable-light);
+        .slide-container {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .inner-container {
+        margin: 0 auto;
+        padding: 0 !important;
+    }
+    .text-container {
+        &.active {
+            color: cssvar(black);
+        }
+    }
+    .shadow-border {
+        @include abs-pos(auto, 0, 0, 0);
+        background: cssvar(light);
+        box-shadow: cssvar(footer-shadow);
+    }
+    .active-indicator {
+        @include abs-pos(auto, calc(50% - 12.5px), 0, auto);
+        border-top: 15px solid transparent;
+        border-right: 12.5px solid transparent;
+        border-bottom: 15px solid cssvar(light);
+        border-left: 12.5px solid transparent;
+    }
+}
+
+:host(.web) {
+    .outer-container {
+        overflow: hidden;
+        .inner-container .text-container {
+            font-size: cssvar(font-m);
+        }
+    }
+    .text-container {
+        align-items: flex-end !important;
+        span {
+            padding-bottom: cssvar(padding-10);
+        }
+    }
+}

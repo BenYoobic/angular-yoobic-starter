@@ -1,0 +1,154 @@
+:host {
+    background: cssvar(light);
+    .header-container {
+        height: 130px; // -webkit-backdrop-filter: blur(10px);
+        // backdrop-filter: blur(10px);
+        // background-color: rgba(255, 255, 255, 0.82);
+        background: cssvar(light);
+        z-index: 999; //padding-top: cssvar(padding-10);
+        &.ocr-mode {
+            height: 155px;
+            .regex-container {
+                display: flex;
+                justify-content: center;
+                padding: cssvar(padding-15);
+                background: white;
+                yoo-form-autocomplete {
+                    width: 100%;
+                }
+            }
+        }
+        .regex-container {
+            display: none;
+            overflow: hidden;
+        }
+        .title-container {
+            display: flex;
+            align-items: center;
+            height: 40px;
+            yoo-ion-button {
+                position: absolute;
+                z-index: 1;
+            }
+            yoo-ion-button.list {
+                position: relative;
+                right: 0;
+                yoo-icon.yo-list-view {
+                    yoo-badge {
+                        position: absolute;
+                        top: 2px;
+                        right: 5px;
+                        border-radius: 50%;
+                    }
+                }
+            }
+        }
+        .tab-container {
+            display: flex;
+            flex: 1;
+            align-items: center;
+            justify-content: space-around;
+            height: 60px;
+            padding-top: cssvar(padding-10);
+            padding-bottom: cssvar(padding-10);
+            .tab-item {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                transition: opacity .3s ease;
+                opacity: 0.4;
+                .icon-text {
+                    padding-top: cssvar(padding-5);
+                    font-size: cssvar(font-s);
+                }
+                &.active {
+                    transition: opacity .3s ease;
+                    opacity: 1;
+                }
+                yoo-icon {
+                    color: cssvar(black);
+                    font-size: cssvar(font-lx);
+                }
+            }
+        }
+    }
+    .scanner-container {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        .test-div {
+            width: 100%;
+            height: 200px;
+            background: grey;
+        }
+    }
+    .input-container {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+        .input-inner-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100%;
+            .content-code {
+                margin-top: cssvar(padding-20);
+                color: cssvar(black);
+                font-size: 100px;
+                yoo-img, yoo-barcode {
+                    width: 180px;
+                    height: 60px;
+                    margin-bottom: 1rem;
+                }
+            }
+            .content-numbers {
+                width: 180px;
+            }
+        }
+        .bottom-toolbar {
+            display: flex;
+            position: absolute;
+            bottom: 0px;
+            align-items: center;
+            justify-content: flex-end;
+            width: 100%;
+            height: 44px;
+            background-color: #fafaf8;
+            box-shadow: inset 0 0.5px 0 0 #e1e0e0;
+            z-index: 40000;
+            .action {
+                padding-right: 15px;
+                color: cssvar(success);
+                font-size: cssvar(font-l);
+            }
+        }
+    }
+}
+
+:host(.ios) {
+    .header-container {
+        padding-top: cssvar(padding-15);
+    }
+}
+
+:host(.iphone-x) {
+    .header-container {
+        padding-top: 35px;
+    }
+    .input-container {
+        .bottom-toolbar {
+            padding-bottom: 20px;
+            ;
+        }
+    }
+}
+
+:host(.hide) {
+    display: none;
+    overflow: hidden;
+}

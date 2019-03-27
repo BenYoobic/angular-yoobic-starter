@@ -1,0 +1,17 @@
+{
+  "name": "data-form",
+  "version": "6.0.259-2",
+  "main": "bundles/data-form.umd.js",
+  "module": "fesm5/data-form.js",
+  "es2015": "fesm2015/data-form.js",
+  "esm5": "esm5/data-form.js",
+  "esm2015": "esm2015/data-form.js",
+  "fesm5": "fesm5/data-form.js",
+  "fesm2015": "fesm2015/data-form.js",
+  "typings": "data-form.d.ts",
+  "metadata": "data-form.metadata.json",
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^1.9.0"
+  }
+}

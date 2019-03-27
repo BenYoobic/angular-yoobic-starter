@@ -1,0 +1,43 @@
+:host .user-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: var(--padding-30, 1.875rem);
+  text-align: center; }
+  :host .user-detail.no-padding {
+    padding-bottom: 0; }
+  :host .user-detail .points {
+    font-size: var(--font-s, 13px); }
+    :host .user-detail .points span {
+      margin-left: 5px; }
+  :host .user-detail .description {
+    padding: var(--padding-10, 0.625rem) var(--padding-10, 0.625rem) 0;
+    font-size: var(--font-s, 13px);
+    font-weight: 300; }
+
+:host yoo-grid div[slot="header"] {
+  display: flex;
+  font-size: var(--font-s, 13px); }
+  :host yoo-grid div[slot="header"] .title {
+    display: flex; }
+  :host yoo-grid div[slot="header"] .action {
+    margin-left: auto;
+    padding-right: 1rem;
+    color: var(--stable, #adadad);
+    font-weight: 300; }
+  :host yoo-grid div[slot="header"] .total-number {
+    padding-left: 0.2rem;
+    color: var(--stable, #adadad); }
+  :host yoo-grid div[slot="header"].small-margin-bottom {
+    margin-bottom: -0.3125rem; }
+
+:host .dates {
+  padding: var(--padding-30, 1.875rem) 0;
+  color: var(--stable, #adadad);
+  font-size: var(--font-s, 13px);
+  font-weight: 300; }
+  :host .dates span.date-label {
+    margin-right: var(--padding-5, 0.3125rem);
+    color: var(--black, #000000);
+    font-weight: normal; }

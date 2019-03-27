@@ -1,0 +1,59 @@
+:host {
+  position: absolute;
+  top: 0;
+  flex-direction: column;
+  align-items: center;
+  min-width: 2.625rem;
+  min-height: 2.625rem; }
+
+:host(.right) {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  left: 3.125rem;
+  flex-direction: row; }
+
+:host(.right[mini]) {
+  margin: 0.1875rem 0; }
+
+:host(.left) {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  right: 3.125rem;
+  flex-direction: row-reverse; }
+
+:host(.left[mini]) {
+  margin: 0.1875rem 0; }
+
+:host(.top) {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  top: auto;
+  bottom: 3.125rem;
+  flex-direction: column-reverse; }
+
+:host(.top[mini]) {
+  margin: 0 0.25rem; }
+
+:host(.bottom) {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  top: 3.125rem; }
+
+:host(.bottom[mini]) {
+  margin: 0 0.25rem; }

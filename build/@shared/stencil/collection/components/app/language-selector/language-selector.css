@@ -1,0 +1,86 @@
+:host .wrapper {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  position: absolute; }
+  :host .wrapper .inner-wrapper {
+    position: absolute;
+    right: 0.75rem;
+    bottom: auto;
+    left: auto;
+    width: 250px;
+    height: auto !important;
+    border-radius: 12.5px;
+    background-color: var(--light, #FFFFFF); }
+    :host .wrapper .inner-wrapper .heading {
+      padding-top: var(--padding-25, 1.5625rem);
+      padding-bottom: 1.0625rem;
+      padding-left: var(--padding-25, 1.5625rem);
+      line-height: normal;
+      text-transform: uppercase; }
+    :host .wrapper .inner-wrapper .load-container {
+      display: flex;
+      flex-direction: row;
+      align-content: center;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      max-width: 100%;
+      height: 100%; }
+    :host .wrapper .inner-wrapper .lists-container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 0 1.5625rem; }
+      :host .wrapper .inner-wrapper .lists-container .item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        width: 2rem;
+        height: 3rem;
+        margin-right: 0.75rem;
+        margin-bottom: 0.75rem; }
+        :host .wrapper .inner-wrapper .lists-container .item .icon {
+          display: flex;
+          position: relative;
+          align-items: center;
+          justify-content: center;
+          width: 2rem;
+          height: 2rem;
+          border-radius: 1rem;
+          font-size: var(--font-xl, 36px);
+          overflow: hidden; }
+          :host .wrapper .inner-wrapper .lists-container .item .icon .icon-class {
+            position: absolute; }
+        :host .wrapper .inner-wrapper .lists-container .item .overlay {
+          position: absolute;
+          top: 0%;
+          width: 2rem;
+          height: 2rem;
+          border-radius: 1rem;
+          background-color: var(--text-color, #807f83);
+          opacity: 0.6; }
+        :host .wrapper .inner-wrapper .lists-container .item .check {
+          top: 0.5rem;
+          right: auto;
+          bottom: auto;
+          left: 0.5rem;
+          position: absolute;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 1rem;
+          height: 1rem;
+          border-radius: 0.5rem;
+          background-color: var(--light, #FFFFFF);
+          font-size: var(--font-s, 13px); }
+      :host .wrapper .inner-wrapper .lists-container .item-empty {
+        width: 2rem;
+        height: 0;
+        margin-right: 0.75rem; }
+      :host .wrapper .inner-wrapper .lists-container .item-title {
+        font-size: var(--font-xs, 10px); }

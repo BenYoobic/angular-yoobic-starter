@@ -1,0 +1,40 @@
+:host {
+  cursor: pointer;
+
+  .outer-container {
+    display: flex;
+
+    position: relative;
+    align-items: center;
+
+    justify-content: center;
+    width: 100%;
+    height: 86px;
+    margin-bottom: 1rem;
+    border-radius: $border-radius-input;
+    box-shadow: cssvar(grid-frame-shadow);
+
+    .image {
+      @include abs-pos(0, 0, 0, 0);
+      border-radius: $border-radius-input;
+      background-position: center;
+    }
+
+    .overlay {
+      @include abs-pos(0, 0, 0, 0);
+      border-radius: $border-radius-input;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+
+    .title-container {
+      max-height: 72px;
+      margin: 1rem;
+      color: cssvar(always-light);
+      font-size: cssvar(font-l);
+      text-align: center;
+      // overflow: hidden;
+      z-index: 10;
+    }
+  }
+}

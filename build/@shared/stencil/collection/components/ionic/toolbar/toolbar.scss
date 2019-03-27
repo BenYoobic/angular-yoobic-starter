@@ -1,0 +1,197 @@
+//OUR OWN CUSTOM CSS HERE
+:host(.light),
+:host(.ion-color-light),
+:host([color=light]) {
+  color: cssvar(black) !important;
+}
+
+:host(.dark),
+:host(.ion-color-dark),
+:host([color=dark]) {
+  color: cssvar(light) !important;
+}
+
+:host(.always-drak),
+:host(.ion-color-alaways-dark),
+:host([color=always-drak]) {
+  color: $black !important;
+}
+//STENCIL
+
+
+// iOS Toolbar
+// --------------------------------------------------
+/// @prop - Order of the toolbar elements
+$toolbar-order-ios: ( back-button: 0, menu-toggle-start: 1, buttons-start: 2, buttons-secondary: 3, content: 4, buttons-primary: 5, buttons-end: 6, menu-toggle-end: 7, );
+/// @prop - Font family of the toolbar
+$toolbar-ios-font-family: $font-family-base !default;
+/// @prop - Font size of the toolbar button
+$toolbar-ios-button-font-size: 17px !default;
+/// @prop - Text color of the toolbar button
+$toolbar-ios-button-color: ion-color(primary, base) !default;
+/// @prop - Background color of the toolbar button
+$toolbar-ios-button-background-color: $toolbar-ios-background-color !default;
+/// @prop - Background color of the toolbar button when activated
+$toolbar-ios-button-background-color-activated: $toolbar-ios-color-active !default;
+/// @prop - Border radius of the toolbar button
+$toolbar-ios-button-border-radius: 4px !default;
+/// @prop - Font weight of the strong toolbar button
+$toolbar-ios-button-strong-font-weight: 600 !default;
+/// @prop - Fill color of the toolbar button icon
+$toolbar-ios-button-icon-fill-color: currentColor !default;
+/// @prop - Filter of the translucent toolbar
+$toolbar-ios-translucent-filter: saturate(180%) blur(20px) !default;
+// iOS Title
+// --------------------------------------------------
+/// @prop - Font size of the toolbar title
+$toolbar-ios-title-font-size: 5vw !default;
+/// @prop - Font weight of the toolbar title
+$toolbar-ios-title-font-weight: 400 !default;
+/// @prop - Text alignment of the toolbar title
+$toolbar-ios-title-text-align: center !default;
+/// @prop - Text color of the toolbar title
+$toolbar-ios-title-text-color: $toolbar-ios-text-color !default;
+// Toolbar
+// --------------------------------------------------
+:host {
+  --border-width: 0;
+  --border-style: solid;
+  --background: #{current-color(base)};
+  --ion-color-base: #{cssvar(light)};
+  --ion-color-contrast: #{$toolbar-ios-text-color};
+  --border-color: #{$toolbar-ios-border-color};
+  --translucent-filter: #{$toolbar-ios-translucent-filter};
+  --translucent-background: #{$toolbar-ios-translucent-background-color};
+  --title-margin-top: none;
+  @include font-smoothing();
+  @include padding($toolbar-ios-padding);
+
+  display: flex;
+
+  position: relative;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
+  min-height: 44px;
+  color: #{current-color(contrast)};
+  font-family: $toolbar-ios-font-family; // default color / background
+  contain: content;
+
+  overflow: hidden;
+
+  z-index: $z-index-toolbar;
+  box-sizing: border-box;
+}
+
+// Transparent Toolbar
+// --------------------------------------------------
+:host(.toolbar-translucent) {
+  --border-color: transparent;
+  .toolbar-background {
+    background: cssvar(translucent-background);
+    backdrop-filter: cssvar(translucent-filter);
+  }
+}
+
+:host(.ios) {
+  align-items: flex-end;
+  height: $toolbar-ios-height;
+  padding-bottom: 0.3125rem !important;
+}
+
+:host(.iphone-x-fullscreen) {
+  // height: 74px !important;
+  height: 88px !important;
+  padding-top: 46px !important; // iphonex top frame height
+
+}
+
+:host(.ion-color-light) {
+  --ion-color-light: #{cssvar(text-color)};
+}
+
+:host(.ion-color-dark) {
+  --ion-color-base: #{cssvar(black)};
+}
+
+:host(.ion-color-always-dark) {
+  --background: $black;
+  color: white;
+}
+
+:host(.ion-color-transparent){
+  --ion-color-base: transparent;
+}
+
+.toolbar-background {
+  @include position(0, 0, 0, 0);
+  position: absolute;
+  transform: translateZ(0);
+  border-width: cssvar(border-width);
+  border-style: cssvar(border-style);
+  border-color: cssvar(border-color);
+  background: cssvar(background);
+  contain: strict;
+
+  z-index: $z-index-toolbar-background;
+  pointer-events: none;
+}
+
+// iOS Toolbar Content
+// --------------------------------------------------
+.toolbar-content {
+  flex: 1;
+  order: map-get($toolbar-order-ios, content);
+  min-width: 0;
+}
+
+::slotted(yoo-ion-title) {
+  //@include position(0, null, null, 0);
+  //@include padding(0, 5.625rem, 0px);
+
+  position: relative;
+  top:0;
+  bottom:0;
+  left:0;
+  width: 100%;
+  margin-top: cssvar(title-margin-top);
+  //height: 100%;
+  transform: translateZ(0);
+  font-size: $toolbar-ios-title-font-size;
+  font-weight: $toolbar-ios-title-font-weight;
+  letter-spacing: -.03em;
+  text-align: $toolbar-ios-title-text-align;
+  box-sizing: border-box;
+  pointer-events: none;
+}
+
+::slotted(yoo-ion-title.img) {
+  position: absolute;
+}
+
+:host(.animate) {
+  height: 0;
+  min-height: 0;
+  transition: 0.3s;
+  z-index: 0;
+}
+
+:host(.no-border) {
+  --border-width: 0 !important;
+}
+
+:host(.web) {
+  height: cssvar(toolbar-web-height);
+}
+
+:host(.shadow) {
+  color: cssvar(black);
+  box-shadow: cssvar(toolbar-shadow);
+}
+
+:host(.overflow-visible) {
+    contain: none;
+    overflow: visible;
+}

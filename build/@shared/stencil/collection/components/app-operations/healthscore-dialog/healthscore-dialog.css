@@ -1,0 +1,103 @@
+:host .outer-container {
+  display: flex;
+  flex-direction: column; }
+  :host .outer-container .healthscore-title {
+    margin-top: var(--padding-20, 1.25rem);
+    text-align: center;
+    text-transform: uppercase; }
+  :host .outer-container .healthscore-numbers {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 1.875rem 0.9375rem 0 0.9375rem; }
+    :host .outer-container .healthscore-numbers .healthscore-number {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 var(--padding-20, 1.25rem); }
+      :host .outer-container .healthscore-numbers .healthscore-number .highest {
+        color: var(--success, #04CC99); }
+      :host .outer-container .healthscore-numbers .healthscore-number .lowest {
+        color: var(--danger, #ff625f); }
+      :host .outer-container .healthscore-numbers .healthscore-number .value {
+        font-size: var(--font-xl, 36px);
+        font-weight: 300;
+        letter-spacing: 1px;
+        line-height: 2.625rem;
+        text-align: center; }
+      :host .outer-container .healthscore-numbers .healthscore-number .text {
+        margin-top: var(--padding-10, 0.625rem);
+        color: var(--stable, #adadad);
+        font-size: var(--font-xs, 10px);
+        letter-spacing: 0.7px;
+        text-transform: uppercase; }
+    :host .outer-container .healthscore-numbers .vertical-border {
+      width: 1px;
+      height: 1.875rem;
+      margin-top: 0.75rem;
+      border: solid 0.5px var(--stable-light, #f1f1f1); }
+  :host .outer-container .healthscore-evolution {
+    margin-top: 3.125rem;
+    border-bottom: 1px solid var(--stable-light, #f1f1f1); }
+    :host .outer-container .healthscore-evolution .healthscore-chart {
+      height: 10.3125rem;
+      margin-top: 1.875rem; }
+  :host .outer-container .healthscore-comparison .healthscore-chart {
+    height: 12.1875rem; }
+  :host .outer-container .healthscore-comparison .legends {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; }
+    :host .outer-container .healthscore-comparison .legends .legend {
+      display: flex;
+      flex-direction: column;
+      padding: var(--padding-10, 0.625rem) 0.6875rem 0.3125rem 0.6875rem;
+      font-size: 0.625rem; }
+      :host .outer-container .healthscore-comparison .legends .legend .success {
+        color: var(--success, #04CC99); }
+      :host .outer-container .healthscore-comparison .legends .legend .info {
+        color: var(--info, #fc459e); }
+      :host .outer-container .healthscore-comparison .legends .legend .danger {
+        color: var(--danger, #ff625f); }
+      :host .outer-container .healthscore-comparison .legends .legend .stable-alt {
+        color: var(--text-color, #807f83); }
+
+:host .border {
+  width: 100%;
+  height: 0;
+  border-top: 1px solid var(--stable-30, #E6E6E6); }
+  :host .border.selected {
+    border-top: 1px solid var(--success, #04CC99); }
+
+:host(.web) {
+  background: var(--light, #FFFFFF); }
+  :host(.web) .outer-container {
+    display: block;
+    width: 100%;
+    height: 100%; }
+    :host(.web) .outer-container.toolbar {
+      height: calc(100% - 3rem); }
+    :host(.web) .outer-container yoo-ion-slides yoo-ion-slide .slide-content {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+      padding-left: var(--padding-5, 0.3125rem); }
+      :host(.web) .outer-container yoo-ion-slides yoo-ion-slide .slide-content .healthscore-title {
+        margin-bottom: var(--padding-20, 1.25rem);
+        text-transform: unset; }
+      :host(.web) .outer-container yoo-ion-slides yoo-ion-slide .slide-content yoo-navbar {
+        margin: 0 var(--padding-20, 1.25rem); }
+      :host(.web) .outer-container yoo-ion-slides yoo-ion-slide .slide-content .healthscore-numbers {
+        justify-content: flex-start;
+        margin: var(--padding-15, 0.9375rem) 0 0 var(--padding-10, 0.625rem); }
+        :host(.web) .outer-container yoo-ion-slides yoo-ion-slide .slide-content .healthscore-numbers .healthscore-number .value {
+          font-size: var(--font-lx, 27px); }
+        :host(.web) .outer-container yoo-ion-slides yoo-ion-slide .slide-content .healthscore-numbers .healthscore-number .text {
+          margin: 0; }
+      :host(.web) .outer-container yoo-ion-slides yoo-ion-slide .slide-content .healthscore-evolution {
+        margin-top: 0; }
+        :host(.web) .outer-container yoo-ion-slides yoo-ion-slide .slide-content .healthscore-evolution .healthscore-chart {
+          margin-top: var(--padding-10, 0.625rem); }
+    :host(.web) .outer-container yoo-ion-slides .swiper-pagination .swiper-pagination-bullet {
+      --bullet-background-active: var(--black, #000000); }

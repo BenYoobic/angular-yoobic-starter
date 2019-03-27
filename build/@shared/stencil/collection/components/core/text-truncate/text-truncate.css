@@ -1,0 +1,100 @@
+:host {
+  --current-background-color: var(--light, #FFFFFF);
+  --more-button-size: 14px;
+  --more-button-color: var(--stable, #adadad);
+  --text-color:  var(--black, #000000);
+  --text-max-height: 20px;
+  --ellipsis-padding-right: 2.5rem;
+  --max-line: 1;
+  --text-line-height: 1.2em; }
+
+:host(.dark) .content-wrapper .text {
+  color: white; }
+
+:host(.light) {
+  --current-background-color: white !important; }
+
+:host .hidden-text {
+  position: absolute;
+  opacity: 0; }
+
+:host .normal-text {
+  color: var(--text-color, #807f83); }
+  :host .normal-text.show-break-line {
+    white-space: pre-wrap; }
+
+:host .normal-more-button {
+  padding: 0.5rem 0;
+  color: var(--more-button-color); }
+
+:host .single-line-truncate-container {
+  display: flex;
+  align-items: center; }
+  :host .single-line-truncate-container .single-line-text {
+    color: var(--text-color, #807f83);
+    white-space: pre-wrap !important; }
+    :host .single-line-truncate-container .single-line-text.truncate {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      max-height: var(--text-max-height);
+      line-height: 1.75; }
+      :host .single-line-truncate-container .single-line-text.truncate p {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap; }
+    :host .single-line-truncate-container .single-line-text p {
+      margin: 0;
+      padding: 0; }
+  :host .single-line-truncate-container .single-line-button {
+    margin-left: auto;
+    color: var(--more-button-color); }
+
+:host .multi-line-truncate-container {
+  position: relative;
+  max-height: var(--text-max-height);
+  overflow: hidden; }
+  :host .multi-line-truncate-container .multi-line-text {
+    color: var(--text-color, #807f83); }
+    :host .multi-line-truncate-container .multi-line-text p {
+      margin: 0;
+      padding: 0; }
+  :host .multi-line-truncate-container .ellipsis {
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 1rem;
+    padding-right: var(--ellipsis-padding-right);
+    padding-left: var(--padding-5, 0.3125rem);
+    background-color: var(--current-background-color);
+    color: var(--text-color, #807f83); }
+  :host .multi-line-truncate-container .more-button {
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    min-width: 2.5rem;
+    padding-left: 2px;
+    background-color: var(--current-background-color);
+    color: var(--more-button-color);
+    font-size: 14; }
+
+:host .line-clamp .text-container {
+  display: -webkit-box;
+  color: var(--text-color, #807f83);
+  overflow: hidden;
+  -webkit-line-clamp: var(--max-line);
+  -webkit-box-orient: vertical; }
+  :host .line-clamp .text-container p {
+    margin: 0;
+    padding: 0; }
+
+:host(.card-list) .content-wrapper .text {
+  color: var(--black, #000000);
+  font-size: var(--font-l, 17px);
+  font-weight: 400; }
+
+:host(.form-recap) .content-wrapper .text {
+  font-size: var(--font-m, 15px);
+  line-height: 1.2; }

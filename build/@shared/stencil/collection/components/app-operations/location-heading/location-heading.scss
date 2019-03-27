@@ -1,0 +1,68 @@
+:host {
+    .outer-container {
+        display: flex;
+        flex-direction: row;
+        flex-flow: row wrap;
+        align-items: stretch;
+        padding: 0.8em 0;
+        padding-bottom: 0;
+        background: cssvar(light);
+        .image-container {
+            display: flex;
+            position: relative;
+            flex: 0.4;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            .top-right-vip {
+                position: absolute;
+                top: -5px;
+                right: 10px;
+                yoo-badge {
+                    --inner-container-default-padding: 0.5rem 0.5rem;
+                    --outer-container-border: 2px solid #{cssvar(light)};
+                    --font-size-inner-container: #{cssvar(font-l)};
+                }
+            }
+        }
+        .large-address {
+            padding-top: 1em;
+        }
+        .text-container {
+            flex: 1;
+            padding-top: 0.3rem;
+            padding-right: 0.5em;
+            font-size: cssvar(font-s);
+            .title {
+                color: cssvar(black);
+                font-size: cssvar(font-l);
+            }
+            .black {
+                color: cssvar(black);
+            }
+            .address,
+            .last-visit {
+                padding-top: 0.1em;
+                color: cssvar(text-color);
+            }
+            .tags-container {
+                color: cssvar(success);
+                word-break: break-all;
+                .hashtag {
+                    padding-right: cssvar(padding-10);
+                }
+            }
+        }
+    }
+}
+
+:host(.vip) {
+    .outer-container {
+        .image-container {
+            yoo-avatar {
+                --border-initial: 2px solid #{cssvar(light)};
+                --image-shadow: 0 0 0 3px #{cssvar(energized)};
+            }
+        }
+    }
+}

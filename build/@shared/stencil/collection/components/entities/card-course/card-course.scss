@@ -1,0 +1,107 @@
+:host {
+    cursor: pointer;
+    .outer-container {
+        margin-right: 0.325rem;
+        margin-bottom: 1rem;
+        margin-left: 0.325rem;
+        padding-bottom: cssvar(padding-10);
+        border-radius: $border-radius-input;
+        background: cssvar(light-to-dark);
+        box-shadow: cssvar(card-shadow-2);
+
+        .image-container {
+            position: relative;
+            height: 270px;
+            margin-top: 0.5rem;
+            margin-bottom: 0.8rem;
+            .image {
+                width: 100%;
+                height: 100%;
+                border-radius: $border-radius-input $border-radius-input 0 0;
+
+                yoo-icon {
+                    position: absolute;
+                    right: cssvar(padding-15);
+                    bottom: cssvar(padding-15);
+                    padding: 0.5rem;
+                    border: none;
+                    border-radius: 50%;
+                    background: cssvar(stable);
+                    color: cssvar(light);
+                    font-size: cssvar(font-l);
+                }
+            }
+        }
+
+        .content-container {
+            display: flex;
+            flex-direction: column;
+            margin: 0 cssvar(padding-10);
+            font-size: cssvar(font-m);
+
+            .course-title {
+                margin: 5px 0;
+                color: cssvar(black);
+                font-size: 17px;
+                font-weight: normal;
+                line-height: 21px;
+            }
+            .course-description {
+                position: relative;
+                margin: 5px 0;
+                color: cssvar(stable);
+                font-size: 13px;
+                line-height: normal;
+                white-space: normal;
+                overflow: hidden;
+            }
+            .course-points {
+                display: flex;
+                justify-content: space-between;
+                margin: 5px 0;
+
+                span {
+                    color: cssvar(dark);
+
+                    yoo-icon {
+                        padding-right: 0.25rem;
+                        color: cssvar(energized);
+                    }
+                }
+            }
+
+            .course-info {
+                display: flex;
+                flex-direction: row;
+                padding: 0.25rem 0;
+                font-size: cssvar(font-s);
+                .date {
+                    color: cssvar(danger-light);
+                    .date-label {
+                        color: cssvar(black);
+                    }
+                }
+                .lessons {
+                    span {
+                        padding-right: 0.5rem;
+                        color: cssvar(stable);
+                        yoo-icon {
+                            padding-right: 0.25rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    p {
+        -webkit-margin-before: 0;
+        -webkit-margin-after: 0;
+        -webkit-margin-start: 0;
+        -webkit-margin-end: 0;
+    }
+}
+
+:host(.offline) {
+    @include offline-entity();
+}

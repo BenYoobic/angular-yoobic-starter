@@ -1,0 +1,42 @@
+:host {
+  --border-radius: 0;
+  --border: none;
+  --button-width-container: 100%;
+  --footer-height: 5.75rem;
+  top: auto;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  z-index: 1; }
+  :host .mission-footer {
+    top: auto;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: var(--footer-height);
+    border-top: 1px solid var(--stable-30, #E6E6E6);
+    background-color: var(--light, #FFFFFF);
+    z-index: 2; }
+    :host .mission-footer yoo-button {
+      z-index: 3; }
+    :host .mission-footer .button-container {
+      width: 100%;
+      padding-right: var(--padding-15, 0.9375rem);
+      z-index: 3; }
+      :host .mission-footer .button-container yoo-button {
+        --width-container: var(--button-width-container); }
+      :host .mission-footer .button-container.first {
+        padding-left: var(--padding-15, 0.9375rem); }
+
+:host(.iphone-x) .mission-footer {
+  padding-bottom: 20px; }
+
+:host(.no-gradient) .mission-footer {
+  height: 3.125rem; }

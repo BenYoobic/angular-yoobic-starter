@@ -1,0 +1,65 @@
+
+
+:host {
+    .breadcrumb {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0.375rem 0rem;
+        font-size: cssvar(font-s);
+        line-height: 2;
+
+        .breadcrumb-item {
+            align-self: center;
+            padding-right: 0.75rem;
+            color: cssvar(dark-60);
+            
+            span {
+                @include text-truncate();
+                position: relative;                
+                padding-right: 0.75rem;
+            }
+            
+            &.active {
+                color: cssvar(text-color);
+            }
+
+            &.more {
+                span {
+                    &.yo-right {
+                        padding-right: 0rem;
+                    }
+                }
+                .more-icons {
+                    padding-left: 0.75rem; 
+                    yoo-icon {
+                        &.yo-arrow-dropdown {
+                            padding: 0rem 0.25rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        yoo-context-menu {
+            .context-container {
+                display: flex;
+                flex-direction: column-reverse;                
+                span {
+                    position: relative;
+                    width: 100%;
+                    padding: 0.5rem 1rem;
+                    border-top: 1px solid cssvar(stable-30);
+                    line-height: 1.5;
+                    &:last-child {
+                        border-top: none;
+                    }
+                    &:hover {
+                        background: cssvar(accent-05);
+                        color: cssvar(dark);
+                    }
+                }
+            }
+        }
+    }
+}

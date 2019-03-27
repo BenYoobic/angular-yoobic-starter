@@ -1,0 +1,139 @@
+:host {
+  height: 100%;
+  font-size: var(--font-m, 15px);
+  font-weight: 400; }
+  :host .mission-detail {
+    display: flex;
+    flex-direction: column;
+    height: 100%; }
+    :host .mission-detail .scroll-spacer {
+      height: 5.75rem; }
+    :host .mission-detail .mission-content {
+      padding: var(--padding, 1rem); }
+      :host .mission-detail .mission-content .menu {
+        list-style: none outside none;
+        background: none repeat scroll 0 0 transparent;
+        border: 0 none;
+        font-size: 100%;
+        margin: 0;
+        outline: 0 none;
+        padding: 0;
+        vertical-align: baseline;
+        -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+        margin-top: 1rem;
+        padding: 0;
+        list-style: none; }
+        :host .mission-detail .mission-content .menu .menu-item {
+          display: flex;
+          flex-direction: row; }
+          :host .mission-detail .mission-content .menu .menu-item .menu-left {
+            display: flex;
+            flex-direction: column;
+            align-items: center; }
+            :host .mission-detail .mission-content .menu .menu-item .menu-left .menu-icon {
+              height: 1.875rem;
+              width: 1.875rem; }
+              :host .mission-detail .mission-content .menu .menu-item .menu-left .menu-icon yoo-icon {
+                height: 1.1875rem;
+                width: 1.1875rem;
+                font-size: var(--font-l, 17px);
+                display: flex;
+                justify-content: center;
+                background-color: var(--light, #FFFFFF);
+                border: solid 0.03125rem #d0d0d0;
+                border-radius: 50%;
+                padding: 0.34375rem; }
+            :host .mission-detail .mission-content .menu .menu-item .menu-left .border {
+              width: 1px;
+              height: 100%;
+              background-color: #d0d0d0; }
+          :host .mission-detail .mission-content .menu .menu-item .menu-right {
+            margin-left: 0.625rem;
+            width: 100%;
+            overflow: hidden; }
+            :host .mission-detail .mission-content .menu .menu-item .menu-right .menu-title {
+              font-weight: 600;
+              line-height: 1.125rem;
+              margin-top: 0.375rem; }
+            :host .mission-detail .mission-content .menu .menu-item .menu-right .menu-content {
+              margin-top: 0.25rem;
+              margin-bottom: 1.25rem; }
+        :host .mission-detail .mission-content .menu .menu-item .menu-right .menu-title {
+          margin-bottom: 0.625rem; }
+        :host .mission-detail .mission-content .menu .menu-item .menu-right .menu-content span {
+          margin-right: 1.25rem; }
+        :host .mission-detail .mission-content .menu .menu-item .menu-right .menu-content yoo-avatar {
+          margin-right: 0.3125rem; }
+        :host .mission-detail .mission-content .menu .menu-item .menu-right .menu-content .menu-content-contact {
+          margin-bottom: var(--padding-10, 0.625rem); }
+        :host .mission-detail .mission-content .menu .menu-item .menu-right .menu-requestor {
+          display: flex; }
+        :host .mission-detail .mission-content .menu .menu-item:last-child .menu-left .border {
+          display: none; }
+        :host .mission-detail .mission-content .menu yoo-mission-contents:last-child {
+          --display-border: none; }
+  :host .mission-todo .mission-content .menu .menu-item .menu-right .menu-title {
+    font-weight: 400; }
+
+:host(.web) {
+  border-radius: 8px;
+  background: var(--light, #FFFFFF);
+  box-shadow: var(--tile-shadow, 0 5px 15px 3px rgba(40, 47, 54, 0.08)); }
+  :host(.web) yoo-ion-header yoo-ion-toolbar {
+    height: 3.75rem; }
+  :host(.web) .mission-footer {
+    justify-content: flex-start;
+    padding-right: 1.875rem;
+    padding-left: 1.875rem;
+    border-radius: 8px;
+    box-shadow: var(--tile-shadow, 0 5px 15px 3px rgba(40, 47, 54, 0.08)); }
+    :host(.web) .mission-footer yoo-button {
+      margin-right: var(--padding-10, 0.625rem); }
+    :host(.web) .mission-footer .unbook {
+      order: 2; }
+    :host(.web) .mission-footer .continue {
+      order: 1; }
+
+:host(.border) .mission-detail.web yoo-ion-content {
+  border-radius: 0.375rem; }
+
+:host(.border) .mission-detail.web yoo-form-footer {
+  --border-radius: 0 0 0.375rem 0.375rem; }
+
+:host .score-item .mission-title {
+  margin-top: 1rem;
+  margin-bottom: var(--padding-15, 0.9375rem);
+  font-size: 1.6825rem;
+  line-height: 2.0625rem; }
+
+:host .score-item .menu-content .score-active-container {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 2rem; }
+
+:host .score-item .menu-content .menu-content-scoring {
+  padding-bottom: 0.5rem; }
+  :host .score-item .menu-content .menu-content-scoring .centered {
+    text-align: center;
+    padding: 0.5rem; }
+  :host .score-item .menu-content .menu-content-scoring .network {
+    color: var(--text-color, #807f83);
+    margin-top: 1rem; }
+  :host .score-item .menu-content .menu-content-scoring.extra-score .score-container {
+    display: flex;
+    justify-content: space-between; }
+    :host .score-item .menu-content .menu-content-scoring.extra-score .score-container.points-container {
+      align-items: center;
+      padding: 1em 0.5rem; }
+    :host .score-item .menu-content .menu-content-scoring.extra-score .score-container.contrasted {
+      background-color: rgba(241, 241, 241, 0.5); }
+  :host .score-item .menu-content .menu-content-scoring.points {
+    padding: 0 !important; }
+  :host .score-item .menu-content .menu-content-scoring.mixed {
+    padding-top: 0.75rem; }
+  :host .score-item .menu-content .menu-content-scoring.no-divider {
+    padding-top: 0; }
+  :host .score-item .menu-content .menu-content-scoring.divider {
+    border-bottom: 1px solid var(--stable-light, #f1f1f1);
+    padding-bottom: 0.75rem;
+    padding-top: 0; }

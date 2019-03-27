@@ -1,0 +1,52 @@
+:host {
+
+    .outer-container,
+    .readonly {
+        touch-action: none;
+
+        .title {
+            color: cssvar(black);
+            font-size: cssvar(font-lx);
+            font-weight: bold;
+        }
+
+        .placeholder {
+            color: cssvar(stable);
+            font-size: cssvar(font-l);
+        }
+
+        .words-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            padding-top: cssvar(padding-40);
+
+            .left-container,
+            .right-container {
+                display: flex;
+                flex: 1;
+                flex-direction: column;
+                text-align: center;
+
+                yoo-badge {
+                    --color-inner-text: #{cssvar(black)};
+                    --font-size-inner-container: #{cssvar(font-m)};
+                    --inner-container-default-padding: 0.375rem 0.625rem;
+                    margin: 0 $padding-5 $padding-5 $padding-5;
+                    touch-action: none;
+
+                    &.drag-target {
+                        --shadow: #{cssvar(button-shadow)};
+                        --background: #{cssvar(light)};
+                        position: relative;
+                        z-index: 50;
+                    }
+
+                    &.drop-target {
+                        --background: #{cssvar(stable-30)};
+                    }
+                }
+            }
+        }
+    }
+}

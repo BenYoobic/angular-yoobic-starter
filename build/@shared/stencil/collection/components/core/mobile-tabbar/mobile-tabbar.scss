@@ -1,0 +1,82 @@
+:host {
+  .outer-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 49px;
+    user-select: none;
+    .item-container {
+      display: flex;
+      position: relative;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      width: 100%;
+      min-width: 48px;
+      padding-top: 0.4875rem;
+      color: cssvar(tab-bar-color);
+      overflow: hidden;
+      &.active {
+        display: inline;
+        .icon-container {
+          -webkit-background-clip: text;
+          background-clip: text;
+          color: cssvar(success);
+          text-align: center;
+        }
+        .text-container {
+          color: cssvar(success);
+          text-align: center;
+        }
+      }
+      .icon-container {
+        position: relative;
+        max-height: 22px;
+        margin-bottom: -5px;
+        yoo-icon {
+          font-size: 20px;
+          line-height: 1.4rem;
+          yoo-badge {
+            position: absolute;
+            top: -20px;
+          }
+        }
+
+      }
+      .text {
+        font-size: cssvar(font-xs);
+      }
+
+    }
+  }
+}
+
+:host(.iphone-x) {
+  .outer-container {
+    align-items: flex-start;
+    height: 73px !important;
+
+    .item-container{
+      justify-content: initial !important;
+      height: 100%;
+      .dot {
+        top: 35%;
+      }
+    }
+  }
+}
+
+:host(.boost) {
+    .outer-container {
+        .item-container {
+            &.active {
+                .icon-container {
+                    color: cssvar(danger-light)!important;
+                }
+                .text-container {
+                    color: cssvar(danger-light)!important;
+                }
+            }
+        }
+    }
+}

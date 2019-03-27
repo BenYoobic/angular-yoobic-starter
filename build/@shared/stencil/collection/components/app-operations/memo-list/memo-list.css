@@ -1,0 +1,116 @@
+:host .outer-container {
+  padding: 0 1rem; }
+  :host .outer-container .title-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 1rem; }
+    :host .outer-container .title-container .title {
+      color: var(--black, #000000);
+      font-size: var(--font-l, 17px);
+      font-weight: 700; }
+    :host .outer-container .title-container .flex {
+      flex: 1; }
+    :host .outer-container .title-container yoo-badge {
+      margin-left: 0.5rem; }
+    :host .outer-container .title-container yoo-icon {
+      padding-left: var(--padding-10, 0.625rem);
+      font-size: var(--font-s, 13px);
+      cursor: pointer; }
+      :host .outer-container .title-container yoo-icon.yo-down, :host .outer-container .title-container yoo-icon.yo-up {
+        color: var(--black, #000000);
+        font-weight: 600; }
+  :host .outer-container yoo-ion-list yoo-ion-item-sliding yoo-ion-item-options button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    border: none; }
+    :host .outer-container yoo-ion-list yoo-ion-item-sliding yoo-ion-item-options button .text-action {
+      padding-top: 0.25rem;
+      font-family: "Lato" !important;
+      font-size: var(--font-xs, 10px); }
+    :host .outer-container yoo-ion-list yoo-ion-item-sliding yoo-ion-item-options button yoo-icon {
+      width: 60px;
+      font-size: var(--font-l, 17px); }
+  :host .outer-container .border {
+    border-bottom: 1px solid var(--stable-30, #E6E6E6); }
+  :host .outer-container .checkbox-container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding-right: 0.5rem; }
+  :host .outer-container .disabled {
+    padding-top: 0.25rem; }
+  :host .outer-container .inner-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-top: 0.75rem;
+    padding-bottom: 0.4rem; }
+    :host .outer-container .inner-container .photo {
+      width: 40px;
+      height: 40px;
+      margin-top: 0.2rem;
+      margin-bottom: 0.5rem;
+      margin-left: 1.9rem;
+      border-radius: 5px; }
+    :host .outer-container .inner-container .description-container {
+      margin-bottom: 0.3rem;
+      padding-left: 1.75rem; }
+      :host .outer-container .inner-container .description-container yoo-text-truncate {
+        --text-color: var(--text-color, #807f83);
+        font-size: var(--font-s, 13px); }
+    :host .outer-container .inner-container .item-container {
+      display: flex;
+      justify-content: space-between;
+      width: 100%; }
+      :host .outer-container .inner-container .item-container .center-container {
+        flex-grow: 1;
+        color: var(--black, #000000);
+        font-size: var(--font-m, 15px); }
+        :host .outer-container .inner-container .item-container .center-container .menu-item-title.closed {
+          color: var(--success, #04CC99);
+          text-decoration: line-through; }
+        :host .outer-container .inner-container .item-container .center-container .menu-item-title.open {
+          line-height: 1.2rem; }
+        :host .outer-container .inner-container .item-container .center-container .menu-item-title.readonly {
+          opacity: 0.7; }
+        :host .outer-container .inner-container .item-container .center-container .menu-item-title.selected {
+          transition: 0.3s;
+          color: var(--success, #04CC99);
+          text-decoration: line-through; }
+        :host .outer-container .inner-container .item-container .center-container .menu-item-title.unselected {
+          transition: 0.3s;
+          color: var(--black, #000000);
+          text-decoration: none; }
+      :host .outer-container .inner-container .item-container .right-container {
+        display: flex;
+        padding: 0 0.5rem;
+        font-size: var(--font-s, 13px); }
+        :host .outer-container .inner-container .item-container .right-container .date-box {
+          margin-top: 0.25rem; }
+          :host .outer-container .inner-container .item-container .right-container .date-box .menu-item-date {
+            align-self: center;
+            margin-left: var(--padding-10, 0.625rem);
+            color: var(--text-color, #807f83);
+            font-size: var(--font-s, 13px); }
+            :host .outer-container .inner-container .item-container .right-container .date-box .menu-item-date.danger {
+              color: var(--danger, #ff625f); }
+        :host .outer-container .inner-container .item-container .right-container .avatar-box {
+          padding-right: 0.4rem; }
+          :host .outer-container .inner-container .item-container .right-container .avatar-box .avatar-container yoo-avatar {
+            height: 24px; }
+          :host .outer-container .inner-container .item-container .right-container .avatar-box .avatar-container ul {
+            display: flex;
+            margin: auto;
+            padding: 0;
+            list-style: none; }
+          :host .outer-container .inner-container .item-container .right-container .avatar-box .avatar-container ul li {
+            display: inline-table;
+            margin-right: -0.5rem; }
+
+:host([type=closed]) .outer-container {
+  padding-bottom: 2rem; }

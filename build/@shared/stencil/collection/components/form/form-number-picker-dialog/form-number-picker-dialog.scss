@@ -1,0 +1,63 @@
+:host {
+    .outer-container {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        height: 100%;
+        yoo-ion-toolbar {
+            max-height: 44px;
+            box-shadow: cssvar(toolbar-shadow);
+        }
+        .content {
+            position: relative;
+            height: calc(100% - 44px);
+            background-color: cssvar(light);
+            yoo-ion-scroll {
+                top: auto;
+                height: 100%;
+                transition: 0.3s;
+            }
+        }
+        .item-selected {
+            color: cssvar(success);
+        }
+    }
+    .center {
+        padding-top: 0.5rem;
+        text-align: center;
+    }
+    .lastElement {
+        padding-bottom: 5rem;
+    }
+    .footer-background {
+        @include abs-pos(auto, 0, 0, 0);
+        z-index: 1;
+
+        &.bottom {
+            height: 2.875rem;
+            border: cssvar(border);
+            border-radius: cssvar(border-radius);
+            background: cssvar(light);
+        }
+
+        &.middle {
+            bottom: 2.875rem;
+            height: 1.4375rem;
+            background-image: cssvar(footer-background-middle);
+            &.web {
+            height: 2.875rem;
+            }
+        }
+
+        &.top {
+            bottom: 4.3125rem;
+            height: 1.4375rem;
+            background-image: cssvar(footer-background-top);
+            &.web {
+            bottom: 5.75rem;
+            height: 2.875rem;
+            }
+        }
+
+    }
+}   

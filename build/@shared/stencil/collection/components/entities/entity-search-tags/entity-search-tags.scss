@@ -1,0 +1,102 @@
+:host {
+    --entity-search-shadow: none;
+    @keyframes slideInRight {
+        0% { margin-left: 100px; opacity: 0; }
+        100% { margin-left: 10px; opacity: 1; }
+    }
+    @keyframes fadeIn {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+    }
+    .outer-container {
+        @for $i from 1 through 10 {
+            .menu-item:nth-of-type(#{$i}) {
+                animation-delay: #{$i/12}s;
+            }
+        }
+        display: flex;
+        position: relative;
+        width: 100% !important;
+        height: 1.825rem;
+        padding-bottom: 0.2rem;
+        yoo-ion-scroll {
+            min-height: 2rem;
+        }
+        yoo-button {
+            --border-radius-container: #{cssvar(button-border-radius-18)};
+            --height-icon-only-container: 1.875rem;
+            --height-container: 1.875rem;
+            --border-container: 1px solid #{cssvar(always-stable-light)};
+            --color-value: #{cssvar(black)};
+            --font-size-icon: 1.25rem;
+            --font-size-text: #{cssvar(font-m)};
+            --shadow: #{cssvar(entity-search-shadow)} !important;
+            --padding-text-span: 0 #{cssvar(padding-10)} 1px 3px;
+            padding: 0 cssvar(padding-10) 0 cssvar(padding-15);
+            z-index: 1;
+            animation-name: fadeIn;
+            animation-fill-mode: both;
+            animation-duration: .3s ;
+        }
+        &.advanced-filters {
+            yoo-ion-scroll {
+                --left-pos: 55px;
+            }
+        }
+        &.advanced-filters-count {
+            yoo-ion-scroll {
+                --left-pos: 80px;
+            }
+        }
+        .button-spacer {
+            //min-width: 1rem;
+        }
+
+        .menu-item {
+            animation-name: slideInRight;
+            animation-fill-mode: both;
+            animation-duration: .5s ;
+            display: flex;
+            align-items: center;
+            height: 1.875rem;
+            margin-left: cssvar(padding-10);
+            padding: 0 cssvar(padding-10) 0 cssvar(padding-10);
+            border: solid 1px cssvar(stable-light-to-white);
+            border-radius: 0.9375rem;
+            background: cssvar(light);
+            color: cssvar(black);
+            font-size: 0.9375rem;
+            white-space: nowrap;
+            box-shadow: cssvar(entity-search-shadow);
+            cursor: pointer;
+            &.selected {
+                border: solid 1px cssvar(light);
+                background: cssvar(gradient-success);
+                color: cssvar(light);
+            }
+        }
+        .spacer {
+            width: 0.625rem;
+            height: 0;
+            visibility: hidden;
+        }
+        &.margin {
+            margin: 0 1rem;
+        }
+        .placeholder {
+            width: 100%;
+            min-height: 30px;
+            background: cssvar(stable-light);
+        }
+    }
+}
+
+:host(.boost){
+    .outer-container {
+        .menu-item {
+            &.selected {
+                background: cssvar(danger-light);
+            }
+        }
+    }
+}

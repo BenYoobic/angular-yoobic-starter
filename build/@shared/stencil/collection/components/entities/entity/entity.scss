@@ -1,0 +1,253 @@
+@mixin check-selected-unselected($afterOrBefore) {
+    &#{$afterOrBefore} {
+        @if $afterOrBefore==":after" {
+            @include abs-pos(#{cssvar(top-pos-check-selected)}, 0, #{cssvar(bottom-pos-check-selected)}, auto);
+        }
+        @else {
+            @include abs-pos(#{cssvar(top-pos-check-selected)}, auto, #{cssvar(bottom-pos-check-selected)}, 0.4rem);
+        }
+        display: flex;
+        align-items: center;
+        padding: 0 0.5rem;
+        transform: translateY(-2.5%);
+        font-family: "yoobicons";
+        font-size: cssvar(font-size-icon-check-selected);
+    }
+    yoo-card-list {
+        --border-bottom-outer-container: 1px solid #{cssvar(stable-30)};
+        --border-bottom-content-container: transparent; //--justify-content-content-container: center;
+        @if $afterOrBefore==":after" {
+            --margin-content-container-right: 2rem;
+        }
+        @else {
+            --margin-content-container-left: 3rem;
+        }
+    }
+}
+@mixin card-cell-web-selected() {
+    @include abs-pos(cssvar(padding-5), cssvar(padding-5), auto, auto);
+    display: flex;
+    align-items: center;
+    height: 1.3rem;
+    border-radius: 50%;
+    background-color: cssvar(light);
+    font-family: "yoobicons";
+    font-size: 1.375rem;
+}
+
+:host {
+    --padding: 0;
+    --padding-right-content-container: 0;
+    --padding-left-content-container: 0;
+    --padding-right-content-container-card-list: 0;
+    --overflow-card-heading-text-card-list: hidden;
+    --text-overflow-card-heading-text-card-list: ellipsis;
+    --white-space-card-heading-text-card-list: normal;
+    --font-size-icon-check-selected: #{cssvar(checkbox-size)};
+    --top-pos-check-selected: 0;
+    --bottom-pos-check-selected: 0;
+    --entity-background: none;
+    --margin: 0.1rem 0.5rem 1rem 0.5rem !important;
+    --icon-color: #{cssvar(success)};
+}
+
+:host(.boost) {
+    --icon-color: #{cssvar(danger-light)} !important;
+    &:after {
+        padding: 0 !important;
+    }
+}
+:host {
+    overflow: hidden;
+    .icon-container {
+        margin-right: 1rem;
+        .icon {
+            width: 3rem;
+            height: 3rem;
+            border: 1px solid cssvar(stable-30);
+            border-radius: 50%;
+            background-color: cssvar(dark-10);
+        }
+    }
+    .content-container {
+        padding-right: cssvar(padding-right-content-container);
+        padding-left: cssvar(padding-left-content-container);
+        text-align: left;
+        .title {
+            font-weight: bold;
+        }
+        .subtitle {
+            opacity: 0.65;
+        }
+    }
+    yoo-avatar {
+        --transform-avatar: translateY(5px);
+    }
+    yoo-card-list {
+        //--margin-content-container-right: #{cssvar(padding)};
+        --overflow-card-heading-text: #{cssvar(overflow-card-heading-text-card-list)};
+        --text-overflow-card-heading-text: #{cssvar(text-overflow-card-heading-text-card-list)};
+        --white-space-card-heading-text: #{cssvar(white-space-card-heading-text-card-list)};
+        --card-list-background: #{cssvar(entity-background)};
+        margin-bottom: 1px;
+    }
+}
+
+// last inside grid framed
+:host(.last) {
+    //padding-bottom: 0.5rem;
+    yoo-card-list {
+        --border-bottom-outer-container: transparent;
+        --border-bottom-content-container: transparent;
+        --border-bottom-outer-container: none !important;
+    }
+}
+
+:host(.child) {
+    yoo-card-list {
+        padding-left: 2.8125rem;
+    }
+
+    yoo-card-question {
+        padding-left: 1.25rem;
+    }
+}
+
+:host(.check-selected:not(.web)) {
+    @include check-selected-unselected(":after");
+    &:after {
+        color: #{cssvar(icon-color)};
+        content: "\e953";
+    }
+    yoo-card-cell {
+        --display-after-image: block;
+        --position-image-container: relative;
+        --opacity-image: 0.2;
+    }
+}
+
+:host(.check-unselected:not(.web):not(.card-cell)) {
+    @include check-selected-unselected(":after");
+    &:after {
+        color: cssvar(stable);
+        content: "\e95b";
+    }
+}
+
+:host(.check-selected-left:not(.web):not(.card-cell)) {
+    @include check-selected-unselected(":before");
+    &:before {
+        color: #{cssvar(icon-color)};
+        content: "\e953";
+    }
+    yoo-card-cell {
+        --display-after-image: block;
+        --position-image-container: relative;
+        --opacity-image: 0.2;
+    }
+}
+
+:host(.check-unselected-left:not(.web):not(.card-cell)) {
+    @include check-selected-unselected(":before");
+    &:before {
+        color: cssvar(stable);
+        content: "\e95b";
+    }
+}
+
+:host(.card-cell.check-unselected-left.web) {
+    &::after {
+        @include card-cell-web-selected();
+        color: cssvar(light);
+        content: "\e9bb";
+    }
+}
+
+:host(.card-cell.selected.check-selected-left.web) {
+    &::after {
+        @include card-cell-web-selected();
+        color: cssvar(success);
+        content: "\e953";
+    }
+}
+
+:host(.language) {
+    @include single-line-selected();
+}
+
+:host(.environnement) {
+    @include single-line-selected();
+}
+
+:host(.catalog-display) {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+:host(.users) {
+    overflow: visible;
+}
+
+:host(.user) {
+    overflow: visible;
+}
+
+:host(.autocomplete) {
+    yoo-badge {
+        --font-size-inner-container: #{cssvar(font-m)};
+    }
+}
+
+:host(.lessons) {
+    box-shadow: 0 5px 15px 0 rgba(40, 47, 54, 0.08);
+}
+
+:host(.photos) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 120px;
+    height: 120px;
+    margin-bottom: 0.25rem;
+}
+
+:host(.web.photos) {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    overflow: visible;
+    z-index: 1;
+}
+
+:host(.web.photos.context-menu-open) {
+    z-index: 2;
+}
+
+:host(.apps) {
+    overflow: visible;
+}
+
+:host(.card-feed) {
+    height: 100% !important;
+}
+
+:host(.card-feed.web) {
+    align-items: center;
+}
+
+:host(.collapsible:not(.map)),
+:host(.locations.no-kpi:not(.map):not(.framed)) {
+    display: block;
+    height: auto;
+    margin-bottom: cssvar(padding-20);
+    border-radius: 0.5rem;
+    background: cssvar(light);
+    box-shadow: 0 5px 15px 0 rgba(40, 47, 54, 0.08);
+}
+
+:host(.products.simple) {
+    yoo-card-list {
+        --border-bottom-content-container: none;
+    }
+}

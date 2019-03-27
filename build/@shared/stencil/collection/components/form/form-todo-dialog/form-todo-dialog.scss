@@ -1,0 +1,35 @@
+:host {
+    @include tasks-style();
+
+    .border {
+        @include border-profile();
+    }
+
+    .task {
+        .task-part {
+            margin: 0 1rem;
+
+            yoo-icon {
+                margin-right: 0.5rem;
+                font-size: cssvar(font-m);
+            }
+        }
+    }
+
+    .tasks {
+        margin-bottom: 0.5rem;
+        padding: 1rem;
+        background: cssvar(light);
+        .field-placeholder {
+            margin-bottom: 0.625rem;
+        }
+    }
+
+    .menu {
+        @include reset-list();
+        @include mission-style();
+        margin: 0.5rem;
+        padding: 0;
+        list-style: none;
+    }
+}

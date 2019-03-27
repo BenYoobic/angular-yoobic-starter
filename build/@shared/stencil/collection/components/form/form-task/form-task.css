@@ -1,0 +1,103 @@
+:host .readonly,
+:host .outer-container {
+  display: flex;
+  flex-direction: column; }
+  :host .readonly .task,
+  :host .outer-container .task {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    background: var(--light, #FFFFFF);
+    line-height: 39px; }
+    :host .readonly .task .task-part,
+    :host .outer-container .task .task-part {
+      display: flex;
+      flex-direction: row; }
+      :host .readonly .task .task-part yoo-avatar,
+      :host .outer-container .task .task-part yoo-avatar {
+        --transform-avatar: translateY(5px);
+        margin-right: 0.5rem; }
+      :host .readonly .task .task-part .text,
+      :host .outer-container .task .task-part .text {
+        font-size: var(--font-l, 17px); }
+      :host .readonly .task .task-part .date,
+      :host .outer-container .task .task-part .date {
+        margin-right: 0.625rem;
+        color: var(--text-color, #807f83);
+        font-size: var(--font-s, 13px); }
+      :host .readonly .task .task-part yoo-button,
+      :host .outer-container .task .task-part yoo-button {
+        --width-icon-only-container: 0.25rem;
+        --font-size-icon: 1.125rem;
+        padding-top: 0.6875rem; }
+  :host .readonly .border,
+  :host .outer-container .border {
+    width: 100%;
+    height: 0;
+    border-top: 1px solid var(--stable-30, #E6E6E6); }
+  :host .readonly .title,
+  :host .outer-container .title {
+    font-size: var(--font-m, 15px); }
+  :host .readonly .newtask,
+  :host .outer-container .newtask {
+    display: flex;
+    flex-direction: row;
+    margin-top: 0.875rem;
+    font-size: var(--font-m, 15px); }
+    :host .readonly .newtask.nomargin,
+    :host .outer-container .newtask.nomargin {
+      margin-top: 0; }
+    :host .readonly .newtask .icon,
+    :host .outer-container .newtask .icon {
+      display: flex;
+      align-items: center;
+      margin-right: 0.125rem; }
+      :host .readonly .newtask .icon .yo-plus,
+      :host .outer-container .newtask .icon .yo-plus {
+        font-size: 0.5rem; }
+  :host .readonly .task,
+  :host .outer-container .task {
+    align-items: flex-start; }
+    :host .readonly .task .task-part yoo-icon,
+    :host .outer-container .task .task-part yoo-icon {
+      line-height: 39px; }
+    :host .readonly .task .task-part .description-container,
+    :host .outer-container .task .task-part .description-container {
+      display: flex; }
+    :host .readonly .task .task-part .text-container,
+    :host .outer-container .task .task-part .text-container {
+      padding: 7px 0 1rem 0.625rem;
+      line-height: 1.5rem; }
+      :host .readonly .task .task-part .text-container .text,
+      :host .outer-container .task .task-part .text-container .text {
+        color: var(--black, #000000);
+        font-size: var(--font-m, 15px); }
+    :host .readonly .task .task-part yoo-button,
+    :host .outer-container .task .task-part yoo-button {
+      padding-top: 0.2rem; }
+
+:host .readonly .task .task-part .break-text {
+  text-decoration: line-through; }
+
+:host .readonly .task .task-part .text {
+  margin-left: 0.625rem; }
+
+:host .readonly .task .task-part .subtitle {
+  color: #adadad; }
+
+:host .readonly .task .task-part .yo-circle {
+  color: #d0d0d0; }
+
+:host(.history) .readonly {
+  margin-top: 0 !important; }
+
+:host(.tasks-container) {
+  display: block;
+  margin-top: 1rem; }
+  :host(.tasks-container) .outer-container {
+    padding: var(--padding-10, 0.625rem) 0 0 0; }
+    :host(.tasks-container) .outer-container:not(.outer-container-empty) {
+      margin-bottom: 1rem; }
+  :host(.tasks-container) .outer-container-empty {
+    padding: 0; }

@@ -1,0 +1,17 @@
+{
+  "name": "translate",
+  "version": "6.0.259-2",
+  "main": "bundles/translate.umd.js",
+  "module": "fesm5/translate.js",
+  "es2015": "fesm2015/translate.js",
+  "esm5": "esm5/translate.js",
+  "esm2015": "esm2015/translate.js",
+  "fesm5": "fesm5/translate.js",
+  "fesm2015": "fesm2015/translate.js",
+  "typings": "translate.d.ts",
+  "metadata": "translate.metadata.json",
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^1.9.0"
+  }
+}

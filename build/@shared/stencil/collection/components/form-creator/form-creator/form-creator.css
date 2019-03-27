@@ -1,0 +1,85 @@
+:host {
+  width: 100%;
+  height: 100%;
+  background: var(--light, #FFFFFF); }
+  :host .container {
+    display: flex;
+    flex-direction: column;
+    height: 100%; }
+    :host .container .content {
+      display: flex;
+      height: calc(100% - 3rem); }
+      :host .container .content .left-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: 3rem;
+        border-right: 1px solid var(--stable-light, #f1f1f1);
+        font-size: 1.125rem; }
+        :host .container .content .left-menu yoo-icon {
+          margin-top: var(--padding-20, 1.25rem); }
+      :host .container .content .left-selection {
+        min-width: 22rem;
+        height: 100%;
+        padding-top: var(--padding-20, 1.25rem);
+        border-right: 1px solid var(--stable-light, #f1f1f1); }
+        :host .container .content .left-selection yoo-accordion {
+          --outer-container-padding: 0 var(--padding-20, 1.25rem);
+          --outer-container-width: calc(100% - 2.5rem); }
+          :host .container .content .left-selection yoo-accordion yoo-accordion.sub-accordion {
+            --outer-container-padding: 0;
+            --outer-container-width: 100%; }
+      :host .container .content .form-content {
+        width: 100%;
+        padding: var(--padding-20, 1.25rem);
+        background-color: #fafafa; }
+        :host .container .content .form-content yoo-accordion.pages-accordion {
+          --accordion-background: var(--stable-background, #fafafa)
+                ; }
+      :host .container .content .live-preview {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        min-width: 30rem;
+        padding: var(--padding-20, 1.25rem);
+        transition: 0.3s;
+        border-left: 1px solid var(--stable-light, #f1f1f1); }
+        :host .container .content .live-preview.hide {
+          width: 0;
+          min-width: 0;
+          padding: 0; }
+          :host .container .content .live-preview.hide .live-preview-header {
+            width: 0;
+            opacity: 0; }
+          :host .container .content .live-preview.hide .device-container {
+            opacity: 0; }
+        :host .container .content .live-preview .live-preview-header {
+          display: flex;
+          align-items: center;
+          align-self: flex-end;
+          justify-content: space-between;
+          width: 100%;
+          padding-bottom: 0.5625rem;
+          transition: 0.5s;
+          border-bottom: 1px solid var(--stable-light, #f1f1f1);
+          font-size: 1.125rem;
+          white-space: nowrap; }
+          :host .container .content .live-preview .live-preview-header .icon-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2rem;
+            height: 1.625rem; }
+        :host .container .content .live-preview .device-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          height: 100%; }
+          :host .container .content .live-preview .device-container.iphone-x .form-dynamic-slot-container {
+            top: 2rem;
+            right: 0;
+            bottom: 1rem;
+            left: 0;
+            position: absolute; }

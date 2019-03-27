@@ -1,0 +1,150 @@
+:host {
+  display: flex;
+  position: relative;
+  width: 100%;
+  z-index: 0; }
+
+:host(.neutral) .dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  background-color: var(--dark, #2b3648) !important;
+  opacity: 0.2; }
+
+@keyframes expand-to-full {
+  0% {
+    width: 0%;
+    background-color: var(--dark, #2b3648) !important;
+    opacity: 0; }
+  100% {
+    width: 100%;
+    background-color: var(--dark, #2b3648) !important;
+    opacity: 0.8; } }
+
+@keyframes anim-in {
+  0% {
+    width: 0%; }
+  100% {
+    width: 100%;
+    z-index: -1; } }
+  :host(.neutral) .dot:before {
+    position: relative;
+    content: '';
+    display: block;
+    margin-top: 100%;
+    border-radius: 50%; }
+  :host(.neutral) .dot:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 50%; }
+  :host(.neutral) .dot.tapped, :host(.neutral) .dot.active, :host(.neutral) .dot.tapped:after, :host(.neutral) .dot.active:after {
+    border-radius: 50%;
+    animation: anim-in 0.35s; }
+  :host(.neutral) .dot.hovered, :host(.neutral) .dot.hovered:after {
+    border-radius: 50%;
+    animation: anim-in 0.15s;
+    animation-fill-mode: forwards; }
+
+:host(.operations) .dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  background-color: var(--success, #04CC99);
+  opacity: 0.2; }
+
+@keyframes expand-to-full {
+  0% {
+    width: 0%;
+    background-color: var(--success, #04CC99);
+    opacity: 0; }
+  100% {
+    width: 100%;
+    background-color: var(--success, #04CC99);
+    opacity: 0.8; } }
+
+@keyframes anim-in {
+  0% {
+    width: 0%; }
+  100% {
+    width: 100%;
+    z-index: -1; } }
+  :host(.operations) .dot:before {
+    position: relative;
+    content: '';
+    display: block;
+    margin-top: 100%;
+    border-radius: 50%; }
+  :host(.operations) .dot:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 50%; }
+  :host(.operations) .dot.tapped, :host(.operations) .dot.active, :host(.operations) .dot.tapped:after, :host(.operations) .dot.active:after {
+    border-radius: 50%;
+    animation: anim-in 0.35s; }
+  :host(.operations) .dot.hovered, :host(.operations) .dot.hovered:after {
+    border-radius: 50%;
+    animation: anim-in 0.15s;
+    animation-fill-mode: forwards; }
+
+:host(.boost) .dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  background-color: var(--danger-light, #F46885);
+  opacity: 0.2; }
+
+@keyframes expand-to-full {
+  0% {
+    width: 0%;
+    background-color: var(--danger-light, #F46885);
+    opacity: 0; }
+  100% {
+    width: 100%;
+    background-color: var(--danger-light, #F46885);
+    opacity: 0.8; } }
+
+@keyframes anim-in {
+  0% {
+    width: 0%; }
+  100% {
+    width: 100%;
+    z-index: -1; } }
+  :host(.boost) .dot:before {
+    position: relative;
+    content: '';
+    display: block;
+    margin-top: 100%;
+    border-radius: 50%; }
+  :host(.boost) .dot:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 50%; }
+  :host(.boost) .dot.tapped, :host(.boost) .dot.active, :host(.boost) .dot.tapped:after, :host(.boost) .dot.active:after {
+    border-radius: 50%;
+    animation: anim-in 0.35s; }
+  :host(.boost) .dot.hovered, :host(.boost) .dot.hovered:after {
+    border-radius: 50%;
+    animation: anim-in 0.15s;
+    animation-fill-mode: forwards; }
+
+:host(.center) {
+  align-items: center;
+  justify-content: center; }

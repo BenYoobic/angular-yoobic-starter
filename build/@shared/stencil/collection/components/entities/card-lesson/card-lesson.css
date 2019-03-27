@@ -1,0 +1,91 @@
+:host {
+  cursor: pointer; }
+  :host .outer-container {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0.75rem 0 0.75rem 0;
+    padding: 1rem 0;
+    border-radius: 0.5rem;
+    background-color: var(--light-to-dark, #FFFFFF);
+    box-shadow: 0 0.3125rem 0.9375rem 0 rgba(40, 47, 54, 0.08); }
+    :host .outer-container .type-icon-container,
+    :host .outer-container .extra-icon-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      min-width: 33px;
+      margin: 0 0.9375rem;
+      color: var(--black, #000000); }
+      :host .outer-container .type-icon-container yoo-icon,
+      :host .outer-container .extra-icon-container yoo-icon {
+        display: flex;
+        justify-content: center;
+        padding: 0.5rem;
+        border: none;
+        border-radius: 50%;
+        background: var(--danger-light-to-dark-two, #F46885);
+        color: var(--light_const, #FFFFFF);
+        font-size: var(--font-l, 17px); }
+    :host .outer-container .info-container {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 2;
+      justify-content: flex-start; }
+      :host .outer-container .info-container .title-container {
+        color: var(--black, #000000);
+        font-size: var(--font-m, 15px);
+        font-weight: bold;
+        letter-spacing: 1px;
+        text-transform: uppercase; }
+      :host .outer-container .info-container .order-container {
+        margin-top: 0.1875rem;
+        color: var(--black, #000000);
+        font-size: var(--font-m, 15px);
+        line-height: 1.125rem; }
+      :host .outer-container .info-container .remaining-points-container {
+        display: flex;
+        align-items: center;
+        min-height: 1.5625rem;
+        margin-top: 0.1875rem;
+        color: var(--black, #000000); }
+        :host .outer-container .info-container .remaining-points-container yoo-badge {
+          --background: transparent;
+          --inner-container-default-padding: 0.25rem 0.53rem 0.25rem 0;
+          --color-inner-text: var(--black, #000000);
+          --font-size-inner-container: var(--font-m, 15px); }
+    :host .outer-container.finished {
+      background-color: var(--danger-light, #F46885); }
+      :host .outer-container.finished .type-icon-container yoo-icon,
+      :host .outer-container.finished .extra-icon-container yoo-icon {
+        background: var(--light_const, #FFFFFF);
+        color: var(--danger-light, #F46885); }
+      :host .outer-container.finished .info-container .order-container {
+        color: var(--light_const, #FFFFFF); }
+      :host .outer-container.finished .info-container .title-container {
+        color: var(--light_const, #FFFFFF); }
+      :host .outer-container.finished .info-container .remaining-points-container yoo-badge {
+        --color-inner-text: var(--light_const, #FFFFFF); }
+    :host .outer-container.locked {
+      background-color: var(--stable-light2, #cacaca); }
+      :host .outer-container.locked .type-icon-container yoo-icon,
+      :host .outer-container.locked .extra-icon-container yoo-icon {
+        background: var(--stable, #adadad);
+        color: var(--always-light, #FFFFFF); }
+      :host .outer-container.locked .info-container .order-container {
+        color: var(--text-color, #807f83); }
+      :host .outer-container.locked .info-container .title-container {
+        color: var(--text-color, #807f83); }
+      :host .outer-container.locked .info-container .remaining-points-container {
+        color: var(--text-color, #807f83); }
+        :host .outer-container.locked .info-container .remaining-points-container yoo-badge {
+          --color-inner-text: var(--text-color, #807f83); }
+
+:host(.dark) .outer-container {
+  border: 0.5px solid var(--stable, #adadad);
+  background: transparent;
+  background: var(--black, #000000);
+  box-shadow: none; }
+  :host(.dark) .outer-container .info-container {
+    color: var(--light, #FFFFFF); }

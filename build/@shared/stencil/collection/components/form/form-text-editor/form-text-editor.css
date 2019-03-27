@@ -1,0 +1,36 @@
+:host .pell {
+  border: 1px solid var(--input-container-border-color, #E6E6E6);
+  box-sizing: border-box; }
+
+:host .pell-content {
+  box-sizing: border-box;
+  height: 180px;
+  outline: 0;
+  overflow-y: auto;
+  padding: 1rem; }
+
+:host .pell-actionbar {
+  background-color: var(--light, #FFFFFF);
+  border-bottom: 1px solid var(--input-container-border-color, #E6E6E6); }
+
+:host .pell-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  height: 30px;
+  outline: 0;
+  width: 30px;
+  vertical-align: bottom; }
+
+:host .pell-button-selected {
+  background-color: var(--success, #04CC99); }
+
+:host .container {
+  width: 100%;
+  border: 1px solid var(--input-container-border-color, #E6E6E6);
+  border-radius: var(--border-radius-input, 5px); }
+  :host .container .pell-actionbar {
+    border-top-left-radius: var(--border-radius-input, 5px);
+    border-top-right-radius: var(--border-radius-input, 5px); }
+    :host .container .pell-actionbar .pell-button {
+      color: var(--black, #000000); }

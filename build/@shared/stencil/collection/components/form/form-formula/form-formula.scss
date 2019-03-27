@@ -1,0 +1,5 @@
+:host {
+    .readonly {
+        @include form-readonly-padding();
+    }
+}

@@ -1,0 +1,31 @@
+:host {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
+  :host .header,
+  :host yoo-ion-header {
+    width: unset;
+    padding: 0.5rem;
+    padding-bottom: 0;
+    background: var(--light, #FFFFFF);
+    box-shadow: var(--input-bar-shadow, 0 1px 10px 0 rgba(0, 0, 0, 0.15)); }
+    :host .header yoo-ion-buttons,
+    :host yoo-ion-header yoo-ion-buttons {
+      margin-left: 1rem; }
+  :host .content yoo-ion-slides,
+  :host yoo-ion-content yoo-ion-slides {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; }
+  :host .content .toolbar,
+  :host yoo-ion-content .toolbar {
+    padding-top: 1rem; }
+  :host yoo-navbar {
+    --width-outer-container: unset; }

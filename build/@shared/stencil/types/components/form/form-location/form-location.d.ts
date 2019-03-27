@@ -1,0 +1,35 @@
+import '../../../stencil.core';
+import { EventEmitter } from '../../../stencil.core';
+import { ValidatorEntry, AsyncValidator, Validator, IFormLocation, ILocation, IGridSearch, IMarker, IEntitySearchTags } from '../../../interfaces';
+export declare class YooFormLocationComponent implements IFormLocation {
+    value: ILocation | Array<ILocation>;
+    validators: Array<Validator<ILocation | Array<ILocation>> | ValidatorEntry>;
+    asyncValidators: Array<AsyncValidator<ILocation | Array<ILocation>>>;
+    readonly: boolean;
+    multiple: boolean;
+    name: string;
+    validity: boolean;
+    tags: Array<IEntitySearchTags>;
+    isHistory: boolean;
+    validityChanged: EventEmitter<boolean>;
+    inputBlurred: EventEmitter<any>;
+    inputFocused: EventEmitter<any>;
+    inputChanged: EventEmitter<any>;
+    fetchData: EventEmitter<IGridSearch>;
+    aroundMe: boolean;
+    host: HTMLStencilElement;
+    protected formAutocomplete: HTMLYooFormAutocompleteElement;
+    protected marker: IMarker;
+    updateValues(values: any): void;
+    componentWillLoad(): void;
+    onFetchData(ev: CustomEvent<IGridSearch>): void;
+    onAroundMeToggle(ev: CustomEvent<boolean>): void;
+    onInputChanged(ev: CustomEvent<ILocation>): void;
+    onInputBlurred(ev: CustomEvent<any>): void;
+    onInputFocused(ev: CustomEvent<any>): void;
+    stopValidityChangeEvent(ev: CustomEvent<any>): void;
+    renderInput(readonly: boolean): JSX.Element;
+    renderReadonly(): JSX.Element;
+    renderEditable(): JSX.Element;
+    render(): JSX.Element;
+}

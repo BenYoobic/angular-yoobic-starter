@@ -1,0 +1,181 @@
+:host {
+  position: relative; }
+  :host yoo-ion-header {
+    position: absolute;
+    top: 0;
+    background: transparent !important; }
+    :host yoo-ion-header yoo-ion-toolbar {
+      --ion-color-base: rgba(0, 0, 0, 0.6); }
+      :host yoo-ion-header yoo-ion-toolbar yoo-ion-button.button-clear {
+        --ion-color-base: var(--always-light, #FFFFFF); }
+  :host .header-container {
+    display: flex;
+    position: absolute;
+    top: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    transition: all .3s ease;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-size: 17px;
+    overflow: hidden;
+    z-index: 999;
+    box-sizing: border-box; }
+    :host .header-container.active .hidden-items-container {
+      display: flex;
+      width: 100%;
+      max-height: 150px;
+      padding-top: 25px;
+      padding-right: var(--padding-15, 0.9375rem);
+      padding-bottom: var(--padding-15, 0.9375rem);
+      padding-left: var(--padding-15, 0.9375rem);
+      transition: all .3s ease;
+      opacity: 1;
+      z-index: 3;
+      box-sizing: border-box; }
+    :host .header-container.active .header-bottom-handler {
+      display: block; }
+    :host .header-container .item-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding-right: var(--padding-15, 0.9375rem);
+      padding-bottom: var(--padding-10, 0.625rem);
+      color: var(--always-light, #FFFFFF); }
+      :host .header-container .item-container yoo-ion-button yoo-icon {
+        color: var(--always-light, #FFFFFF);
+        font-size: 20px; }
+        :host .header-container .item-container yoo-ion-button yoo-icon.yo-rotate-camera {
+          font-size: 30px; }
+    :host .header-container .hidden-items-container {
+      top: 0;
+      width: 100%;
+      max-height: 0px;
+      transition: all .3s ease;
+      opacity: 0;
+      z-index: -1; }
+      :host .header-container .hidden-items-container .item {
+        display: inline-block;
+        position: relative;
+        width: 60px;
+        height: 90px;
+        margin-top: 13px;
+        margin-right: 30px;
+        border: solid 1px var(--always-light, #FFFFFF);
+        background-color: var(--always-light, #FFFFFF); }
+        :host .header-container .hidden-items-container .item yoo-icon {
+          position: absolute;
+          top: -13px;
+          right: -15px;
+          color: var(--always-light, #FFFFFF);
+          font-size: 20px; }
+    :host .header-container .header-bottom-handler {
+      display: none;
+      width: 30px;
+      height: 5px;
+      margin-top: var(--padding-15, 0.9375rem);
+      margin-bottom: var(--padding-15, 0.9375rem);
+      border-radius: 100px;
+      background-color: var(--always-light, #FFFFFF); }
+  :host .camera-preview-container {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: transparent; }
+    :host .camera-preview-container .helper-modal {
+      display: flex;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      flex-direction: column;
+      align-content: center;
+      justify-content: center;
+      width: 100%;
+      width: 220px;
+      height: 100%;
+      height: 150px;
+      transform: translate(-50%, -50%);
+      border-radius: 12px;
+      background-color: rgba(0, 0, 0, 0.4);
+      color: var(--always-light, #FFFFFF);
+      font-size: 17px;
+      text-align: center;
+      opacity: 0;
+      z-index: 0;
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px); }
+      :host .camera-preview-container .helper-modal.active {
+        opacity: 1;
+        z-index: 3; }
+      :host .camera-preview-container .helper-modal .modal-text {
+        padding: 15px 15px 0 15px; }
+      :host .camera-preview-container .helper-modal .modal-icon {
+        padding: 15px 0 15px 0; }
+        :host .camera-preview-container .helper-modal .modal-icon yoo-icon {
+          font-size: 40px; }
+    :host .camera-preview-container .overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      margin-top: 20px;
+      transform: translate(-50%, -50%);
+      background-size: contain !important; }
+  :host .image {
+    position: absolute;
+    width: auto;
+    max-width: initial;
+    height: 100%;
+    opacity: .8; }
+  :host .image-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: translateX(-70%);
+    opacity: .8;
+    clip-path: circle(calc((100vw - (0.75 * 100vw)) /2) at calc(100% - (calc((100vw - (0.75 * 100vw)) /2 ))) calc(50% - 20px)); }
+    :host .image-bg.active {
+      clip-path: none; }
+  :host .footer {
+    display: flex;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 120px;
+    background: rgba(0, 0, 0, 0.6); }
+    :host .footer .outer-circle {
+      position: absolute;
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      background-color: var(--always-light, #FFFFFF);
+      opacity: 0.3;
+      z-index: 1; }
+    :host .footer .inner-circle {
+      position: absolute;
+      width: 68px;
+      height: 68px;
+      border-radius: 50%;
+      background-color: white;
+      z-index: 2; }
+      :host .footer .inner-circle.tapped {
+        background-color: var(--always-light, #FFFFFF);
+        opacity: 0.6; }
+  :host yoo-ion-content {
+    background: transparent; }
+
+:host(.iphone-x) .header-container {
+  padding-top: 54px; }
+
+:host(.iphone-x) .footer {
+  height: 140px;
+  padding-top: 20px;
+  padding-bottom: 34px; }

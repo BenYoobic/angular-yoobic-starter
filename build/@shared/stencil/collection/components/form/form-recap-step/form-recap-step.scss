@@ -1,0 +1,81 @@
+:host {
+    .outer-container {
+        display: flex;
+        align-items: center;
+        min-height: 5.625rem;
+        margin: cssvar(padding-10) cssvar(padding-15);
+        border-radius: $border-radius-input;
+        background-color: cssvar(light-card-background);
+        text-align: left;
+        box-shadow: cssvar(tile-shadow);
+
+        .icon-outer-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 4.0625rem;
+            height: 100%;
+        }
+
+        .icon-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.1875rem;
+            height: 2.1875rem;
+            border-radius: 50%;
+            color: cssvar(light);
+            font-size: 1rem;
+
+            &.locked {
+                background-color: cssvar(stable);
+            }
+
+            &.valid {
+                background: cssvar(gradient-success);
+            }
+
+            &.invalid {
+                background: cssvar(danger);
+            }
+
+            &.step {
+                position: relative;
+                border: 1px solid cssvar(success);
+                color: cssvar(success);
+                overflow: hidden;
+            }
+
+            .percentage-fill {
+                @include abs-pos(auto, 0, 0, 0);
+                transition: 0.3s all;
+                background: cssvar(success);
+            }
+        }
+
+        .text-container {
+            width: calc(100% - 4.375rem);
+            padding: cssvar(padding-10) cssvar(padding-5) cssvar(padding-10) 0;
+        }
+
+        .step-container {
+            color: cssvar(black);
+            font-size: cssvar(font-m);
+            font-weight: bold;
+            letter-spacing: 1px;
+            line-height: 1.31;
+            text-transform: uppercase;
+
+            yoo-icon {
+                padding-right: cssvar(padding-5);
+                font-weight: bold;
+            }
+            
+        }
+
+        .subtitle-container {
+            color: cssvar(text-color);
+            font-size: cssvar(font-s);
+        }
+    }
+}

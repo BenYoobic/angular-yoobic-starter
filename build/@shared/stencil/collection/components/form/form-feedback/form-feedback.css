@@ -1,0 +1,13 @@
+:host .outer-container,
+:host .readonly {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly; }
+  :host .outer-container .button-container yoo-button,
+  :host .readonly .button-container yoo-button {
+    --border-radius-container: 50%;
+    --height-container: 4.375rem;
+    --min-height-container: 4.375rem;
+    --width-container: 4.375rem;
+    --min-width-container: 4.375rem;
+    --font-size-text: var(--icon-alert, 50px); }

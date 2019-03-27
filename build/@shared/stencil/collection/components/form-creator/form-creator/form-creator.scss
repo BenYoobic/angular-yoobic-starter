@@ -1,0 +1,114 @@
+:host {
+    width: 100%;
+    height: 100%;
+    background: cssvar(light);
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+
+        .content {
+            display: flex;
+            height: calc(100% - 3rem);
+
+            .left-menu {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                min-width: 3rem;
+                border-right: 1px solid cssvar(stable-light);
+                font-size: 1.125rem;
+
+                yoo-icon {
+                    margin-top: cssvar(padding-20);
+                }
+            }
+
+            .left-selection {
+                min-width: 22rem;
+                height: 100%;
+                padding-top: cssvar(padding-20);
+                border-right: 1px solid cssvar(stable-light);
+
+                // Padding on the sides here is necessary to view shadows and this is why
+                // it is not in the parent
+                // TODO: fix accordion title margin for BLOCKS and PAGES
+                yoo-accordion {
+                    --outer-container-padding: 0 #{cssvar(padding-20)};
+                    --outer-container-width: calc(100% - 2.5rem);
+                    yoo-accordion.sub-accordion {
+                        --outer-container-padding: 0;
+                        --outer-container-width: 100%;
+                    }
+                }
+            }
+
+            .form-content {
+                width: 100%;
+                padding: cssvar(padding-20);
+                background-color: #fafafa;
+                yoo-accordion.pages-accordion {
+                    --accordion-background: #{cssvar(stable-background)}
+                }
+            }
+
+            .live-preview {
+                display: flex;
+                position: relative;
+                flex-direction: column;
+                min-width: 30rem;
+                padding: cssvar(padding-20);
+                transition: 0.3s;
+                border-left: 1px solid cssvar(stable-light);
+
+                &.hide {
+                    width: 0;
+                    min-width: 0;
+                    padding: 0;
+                    .live-preview-header {
+                        width: 0;
+                        opacity: 0;
+                    }
+                    .device-container {
+                        opacity: 0;
+                    }
+                }
+
+                .live-preview-header {
+                    display: flex;
+                    align-items: center;
+                    align-self: flex-end;
+                    justify-content: space-between;
+                    width: 100%;
+                    padding-bottom: 0.5625rem;
+                    transition: 0.5s;
+                    border-bottom: 1px solid cssvar(stable-light);
+                    font-size: 1.125rem;
+                    white-space: nowrap;
+                    .icon-container {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 2rem;
+                        height: 1.625rem;
+                    }
+                }
+
+                .device-container {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    width: 100%;
+                    height: 100%;
+                    &.iphone-x {
+                        .form-dynamic-slot-container {
+                            @include abs-pos(2rem, 0, 1rem, 0);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

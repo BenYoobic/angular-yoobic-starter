@@ -1,0 +1,32 @@
+:host {
+    @include abs-pos-full-width();
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .header,
+    yoo-ion-header {
+        width: unset;
+        padding: 0.5rem;
+        padding-bottom: 0;
+        background: cssvar(light);
+        box-shadow: cssvar(input-bar-shadow);
+        yoo-ion-buttons {
+            margin-left: 1rem;
+        }
+    }
+    .content,
+    yoo-ion-content {
+        yoo-ion-slides {
+            @include abs-pos-full-width();
+        }
+        .toolbar {
+            padding-top: 1rem;
+        }
+        yoo-grid {
+            // --position-empty: relative;
+        }
+    }
+    yoo-navbar {
+        --width-outer-container: unset;
+    }
+}

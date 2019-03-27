@@ -1,0 +1,31 @@
+:host {
+    .scale-container {
+        position: relative;
+        top: 0;
+        left: 0.25rem;
+        width: 15rem;
+        transform: rotate(-90deg);
+        transform-origin: 7.5rem 7.5rem;
+        opacity: 0.7;
+
+        .bar-container {
+            border-top: 0.71875rem solid transparent;
+            border-bottom: 0.718rem solid transparent;
+        }
+    }
+
+    .range-container {
+        display: flex;
+        padding-top: 0.5rem;
+
+        .bar-container {
+            width:100%;
+            background-color: cssvar(dark-10);
+
+            .progress-container {
+                height:2px;
+                background-color: cssvar(success);
+            }
+        }
+    }
+}

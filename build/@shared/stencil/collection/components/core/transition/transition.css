@@ -1,0 +1,113 @@
+:host .container {
+  display: inline-block;
+  position: relative;
+  overflow: hidden; }
+  :host .container .overlay {
+    display: none;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--stable-30, #E6E6E6);
+    color: var(--dark, #2b3648);
+    font-size: var(--font-xl, 36px);
+    opacity: 0.8;
+    z-index: 1000; }
+  :host .container .sub-overlay {
+    display: none;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    color: var(--dark, #2b3648);
+    font-size: 2rem;
+    opacity: 1;
+    z-index: 1000; }
+
+:host(.bottom) .container .overlay {
+  top: 50%;
+  left: 0%;
+  width: 100%;
+  height: 50%; }
+
+:host(.fade) .container .overlay {
+  top: 2.5%;
+  left: 2.5%;
+  width: 95%;
+  height: 95%; }
+
+:host(.icon) .container .overlay {
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%; }
+
+:host(.icon) .container .overlay {
+  background-color: transparent;
+  font-size: var(--font-xxl, 60px);
+  opacity: 1; }
+
+:host(.image) .container .overlay {
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%; }
+
+:host(.image) .container .overlay {
+  background-color: transparent;
+  opacity: 1; }
+
+:host(.heading) .container .overlay {
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 50%;
+  background-color: transparent;
+  opacity: 1; }
+
+:host(.heading) .container .sub-overlay {
+  bottom: 0%;
+  left: 0%;
+  width: 100%;
+  height: 50%; }
+
+:host(.accent) .container .overlay {
+  color: var(--accent, #1FB6FF); }
+
+:host(.accent) .container .sub-overlay {
+  color: var(--accent, #1FB6FF); }
+
+:host(.dark) .container .overlay {
+  color: var(--dark, #2b3648); }
+
+:host(.dark) .container .sub-overlay {
+  color: var(--dark, #2b3648); }
+
+:host(.danger) .container .overlay {
+  color: var(--danger, #ff625f); }
+
+:host(.danger) .container .sub-overlay {
+  color: var(--danger, #ff625f); }
+
+:host(.success) .container .overlay {
+  color: var(--success, #04CC99); }
+
+:host(.success) .container .sub-overlay {
+  color: var(--success, #04CC99); }
+
+:host(.info) .container .overlay {
+  color: var(--info, #fc459e); }
+
+:host(.info) .container .sub-overlay {
+  color: var(--info, #fc459e); }
+
+:host(.warning) .container .overlay {
+  color: var(--warning, #ff6402); }
+
+:host(.warning) .container .sub-overlay {
+  color: var(--warning, #ff6402); }
+
+:host(.light) .container .overlay {
+  color: var(--light, #FFFFFF); }
+
+:host(.light) .container .sub-overlay {
+  color: var(--light, #FFFFFF); }

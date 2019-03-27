@@ -1,0 +1,109 @@
+:host {
+    --width-dropdown-content: 9.375rem;
+}
+
+:host {
+    display: block;
+}
+
+:host([hidden]) {
+    display: none;
+}
+
+:host {
+    .dropdown-toggle ::slotted(*) {
+        cursor: pointer;
+    }
+
+    .dropdown-content {
+        @include abs-pos(auto, auto, auto, auto);
+
+        width: cssvar(width-dropdown-content);
+        max-width: cssvar(width-dropdown-content);
+        transform: translateY(-2em);
+        transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
+        border-radius: 4px;
+        background: cssvar(light);
+        font-size: cssvar(font-s);
+        box-shadow: 0 5px 13px 0 rgba(40, 47, 54, 0.08);
+        /* hides sub-menu */
+        opacity: 0;
+        visibility: hidden;
+
+        
+        z-index: 1;
+        .content {
+            padding: cssvar(padding-5) cssvar(padding-10);
+
+            &:first-child {
+                padding-top: cssvar(padding-10);
+            }
+
+            &:last-child {
+                padding-bottom: cssvar(padding-10);
+            }
+
+            &:hover {
+                background: cssvar(success-light);
+            }
+
+            .content-detail {
+                yoo-icon {
+                    padding-right: cssvar(padding-5);
+                }
+            }
+        }
+    }
+
+    .dropdown-content.show {
+
+        transform: translateY(0%);
+        transition-delay: 0s, 0s, 0.3s;
+        /* shows sub-menu */
+        opacity: 1;
+        visibility: visible;
+        z-index: 10000;
+        /* this removes the transition delay so the menu will be visible while the other styles transition */
+    }
+}
+
+:host(.flex-column) {
+    .dropdown-content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+:host(.tab-vertical) {
+    .dropdown-content {
+        transform: translateY(-100%) translateX(5.5rem);
+    }
+
+    .tab-title-other {
+        .yo-right {
+            padding-left: 0.2rem;
+        }
+    }
+
+    .tab-title-other:hover {
+        border-bottom-width: 0rem;
+    }
+}
+
+:host(.tab) {
+    display: inline-block;
+
+    .tab-title-other {
+        display: flex;
+        align-items: center;
+
+        .yo-arrow-dropdown {
+            padding-left: 0.2rem;
+        }
+
+        &:hover {
+            color: cssvar(success);
+        }
+    }
+}

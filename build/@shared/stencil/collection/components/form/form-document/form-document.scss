@@ -1,0 +1,37 @@
+:host {
+    --height-image-container: 260px;
+    --outer-container-padding: 0.5rem 0rem;
+}
+
+:host {
+    .outer-container,
+    .readonly {
+        padding: cssvar(outer-container-padding);
+        .image-container {
+            height: cssvar(height-image-container);
+            margin-right: auto;
+            margin-left: auto;
+            border: 1px solid cssvar(stable-30);
+            border-radius: 0.5rem;
+            &.contain {
+                height: 320px;
+                margin: 0 1rem;
+                border: none; //
+            }
+            &.relative-to-window {
+                height: 25vh;
+            }
+        }
+    }
+    .readonly {
+        .image-container {
+            width: 98px;
+            height: 98px;
+            margin-left: 0;
+        }
+    }
+}
+
+:host(.boost.tablet) {
+    --height-image-container: 520px;
+}

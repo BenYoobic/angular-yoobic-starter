@@ -1,0 +1,38 @@
+:host {
+    .container {
+        margin-top: 1rem;
+        text-align: center;
+
+        .user-name {
+            line-height: 1.3125rem;
+        }
+
+        .user-role {
+            color: cssvar(stable);
+            font-size: cssvar(font-s);
+            line-height: 1rem;
+        }
+
+        .buttons-container {
+            display: flex;
+            flex-direction: row;
+            align-content: center;
+            align-items: center;
+            justify-content: space-around;
+            margin: 2rem;
+
+            .button-container {
+                display: flex;
+                flex-direction: column;
+                align-content: center;
+                align-items: center;
+                justify-content: center;
+                .button-title{
+                    padding-top: cssvar(padding-5);
+                    color: cssvar(success);
+                    font-size: cssvar(font-xs);
+                }
+            }
+        }
+    }
+}

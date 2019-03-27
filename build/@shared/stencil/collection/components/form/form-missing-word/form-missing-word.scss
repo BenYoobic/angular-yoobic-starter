@@ -1,0 +1,101 @@
+:host {
+  .outer-container {
+    .sentence {
+        margin-top: $padding-20;
+        font-size: cssvar(font-m);
+        line-height: cssvar(font-xl);
+        touch-action: none;
+        user-select: none;
+
+        yoo-badge {
+          --font-size-inner-container: #{cssvar(font-m)};
+          --inner-container-default-padding: 0.375rem 0.625rem;
+          margin: $padding-5 0.125rem 1px 0.125rem;
+          text-align: center;
+          &.drag-target {
+            position: relative;
+            z-index: 1;
+          }
+        }
+
+      .word {
+        display: inline-block;
+        margin: 0 2px;
+        padding-top: cssvar(padding-5);
+        user-select: none;
+
+        &.hidden {
+            border-bottom: 1px solid cssvar(danger-light);
+            color: transparent;
+        }
+
+        &.droppable {
+          min-width: 85px;
+          text-align: center;
+        }
+
+        &.dynamic {
+          color: cssvar(danger);
+
+          &.drop-target {
+            background: cssvar(danger);
+            color: cssvar(light);
+          }
+        }
+
+        &.drop-target {
+          background: cssvar(stable-alt-to-dark);
+          color: cssvar(light);
+        }
+      }
+    }
+
+    .placeholder {
+      margin: $padding-20 auto;
+      color: cssvar(stable);
+      font-size: cssvar(font-m);
+      letter-spacing: normal;
+    }
+
+    .suggestions {
+      padding: 0.3125rem;
+      background: cssvar(light);
+      font-size: cssvar(font-l);
+
+      yoo-badge {
+        --font-size-inner-container: #{cssvar(font-m)};
+        --inner-container-default-padding: 0.375rem 0.625rem;
+        margin: 0 $padding-5 $padding-5 $padding-5;
+        cursor: pointer;
+        touch-action: none;
+
+          &.transparent {
+              --color-inner-text: #{cssvar(stable-alt)};
+          }
+          &.drag-target {
+            position: relative;
+            z-index: 1;
+          }
+      }
+
+      &.drop-target {
+          padding: 0.25rem;
+          border:1px dashed cssvar(stable-alt-to-dark);
+      }
+    }
+  }
+
+  .readonly {
+      @include form-readonly-padding();
+      .sentence-answers {
+          .word {
+              &.success {
+                  color: cssvar(success);
+              }
+              &.danger {
+                  color: cssvar(danger);
+              }
+          }
+      }
+  }
+}

@@ -1,0 +1,61 @@
+.scroll-inner.full-height {
+  height: 100%; }
+
+:host {
+  --height: 100%; }
+
+:host {
+  --ion-color-base: cssvar(light);
+  --ion-color-contrast: #807f83;
+  --padding-top: 0;
+  --padding-bottom: 0;
+  --padding-start: 0;
+  --padding-end: 0;
+  --keyboard-offset: 0px;
+  --offset-top: 0px;
+  --offset-bottom: 0px;
+  display: block;
+  position: relative;
+  flex: 1;
+  width: 100%;
+  height: var(--height);
+  margin: 0 !important;
+  padding: 0 !important;
+  background-color: var(--light, #FFFFFF);
+  font-family: "Lato" !important;
+  contain: layout size style; }
+
+:host(.scroll-disabled),
+yoo-ion-scroll {
+  padding: calc(var(--padding-top) +var(--offset-top)) var(--padding-end) calc(var(--padding-bottom) + var(--keyboard-offset) + var(--offset-bottom)) var(--padding-start); }
+
+:host(.ion-color-outer),
+:host(.outer-content) {
+  --ion-color-base: var(--stable-light, #f1f1f1); }
+
+::slotted(hr) {
+  height: 0.55px;
+  background-color: rgba(var(--ion-text-color-rgb), 0.12); }
+
+:host(.feed-detail-page) {
+  display: flex; }
+  :host(.feed-detail-page) yoo-ion-scroll {
+    --background-color: var(--dark, #2b3648); }
+
+:host(.manager-insight-page) {
+  display: flex; }
+  :host(.manager-insight-page) yoo-ion-scroll {
+    --background-color: var(--dark, #2b3648); }
+
+:host(.flex) {
+  display: flex; }
+
+:host(.flex-column) {
+  display: flex;
+  flex-direction: column;
+  height: 100%; }
+
+:host(.padding) yoo-ion-scroll {
+  top: 1rem;
+  bottom: 1rem;
+  left: 1rem; }

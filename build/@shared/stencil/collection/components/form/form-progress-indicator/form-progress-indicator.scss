@@ -1,0 +1,333 @@
+@mixin current-color($color) {
+    .outer-container {
+        .step-container {
+            .step-circle {
+                background-color: cssvar($color);
+
+                &.current {
+                    border: 1px solid cssvar($color);
+                    color: cssvar($color);
+                }
+            }
+
+        }
+
+        .progress-line-container {
+            .progress-line {
+                background-color: cssvar($color);
+            }
+        }
+    }
+}
+@mixin current-gradient($gradient, $color) {
+    .outer-container {
+        .step-container {
+            .step-circle {
+                border: 1px solid cssvar($color);
+                background-color: cssvar(light);
+                color: cssvar($color);
+
+                &.completed {
+                    background: cssvar($gradient);
+                    color: cssvar(light) !important;
+
+                    span {
+                        color: cssvar(light);
+                    }
+                }
+
+                &.invalid {
+                    border: 1px solid cssvar(danger);
+                    background-color: cssvar(danger);
+                    color: cssvar(light) !important;
+
+                    span {
+                        color: cssvar(light);
+                    }
+                }
+
+                &.current-invalid {
+                    border: 1px solid cssvar(danger);
+                    color: cssvar(danger);
+                }
+
+                &.locked {
+                    border: 1px solid cssvar(stable);
+                    background-color: cssvar(stable);
+                    color: cssvar(light);
+                }
+
+                .percentage-fill {
+                    background: cssvar($gradient);
+                }
+            }
+
+            .progress-line {
+                &.completed {
+                    background-color: cssvar($color);
+                }
+            }
+        }
+
+
+    }
+}
+
+:host {
+    --scroll-container-color: unset;
+    --scroll-container-margin: unset;
+    yoo-context-menu {
+        --width-dropdown-content: 11.25rem;
+    }
+}
+
+:host {
+    
+    .scroll-container {
+        position: relative;
+        height: 5rem;
+        margin: cssvar(scroll-container-margin);
+        padding-bottom: cssvar(padding-10);
+        transition: 0.3s;
+        background-color: cssvar(scroll-container-color);
+
+        yoo-ion-scroll {
+            padding: 0 cssvar(padding-15);
+        }
+    }
+
+    .outer-container {
+        display: flex;
+
+        position: relative;
+        flex-direction: row;
+
+        .step-container {
+            position: relative;
+            width: 5rem;
+            padding-top: 0.75rem;
+            cursor: pointer;
+
+            &.last {
+                width: auto;
+                margin-right: cssvar(padding-15);
+            }
+
+            &.active {
+                padding-top: 0.5625rem;
+            }
+
+            .step-title {
+                display: flex;
+                position: absolute;
+                justify-content: center;
+                padding: cssvar(padding-10) 0;
+                font-size: cssvar(font-s);
+                overflow: visible;
+            }
+
+            .step-circle-outer {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 2.5rem;
+                height: 2.5rem;
+
+                &.active {
+                    border: 2px solid cssvar(black);
+                    border-radius: 50%;
+                }
+            }
+
+            .step-circle {
+                @include border-radius(50%);
+                display: flex;
+                position: relative;
+                align-items: center;
+                justify-content: center;
+                width: 30px;
+                height: 30px;
+                background-color: cssvar(dark-10);
+                color: cssvar(light);
+                font-size: cssvar(font-m);
+                overflow: hidden;
+                z-index: 1;
+
+                &.more {
+                    padding: 5.5px 8.5px;
+                    cursor: context-menu;
+                }
+
+                &.completed {
+                    background-color: cssvar(stable-30);
+                    color: cssvar(accent);
+                }
+
+                .percentage-fill {
+                    @include abs-pos(auto, 0, 0, 0);
+                    transition: 0.3s all;
+                }
+
+            }
+
+            .progress-line {
+                @include abs-pos(1.9375rem, -4px, auto, 1rem); // top: 3.3125rem;
+                height: 1px;
+                background-color: cssvar(stable-light);
+
+                &.first {
+                    left: 4px;
+                }
+
+                &.last {
+                    right: 50%;
+                }
+
+                &.active {
+                    left: 44px;
+                }
+
+                &.active-next {
+                    right: 0;
+                }
+            }
+
+        }
+
+        .context-container {
+            display: flex;
+            flex-direction: column;
+
+            span {
+                position: relative;
+                width: 100%;
+                padding: 0.5rem 1rem;
+                border-bottom: 1px solid cssvar(stable-30);
+                line-height: 1.5;
+
+                &:last-child {
+                    border-bottom: none;
+                }
+
+                &:hover {
+                    background: cssvar(accent-05);
+                    color: cssvar(dark);
+                }
+
+                &.context-current {
+                    font-weight: bold;
+                }
+
+                yoo-icon {
+                    @include abs-pos(0.75rem, 0.625rem, auto, auto); // top: 12px;
+                }
+            }
+        }
+    }
+}
+
+
+:host(.vertical) {
+    .outer-container {
+        flex-direction: column;
+        max-width: 2rem;
+
+        .step-container {
+            position: relative;
+            padding-right: 0rem;
+
+            padding-bottom: 2.8125rem;
+
+
+            .step-title {
+                position: relative;
+                top: 2.3125rem;
+                right: 0px;
+                bottom: 0px;
+                left: 2.8125rem;
+            }
+
+            .step-circle {
+                padding: 4.5px 0.5px;
+                text-align: center;
+
+                &.completed {
+                    .completed-icon {
+                        text-align: center;
+                    }
+                }
+            }
+        }
+
+        .progress-line {
+            @include abs-pos(2.6875rem, 0.875rem, auto, auto);
+
+            width: 5px;
+
+            height: 8.45rem;
+            background-color: cssvar(stable-30);
+            z-index: -1;
+
+            &.faded {
+                background-color: cssvar(dark-10);
+                z-index: -2;
+            }
+        }
+    }
+}
+
+// Colors
+:host(.success) {
+    @include current-color(success);
+
+    .outer-container .step-container .step-circle.completed {
+        color: cssvar(success);
+    }
+}
+
+:host(.danger) {
+    @include current-color(danger);
+
+    .outer-container .step-container .step-circle.completed {
+        color: cssvar(danger);
+    }
+}
+
+:host(.warning) {
+    @include current-color(warning);
+
+    .outer-container .step-container .step-circle.completed {
+        color: cssvar(warning);
+    }
+}
+
+:host(.info) {
+    @include current-color(info);
+
+    .outer-container .step-container .step-circle.completed {
+        color: cssvar(info);
+    }
+}
+
+:host(.gradient-success) {
+    @include current-gradient(gradient-success, success);
+
+    .outer-container .step-container .step-circle.completed {
+        border: 1px solid cssvar(success);
+        color: cssvar(gradient-success);
+    }
+}
+
+:host(.gradient-danger) {
+    @include current-gradient(gradient-danger, danger);
+
+    .outer-container .step-container .step-circle.completed {
+        color: cssvar(gradient-danger);
+    }
+}
+
+:host(.more-stable) {
+    yoo-text-truncate {
+        --current-background-color: #{cssvar(stable-ultralight)};
+    }
+}

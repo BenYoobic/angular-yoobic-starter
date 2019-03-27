@@ -1,0 +1,30 @@
+:host() {
+    --info-text-color: #{cssvar(text-color)};
+}
+
+:host {
+    .outer-container {
+        padding: 0.5rem 1rem;
+        color: cssvar(info-text-color);
+        font-size: cssvar(font-small);
+    }
+}
+
+:host(.no-padding-bottom) {
+    .outer-container {
+        padding-bottom: 0;
+    }
+}
+
+
+:host(.margin-bottom) {
+    .outer-container {
+        border-bottom: 1px solid cssvar(stable-30);
+    }
+}
+
+:host(.no-padding) {
+    .outer-container {
+        padding: 0;
+    }
+}

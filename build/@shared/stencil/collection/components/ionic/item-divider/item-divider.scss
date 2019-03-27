@@ -1,0 +1,50 @@
+:host {
+    --padding-start: 0.5rem;
+    --padding-end: 0px;
+    --padding-top: 0px;
+    --padding-bottom: 0px;
+    @include font-smoothing();
+    @include margin(0);
+    @include padding( #{cssvar(padding-top)}, #{cssvar(padding-end)} #{cssvar(padding-bottom)}, #{cssvar(padding-start)});
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    min-height: $item-divider-min-height;
+    background-color: #{current-color(base)};
+    color: #{current-color(contrast)};
+    font-family: $font-family-base;
+    overflow: hidden;
+    z-index: $z-index-item-divider;
+    box-sizing: border-box;
+}
+
+:host([sticky]) {
+    position: sticky;
+    top: 0;
+}
+
+.item-divider-inner {
+    @include margin(0);
+    @include padding(0);
+    display: flex;
+    flex: 1;
+    flex-direction: inherit;
+    align-items: inherit;
+    align-self: stretch;
+    min-height: inherit;
+    border: 0;
+    overflow: hidden;
+}
+
+.item-divider-wrapper {
+    display: flex;
+    flex: 1;
+    flex-direction: inherit;
+    align-items: inherit;
+    align-self: stretch;
+    padding-top: 0.5rem; //cssvar(padding-start);
+    font-weight: 600;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}

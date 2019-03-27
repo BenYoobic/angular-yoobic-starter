@@ -1,0 +1,30 @@
+import { CoreConfig } from '@shared/common';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+export declare const AVAILABLE_LANGUAGES: string[];
+export declare class Translate {
+    private coreConfig;
+    protected http: HttpClient;
+    static availablesLanguage: Array<string>;
+    static availablesLanguageAll: Array<string>;
+    static currentLanguage: string;
+    private defaultLanguage;
+    private _languageChange;
+    constructor(coreConfig: CoreConfig, http: HttpClient);
+    init(): Promise<void>;
+    readonly languageChange$: Observable<string>;
+    checkLanguage(language: string): string;
+    setLanguage(language: string, reload?: boolean): Promise<any>;
+    addDynamicLanguage(language: string, translations: Array<any>, isAdmin: boolean): void;
+    getCurrentLanguage(): any;
+    getCurrentAngularLocale(): string;
+    getCurrentLanguageFull(separator?: string): string;
+    get(key: string, params?: Object): string;
+    getIcon(language: string): string;
+    getAll(language: string): any;
+    polyglot(value: string): any;
+    isCurrentLanguageRtl(): boolean;
+    isCurrentLanguageChinese(): boolean;
+    isRtl(language: string): boolean;
+    getLanguageFull(language: string, separator?: string): string;
+}

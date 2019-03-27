@@ -1,0 +1,79 @@
+:host {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 3rem;
+    border-bottom: 1px solid cssvar(stable-light);
+    .image-container {
+        display: flex;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        width: 3rem;
+        height: 100%;
+        yoo-img {
+            display: flex;
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+        &::after {
+            position: absolute;
+            right: 0;
+            width: 1px;
+            height: 1.125rem;
+            background: cssvar(stable-light);
+            content: "";
+        }
+    }
+    .title {
+        display: flex;
+        flex: 1;
+        padding-left: cssvar(padding-20);
+        font-size: cssvar(font-s);
+        .stable {
+            margin-right: cssvar(padding-5);
+        }
+    }
+    .buttons-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+        .icon-container {
+            min-width: 1.125rem;
+            margin-right: cssvar(padding-20);
+            font-size: 1.125rem;
+            text-align: center;
+            &.end {
+                display: flex;
+                position: relative;
+                align-items: center;
+                justify-content: center;
+                width: 3.625rem;
+                height: 100%;
+                margin-right: 0;
+                &::after {
+                    position: absolute;
+                    left: 0;
+                    width: 1px;
+                    height: 1.125rem;
+                    background: cssvar(stable-light);
+                    content: "";
+                }
+            }
+            &.context-menu {
+                position: relative;
+                yoo-button.secondary-actions {
+                    --shadow: none;
+                }
+
+            }
+        }
+        yoo-button {
+            --min-height-container: 1.625rem;
+            --min-width-container: 4.6875rem;
+            --font-size-text: cssvar(font-s);
+            margin-right: cssvar(padding-20);
+        }
+    }
+}

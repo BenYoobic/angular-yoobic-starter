@@ -1,0 +1,45 @@
+:host {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; }
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.1); }
+  100% {
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1); } }
+  :host .outer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%; }
+    :host .outer-container .ripple {
+      padding: 1.5625rem;
+      border-radius: 100%;
+      background-color: var(--light, #FFFFFF);
+      animation: pulse 1s infinite; }
+    :host .outer-container .getready {
+      align-items: center;
+      color: var(--danger-light, #F46885);
+      font-size: calc(var(--font-ll, 20px) * 2);
+      font-weight: bold;
+      text-align: center; }
+    :host .outer-container .timer {
+      width: 9.375rem;
+      height: 9.375rem;
+      border-radius: 100%;
+      background-color: var(--gradient-danger-light, #F46885);
+      color: var(--light, #FFFFFF);
+      font-size: calc(var(--font-ll, 20px) * 4);
+      line-height: 9.375rem;
+      text-align: center;
+      box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1);
+      animation: pulse 1s infinite; }
+
+:host(.web) .outer-container {
+  background: var(--light, #FFFFFF);
+  position: absolute;
+  left: 0;
+  right: 0; }

@@ -1,0 +1,115 @@
+@mixin size-position($width, $height, $top, $left) {
+    .container {
+        .overlay {
+
+            top: $top;
+            left: $left;
+            width: $width;
+            height: $height;
+        }
+    }
+}
+
+:host{
+    .container {
+        display: inline-block;
+        position: relative;
+        overflow: hidden;
+            .overlay {
+            display: none;
+            position: absolute;
+            align-items: center;
+
+            justify-content: center;
+            background-color: cssvar(stable-30);
+            color: cssvar(dark);
+            font-size: cssvar(font-xl);
+            opacity: 0.8;
+
+            z-index: 1000;
+        }
+        .sub-overlay {
+            display: none;
+            position: absolute;
+            align-items: center;
+
+            justify-content: center;
+            background-color: transparent;
+            color: cssvar(dark);
+            font-size: 2rem;
+            opacity: 1;
+
+            z-index: 1000;            
+        }
+    }
+}
+
+:host(.bottom) {
+    @include size-position(100%, 50%, 50%, 0%);
+}
+
+:host(.fade) {
+    @include size-position(95%, 95%, 2.5%, 2.5%);
+}
+
+:host(.icon) {
+    @include size-position(100%, 100%, 0%, 0%);
+    .container {
+        .overlay {
+
+            background-color: transparent;
+            font-size: cssvar(font-xxl);
+            opacity: 1;
+        }
+    }
+}
+
+:host(.image) {
+    @include size-position(100%, 100%, 0%, 0%);
+    .container {
+        .overlay {
+            background-color: transparent;
+            opacity: 1;
+        }
+    }
+}
+
+:host(.heading) {
+    .container {
+        .overlay {
+
+            top: 0%;
+            left: 0%;
+            width: 100%;
+            height: 50%;
+            background-color: transparent;
+            opacity: 1;
+        }
+        .sub-overlay {
+
+            bottom: 0%;
+            left: 0%;
+            width: 100%;
+            height: 50%;
+        }
+    }
+}
+@mixin text-color($class, $color) {
+    :host(.#{$class}) {
+        .container {
+           .overlay {
+               color: cssvar($color);
+           }
+           .sub-overlay {
+               color: cssvar($color);
+           }
+        }
+    }
+}
+@include text-color(accent, accent);
+@include text-color(dark, dark);
+@include text-color(danger, danger);
+@include text-color(success, success);
+@include text-color(info, info);
+@include text-color(warning, warning);
+@include text-color(light, light);

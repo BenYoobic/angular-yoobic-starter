@@ -1,0 +1,16 @@
+:host {
+    .outer-container {
+        @include menu-item-style();
+        @include entity-search-menu-title();
+        padding: 1rem;
+        padding-top: 2rem;
+
+        .menu-title {
+            margin-top: 0;
+        }
+
+        .menu {
+            color: cssvar(black);
+        }
+    }
+}

@@ -1,0 +1,388 @@
+:host {
+    --display-after-image: none;
+    --position-image-container: unset;
+    --opacity-image: 1;
+}
+
+:host {
+    cursor: pointer;
+
+    .outer-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: cssvar(padding-10) .5rem;
+        border: 0;
+
+        .image-container {
+            position: cssvar(position-image-container);
+            align-self: center;
+            width: 7rem;
+            max-width: 80px;
+            height: 7rem;
+            max-height: 80px;
+            //border-radius: 50%;
+            text-align: center;
+            box-shadow: cssvar(card-shadow);
+
+            .image {
+                display: inline-block;
+                width: 100%;
+                max-width: 80px;
+                height: 100%;
+                max-height: 80px;
+                border-radius: 4px;
+                //   box-shadow: 0 2px 4px 0 rgba(40, 47, 54, 0.08);
+                opacity: cssvar(opacity-image);
+            }
+
+            &.badge {
+                width: 60px;
+                height: 60px;
+                box-shadow: none;
+
+                .image {
+                    border-radius: none;
+                    box-shadow: none;
+                }
+            }
+
+            .image-overlay {
+                @include abs-pos(15%, 15%, auto, auto); // right: 50%;
+                display: cssvar(display-after-image);
+                transform: translate(50%, -50%); //background: cssvar(light);
+                color: cssvar(success);
+                font-family: "yoobicons";
+                font-size: cssvar(checkbox-size);
+                font-weight: 600;
+                clip-path: circle(12px at center);
+            }
+
+            .icon-container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: 100%;
+                border: solid 0.5px cssvar(stable-light);
+                border-radius: 50%;
+                font-size: cssvar(font-xl);
+            }
+        }
+
+        .text-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 0.5625rem;
+            color: cssvar(black);
+            font-size: cssvar(font-s);
+
+            .text,
+            .subheading,
+            .text-truncate,
+            .date-label {
+                text-align: center;
+            }
+            .text.badge{
+                font-size: cssvar(font-xs);
+            }
+
+            .text-truncate,
+            .subheading {
+                @include text-truncate();
+                width: 5rem;
+            }
+
+            .subheading {
+                color: cssvar(stable);
+            }
+
+            .date-label {
+                color: cssvar(danger-light);
+            }
+        }
+
+        .action-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: cssvar(padding-5);
+            //margin-bottom: $padding-10;
+            color: cssvar(control-icon-color);
+            font-size: cssvar(font-xs);
+
+            .icon-action {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 0.875rem;
+                height: 0.875rem;
+                border: solid 0.5px cssvar(stable-light);
+                border-radius: 50%;
+            }
+        }
+
+        .icon-overlay {
+            @include abs-pos-full-width();
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: cssvar(light);
+            font-size: 2rem;
+
+            &.top-right {
+                top: cssvar(padding-5);
+                right: cssvar(padding-5);
+                align-items: flex-start;
+                justify-content: flex-end;
+                font-size: 0.5rem;
+            }
+
+            &.bottom-left,
+            &.bottom-right {
+                bottom: cssvar(padding-5);
+                align-items: flex-end;
+                font-size: 0.5rem;
+            }
+
+            &.bottom-left {
+                left: cssvar(padding-5);
+                justify-content: flex-start;
+            }
+
+            &.bottom-right {
+                right: cssvar(padding-5);
+                justify-content: flex-end;
+            }
+
+            .icon-overlay-container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 1.0625rem;
+                height: 1.0625rem;
+                border-radius: 50%;
+                background-color: cssvar(backdrop);
+            }
+        }
+
+        .validated {
+            @include abs-pos(5px, auto, auto, 5px);
+            width: 20px;
+            height: 20px;
+            border: 3px solid cssvar(light);
+            border-radius: 50%;
+            background-color: cssvar(success);
+            box-sizing: border-box;
+
+            &.danger {
+                background-color: cssvar(danger);
+            }
+        }
+    }
+}
+@media only screen and (max-width: 370px) {
+    :host(.files) {
+        .outer-container {
+
+            .image-container {
+                position: cssvar(position-image-container);
+                align-self: center;
+                width: 5rem !important;
+                height: 5rem !important;
+
+            }
+        }
+    }
+}
+
+:host(.files) {
+    .outer-container {
+        margin-bottom: 1rem;
+        padding: 0 .5rem 0 .5rem;
+        border-radius: 4px;
+        overflow: hidden;
+
+        .image-container {
+            .icon-container {
+                // border: none;
+            }
+        }
+
+        .text-container {
+            color: cssvar(black);
+        }
+    }
+}
+
+:host(.filesFolders) {
+    .outer-container {
+        .image-container {
+            .image {
+                background-size: contain !important;
+                background-position-y: 50%;
+            }
+        }
+    }
+}
+
+:host(.apps) {
+    display: block;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    box-shadow: cssvar(tile-shadow);
+
+    .outer-container {
+        .image-container {
+            .image {
+                width: 50%;
+                height: 50%;
+                margin: auto;
+                margin-top: 2rem;
+            }
+        }
+    }
+}
+
+
+:host(.photos) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    border-radius: 0.5rem;
+    cursor: pointer;
+
+    .outer-container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+
+        .image-container {
+            position: cssvar(position-image-container);
+            align-self: center;
+            width: 100%;
+            max-width: 120px;
+            height: 100%;
+            max-height: 120px;
+
+            .image {
+                width: 100%;
+                max-width: 120px;
+                height: 100%;
+                max-height: 120px;
+                border-radius: 0.5rem;
+                background: cssvar(stable-light);
+                opacity: cssvar(opacity-image);
+            }
+
+            .image-overlay {
+                @include abs-pos(15%, 15%, auto, auto); // right: 50%;
+                display: cssvar(display-after-image);
+                transform: translate(50%, -50%); //background: cssvar(light);
+                color: cssvar(success);
+                font-family: "yoobicons";
+                font-size: cssvar(font-l);
+                font-weight: 600;
+                clip-path: circle(12px at center);
+            }
+
+            .icon-container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: 100%;
+                border: solid 0.5px cssvar(stable-light);
+                border-radius: 0.5rem;//border-radius: 50%;
+                font-size: cssvar(font-xl);
+            }
+        }
+
+        .text-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 0.5625rem;
+            font-size: cssvar(font-xs);
+
+            .text {
+                @include text-truncate();
+                width: 5rem;
+                text-align: center;
+            }
+        }
+
+        .action-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: cssvar(padding-10);
+            color: cssvar(stable);
+            font-size: cssvar(font-xs);
+
+            .icon-action {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 0.875rem;
+                height: 0.875rem;
+                border: solid 0.5px cssvar(stable-light);
+                border-radius: 50%;
+            }
+        }
+    }
+}
+
+:host(.photos.web) {
+    .outer-container {
+        position: unset;
+    }
+    .icon-overlay {
+        .icon-overlay-container {
+            width: cssvar(padding-20);
+            height: cssvar(padding-20);
+        }
+    }
+}
+
+:host(.courses),
+:host(.plans) {
+    .outer-container {
+        width: 6.125rem;
+
+        .image-container {
+            max-width: unset;
+            height: 10.125rem;
+            max-height: unset;
+            border-radius: 4px;
+            // box-shadow: 0 2px 4px 0 rgba(40, 47, 54, 0.08);
+            object-fit: contain;
+
+            yoo-img {
+                max-width: unset !important;
+                max-height: unset !important;
+
+                yoo-icon {
+                    position: absolute;
+                    right: cssvar(padding-10);
+                    bottom: cssvar(padding-10);
+                    padding: 0.5rem;
+                    border: none;
+                    border-radius: 50%;
+                    background: cssvar(stable);
+                    color: cssvar(light);
+                    font-size: cssvar(font-l);
+                }
+            }
+        }
+    }
+}
+
+:host(.badges){
+    .outer-container{
+        width: 80px;
+    }
+}

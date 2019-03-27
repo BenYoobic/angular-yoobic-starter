@@ -1,0 +1,73 @@
+:host .outer-container {
+  display: block !important;
+  justify-content: center;
+  height: auto;
+  height: 60px;
+  margin: 2px;
+  padding: 0;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0 5px 15px 0 rgba(0, 15, 54, 0.08); }
+  :host .outer-container .audio-player-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    min-width: 150px;
+    padding: 15px; }
+    :host .outer-container .audio-player-wrapper .play-button {
+      flex: 1;
+      justify-content: flex-start;
+      width: 35px;
+      height: 35px; }
+      :host .outer-container .audio-player-wrapper .play-button yoo-icon {
+        color: black;
+        font-size: 35px; }
+    :host .outer-container .audio-player-wrapper .progress-wrapper {
+      display: flex;
+      position: relative;
+      flex-grow: 10;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: auto;
+      margin-right: 15px;
+      margin-left: 15px;
+      background-color: white; }
+      :host .outer-container .audio-player-wrapper .progress-wrapper .progress-bar {
+        justify-content: flex-end;
+        width: 100%;
+        height: 2px;
+        background-color: #adadad;
+        opacity: .2; }
+      :host .outer-container .audio-player-wrapper .progress-wrapper .progress-button {
+        position: absolute;
+        left: 0px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--success, #04CC99);
+        z-index: 3; }
+      :host .outer-container .audio-player-wrapper .progress-wrapper .progress-overlay {
+        position: absolute;
+        left: 0px;
+        width: 0%;
+        height: 2px;
+        background: var(--success, #04CC99);
+        z-index: 2; }
+    :host .outer-container .audio-player-wrapper .description-wrapper {
+      flex: 1;
+      text-align: right; }
+      :host .outer-container .audio-player-wrapper .description-wrapper .title {
+        color: black;
+        font-size: 13px; }
+      :host .outer-container .audio-player-wrapper .description-wrapper .subtitle {
+        color: #adadad;
+        font-size: 9px; }
+
+:host(.readonly) {
+  padding: 0.5rem 0rem; }
+
+:host(.history) .outer-container {
+  margin: 2px; }

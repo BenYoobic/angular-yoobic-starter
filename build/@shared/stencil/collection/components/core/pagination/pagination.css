@@ -1,0 +1,149 @@
+:host .container {
+  display: flex;
+  flex-direction: row;
+  width: 100%; }
+  :host .container.show-total-disabled {
+    justify-content: center; }
+  :host .container.show-total {
+    justify-content: space-between; }
+  :host .container .total-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    min-width: 7.6rem;
+    color: var(--dark-80, #495b79); }
+    :host .container .total-container .text-container {
+      padding-left: 0.3rem; }
+    :host .container .total-container .dropdown-entry {
+      width: 100%;
+      padding: 0.5rem 1rem;
+      line-height: 1.5;
+      cursor: pointer; }
+      :host .container .total-container .dropdown-entry:hover {
+        background: var(--accent-05, #f4fbff);
+        color: var(--dark, #2b3648); }
+    :host .container .total-container .items-container {
+      display: flex;
+      flex-direction: row;
+      padding-left: 0.5rem; }
+  :host .container .inner-container {
+    display: flex;
+    flex-direction: row; }
+    :host .container .inner-container .page-number {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 5px; }
+      :host .container .inner-container .page-number:hover {
+        cursor: pointer; }
+
+:host(.accent) .container .inner-container .page-number {
+  color: var(--accent, #1FB6FF);
+  font-size: var(--font-s, 13px);
+  font-weight: 400; }
+  :host(.accent) .container .inner-container .page-number:hover {
+    background: var(--accent-20, #d2f0ff); }
+  :host(.accent) .container .inner-container .page-number.active {
+    background: var(--accent, #1FB6FF);
+    color: var(--light, #FFFFFF); }
+  :host(.accent) .container .inner-container .page-number.disabled {
+    color: var(--accent-05, #f4fbff); }
+    :host(.accent) .container .inner-container .page-number.disabled:hover {
+      background: transparent;
+      cursor: not-allowed; }
+  :host(.accent) .container .inner-container .page-number.ellipsis:hover {
+    background: transparent;
+    cursor: default; }
+
+:host(.danger) .container .inner-container .page-number {
+  color: var(--danger, #ff625f);
+  font-size: var(--font-s, 13px);
+  font-weight: 400; }
+  :host(.danger) .container .inner-container .page-number:hover {
+    background: var(--danger-20, #ffe0df); }
+  :host(.danger) .container .inner-container .page-number.active {
+    background: var(--danger, #ff625f);
+    color: var(--light, #FFFFFF); }
+  :host(.danger) .container .inner-container .page-number.disabled {
+    color: var(--danger-05, #fff7f7); }
+    :host(.danger) .container .inner-container .page-number.disabled:hover {
+      background: transparent;
+      cursor: not-allowed; }
+  :host(.danger) .container .inner-container .page-number.ellipsis:hover {
+    background: transparent;
+    cursor: default; }
+
+:host(.success) .container .inner-container .page-number {
+  color: var(--success, #04CC99);
+  font-size: var(--font-s, 13px);
+  font-weight: 400; }
+  :host(.success) .container .inner-container .page-number:hover {
+    background: var(--success-20, #c4feef); }
+  :host(.success) .container .inner-container .page-number.active {
+    background: var(--success, #04CC99);
+    color: var(--light, #FFFFFF); }
+  :host(.success) .container .inner-container .page-number.disabled {
+    color: var(--success-05, #f0fffb); }
+    :host(.success) .container .inner-container .page-number.disabled:hover {
+      background: transparent;
+      cursor: not-allowed; }
+  :host(.success) .container .inner-container .page-number.ellipsis:hover {
+    background: transparent;
+    cursor: default; }
+
+:host(.info) .container .inner-container .page-number {
+  color: var(--info, #fc459e);
+  font-size: var(--font-s, 13px);
+  font-weight: 400; }
+  :host(.info) .container .inner-container .page-number:hover {
+    background: var(--info-20, #fedaec); }
+  :host(.info) .container .inner-container .page-number.active {
+    background: var(--info, #fc459e);
+    color: var(--light, #FFFFFF); }
+  :host(.info) .container .inner-container .page-number.disabled {
+    color: var(--info-05, #fff6fa); }
+    :host(.info) .container .inner-container .page-number.disabled:hover {
+      background: transparent;
+      cursor: not-allowed; }
+  :host(.info) .container .inner-container .page-number.ellipsis:hover {
+    background: transparent;
+    cursor: default; }
+
+:host(.warning) .container .inner-container .page-number {
+  color: var(--warning, #ff6402);
+  font-size: var(--font-s, 13px);
+  font-weight: 400; }
+  :host(.warning) .container .inner-container .page-number:hover {
+    background: var(--warning-20, #ffe0cc); }
+  :host(.warning) .container .inner-container .page-number.active {
+    background: var(--warning, #ff6402);
+    color: var(--light, #FFFFFF); }
+  :host(.warning) .container .inner-container .page-number.disabled {
+    color: var(--warning-05, #fff7f2); }
+    :host(.warning) .container .inner-container .page-number.disabled:hover {
+      background: transparent;
+      cursor: not-allowed; }
+  :host(.warning) .container .inner-container .page-number.ellipsis:hover {
+    background: transparent;
+    cursor: default; }
+
+:host(.dark) .container .inner-container .page-number {
+  color: var(--dark-80, #495b79);
+  font-size: var(--font-s, 13px);
+  font-weight: 400; }
+  :host(.dark) .container .inner-container .page-number:hover {
+    background: var(--dark-40, #9cabc4); }
+  :host(.dark) .container .inner-container .page-number.active {
+    background: var(--dark-80, #495b79);
+    color: var(--light, #FFFFFF); }
+  :host(.dark) .container .inner-container .page-number.disabled {
+    color: var(--stable-30, #E6E6E6); }
+    :host(.dark) .container .inner-container .page-number.disabled:hover {
+      background: transparent;
+      cursor: not-allowed; }
+  :host(.dark) .container .inner-container .page-number.ellipsis:hover {
+    background: transparent;
+    cursor: default; }

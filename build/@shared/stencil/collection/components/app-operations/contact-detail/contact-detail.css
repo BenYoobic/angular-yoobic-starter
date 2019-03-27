@@ -1,0 +1,26 @@
+:host .container {
+  margin-top: 1rem;
+  text-align: center; }
+  :host .container .user-name {
+    line-height: 1.3125rem; }
+  :host .container .user-role {
+    color: var(--stable, #adadad);
+    font-size: var(--font-s, 13px);
+    line-height: 1rem; }
+  :host .container .buttons-container {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    justify-content: space-around;
+    margin: 2rem; }
+    :host .container .buttons-container .button-container {
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+      align-items: center;
+      justify-content: center; }
+      :host .container .buttons-container .button-container .button-title {
+        padding-top: var(--padding-5, 0.3125rem);
+        color: var(--success, #04CC99);
+        font-size: var(--font-xs, 10px); }

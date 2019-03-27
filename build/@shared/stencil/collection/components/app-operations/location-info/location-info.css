@@ -1,0 +1,19 @@
+:host .outer-container {
+  padding: 0.5rem 1rem;
+  border-top: 1px solid var(--stable-30, #E6E6E6);
+  background: var(--light, #FFFFFF); }
+  :host .outer-container .menu-content {
+    line-height: 1.75; }
+    :host .outer-container .menu-content span {
+      color: var(--black, #000000);
+      font-size: var(--font-ll, 20px);
+      font-weight: 600;
+      line-height: 1em; }
+    :host .outer-container .menu-content .menu-content-contact {
+      text-decoration: none; }
+      :host .outer-container .menu-content .menu-content-contact.name {
+        font-size: var(--font-l, 17px); }
+      :host .outer-container .menu-content .menu-content-contact.email {
+        color: var(--success, #04CC99); }
+      :host .outer-container .menu-content .menu-content-contact.phone {
+        color: var(--dark, #2b3648); }

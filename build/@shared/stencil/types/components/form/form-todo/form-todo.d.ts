@@ -1,0 +1,37 @@
+import '../../../stencil.core';
+import { EventEmitter } from '../../../stencil.core';
+import { ValidatorEntry, AsyncValidator, Validator, IFormTodo, ITodo, ITodoTask } from '../../../interfaces';
+export declare class YooFormTodoComponent implements IFormTodo {
+    value: ITodo;
+    validators: Array<Validator<ITodo> | ValidatorEntry>;
+    asyncValidators: Array<AsyncValidator<ITodo>>;
+    placeholder: string;
+    required: boolean;
+    readonly: boolean;
+    type: string;
+    name: string;
+    validity: boolean;
+    allPhotosRequired: boolean;
+    allowLibrary: boolean;
+    values: Array<any>;
+    linked: boolean;
+    validityChanged: EventEmitter<boolean>;
+    inputBlurred: EventEmitter<any>;
+    inputFocused: EventEmitter<any>;
+    inputChanged: EventEmitter<any>;
+    fetchCustomData: EventEmitter<any>;
+    fieldFetchData: EventEmitter<any>;
+    host: HTMLStencilElement;
+    private slidesTodo;
+    private slidesTodoTask;
+    setSlides(data: any): void;
+    componentWillLoad(): void;
+    onUpdateTodo(ev: CustomEvent<ITodoTask[]>): void;
+    onClearTodo(ev: MouseEvent): void;
+    onOpenModal(): Promise<void>;
+    convertToNumber(priority: string): number;
+    renderTasks(): JSX.Element;
+    renderReadonly(): JSX.Element;
+    renderEditable(): JSX.Element;
+    render(): JSX.Element;
+}

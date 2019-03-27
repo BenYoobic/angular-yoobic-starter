@@ -1,0 +1,45 @@
+import '../../../stencil.core';
+import { EventEmitter } from '../../../stencil.core';
+import { IFormBarcodeOcrRegex } from '../../../interfaces';
+export declare class YooFormBarcodeDialogComponent {
+    value: string;
+    fnBarcodeResult: any;
+    fnOcrResult: any;
+    mainMode: 'default' | 'batch' | 'ocr';
+    enableKeyboardResizing: boolean;
+    ocrRegexes: Array<IFormBarcodeOcrRegex>;
+    scannedSuccess: EventEmitter<any>;
+    inputMode: 'default' | 'keyboard' | 'ocr';
+    textManualInput: string;
+    selectedOcrRegex: IFormBarcodeOcrRegex;
+    host: HTMLStencilElement;
+    private supportMode;
+    private scandit;
+    close(): void;
+    restartOcrScanner(): void;
+    componentWillLoad(): void;
+    componentDidLoad(): void;
+    onCancel(): void;
+    onInitMainMode(): void;
+    onCreateModeObj(mode: any, icon: any, text: any): any;
+    isMode(compareMode: string): boolean;
+    onSelectMode(mode: 'default' | 'keyboard' | 'ocr', initialSelect?: boolean): void;
+    onInputChanged(ev: CustomEvent<string>): void;
+    onScannedSuccess(ev: any): void;
+    onRegexInputFocued(): void;
+    hasRegexPattern(regex: any): any;
+    onChangeOcrRegex(regex: IFormBarcodeOcrRegex): void;
+    onSave(): void;
+    renderHeaderTitle(): JSX.Element;
+    renderHeaderTab(): JSX.Element;
+    renderTags(): JSX.Element;
+    renderRegexSelector(): JSX.Element;
+    renderHeader(): JSX.Element;
+    renderKeyboardContent(): JSX.Element;
+    renderScannerContent(): JSX.Element;
+    renderBody(): JSX.Element;
+    hostData(): {
+        class: any;
+    };
+    render(): JSX.Element;
+}

@@ -1,0 +1,228 @@
+:host {
+  --margin: var(--padding-15, 0.9375rem); }
+
+:host .outer-container {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  margin: 0 var(--padding-15, 0.9375rem);
+  border: 1px solid var(--stable-30, #E6E6E6);
+  border-radius: var(--border-radius-input, 5px); }
+  :host .outer-container.focused {
+    border: 1px solid var(--dark, #2b3648); }
+  :host .outer-container .flex {
+    display: flex;
+    flex: 1; }
+  :host .outer-container .input-container input {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    display: inline-block;
+    vertical-align: middle;
+    white-space: normal;
+    background: none;
+    line-height: 1;
+    font-size: var(--font-m, 15px);
+    font-family: "Lato" !important;
+    min-width: 0;
+    box-sizing: content-box;
+    width: 100%;
+    height: 2.5rem;
+    padding-left: var(--padding-15, 0.9375rem);
+    border: none;
+    border-radius: var(--border-radius-input, 5px);
+    background: var(--light, #FFFFFF);
+    color: var(--tex-color);
+    font-size: var(--font-m, 15px);
+    line-height: 1.5;
+    vertical-align: unset; }
+    :host .outer-container .input-container input:focus {
+      outline: 0; }
+    :host .outer-container .input-container input[type=reset], :host .outer-container .input-container input[type=button], :host .outer-container .input-container input[type=submit], :host .outer-container .input-container input[type=checkbox], :host .outer-container .input-container input[type=radio] {
+      box-sizing: border-box; }
+    :host .outer-container .input-container input[type=search] {
+      -webkit-appearance: textfield;
+      box-sizing: content-box; }
+    :host .outer-container .input-container input.native {
+      padding: 0rem 1rem; }
+  :host .outer-container .icon-prefix,
+  :host .outer-container .icon-suffix {
+    display: flex;
+    flex-direction: row;
+    color: var(--dark, #2b3648); }
+  :host .outer-container .icon-prefix {
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    padding-left: var(--padding-15, 0.9375rem);
+    border-right: 1px solid var(--stable-30, #E6E6E6);
+    color: csscolor(stable);
+    font-size: var(--font-m, 15px); }
+  :host .outer-container .icon-close {
+    color: var(--stable, #adadad); }
+  :host .outer-container .icon-suffix {
+    display: flex;
+    align-items: center;
+    padding-right: var(--padding-15, 0.9375rem); }
+    :host .outer-container .icon-suffix.toggle {
+      font-size: var(--font-xs, 10px); }
+    :host .outer-container .icon-suffix.clear {
+      padding-right: var(--padding-10, 0.625rem); }
+
+:host .time-input-container {
+  margin: var(--margin);
+  padding-bottom: var(--padding-15, 0.9375rem); }
+  :host .time-input-container .time-input-header {
+    padding-bottom: var(--padding-10, 0.625rem); }
+  :host .time-input-container .time-inputs {
+    box-sizing: border-box;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: row; }
+    :host .time-input-container .time-inputs .hours-container,
+    :host .time-input-container .time-inputs .minutes-container,
+    :host .time-input-container .time-inputs .am-pm-container {
+      box-sizing: border-box;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: flex;
+      width: 4.375rem;
+      height: 2.5rem;
+      border: solid 1px var(--form-time-border-color, rgba(173, 173, 173, 0.3));
+      border-radius: 0.3125rem; }
+      :host .time-input-container .time-inputs .hours-container .time-controls-container,
+      :host .time-input-container .time-inputs .minutes-container .time-controls-container,
+      :host .time-input-container .time-inputs .am-pm-container .time-controls-container {
+        box-sizing: border-box;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: var(--font-xs, 10px); }
+        :host .time-input-container .time-inputs .hours-container .time-controls-container .time-control-up,
+        :host .time-input-container .time-inputs .hours-container .time-controls-container .time-control-down,
+        :host .time-input-container .time-inputs .minutes-container .time-controls-container .time-control-up,
+        :host .time-input-container .time-inputs .minutes-container .time-controls-container .time-control-down,
+        :host .time-input-container .time-inputs .am-pm-container .time-controls-container .time-control-up,
+        :host .time-input-container .time-inputs .am-pm-container .time-controls-container .time-control-down {
+          box-sizing: border-box;
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -moz-box;
+          display: -ms-flexbox;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          height: 100%;
+          margin-right: var(--padding-10, 0.625rem);
+          color: var(--black, #000000); }
+          :host .time-input-container .time-inputs .hours-container .time-controls-container .time-control-up yoo-icon,
+          :host .time-input-container .time-inputs .hours-container .time-controls-container .time-control-down yoo-icon,
+          :host .time-input-container .time-inputs .minutes-container .time-controls-container .time-control-up yoo-icon,
+          :host .time-input-container .time-inputs .minutes-container .time-controls-container .time-control-down yoo-icon,
+          :host .time-input-container .time-inputs .am-pm-container .time-controls-container .time-control-up yoo-icon,
+          :host .time-input-container .time-inputs .am-pm-container .time-controls-container .time-control-down yoo-icon {
+            font-weight: bold; }
+      :host .time-input-container .time-inputs .hours-container .input-hours,
+      :host .time-input-container .time-inputs .hours-container .input-minutes,
+      :host .time-input-container .time-inputs .hours-container .input-am-pm,
+      :host .time-input-container .time-inputs .minutes-container .input-hours,
+      :host .time-input-container .time-inputs .minutes-container .input-minutes,
+      :host .time-input-container .time-inputs .minutes-container .input-am-pm,
+      :host .time-input-container .time-inputs .am-pm-container .input-hours,
+      :host .time-input-container .time-inputs .am-pm-container .input-minutes,
+      :host .time-input-container .time-inputs .am-pm-container .input-am-pm {
+        margin: 0;
+        border: 0;
+        padding: 0;
+        display: inline-block;
+        vertical-align: middle;
+        white-space: normal;
+        background: none;
+        line-height: 1;
+        font-size: var(--font-m, 15px);
+        font-family: "Lato" !important;
+        min-width: 0;
+        box-sizing: content-box;
+        max-width: 2.0625rem;
+        padding-left: var(--padding-15, 0.9375rem);
+        opacity: 0.3; }
+        :host .time-input-container .time-inputs .hours-container .input-hours:focus,
+        :host .time-input-container .time-inputs .hours-container .input-minutes:focus,
+        :host .time-input-container .time-inputs .hours-container .input-am-pm:focus,
+        :host .time-input-container .time-inputs .minutes-container .input-hours:focus,
+        :host .time-input-container .time-inputs .minutes-container .input-minutes:focus,
+        :host .time-input-container .time-inputs .minutes-container .input-am-pm:focus,
+        :host .time-input-container .time-inputs .am-pm-container .input-hours:focus,
+        :host .time-input-container .time-inputs .am-pm-container .input-minutes:focus,
+        :host .time-input-container .time-inputs .am-pm-container .input-am-pm:focus {
+          outline: 0; }
+        :host .time-input-container .time-inputs .hours-container .input-hours[type=reset], :host .time-input-container .time-inputs .hours-container .input-hours[type=button], :host .time-input-container .time-inputs .hours-container .input-hours[type=submit], :host .time-input-container .time-inputs .hours-container .input-hours[type=checkbox], :host .time-input-container .time-inputs .hours-container .input-hours[type=radio],
+        :host .time-input-container .time-inputs .hours-container .input-minutes[type=reset],
+        :host .time-input-container .time-inputs .hours-container .input-minutes[type=button],
+        :host .time-input-container .time-inputs .hours-container .input-minutes[type=submit],
+        :host .time-input-container .time-inputs .hours-container .input-minutes[type=checkbox],
+        :host .time-input-container .time-inputs .hours-container .input-minutes[type=radio],
+        :host .time-input-container .time-inputs .hours-container .input-am-pm[type=reset],
+        :host .time-input-container .time-inputs .hours-container .input-am-pm[type=button],
+        :host .time-input-container .time-inputs .hours-container .input-am-pm[type=submit],
+        :host .time-input-container .time-inputs .hours-container .input-am-pm[type=checkbox],
+        :host .time-input-container .time-inputs .hours-container .input-am-pm[type=radio],
+        :host .time-input-container .time-inputs .minutes-container .input-hours[type=reset],
+        :host .time-input-container .time-inputs .minutes-container .input-hours[type=button],
+        :host .time-input-container .time-inputs .minutes-container .input-hours[type=submit],
+        :host .time-input-container .time-inputs .minutes-container .input-hours[type=checkbox],
+        :host .time-input-container .time-inputs .minutes-container .input-hours[type=radio],
+        :host .time-input-container .time-inputs .minutes-container .input-minutes[type=reset],
+        :host .time-input-container .time-inputs .minutes-container .input-minutes[type=button],
+        :host .time-input-container .time-inputs .minutes-container .input-minutes[type=submit],
+        :host .time-input-container .time-inputs .minutes-container .input-minutes[type=checkbox],
+        :host .time-input-container .time-inputs .minutes-container .input-minutes[type=radio],
+        :host .time-input-container .time-inputs .minutes-container .input-am-pm[type=reset],
+        :host .time-input-container .time-inputs .minutes-container .input-am-pm[type=button],
+        :host .time-input-container .time-inputs .minutes-container .input-am-pm[type=submit],
+        :host .time-input-container .time-inputs .minutes-container .input-am-pm[type=checkbox],
+        :host .time-input-container .time-inputs .minutes-container .input-am-pm[type=radio],
+        :host .time-input-container .time-inputs .am-pm-container .input-hours[type=reset],
+        :host .time-input-container .time-inputs .am-pm-container .input-hours[type=button],
+        :host .time-input-container .time-inputs .am-pm-container .input-hours[type=submit],
+        :host .time-input-container .time-inputs .am-pm-container .input-hours[type=checkbox],
+        :host .time-input-container .time-inputs .am-pm-container .input-hours[type=radio],
+        :host .time-input-container .time-inputs .am-pm-container .input-minutes[type=reset],
+        :host .time-input-container .time-inputs .am-pm-container .input-minutes[type=button],
+        :host .time-input-container .time-inputs .am-pm-container .input-minutes[type=submit],
+        :host .time-input-container .time-inputs .am-pm-container .input-minutes[type=checkbox],
+        :host .time-input-container .time-inputs .am-pm-container .input-minutes[type=radio],
+        :host .time-input-container .time-inputs .am-pm-container .input-am-pm[type=reset],
+        :host .time-input-container .time-inputs .am-pm-container .input-am-pm[type=button],
+        :host .time-input-container .time-inputs .am-pm-container .input-am-pm[type=submit],
+        :host .time-input-container .time-inputs .am-pm-container .input-am-pm[type=checkbox],
+        :host .time-input-container .time-inputs .am-pm-container .input-am-pm[type=radio] {
+          box-sizing: border-box; }
+        :host .time-input-container .time-inputs .hours-container .input-hours[type=search],
+        :host .time-input-container .time-inputs .hours-container .input-minutes[type=search],
+        :host .time-input-container .time-inputs .hours-container .input-am-pm[type=search],
+        :host .time-input-container .time-inputs .minutes-container .input-hours[type=search],
+        :host .time-input-container .time-inputs .minutes-container .input-minutes[type=search],
+        :host .time-input-container .time-inputs .minutes-container .input-am-pm[type=search],
+        :host .time-input-container .time-inputs .am-pm-container .input-hours[type=search],
+        :host .time-input-container .time-inputs .am-pm-container .input-minutes[type=search],
+        :host .time-input-container .time-inputs .am-pm-container .input-am-pm[type=search] {
+          -webkit-appearance: textfield;
+          box-sizing: content-box; }
+    :host .time-input-container .time-inputs .minutes-container {
+      margin: 0 var(--padding-15, 0.9375rem); }
+
+:host(.cordova) {
+  display: flex; }

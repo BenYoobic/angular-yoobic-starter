@@ -1,0 +1,65 @@
+:host {
+  display: block; }
+  :host .container {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: var(--light, #FFFFFF); }
+    :host .container:not(.fullscreen) {
+      border-bottom: 10px solid var(--stable-ultralight, #F5F5F5); }
+      :host .container:not(.fullscreen) .content {
+        position: relative;
+        width: 100%;
+        min-height: 250px; }
+        :host .container:not(.fullscreen) .content yoo-kpi {
+          pointer-events: none; }
+      :host .container:not(.fullscreen) .kpi-container {
+        height: 100%; }
+        :host .container:not(.fullscreen) .kpi-container.carousel, :host .container:not(.fullscreen) .kpi-container.map {
+          height: 250px; }
+        :host .container:not(.fullscreen) .kpi-container.carousel {
+          border-bottom: 1px solid var(--stable-30, #E6E6E6); }
+    :host .container .heading {
+      padding: 0.5rem;
+      font-size: var(--font-l, 17px); }
+    :host .container.fullscreen .content {
+      position: relative;
+      width: 100%;
+      height: 380px; }
+      :host .container.fullscreen .content yoo-kpi {
+        --chart-height: 380px; }
+    :host .container.fullscreen.full-height {
+      display: flex;
+      flex: 1;
+      flex-direction: column; }
+      :host .container.fullscreen.full-height .content {
+        flex: 1; }
+        :host .container.fullscreen.full-height .content yoo-kpi {
+          --chart-height: 100%;
+          display: block;
+          height: 100%; }
+    :host .container .kpi-container {
+      height: 100%; }
+
+:host(.web:not(.insights)) .container:not(.fullscreen) {
+  height: 100%;
+  border-bottom: 1px solid var(--stable-ultralight, #F5F5F5); }
+  :host(.web:not(.insights)) .container:not(.fullscreen) .content {
+    height: 250px; }
+
+:host(.web.insights) .container {
+  height: 100%;
+  padding-bottom: var(--padding-15, 0.9375rem); }
+  :host(.web.insights) .container .heading {
+    padding-left: 1rem; }
+  :host(.web.insights) .container .content {
+    height: 250px;
+    padding-top: 1.125rem; }
+
+:host(.no-border) .container {
+  border-top: none;
+  border-bottom: none; }
+
+:host(.web) {
+  display: block;
+  height: 100%; }

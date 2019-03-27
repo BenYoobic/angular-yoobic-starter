@@ -1,0 +1,145 @@
+:host {
+    --curve: cubic-bezier(0.650, 0.000, 0.450, 1.000);
+}
+
+:host {
+
+
+    display: block;
+
+    .container {
+        @keyframes stroke {
+            100% {
+              stroke-dashoffset: 0;
+            }
+          }
+          @keyframes scale {
+            0%, 100% {
+              transform: none;
+            }
+            50% {
+              transform: scale3d(1.1, 1.1, 1);
+            }
+          }
+          @keyframes fill {
+            100% {
+              box-shadow: inset 0px 0px 0px 30px cssvar(success);
+            }
+        }
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+
+        .value {
+            font-size: cssvar(font-l);
+            font-weight: bold;
+            line-height: 1.5;
+            text-align: center;
+
+            img {
+                width: 1rem;
+                height: 1rem;
+            }
+        }
+
+        .checkmark-circle {
+            stroke-dasharray: 166;
+            stroke-dashoffset: 166;
+            stroke-width: 2;
+            stroke-miterlimit: 10;
+            stroke: cssvar(success);
+            fill: none;
+        }
+
+        .checkmark {
+            display: block;
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            margin: 10% auto;
+            border-radius: 50%;
+            box-shadow: inset 0px 0px 0px cssvar(success);
+            opacity: 0;
+            stroke-width: 2;
+            stroke: #fff;
+            stroke-miterlimit: 10;
+            &.active {
+                position: initial;
+                opacity: 1;
+                animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+                .checkmark-check {
+                    animation: stroke .3s #{cssvar(curve)} .8s forwards;
+                }
+                .checkmark-circle {
+                    animation: stroke .6s #{cssvar(curve)} forwards;
+                }
+            }
+        }
+
+        .checkmark-check {
+            transform-origin: 50% 50%;
+            stroke-dasharray: 48;
+            stroke-dashoffset: 48;
+        }
+        
+        .text {
+            margin: 1rem;
+            color:cssvar(text-color);
+            font-weight: 400;
+        }
+    }
+}
+
+:host(.absolute) {
+    @include abs-pos-full-width();
+    z-index: 9;
+}
+
+:host(.absolute.safari) {
+    .container {
+        position: absolute;
+    }
+}
+
+:host(.fixed) {
+    @include fixed-pos-full-width();
+    z-index: 9;
+}
+
+:host(.backdrop) {
+    .container {
+        background: cssvar(backdrop-light);
+    }
+}
+
+:host(.backdrop-dark) {
+    .container {
+        background: cssvar(backdrop);
+    }
+}
+
+:host(.dark) {
+    .container {
+        background: cssvar(black);
+    }
+}
+@mixin class-size($class, $size) {
+    :host(.#{$class}) {
+        .container {
+            .value {
+                img {
+                    width: $size;
+                    height: $size;
+                }
+            }
+        }
+    }
+}
+@include class-size(small, 1rem);
+@include class-size(medium, 1.75rem);
+@include class-size(large, 2.5rem);

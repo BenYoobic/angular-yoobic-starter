@@ -1,0 +1,44 @@
+import { IProperty } from '../entity/entity.interface';
+import { ILocation, IKpiData } from '@shared/stencil';
+import { LocationType } from '../location-type/location-type.interface';
+import { Tenant } from '../tenant/tenant.interface';
+export declare const LOCATION_GEOCODESTATUS: string[];
+export declare function onAddressChange(value: any, data: any, field: any): void;
+export declare function onTypeChange(value: any, data: any): void;
+export declare class Location implements ILocation {
+    _id: string;
+    clientid: string;
+    title: string;
+    address: string;
+    imageData?: string;
+    vip: boolean;
+    tags: Array<string>;
+    type: LocationType;
+    typeRef: string;
+    missiondescriptions?: any;
+    missiondescriptionsRef?: Array<string>;
+    notificationemail?: Array<string>;
+    contactname?: string;
+    contactemail?: string;
+    contactphone?: string;
+    info?: string;
+    status?: string;
+    placesearch?: string;
+    _geoloc: [number, number];
+    aisles?: string[];
+    smartTagId?: string;
+    properties?: IProperty[];
+    distance?: number;
+    stats?: Array<{
+        title: string;
+        value: number;
+        color: string;
+    }>;
+    _tenant?: Tenant;
+    _tenantRef?: string;
+    lastVisit?: Date;
+    countVisits?: number;
+    hasAvailableMissions?: boolean;
+    availableMissions?: number;
+    kpiData?: Array<IKpiData>;
+}

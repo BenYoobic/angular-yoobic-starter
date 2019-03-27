@@ -1,0 +1,96 @@
+:host .task {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  background: var(--light, #FFFFFF);
+  line-height: 39px; }
+  :host .task .task-part {
+    display: flex;
+    flex-direction: row; }
+    :host .task .task-part yoo-avatar {
+      --transform-avatar: translateY(5px);
+      margin-right: 0.5rem; }
+    :host .task .task-part .text {
+      font-size: var(--font-l, 17px); }
+    :host .task .task-part .date {
+      margin-right: 0.625rem;
+      color: var(--text-color, #807f83);
+      font-size: var(--font-s, 13px); }
+    :host .task .task-part yoo-button {
+      --width-icon-only-container: 0.25rem;
+      --font-size-icon: 1.125rem;
+      padding-top: 0.6875rem; }
+
+:host .border {
+  width: 100%;
+  height: 0;
+  border-top: 1px solid var(--stable-30, #E6E6E6); }
+
+:host .task .task-part {
+  margin: 0 1rem; }
+  :host .task .task-part yoo-icon {
+    margin-right: 0.5rem;
+    font-size: var(--font-m, 15px); }
+
+:host .tasks {
+  margin-bottom: 0.5rem;
+  padding: 1rem;
+  background: var(--light, #FFFFFF); }
+  :host .tasks .field-placeholder {
+    margin-bottom: 0.625rem; }
+
+:host .menu {
+  list-style: none outside none;
+  background: none repeat scroll 0 0 transparent;
+  border: 0 none;
+  font-size: 100%;
+  margin: 0;
+  outline: 0 none;
+  padding: 0;
+  vertical-align: baseline;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  margin: 0.5rem;
+  padding: 0;
+  list-style: none; }
+  :host .menu .menu-item {
+    display: flex;
+    flex-direction: row; }
+    :host .menu .menu-item .menu-left {
+      display: flex;
+      flex-direction: column;
+      align-items: center; }
+      :host .menu .menu-item .menu-left .menu-icon {
+        height: 1.875rem;
+        width: 1.875rem; }
+        :host .menu .menu-item .menu-left .menu-icon yoo-icon {
+          height: 1.1875rem;
+          width: 1.1875rem;
+          font-size: var(--font-l, 17px);
+          display: flex;
+          justify-content: center;
+          background-color: var(--light, #FFFFFF);
+          border: solid 0.03125rem #d0d0d0;
+          border-radius: 50%;
+          padding: 0.34375rem; }
+      :host .menu .menu-item .menu-left .border {
+        width: 1px;
+        height: 100%;
+        background-color: #d0d0d0; }
+    :host .menu .menu-item .menu-right {
+      margin-left: 0.625rem;
+      width: 100%;
+      overflow: hidden; }
+      :host .menu .menu-item .menu-right .menu-title {
+        font-weight: 600;
+        line-height: 1.125rem;
+        margin-top: 0.375rem; }
+      :host .menu .menu-item .menu-right .menu-content {
+        margin-top: 0.25rem;
+        margin-bottom: 1.25rem; }
+  :host .menu .menu-item .menu-right .menu-title {
+    margin-bottom: 0.625rem; }
+  :host .menu .menu-item .menu-right .menu-content span {
+    margin-right: 1.25rem; }
+  :host .menu .menu-item .menu-right .menu-content yoo-avatar {
+    margin-right: 0.3125rem; }

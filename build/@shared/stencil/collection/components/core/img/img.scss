@@ -1,0 +1,44 @@
+:host {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    >div,
+    img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+    .fallback-icon-container {
+        display: flex;
+        position: absolute;
+        align-items: center;
+        justify-content: center;
+        background-color: cssvar(media-fallback-background);
+        yoo-icon {
+            color: cssvar(stable-alt);
+            font-size: cssvar(font-xl);
+        }
+    }
+}
+
+:host(.ag-cell-image) {
+    width: 30px;
+    height: 30px;
+    border: 1px solid cssvar(input-container-border-color);
+    border-radius: 50%;
+    .fallback-icon-container {
+        yoo-icon {
+            margin-right: 0;
+            font-size: cssvar(font-m);
+        }
+    }
+}
+
+:host(.contain) {
+    >div {
+        background-size: contain !important;
+    }
+    > img {
+        height: auto !important;
+    }
+}

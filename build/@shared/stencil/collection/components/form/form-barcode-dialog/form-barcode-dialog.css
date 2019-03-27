@@ -1,0 +1,115 @@
+:host {
+  background: var(--light, #FFFFFF); }
+  :host .header-container {
+    height: 130px;
+    background: var(--light, #FFFFFF);
+    z-index: 999; }
+    :host .header-container.ocr-mode {
+      height: 155px; }
+      :host .header-container.ocr-mode .regex-container {
+        display: flex;
+        justify-content: center;
+        padding: var(--padding-15, 0.9375rem);
+        background: white; }
+        :host .header-container.ocr-mode .regex-container yoo-form-autocomplete {
+          width: 100%; }
+    :host .header-container .regex-container {
+      display: none;
+      overflow: hidden; }
+    :host .header-container .title-container {
+      display: flex;
+      align-items: center;
+      height: 40px; }
+      :host .header-container .title-container yoo-ion-button {
+        position: absolute;
+        z-index: 1; }
+      :host .header-container .title-container yoo-ion-button.list {
+        position: relative;
+        right: 0; }
+        :host .header-container .title-container yoo-ion-button.list yoo-icon.yo-list-view yoo-badge {
+          position: absolute;
+          top: 2px;
+          right: 5px;
+          border-radius: 50%; }
+    :host .header-container .tab-container {
+      display: flex;
+      flex: 1;
+      align-items: center;
+      justify-content: space-around;
+      height: 60px;
+      padding-top: var(--padding-10, 0.625rem);
+      padding-bottom: var(--padding-10, 0.625rem); }
+      :host .header-container .tab-container .tab-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: opacity .3s ease;
+        opacity: 0.4; }
+        :host .header-container .tab-container .tab-item .icon-text {
+          padding-top: var(--padding-5, 0.3125rem);
+          font-size: var(--font-s, 13px); }
+        :host .header-container .tab-container .tab-item.active {
+          transition: opacity .3s ease;
+          opacity: 1; }
+        :host .header-container .tab-container .tab-item yoo-icon {
+          color: var(--black, #000000);
+          font-size: var(--font-lx, 27px); }
+  :host .scanner-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0; }
+    :host .scanner-container .test-div {
+      width: 100%;
+      height: 200px;
+      background: grey; }
+  :host .input-container {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    height: 100%; }
+    :host .input-container .input-inner-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%; }
+      :host .input-container .input-inner-container .content-code {
+        margin-top: var(--padding-20, 1.25rem);
+        color: var(--black, #000000);
+        font-size: 100px; }
+        :host .input-container .input-inner-container .content-code yoo-img, :host .input-container .input-inner-container .content-code yoo-barcode {
+          width: 180px;
+          height: 60px;
+          margin-bottom: 1rem; }
+      :host .input-container .input-inner-container .content-numbers {
+        width: 180px; }
+    :host .input-container .bottom-toolbar {
+      display: flex;
+      position: absolute;
+      bottom: 0px;
+      align-items: center;
+      justify-content: flex-end;
+      width: 100%;
+      height: 44px;
+      background-color: #fafaf8;
+      box-shadow: inset 0 0.5px 0 0 #e1e0e0;
+      z-index: 40000; }
+      :host .input-container .bottom-toolbar .action {
+        padding-right: 15px;
+        color: var(--success, #04CC99);
+        font-size: var(--font-l, 17px); }
+
+:host(.ios) .header-container {
+  padding-top: var(--padding-15, 0.9375rem); }
+
+:host(.iphone-x) .header-container {
+  padding-top: 35px; }
+
+:host(.iphone-x) .input-container .bottom-toolbar {
+  padding-bottom: 20px; }
+
+:host(.hide) {
+  display: none;
+  overflow: hidden; }

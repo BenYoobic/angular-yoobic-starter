@@ -1,0 +1,719 @@
+@mixin button-color($class, $color, $hover-color: $color, $active-color: $color, $color-00: $color, $opacity: 1) {
+    :host(.#{$class}) {
+        .container {
+            border: 1px solid cssvar($color);
+            background: cssvar($color);
+            opacity: $opacity;
+            &:hover {
+                background: cssvar($hover-color);
+            }
+            &:active {
+                background: cssvar($active-color);
+            }
+            .blur-left {
+                background-image: linear-gradient(0.75turn, cssvar($color-00) 0%, cssvar($color), cssvar($color));
+            }
+            .blur-right {
+                background-image: linear-gradient(0.25turn, cssvar($color-00) 0%, cssvar($color), cssvar($color));
+            }
+            .value {
+                color: cssvar(light_const);
+                fill: cssvar(light);
+            }
+        }
+    }
+}
+@mixin button-gradient-color($app, $gradient, $border, $blur-left, $blur-right) {
+    :host(.#{$app}.#{$gradient}) {
+        .container {
+            border: 0px;
+            background: cssvar($border); // opacity: 0.8;
+            &:active {
+                opacity: 1;
+            }
+            .value {
+                color: cssvar(light_const);
+                fill: cssvar(light);
+            }
+            .blur-left {
+                background-image: linear-gradient(0.75turn, cssvar($blur-left), cssvar($border), cssvar($border));
+            }
+            .blur-right {
+                background-image: linear-gradient(0.25turn, cssvar($blur-right), cssvar($border), cssvar($border));
+            }
+        }
+    }
+}
+@mixin button-outline-color($color) {
+    :host(.outline-#{$color}) {
+        .container {
+            border: none;
+            background: cssvar(transparent-color);
+            &:hover {
+                background: cssvar(light);
+            }
+            &:active {
+                background: cssvar(light);
+            }
+            .value {
+                color: cssvar($color);
+                fill: cssvar($color);
+            }
+        }
+    }
+}
+@mixin button-outline-border-color($color) {
+    :host(.outline-border-#{$color}) {
+        .container {
+            border: 1px solid cssvar($color);
+            background: cssvar(transparent-color);
+            &:hover {
+                background: cssvar(light);
+            }
+            &:active {
+                background: cssvar(light);
+            }
+            .value {
+                color: cssvar($color);
+                fill: cssvar($color);
+            }
+        }
+    }
+}
+@mixin link-transparent-color($color) {
+    :host(.link-transparent-#{$color}) {
+        .container {
+            border: none;
+            background: cssvar(transparent-color);
+            box-shadow: none;
+            fill: cssvar(dark-40);
+            .value {
+                padding: 0;
+                color: cssvar($color);
+            }
+            .icon {
+                color: cssvar($color);
+            }
+            &:hover {
+                transform: translateY(0px);
+                background: cssvar(transparent-color);
+                box-shadow: none;
+            }
+            &:active {
+                background: cssvar(transparent-color);
+            }
+        }
+    }
+}
+
+:host {
+    --padding-value: 0 #{cssvar(padding-10)};
+    --width-container: unset;
+    --min-width-container: 10rem;
+    --height-container: unset;
+    --min-height-container: 3.25rem;
+    --border-radius-container: #{cssvar(button-border-radius)};
+    --padding-container: 0;
+    --padding-text-span: unset;
+    --background-container: #{cssvar(light)};
+    --color-value: #{cssvar(stable)};
+    --value-transition: none;
+    --value-transform: none;
+    --border-container: none;
+    --margin-container: 0 auto;
+    --width-icon-only-container: 2.25rem;
+    --height-icon-only-container: 2.25rem;
+    --font-size-icon: #{cssvar(font-m)};
+    --font-size-text: #{cssvar(font-l)};
+    --shadow: #{cssvar(button-shadow)};
+    --transform: none;
+    --transition: all 0.4s;
+}
+
+:host(.tapped) {
+    .container {
+        overflow: hidden;
+        .dot {
+            @include tap-animation-dot("dark", "");
+        }
+    }
+}
+
+:host {
+    transform: cssvar(transform);
+    transition: cssvar(transition);
+    .container {
+        display: block;
+        position: relative;
+        justify-content: center;
+        width: cssvar(width-container);
+        min-width: cssvar(min-width-container);
+        height: cssvar(height-container);
+        min-height: cssvar(min-height-container);
+        margin: cssvar(margin-container);
+        padding: cssvar(padding-container);
+        transform: cssvar(transform);
+        transition: cssvar(transition);
+        border: cssvar(border-container);
+        border-radius: cssvar(border-radius-container);
+        background: cssvar(background-container);
+        font-family: $font-family;
+        white-space: nowrap;
+        box-shadow: cssvar(shadow);
+        cursor: pointer;
+        &.loading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 2.5rem;
+            min-height: 1.5rem;
+            .value {
+                padding: 0.79rem;
+                text-align: center;
+                yoo-img {
+                    width: 1.5rem;
+                    height: 1.5rem;
+                    overflow: visible;
+                    img {
+                        left: 0;
+                    }
+                }
+            }
+        } // &:hover {
+        //   opacity: 0.6;
+        // }
+        &:active,
+        &:focus {
+            outline: 0 !important;
+        }
+        &.disabled {
+            opacity: 0.4 !important;
+            pointer-events: none;
+        }
+        &.sliding {
+            display: flex;
+            position: relative;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .blur-left {
+            @include abs-pos(0, auto, 0, 0);
+            position: absolute;
+            width: cssvar(padding-25);
+            background-image: linear-gradient(0.75turn, cssvar(transparent-color), cssvar(light), cssvar(light));
+        }
+        .blur-right {
+            @include abs-pos(0, 0, 0, auto);
+            position: absolute;
+            width: cssvar(padding-25);
+            background-image: linear-gradient(0.25turn, cssvar(transparent-color), cssvar(light), cssvar(light));
+        }
+        .icon {
+            padding-right: 0.5rem;
+            padding-left: 0.5rem;
+            font-size: cssvar(font-size-icon); //cssvar(font-m);
+        }
+        yoo-badge {
+            padding-right: 0.5rem;
+            padding-left: 0.5rem;
+        }
+        .value {
+            padding: cssvar(padding-value);
+            transform: cssvar(value-transform);
+            transition: cssvar(value-transition);
+            color: cssvar(color-value);
+            font-size: cssvar(font-size-text);
+            font-style: normal;
+            font-weight: 400;
+            letter-spacing: normal;
+            line-height: normal;
+            text-align: center;
+            overflow: hidden;
+            &.sliding {
+                position: relative;
+                width: calc(100% - 2rem);
+                height: 2rem;
+            } // overflow: hidden;
+            span.sliding {
+                position: relative;
+                bottom: calc(50% - 1.4rem);
+                font-size: cssvar(font-size-text) !important;
+            }
+            .text {
+                padding: cssvar(padding-text-span);
+            } // text-overflow: ellipsis;
+        }
+    }
+}
+
+:host(.no-shadow) {
+    --shadow: none;
+    .container {
+        box-shadow: cssvar(shadow);
+    }
+}
+
+:host(.reverse-order) {
+    .container {
+        .value {
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+        }
+    }
+}
+
+:host(.large) {
+    .container {
+        min-width: 14.38rem;
+        min-height: 3.25rem;
+        .value {
+            font-weight: 500;
+            text-align: center;
+        }
+    }
+}
+
+:host(.full-width) {
+    width: 100%;
+    .container {
+        width: 100%;
+    }
+}
+
+:host(.x-medium) {
+    --font-size-text: #{cssvar(font-m)};
+    .container {
+        min-width: 6.563rem;
+        min-height: 3.25rem;
+        .value {
+            //font-size: cssvar(font-m);
+            font-weight: 400;
+            text-align: center;
+        }
+    }
+}
+
+:host(.x-x-medium) {
+    --font-size-text: #{cssvar(font-m)};
+    .container {
+        min-width: 6.25rem;
+        min-height: 2.5rem;
+        .value {
+            //font-size: cssvar(font-m);
+            text-align: center;
+        }
+    }
+}
+
+:host(.medium) {
+    --font-size-text: #{cssvar(font-s)};
+    .container {
+        min-width: 7.813rem;
+        min-height: 1.875rem;
+        .value {
+            //font-size: cssvar(font-s);
+            text-align: center;
+        }
+    }
+}
+
+:host(.small) {
+    --font-size-text: #{cssvar(font-xs)};
+    --font-size-icon: #{cssvar(font-xs)};
+    .container {
+        min-width: 3.125rem;
+        min-height: 24px;
+        .value {
+            //font-size: cssvar(font-xs);
+            text-align: center; // .icon {
+            //   //font-size: cssvar(font-xs);
+            // }
+        }
+    }
+}
+
+:host(.x-small) {
+    --font-size-text: #{cssvar(font-xs)};
+    --font-size-icon: #{cssvar(font-xs)};
+    .container {
+        min-width: 2.188rem;
+        min-height: 0.625rem;
+        .value {
+            padding: 0 10px; //font-size: cssvar(font-xs);
+            line-height: 1.11;
+            text-align: center;
+            .icon {
+                padding: 0;
+            }
+        }
+    }
+}
+
+:host(.squared) {
+    .container {
+        border-radius: cssvar(button-border-radius);
+    }
+}
+
+:host(.block) {
+    --font-size-text: #{cssvar(font-s)};
+    --font-size-icon: #{cssvar(font-s)};
+    width: 100%;
+    .container {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        border: none;
+        border-radius: 0;
+        box-shadow: none; // .value {
+        //   font-size: cssvar(font-s);
+        // }
+    }
+}
+
+:host(.icon-only) {
+    .container {
+        width: cssvar(width-icon-only-container);
+        min-width: cssvar(padding-15);
+        height: cssvar(height-icon-only-container);
+        min-height: 0px;
+        border-radius: 50%;
+        .value {
+            height: 100%;
+            padding: 0;
+            .icon {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+                padding: 0;
+            }
+        }
+    }
+}
+
+:host(.fab) {
+    .container {
+        min-width: 0px;
+        min-height: 0px;
+        border-radius: cssvar(border-radius-container);
+        .value {
+            padding: 0;
+            border-radius: cssvar(border-radius-container);
+        }
+    }
+}
+
+:host(.icon-only-delete) {
+    --color-value: #{cssvar(black)};
+    .container {
+        width: 4.125rem;
+        height: 4.125rem;
+        border-radius: 50%;
+    }
+}
+
+:host(.truncate) {
+    .container {
+        @include text-truncate();
+    }
+}
+
+:host(.clear) {
+    .container {
+        border: 1px solid cssvar(stable-30);
+        background: cssvar(light);
+        .value {
+            color: cssvar(dark);
+        }
+    }
+}
+
+:host(.translucent) {
+    .container {
+        border: 1px solid transparent;
+        background-color: rgba(255, 255, 255, 0.3);
+        .value {
+            color: cssvar(light);
+        }
+    }
+}
+
+:host(.transparent) {
+    .container {
+        border: 1px solid transparent;
+        background-color: transparent;
+        .value {
+            color: cssvar(light);
+        }
+    }
+}
+
+:host(.link-translucent) {
+    .container {
+        border: none;
+        background: cssvar(transparent-color);
+        box-shadow: none;
+        .value {
+            color: cssvar(light);
+        }
+    }
+}
+
+:host(.btn-form-choice) {
+    --font-size-text: #{cssvar(font-m)};
+    .container {
+        width: 100%;
+        min-width: 0;
+        min-height: 2.5rem;
+        .value {
+            max-width: 100%;
+        }
+    }
+    &.x-medium {
+        .container {
+            max-width: 6.5625rem;
+        }
+    }
+}
+
+:host(.btn-form-choice.large) {
+    .container {
+        min-height: 3.25rem;
+    }
+}
+
+:host(.button-group-menu) {
+    span {
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+        float: right;
+    }
+}
+
+$dark-border-color: cssvar(dark-40);
+:host(.in-group) {
+    .container {
+        @include color-border(top, 1px, $dark-border-color);
+        @include color-border(bottom, 1px, $dark-border-color);
+        @include color-border(right, 1px, $dark-border-color);
+        display: inline-flex;
+        justify-content: center;
+        border-radius: 0px;
+        &:hover {
+            transform: none;
+            box-shadow: none;
+        }
+    }
+}
+
+:host(.in-group.first-button) {
+    .container {
+        @include border-left-radius(15px);
+        @include color-border(left, 1px, $dark-border-color);
+    }
+}
+
+:host(.in-group.last-button) {
+    .container {
+        @include border-right-radius(15px);
+        @include color-border(right, 1px, $dark-border-color);
+    }
+}
+
+:host(.in-group.vertical) {
+    .container {
+        @include color-border(right, 1px, $dark-border-color);
+        @include color-border(left, 1px, $dark-border-color);
+        @include color-border(bottom, 1px, $dark-border-color);
+        border-top: none;
+        border-bottom: none;
+    }
+}
+
+:host(.in-group.vertical.first-button) {
+    .container {
+        @include border-top-radius(15px);
+        @include color-border(left, 1px, $dark-border-color);
+    }
+}
+
+:host(.in-group.vertical.last-button) {
+    .container {
+        @include border-bottom-radius(15px);
+        @include color-border(right, 1px, $dark-border-color);
+    }
+}
+@include button-color(accent, accent, accent-110, accent-120, accent-00);
+@include button-color(dark, dark-to-dark-two, always-dark, dark-40, dark-00);
+@include button-color(black, black, black, black, black, 0.6);
+@include button-color(dark-fab, dark-to-dark-two, always-dark, always-dark, dark-00, 0.6);
+@include button-color(danger, danger, danger-110, danger-120, danger-00);
+@include button-color(danger-light, danger-light, danger-light-110, danger-light-120, danger-light-00);
+@include button-color(success, success, success-110, success-120, success-00);
+@include button-color(info, info, info-110, info-120, info-00);
+@include button-color(warning, warning, warning-110, warning-120, warning-00);
+@include button-color(royal, royal, royal-110, royal-120, royal-00);
+@include link-transparent-color(accent);
+@include link-transparent-color(dark);
+@include link-transparent-color(black);
+@include link-transparent-color(danger);
+@include link-transparent-color(danger-light);
+@include link-transparent-color(success);
+@include link-transparent-color(warning);
+@include link-transparent-color(info);
+@include link-transparent-color(royal);
+@include link-transparent-color(stable);
+@include button-outline-color(accent);
+@include button-outline-color(dark);
+@include button-outline-color(black);
+@include button-outline-color(danger);
+@include button-outline-color(danger-light);
+@include button-outline-color(success);
+@include button-outline-color(warning);
+@include button-outline-color(info);
+@include button-outline-color(royal);
+@include button-outline-border-color(accent);
+@include button-outline-border-color(dark);
+@include button-outline-border-color(black);
+@include button-outline-border-color(danger);
+@include button-outline-border-color(danger-light);
+@include button-outline-border-color(success);
+@include button-outline-border-color(warning);
+@include button-outline-border-color(info);
+@include button-outline-border-color(royal);
+:host(.outline) {
+    .container {
+        transition: all 0s ease 0s;
+        border: 1px solid cssvar(input-container-border-color);
+        background: cssvar(transparent-color);
+        box-shadow: none;
+        .value {
+            color: cssvar(dark);
+            fill: cssvar(dark);
+        }
+    }
+}
+
+:host(.link) {
+    .container {
+        border: 1px solid cssvar(transparent-color);
+        background: cssvar( transparent-color);
+        &:hover {
+            background: cssvar(accent-05);
+        }
+        &:active {
+            background: cssvar(accent-10);
+        }
+        .value {
+            color: cssvar(accent);
+            fill: cssvar(accent);
+        }
+    }
+}
+
+:host(.stable) {
+    .container {
+        background: cssvar(stable-10);
+        .value {
+            color: cssvar(text-color);
+            font-weight: normal;
+        }
+    }
+}
+
+:host(.stable-danger) {
+    .container {
+        background: cssvar(stable-10);
+        .value {
+            color: cssvar(danger);
+            font-weight: normal;
+        }
+    }
+}
+
+:host(.iphone-x-padding) {
+    height: 3.75rem;
+    .container {
+        height: 100%;
+        .value {
+            padding-bottom: 2rem;
+        }
+    }
+}
+
+:host(.footer) {
+    .container {
+        min-width: 5rem;
+    }
+}
+
+:host(.login-screen) {
+    .container {
+        .value {
+            color: cssvar(always-light);
+        }
+    }
+}
+
+:host(.fullscreen-button) {
+    .container {
+        .value {
+            color: cssvar(light);
+        }
+    }
+}
+
+:host(.gradient-success) {
+    .container {
+        .blur-left {
+            background-image: linear-gradient(0.75turn, cssvar(gradient-success-start-00), cssvar(success), cssvar(success));
+        }
+        .blur-right {
+            background-image: linear-gradient(0.25turn, cssvar(gradient-success-end-00), cssvar(success), cssvar(success));
+        }
+    }
+}
+
+:host(.gradient-danger) {
+    .container {
+        .blur-left {
+            background-image: linear-gradient(0.75turn, cssvar(gradient-danger-end-00), cssvar(danger), cssvar(danger));
+        }
+        .blur-right {
+            background-image: linear-gradient(0.25turn, cssvar(gradient-danger-start-00), cssvar(danger), cssvar(danger));
+        }
+    }
+}
+@include button-gradient-color(operations, gradient-danger, danger, gradient-danger-end-00, gradient-danger-start-00);
+@include button-gradient-color(operations, gradient-success, success, gradient-success-start-00, gradient-success-end-00);
+@include button-gradient-color(boost, gradient-success, danger-light, danger-light-00, danger-light-00);
+@include button-gradient-color(boost, gradient-danger, danger, gradient-danger-end-00, gradient-danger-start-00);
+:host(.no-min-width) {
+    .container {
+        min-width: 0;
+    }
+}
+
+:host(.light) {
+    .container {
+        background: cssvar(light);
+    }
+}
+
+:host(.danger-light) {
+    .container {
+        background: cssvar(danger-light);
+    }
+}
+
+:host(.centered) {
+    .container {
+        .value {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+}

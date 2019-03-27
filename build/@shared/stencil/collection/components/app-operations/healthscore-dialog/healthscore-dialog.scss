@@ -1,0 +1,145 @@
+:host {
+    .outer-container {
+        display: flex;
+        flex-direction: column;
+        .healthscore-title {
+            margin-top: cssvar(padding-20);
+            text-align: center;
+            text-transform: uppercase;
+        }
+        .healthscore-numbers {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin: 1.875rem $padding-15 0 $padding-15;
+            .healthscore-number {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 0 cssvar(padding-20);
+                .highest {
+                    color: cssvar(success);
+                }
+                .lowest {
+                    color: cssvar(danger);
+                }
+                .value {
+                    font-size: cssvar(font-xl);
+                    font-weight: 300;
+                    letter-spacing: 1px;
+                    line-height: 2.625rem;
+                    text-align: center;
+                }
+                .text {
+                    margin-top: cssvar(padding-10);
+                    color: cssvar(stable);
+                    font-size: cssvar(font-xs);
+                    letter-spacing: 0.7px;
+                    text-transform: uppercase;
+                }
+            }
+            .vertical-border {
+                width: 1px;
+                height: 1.875rem;
+                margin-top: 0.75rem;
+                border: solid 0.5px cssvar(stable-light);
+            }
+        }
+        .healthscore-evolution {
+            margin-top: 3.125rem;
+            border-bottom: 1px solid cssvar(stable-light);
+            .healthscore-chart {
+                height: 10.3125rem;
+                margin-top: 1.875rem;
+            }
+        }
+        .healthscore-comparison {
+            .healthscore-chart {
+                height: 12.1875rem;
+            }
+            .legends {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                .legend {
+                    display: flex;
+                    flex-direction: column;
+                    padding: cssvar(padding-10) 0.6875rem 0.3125rem 0.6875rem;
+                    font-size: 0.625rem;
+                    .success {
+                        color: cssvar(success);
+                    }
+                    // TODO: is this color needed here at all ?
+                    .info {
+                        color: cssvar(info);
+                    }
+                    .danger {
+                        color: cssvar(danger);
+                    }
+                    .stable-alt {
+                        color: cssvar(text-color);
+                    }
+                }
+            }
+        }
+    }
+    .border {
+        @include border-profile();
+        &.selected {
+            border-top: 1px solid cssvar(success);
+        }
+    }
+}
+
+:host(.web) {
+    background: cssvar(light);
+    .outer-container {
+        display: block;
+        width: 100%;
+        height: 100%;
+        &.toolbar {
+            height: calc(100% - 3rem);
+        }
+        yoo-ion-slides {
+            yoo-ion-slide {
+                .slide-content {
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                    height: 100%;
+                    padding-left: cssvar(padding-5);
+                    .healthscore-title {
+                        margin-bottom: cssvar(padding-20);
+                        text-transform: unset;
+                    }
+                    yoo-navbar {
+                        margin: 0 cssvar(padding-20);
+                    }
+                    .healthscore-numbers {
+                        justify-content: flex-start;
+                        margin: cssvar(padding-15) 0 0 cssvar(padding-10);
+                        .healthscore-number {
+                            .value {
+                                font-size: cssvar(font-lx);
+                            }
+                            .text {
+                                margin: 0;
+                            }
+                        }
+                    }
+                    .healthscore-evolution {
+                        margin-top: 0;
+                        .healthscore-chart {
+                            margin-top: cssvar(padding-10);
+                        }
+                    }
+                } 
+            }
+            .swiper-pagination {
+                .swiper-pagination-bullet {
+                    --bullet-background-active: #{cssvar(black)};
+                }
+            }
+        }
+    }
+}

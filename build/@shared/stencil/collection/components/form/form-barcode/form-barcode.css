@@ -1,0 +1,52 @@
+:host .outer-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding-bottom: 1rem; }
+  :host .outer-container .barcode-container {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    width: 98px;
+    height: 98px;
+    border: 1px solid var(--input-container-border-color, #E6E6E6);
+    border-radius: 0.5rem;
+    cursor: pointer; }
+    :host .outer-container .barcode-container .required {
+      top: auto;
+      right: auto;
+      bottom: auto;
+      left: 0.625rem;
+      position: absolute;
+      color: var(--success, #04CC99);
+      font-size: var(--font-m, 15px); }
+    :host .outer-container .barcode-container yoo-icon {
+      font-size: var(--font-xl, 36px); }
+  :host .outer-container .value-container {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    justify-content: flex-start;
+    height: 98px;
+    padding-left: 2rem;
+    color: var(--text-color, #807f83);
+    font-size: var(--font-m, 15px); }
+
+:host .center {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+:host .readonly {
+  padding: 0.5rem;
+  padding-left: 0;
+  padding-bottom: 0; }
+
+:host(.history) {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important; }
+  :host(.history) .readonly {
+    padding: 0 !important; }

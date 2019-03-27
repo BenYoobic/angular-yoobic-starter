@@ -1,0 +1,35 @@
+export interface IPermissions {
+    canValidate?: boolean;
+    canReceiveService?: boolean;
+    canCreateService?: boolean;
+    canViewPoll?: boolean;
+    canViewAllPolls?: boolean;
+    canCreateVisit?: boolean;
+    canChat?: boolean;
+    canVideoCall?: boolean;
+    canCreateFeed?: boolean;
+    canViewDocuments?: boolean;
+    canViewStoreVisits?: boolean;
+    canViewFeed?: boolean;
+    canViewDashboard?: boolean;
+    canViewMissionAnalysis?: boolean;
+    canViewInventory?: boolean;
+    canAssign?: boolean;
+    canViewOthersCalendar?: boolean;
+    canViewDatabase?: boolean;
+    canViewMemo?: boolean;
+    canCreateMemo?: boolean;
+    canViewInsight?: boolean;
+    canViewHealthscore?: boolean;
+    canViewProductBatch?: boolean;
+    canViewManagerHome?: boolean;
+    canViewLocationDetailTabs?: boolean;
+    canDeletePhoto?: boolean;
+    canCreateCampaignMission?: boolean;
+    canCreateCampaignPoll?: boolean;
+    canCreateCampaignAudit?: boolean;
+    canCreateCampaignRequest?: boolean;
+    canAskQuestion?: boolean;
+    canSendCourseReminders?: boolean;
+    canAssignCourse?: boolean;
+}

@@ -1,0 +1,44 @@
+:host .outer-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 10.3125rem;
+  height: 8rem;
+  padding: 0.625rem 0 0.625rem 1.25rem;
+  border-radius: 0.5rem;
+  background-color: var(--light, #FFFFFF);
+  box-shadow: var(--tile-shadow, 0 5px 15px 3px rgba(40, 47, 54, 0.08)); }
+  :host .outer-container yoo-icon {
+    margin-bottom: var(--padding-15, 0.9375rem);
+    font-size: var(--font-xl, 36px); }
+    :host .outer-container yoo-icon.yo-no-data {
+      height: 1rem; }
+  :host .outer-container .tile-text {
+    margin-top: 0.125rem;
+    color: var(--stable, #adadad);
+    font-size: var(--font-m, 15px);
+    letter-spacing: 1px;
+    line-height: 1.0625rem;
+    text-transform: uppercase; }
+  :host .outer-container .tile-value {
+    font-size: var(--font-l, 17px);
+    font-weight: 300;
+    line-height: 1.8125rem; }
+
+:host .outer-container .yo-chart-up {
+  width: 50px;
+  background: var(--gradient-success, #04CC99);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 50px;
+  line-height: 11px; }
+
+:host .outer-container .yo-chart-down {
+  width: 50px;
+  background: var(--gradient-danger, #ff625f);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 50px;
+  line-height: 11px; }

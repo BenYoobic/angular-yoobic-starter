@@ -1,0 +1,87 @@
+:host {
+    $active: $success;
+    $row-height: 32px;
+    $border-color: $input-container-border-color;
+    $odd-row-background-color: cssvar(stable-light);
+    $ag-icons-path: "./assets/ag-grid/icons/";
+    $font-size: cssvar(font-m);
+    $secondary-font-size: cssvar(font-m);
+    $secondary-font-weight: 600;
+    $header-foreground-color: cssvar(black);
+    $header-background-color: $light;
+    //$header-background-color: cssvar(light);
+    $hover-color: $success;
+    $selected-color: $success;
+    @import "../../../../../../node_modules/ag-grid-community/src/styles/ag-grid.scss";
+    @import "../../../../../../node_modules/ag-grid-community/src/styles/ag-theme-balham/sass/ag-theme-balham.scss";
+    @import "../../../../../../node_modules/ag-grid-community/src/styles/ag-theme-balham-dark/sass/ag-theme-balham-dark.scss";
+    .ag-theme-balham-dark,
+    .ag-theme-balham {
+        color: cssvar(black);
+        .ag-root {
+            border-radius: $border-radius-input;
+        }
+        .ag-side-bar,
+        .ag-status-bar {
+            border: none;
+        }
+        .ag-status-bar {
+            //min-height: 35px;
+            //border: 1px solid cssvar(input-container-border-color);
+            border-top: none;
+        }
+        .ag-icon-loading {
+            margin-top: 0.75rem;
+            margin-right: 0.5rem;
+            background: url(./assets/loader/loading_thin.svg);
+            background-size: contain;
+        }
+        .ag-ltr .ag-row-group-leaf-indent {
+            margin-left: 0;
+        }
+    }
+    .ag-theme-balham-dark .ag-header {
+        background: transparent;
+    }
+    .ag-cell {
+        @include reset();
+        padding: 10px;
+        yoo-badge,
+        yoo-icon {
+            margin-right: 0.3rem;
+            &.yo-circle {
+                margin-right: 2px;
+                font-size: cssvar(icon-m);
+            }
+        }
+        &.text-center {
+            text-align: center;
+        }
+    }
+    .ag-cell.noexpand .ag-group-expanded,
+    .ag-cell.noexpand .ag-group-contracted {
+        display: none !important;
+    }
+    .ag-header-cell,
+    .ag-header-group-cell {
+        padding-top: 5px;
+    }
+    .ag-cell-focus {
+        border: none;
+    }
+    .ag-full-width-row:not(.ag-row-stub) {
+        padding: 1rem;
+        border-top: 1px solid cssvar(input-container-border-color) !important;
+        border-bottom: 1px solid cssvar(input-container-border-color) !important;
+        background: cssvar(light) !important;
+    }
+    .container {
+        width: 100%;
+    }
+}
+
+:host(.select-all) {
+    .ag-theme-balham .ag-icon-checkbox-unchecked {
+        background-image: url(./assets/ag-grid/icons/checkbox-checked.svg?color1=%2304CC99&color2=%23FFFFFF);
+    }
+}

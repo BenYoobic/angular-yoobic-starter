@@ -1,0 +1,124 @@
+/// @prop - Background color of the bullet
+$slides-ios-bullet-background: cssvar(stable) !default;
+/// @prop - Background color of the active bullet
+$slides-ios-bullet-background-active: ion-color(primary, base) !default;
+/// @prop - Alpha to use for the background color of the progress bar
+$slides-ios-progress-bar-background-alpha: .25 !default;
+/// @prop - Background color of the progress bar
+$slides-ios-progress-bar-background: rgba(#{cssvar(ion-text-color-rgb)}, $slides-ios-progress-bar-background-alpha) !default;
+/// @prop - Background color of the active progress bar
+$slides-ios-progress-bar-background-active: ion-color(primary, shade) !default;
+/// @prop - Alpha to use for the background color of the scroll bar
+$slides-ios-scroll-bar-background-alpha: .1 !default;
+/// @prop - Background color of the scroll bar
+$slides-ios-scroll-bar-background: rgba(#{cssvar(ion-text-color-rgb)}, $slides-ios-scroll-bar-background-alpha) !default;
+/// @prop - Alpha to use for the background color of the scroll bar while dragging
+$slides-ios-scroll-bar-drag-background-alpha: .5 !default;
+/// @prop - Background color of the scroll bar drag handle
+$slides-ios-scroll-bar-drag-background: rgba(#{cssvar(ion-text-color-rgb)}, $slides-ios-scroll-bar-drag-background-alpha) !default;
+
+// iOS Slides
+// --------------------------------------------------
+:host {
+    --host-background-color: unset;
+    --bullet-background: #{$slides-ios-bullet-background};
+    --bullet-background-active: #{$slides-ios-bullet-background-active};
+    --swiper-container-height: 100%;
+    --progress-bar-background: #{$slides-ios-progress-bar-background};
+    --progress-bar-background-active: #{$slides-ios-progress-bar-background-active};
+    --scroll-bar-background: #{$slides-ios-scroll-bar-background};
+    --scroll-bar-background-active: #{$slides-ios-scroll-bar-drag-background};
+    --pagination-bottom-position: 0.625rem;
+    --pagination-left-position: 0;
+    --pagination-container-width: 100%;
+    --pagination-z-index: 10;
+}
+
+// Some of the above vars are being passed in to the vendor scss for further customization
+@import "./slides-vendor";
+
+.slides {
+    /**
+  * @prop --bullet-background: Background of the pagination bullets
+  * @prop --bullet-background-active: Background of the active pagination bullet
+  */
+    display: block;
+    background-color: cssvar(host-background-color);
+    user-select: none;
+}
+
+.swiper-container {
+    height: cssvar(swiper-container-height);
+}
+
+// Pagination Bullets
+// --------------------------------------------------
+.swiper-pagination-bullet {
+    background: cssvar(bullet-background);
+    opacity: 0.32;
+}
+
+.swiper-pagination-bullet-active {
+    background: cssvar(bullet-background-active);
+    opacity: 1;
+}
+
+// Pagination Progress Bar
+// --------------------------------------------------
+.swiper-pagination-progressbar {
+    background: cssvar(progress-bar-background);
+}
+
+.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+    background: cssvar(progress-bar-background-active);
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    background-image: none !important;
+}
+
+.swiper-button-prev.hidden,
+.swiper-button-next.hidden {
+    display: none;
+}
+
+// Scrollbar
+// --------------------------------------------------
+.swiper-scrollbar {
+    background: cssvar(scroll-bar-background);
+}
+
+.swiper-scrollbar-drag {
+    background: cssvar(scroll-bar-background-active);
+}
+
+:host(.entity-search-display) {
+
+    .scroll-inner,
+    .slides,
+    .swiper-container {
+        height: 100%;
+    }
+
+    .swiper-slide {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
+.swiper-container.outside-navigation-arrows {
+    overflow: visible;
+    .swiper-button-prev,
+    .swiper-button-next {
+        color: cssvar(always-light);
+        font-size: 2rem;
+    }
+    .swiper-button-prev {
+        left: -2.5rem;
+    }
+    .swiper-button-next {
+        right: -2.5rem;
+    }
+}

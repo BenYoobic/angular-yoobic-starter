@@ -1,0 +1,164 @@
+:host {
+    .outer-container {
+        padding: 0 1rem;
+        .title-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding-top: 1rem;
+            .title {
+                color: cssvar(black);
+                font-size: cssvar(font-l);
+                font-weight: 700;
+            }
+            .flex {
+                flex: 1;
+            }
+            yoo-badge {
+                margin-left: 0.5rem;
+            }
+            yoo-icon {
+                padding-left: cssvar(padding-10);
+                font-size: cssvar(font-s);
+                cursor: pointer;
+                &.yo-down,
+                &.yo-up {
+                    color: cssvar(black);
+                    font-weight: 600;
+                }
+            }
+        }
+        yoo-ion-list {
+            yoo-ion-item-sliding {
+                yoo-ion-item-options {
+                    button {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        margin: 0;
+                        padding: 0;
+                        border: none;
+                        .text-action {
+                            padding-top: 0.25rem;
+                            font-family: $font-family;
+                            font-size: cssvar(font-xs);
+                        }
+                        yoo-icon {
+                            width: 60px;
+                            font-size: cssvar(font-l);
+                        }
+                    }
+                }
+            }
+        }
+        .border {
+            border-bottom: 1px solid cssvar(stable-30);
+        }
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            padding-right: 0.5rem;
+        }
+        .disabled {
+            padding-top: 0.25rem;
+        }
+        .inner-container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            padding-top: 0.75rem;
+            padding-bottom: 0.4rem;
+            .photo {
+                width: 40px;
+                height: 40px;
+                margin-top: 0.2rem;
+                margin-bottom: 0.5rem;
+                margin-left: 1.9rem;
+                border-radius: $border-radius-input;
+            }
+            .description-container {
+                margin-bottom: 0.3rem;
+                padding-left: 1.75rem;
+                yoo-text-truncate {
+                    --text-color: #{cssvar(text-color)};
+                    font-size: cssvar(font-s);
+                }
+            }
+            .item-container {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                .center-container {
+                    flex-grow: 1;
+                    color: cssvar(black);
+                    font-size: cssvar(font-m);
+                    .menu-item-title {
+                        &.closed {
+                            color: cssvar(success);
+                            text-decoration: line-through;
+                        }
+                        &.open {
+                            line-height: 1.2rem;
+                        }
+                        &.readonly {
+                            opacity: 0.7;
+                        }
+                        &.selected {
+                            transition: 0.3s;
+                            color: cssvar(success);
+                            text-decoration: line-through;
+                        }
+                        &.unselected {
+                            transition: 0.3s;
+                            color: cssvar(black);
+                            text-decoration: none;
+                        }
+                    }
+                }
+                .right-container {
+                    display: flex;
+                    padding: 0 0.5rem;
+                    font-size: cssvar(font-s);
+                    .date-box {
+                        margin-top: 0.25rem;
+                        .menu-item-date {
+                            align-self: center;
+                            margin-left: cssvar(padding-10);
+                            color: cssvar(text-color);
+                            font-size: cssvar(font-s);
+                            &.danger {
+                                color: cssvar(danger);
+                            }
+                        }
+                    }
+                    .avatar-box {
+                        padding-right: 0.4rem;
+                        .avatar-container {
+                            yoo-avatar {
+                                height: 24px;
+                            }
+                        }
+                        .avatar-container ul {
+                            display: flex;
+                            margin: auto;
+                            padding: 0;
+                            list-style: none;
+                        }
+                        .avatar-container ul li {
+                            display: inline-table; // used for firefox
+                            margin-right: -0.5rem
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+:host([type=closed]) {
+    .outer-container {
+        padding-bottom: 2rem;
+    }
+}

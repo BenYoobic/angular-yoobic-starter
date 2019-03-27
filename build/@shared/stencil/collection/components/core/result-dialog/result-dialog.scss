@@ -1,0 +1,54 @@
+:host {
+  .outer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 300px;
+    border-radius: 0.5rem;
+    background: cssvar(light);
+    text-align: center;
+    box-shadow: cssvar(card-shadow);
+    z-index: 1;
+
+    .result-dialog-icon {
+      width: 50px;
+      margin-top: 2.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .result-dialog-heading {
+      margin-bottom: 0.3125rem;
+      padding-right: 1rem;
+      padding-left: 1rem;
+      font-size: cssvar(font-l);
+      font-weight: 600;
+      line-height: cssvar(padding-25);
+    }
+
+    .result-dialog-subheading {
+      margin-bottom: 2.21875rem;
+      padding-right: 1rem;
+      padding-left: 1rem;
+      color: cssvar(text-color);
+      font-size: cssvar(padding-15);
+      line-height: 1.33
+    }
+
+    .border {
+      width: 100%;
+      height: 1px;
+      background-color: cssvar(stable-alt);
+    }
+
+    .result-dialog-footer {
+      width: 100%;
+      font-size: cssvar(font-l);
+      font-weight: 600;
+
+      .result-dialog-footer-button {
+        padding-top: 0.65625rem;
+        padding-bottom: 0.75rem;
+      }
+    }
+  }
+}

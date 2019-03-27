@@ -1,0 +1,35 @@
+:host {
+    --chart-height: 250px;
+}
+
+:host {
+    yoo-chart,
+    yoo-pivot-table {
+        --height:#{cssvar(chart-height)};
+    }
+    .photo-container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        yoo-photo-editor {
+            width: 100%;
+            height: cssvar(chart-height);
+        }
+    }
+}
+
+:host(.full-height) {
+    display: block;
+    height: 100%;
+    yoo-chart,
+    yoo-pivot-table {
+        display: block;
+        height: 100%;
+    }
+}
+
+// :host(.web) {
+//     yoo-chart {
+//         --height: 8.75rem;
+//     }
+// }

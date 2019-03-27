@@ -1,0 +1,159 @@
+:host {
+    @include font-size-style();
+    @include font-color-style();
+    @include font-case-style();
+    @include progress-colors();
+    
+    .progressbar-container-line {
+        display: flex;
+        position: relative;
+        svg {
+            max-height: 0.125rem;
+            padding: 0;
+        }
+
+        &.negative-display {
+            svg {
+                transform: rotate(180deg);
+            }
+
+            .marker {
+                position: absolute;
+                height: 0.5rem;
+                border: 0.5px solid cssvar(royal);
+                z-index: 2;
+            }
+
+            .base-graduation {
+                position: absolute;
+                font-size: cssvar(font-xs);
+            }
+
+            &[class*="top"] {
+                .marker {
+                    right: 50%;
+                    margin-top: 0.15rem;
+                }
+                .base-graduation {
+                    right: 49.5%;
+                    margin-top: 1.15rem;
+                }
+            }
+
+            &[class*="bottom"] {
+                .marker {
+                    right: 50%;
+                    margin-top: -0.15rem;
+                }
+                .base-graduation {
+                    right: 49.5%;
+                    margin-top: 0.5rem;
+                }
+            }
+
+            &.middle-left {
+                svg {
+                    padding-right: 1rem !important;
+                    padding-left: 0 !important;
+                }
+                .marker {
+                    right: calc(50% - 1.45rem);
+                    margin-top: 0.3rem;
+                }
+
+                .base-graduation {
+                    top: 0.9rem;
+                    right: calc(50% - 1.6rem);
+                }
+            }
+
+            &.middle-right {
+                svg {
+                    padding-right: 0 !important;
+                    padding-left: 1rem !important;
+                }
+                .marker {
+                    right: calc(50% + 1.75rem);
+                    margin-top: 0.35rem;
+                }
+                .base-graduation {
+                    top: 0.9rem;
+                    right: calc(50% + 1.6rem);
+                }
+            }
+        }
+
+        &[class*="top"] {
+            flex-direction: column-reverse;
+        }
+
+        &[class*="bottom"] {
+            flex-direction: column;
+        }
+
+        &.middle-right {
+            flex-direction: row;
+            align-items: center; 
+            svg {
+                padding-right: 1rem !important;
+            }
+        }
+
+        &.middle-left {
+            flex-direction: row-reverse;
+            align-items: center; 
+            svg {
+                padding-left: 1rem !important;
+            }
+        }
+
+        .progressbar-text {
+            position: inherit !important;
+            left: auto!important;
+            transform: inherit!important;
+            white-space: nowrap;
+
+            p {
+                margin:0;
+            }
+
+            &[class*="right"] {
+                text-align: right;
+            }
+
+            &[class*="middle"] {
+                text-align: center;
+            }
+
+            &[class*="left"] {
+                text-align: left;
+            }
+
+            &[class*="top"] {
+                padding-bottom: 0.25rem!important;
+            }
+
+            &[class*="bottom"] {
+                padding-top: 0.25rem!important;
+            }
+        }
+
+    }
+
+}
+
+/** MOBILE SPECIFIC STYLE **/
+// :host(.mobile) {
+// }
+
+/** WEB SPECIFIC STYLE **/
+:host(.web) {
+    .progressbar-container-line {
+        svg { 
+            path {
+                stroke-width: 1!important;
+            }
+        }
+    }
+}
+

@@ -1,0 +1,639 @@
+:host {
+  display: block;
+  width: 100%; }
+
+@keyframes pulseHolderShimmerGray {
+  0% {
+    background-color: rgba(173, 173, 173, 0.1); }
+  50% {
+    background-color: rgba(173, 173, 173, 0.25); }
+  100% {
+    background-color: rgba(173, 173, 173, 0.1); } }
+
+@keyframes pulseHolderShimmerDarkGray {
+  0% {
+    background-color: rgba(173, 173, 173, 0.15); }
+  50% {
+    background-color: rgba(173, 173, 173, 0.35); }
+  100% {
+    background-color: rgba(173, 173, 173, 0.15); } }
+
+@keyframes pulseHolderShimmerGrayColor {
+  0% {
+    color: rgba(173, 173, 173, 0.1); }
+  50% {
+    color: rgba(173, 173, 173, 0.25); }
+  100% {
+    color: rgba(173, 173, 173, 0.1); } }
+  :host .outer-container {
+    width: 100%;
+    background: var(--ion-color-light, #FFFFFF); }
+    :host .outer-container .masker {
+      position: absolute;
+      background: var(--ion-color-light, #FFFFFF); }
+  :host .outer-container.card-sticky {
+    height: 209px; }
+    :host .outer-container.card-sticky .animated-background {
+      height: 100%; }
+      :host .outer-container.card-sticky .animated-background .masker.category-content,
+      :host .outer-container.card-sticky .animated-background .masker.title-content,
+      :host .outer-container.card-sticky .animated-background .masker.button-content {
+        left: 1.25rem; }
+      :host .outer-container.card-sticky .animated-background .masker.category-content {
+        top: 2.875rem;
+        width: 2.5rem;
+        height: 0.575rem; }
+      :host .outer-container.card-sticky .animated-background .masker.title-content {
+        top: 4.125rem;
+        width: 6.25rem;
+        height: 3.375rem; }
+      :host .outer-container.card-sticky .animated-background .masker.button-content {
+        top: 8.6875rem;
+        width: 4.625rem;
+        height: 1.5rem; }
+  :host .outer-container.card-feed {
+    height: 453px; }
+    :host .outer-container.card-feed .animated-background {
+      height: 100%; }
+      :host .outer-container.card-feed .animated-background .masker.feed-heading-left,
+      :host .outer-container.card-feed .animated-background .masker.feed-heading-middle {
+        left: 2.25rem; }
+      :host .outer-container.card-feed .animated-background .masker.feed-heading-left {
+        top: 0;
+        width: 0.59375rem;
+        height: 2.25rem; }
+      :host .outer-container.card-feed .animated-background .masker.feed-heading-middle {
+        top: 1.0625rem;
+        right: 0;
+        height: 0.1875rem; }
+      :host .outer-container.card-feed .animated-background .masker.feed-heading-right {
+        top: 0;
+        right: 0;
+        left: 11.8125rem;
+        height: 1.0625rem; }
+      :host .outer-container.card-feed .animated-background .masker.feed-heading-right-2 {
+        top: 1.25rem;
+        right: 0;
+        left: 21.1875rem;
+        height: 0.9375rem; }
+      :host .outer-container.card-feed .animated-background .masker.feed-heading-bottom-2 {
+        top: 2.1875rem;
+        right: 0;
+        left: 2.25rem;
+        height: 0.0625rem; }
+      :host .outer-container.card-feed .animated-background .masker.feed-heading-bottom {
+        top: 2.25rem;
+        right: 0;
+        left: 0;
+        height: 0.9375rem; }
+      :host .outer-container.card-feed .animated-background .masker.feed-under-img-top {
+        top: 19.4375rem;
+        right: 0;
+        left: 0;
+        height: 1rem; }
+      :host .outer-container.card-feed .animated-background .masker.feed-under-img-middle {
+        top: 20.4375rem;
+        left: 2.0625rem;
+        width: 0.9375rem; }
+      :host .outer-container.card-feed .animated-background .masker.feed-icon-left,
+      :host .outer-container.card-feed .animated-background .masker.feed-icon-left-2 {
+        top: 20.375rem;
+        height: 1.125rem; }
+      :host .outer-container.card-feed .animated-background .masker.feed-icon-left {
+        left: 1.125rem;
+        width: 0.9375rem; }
+      :host .outer-container.card-feed .animated-background .masker.feed-icon-left-2 {
+        right: 0;
+        left: 3.3125rem; }
+      :host .outer-container.card-feed .animated-background .masker.feed-icon-bottom {
+        top: 21.5rem;
+        right: 0;
+        left: 0;
+        height: 0.9375rem; }
+      :host .outer-container.card-feed .animated-background .masker.feed-like-bottom {
+        top: 23.5625rem;
+        right: 0;
+        left: 0;
+        height: 0.1875rem; }
+      :host .outer-container.card-feed .animated-background .masker.feed-description-bottom {
+        top: 27.3125rem;
+        right: 0;
+        bottom: 0;
+        left: 0; }
+  :host .outer-container.card-course {
+    width: unset;
+    margin: 0 0.325rem 1rem;
+    padding-bottom: var(--padding-20, 1.25rem);
+    border-radius: 0.3125rem;
+    box-shadow: var(--card-shadow-2, 0 5px 15px 0 rgba(40, 47, 54, 0.08));
+    overflow: -webkit-paged-x; }
+    :host .outer-container.card-course .inner-container {
+      margin: 0 1.25rem 0.3125rem; }
+      :host .outer-container.card-course .inner-container.course-image.pulsing {
+        height: 16.8rem;
+        margin: 0 0 2rem; }
+      :host .outer-container.card-course .inner-container.course-title.pulsing {
+        width: 65%;
+        height: 2rem; }
+      :host .outer-container.card-course .inner-container.course-content.pulsing {
+        height: 4rem; }
+      :host .outer-container.card-course .inner-container.course-badge {
+        display: inline-block;
+        flex-direction: row;
+        align-items: center;
+        width: 100%; }
+        :host .outer-container.card-course .inner-container.course-badge .badge.pulsing {
+          width: 4rem;
+          float: left;
+          border-radius: 1.25rem; }
+          :host .outer-container.card-course .inner-container.course-badge .badge.pulsing yoo-icon {
+            padding-left: 0.625rem;
+            color: var(--light-to-dark, #FFFFFF); }
+        :host .outer-container.card-course .inner-container.course-badge .due-date.pulsing {
+          width: 40%;
+          height: 1.75rem;
+          margin-right: 2.5rem;
+          float: right; }
+      :host .outer-container.card-course .inner-container.course-lessons-count.pulsing {
+        width: 18%;
+        height: 1.25rem; }
+      :host .outer-container.card-course .inner-container.course-progress.pulsing {
+        height: 0.5rem;
+        margin-top: 1rem; }
+  :host .outer-container.card-questions {
+    height: 100%;
+    background: transparent; }
+    :host .outer-container.card-questions .separator {
+      border-bottom: 1px solid var(--item-separator, rgba(173, 173, 173, 0.1)); }
+      :host .outer-container.card-questions .separator.first {
+        margin: 0.625rem 0; }
+      :host .outer-container.card-questions .separator.last {
+        margin-top: 0.625rem; }
+    :host .outer-container.card-questions .container {
+      margin-bottom: 0.625rem; }
+      :host .outer-container.card-questions .container.top {
+        display: flex;
+        flex-direction: row;
+        align-items: center; }
+        :host .outer-container.card-questions .container.top .avatar.pulsing {
+          width: 2.0625rem;
+          height: 2.0625rem;
+          border-radius: 50%; }
+        :host .outer-container.card-questions .container.top .user-info {
+          display: flex;
+          flex-direction: column;
+          flex-grow: 2;
+          margin: 0 0.625rem; }
+          :host .outer-container.card-questions .container.top .user-info .name.pulsing {
+            width: 50%;
+            height: 0.8rem;
+            margin-bottom: 0.125rem; }
+          :host .outer-container.card-questions .container.top .user-info .store.pulsing {
+            width: 40%;
+            height: 0.8rem;
+            margin-top: 0.125rem; }
+        :host .outer-container.card-questions .container.top yoo-icon {
+          margin-right: 0.5625rem;
+          float: right;
+          animation: pulseHolderShimmerGrayColor 2s infinite ease-in-out; }
+      :host .outer-container.card-questions .container.image.pulsing {
+        max-width: 100%;
+        height: 260px;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px 0 rgba(40, 47, 54, 0.08); }
+      :host .outer-container.card-questions .container.question.pulsing {
+        width: 65%;
+        height: 1.5rem; }
+      :host .outer-container.card-questions .container.subquestion {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 60%; }
+        :host .outer-container.card-questions .container.subquestion .post-date.pulsing {
+          width: 50%;
+          height: 1.3rem;
+          margin-right: 0.625rem; }
+        :host .outer-container.card-questions .container.subquestion .answers-count.pulsing {
+          width: 40%;
+          height: 1.3rem; }
+    :host .outer-container.card-questions .extra.pulsing {
+      width: 20%;
+      height: 1.2rem;
+      padding-left: 0.3125rem;
+      color: var(--light-to-dark, #FFFFFF);
+      font-size: var(--font-s, 13px); }
+  :host .outer-container.card-question-answers {
+    height: 100%;
+    background: transparent; }
+    :host .outer-container.card-question-answers .separator {
+      margin-bottom: 0.625rem;
+      border-bottom: 1px solid var(--item-separator, rgba(173, 173, 173, 0.1)); }
+    :host .outer-container.card-question-answers .container {
+      margin-bottom: 0.625rem; }
+      :host .outer-container.card-question-answers .container.top {
+        display: flex;
+        flex-direction: row;
+        align-items: center; }
+        :host .outer-container.card-question-answers .container.top .avatar.pulsing {
+          width: 2.0625rem;
+          height: 2.0625rem;
+          border-radius: 50%; }
+        :host .outer-container.card-question-answers .container.top .user-info {
+          display: flex;
+          flex-direction: column;
+          flex-grow: 2;
+          margin: 0 0.625rem; }
+          :host .outer-container.card-question-answers .container.top .user-info .name.pulsing {
+            width: 50%;
+            height: 0.8rem;
+            margin-bottom: 0.125rem; }
+          :host .outer-container.card-question-answers .container.top .user-info .store.pulsing {
+            width: 40%;
+            height: 0.8rem;
+            margin-top: 0.125rem; }
+      :host .outer-container.card-question-answers .container.answer.pulsing {
+        height: 1.5rem; }
+        :host .outer-container.card-question-answers .container.answer.pulsing.first {
+          width: 100%;
+          margin-bottom: 0.25rem; }
+        :host .outer-container.card-question-answers .container.answer.pulsing.last {
+          width: 65%; }
+      :host .outer-container.card-question-answers .container.subanswer {
+        display: inline-block;
+        flex-direction: row;
+        width: 100%; }
+        :host .outer-container.card-question-answers .container.subanswer .post-date.pulsing {
+          width: 30%;
+          height: 1rem;
+          margin-right: 0.625rem;
+          float: left; }
+        :host .outer-container.card-question-answers .container.subanswer .reply.pulsing {
+          width: 15%;
+          height: 1rem;
+          float: left; }
+        :host .outer-container.card-question-answers .container.subanswer yoo-icon {
+          margin-right: 0.5625rem;
+          float: right;
+          font-size: var(--font-ll, 20px);
+          animation: pulseHolderShimmerGrayColor 2s infinite ease-in-out; }
+  :host .outer-container.card-list {
+    height: 54px;
+    margin-top: 0.5rem; }
+    :host .outer-container.card-list .animated-background {
+      height: 100%;
+      margin-right: 1rem; }
+  :host .outer-container.feedsComment {
+    height: 107px; }
+    :host .outer-container.feedsComment .animated-background .container-image {
+      top: 2.875rem;
+      bottom: 0;
+      left: 0;
+      width: 2.25rem; }
+    :host .outer-container.feedsComment .animated-background .container-top {
+      top: 0;
+      right: 0;
+      left: 0;
+      height: 0.625rem; }
+    :host .outer-container.feedsComment .animated-background .container-left {
+      top: 0;
+      bottom: 0;
+      left: 2.25rem;
+      width: 0.625rem; }
+    :host .outer-container.feedsComment .animated-background .container-middle {
+      top: 1.75rem;
+      right: 0;
+      left: 2.25rem;
+      height: 0.5rem; }
+    :host .outer-container.feedsComment .animated-background .container-middle-2 {
+      top: 4.5rem;
+      right: 0;
+      left: 2.25rem;
+      height: 0.5rem; }
+    :host .outer-container.feedsComment .animated-background .container-bottom {
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 0.6875rem; }
+  :host .outer-container.channel .animated-background .container-image,
+  :host .outer-container.missiondescriptions .animated-background .container-image,
+  :host .outer-container.channels .animated-background .container-image,
+  :host .outer-container.views .animated-background .container-image {
+    top: 0;
+    left: 0;
+    width: 2.8125rem;
+    height: 0.9375rem; }
+  :host .outer-container.channel .animated-background .container-image-2,
+  :host .outer-container.missiondescriptions .animated-background .container-image-2,
+  :host .outer-container.channels .animated-background .container-image-2,
+  :host .outer-container.views .animated-background .container-image-2 {
+    bottom: 0;
+    left: 0;
+    width: 2.8125rem;
+    height: 0.9375rem; }
+  :host .outer-container.channel .animated-background .container-left,
+  :host .outer-container.missiondescriptions .animated-background .container-left,
+  :host .outer-container.channels .animated-background .container-left,
+  :host .outer-container.views .animated-background .container-left {
+    top: 0;
+    bottom: 0;
+    left: 2.8125rem;
+    width: 0.625rem; }
+  :host .outer-container.channel,
+  :host .outer-container.missiondescriptions,
+  :host .outer-container.channels {
+    height: 75px; }
+    :host .outer-container.channel .animated-background .container-top,
+    :host .outer-container.missiondescriptions .animated-background .container-top,
+    :host .outer-container.channels .animated-background .container-top {
+      top: 0;
+      right: 0;
+      left: 0;
+      height: 0.4375rem; }
+    :host .outer-container.channel .animated-background .container-middle,
+    :host .outer-container.missiondescriptions .animated-background .container-middle,
+    :host .outer-container.channels .animated-background .container-middle {
+      top: 1.75rem;
+      right: 0;
+      left: 2.8125rem;
+      height: 0.125rem; }
+    :host .outer-container.channel .animated-background .container-bottom,
+    :host .outer-container.missiondescriptions .animated-background .container-bottom,
+    :host .outer-container.channels .animated-background .container-bottom {
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 0.5625rem; }
+  :host .outer-container.views {
+    height: 65px; }
+    :host .outer-container.views .container-top {
+      top: 0;
+      right: 0;
+      left: 2.8125rem;
+      height: 1.5rem; }
+    :host .outer-container.views .container-bottom {
+      right: 0;
+      bottom: 0;
+      left: 2.8125rem;
+      height: 1.5rem; }
+    :host .outer-container.views .container-right {
+      top: 1.5rem;
+      right: 0;
+      left: 15.1875rem;
+      height: 1.0625rem; }
+  :host .outer-container.users .container-top,
+  :host .outer-container.notifications .container-top {
+    top: 0;
+    right: 0;
+    left: 2.8125rem;
+    height: 0.5625rem; }
+  :host .outer-container.users .container-left,
+  :host .outer-container.notifications .container-left {
+    top: 0;
+    bottom: 0;
+    left: 2.8125rem;
+    width: 0.625rem; }
+  :host .outer-container.users .container-middle,
+  :host .outer-container.notifications .container-middle {
+    top: 1.875rem;
+    right: 0;
+    left: 2.8125rem;
+    height: 0.2rem; }
+  :host .outer-container.users .container-bottom,
+  :host .outer-container.notifications .container-bottom {
+    right: 0;
+    bottom: 0;
+    left: 2.8125rem;
+    height: 0.5625rem; }
+  :host .outer-container.users {
+    height: 59px; }
+    :host .outer-container.users .container-image {
+      top: 0;
+      left: 0;
+      width: 2.8125rem;
+      height: 0.625rem; }
+    :host .outer-container.users .container-image-2 {
+      bottom: 0;
+      left: 0;
+      width: 2.8125rem;
+      height: 0.625rem; }
+  :host .outer-container.notifications {
+    height: 100px; }
+    :host .outer-container.notifications .container-image {
+      top: 0;
+      left: 0;
+      width: 2.8125rem;
+      height: 1.0625rem; }
+    :host .outer-container.notifications .container-image-2 {
+      bottom: 0;
+      left: 0;
+      width: 2.8125rem;
+      height: 1.0625rem; }
+    :host .outer-container.notifications .container-right {
+      top: 0.5625rem;
+      right: 5.5rem;
+      left: 9.6875rem;
+      height: 1.3125rem; }
+  :host .outer-container.missions,
+  :host .outer-container.memolist,
+  :host .outer-container.dashboards,
+  :host .outer-container.locations {
+    height: 55px; }
+    :host .outer-container.missions .container-top,
+    :host .outer-container.memolist .container-top,
+    :host .outer-container.dashboards .container-top,
+    :host .outer-container.locations .container-top {
+      top: 0;
+      right: 0;
+      left: 0;
+      height: 0.625rem; }
+    :host .outer-container.missions .container-right,
+    :host .outer-container.memolist .container-right,
+    :host .outer-container.dashboards .container-right,
+    :host .outer-container.locations .container-right {
+      top: 0.625rem;
+      right: 4rem;
+      left: 10rem;
+      height: 1.125rem; }
+    :host .outer-container.missions .container-right-2,
+    :host .outer-container.memolist .container-right-2,
+    :host .outer-container.dashboards .container-right-2,
+    :host .outer-container.locations .container-right-2 {
+      top: 2rem;
+      right: 0;
+      left: 3.5rem;
+      height: 1.125rem; }
+    :host .outer-container.missions .container-middle,
+    :host .outer-container.memolist .container-middle,
+    :host .outer-container.dashboards .container-middle,
+    :host .outer-container.locations .container-middle {
+      top: 1.75rem;
+      right: 0;
+      left: 0;
+      height: 0.25rem; }
+    :host .outer-container.missions .container-bottom,
+    :host .outer-container.memolist .container-bottom,
+    :host .outer-container.dashboards .container-bottom,
+    :host .outer-container.locations .container-bottom {
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 0.3125rem; }
+  :host .outer-container.environnement {
+    height: 44px; }
+    :host .outer-container.environnement .container-top {
+      top: 0;
+      right: 0;
+      left: 0;
+      height: 0.6875rem; }
+    :host .outer-container.environnement .container-right {
+      top: 0.6875rem;
+      right: 0;
+      left: 9.6875rem;
+      height: 1.3125rem; }
+    :host .outer-container.environnement .container-bottom {
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 0.75rem; }
+  :host .outer-container.filesFolders,
+  :host .outer-container.files {
+    height: 53px; }
+    :host .outer-container.filesFolders .container-image,
+    :host .outer-container.files .container-image {
+      top: 0;
+      left: 0;
+      width: 1.875rem;
+      height: 0.4375rem; }
+    :host .outer-container.filesFolders .container-image-2,
+    :host .outer-container.files .container-image-2 {
+      bottom: 0;
+      left: 0;
+      width: 1.875rem;
+      height: 0.4375rem; }
+    :host .outer-container.filesFolders .container-top,
+    :host .outer-container.files .container-top {
+      top: 0;
+      right: 0;
+      left: 1.875rem;
+      height: 0.3125rem; }
+    :host .outer-container.filesFolders .container-left,
+    :host .outer-container.files .container-left {
+      top: 0;
+      bottom: 0;
+      left: 1.875rem;
+      width: 0.625rem; }
+    :host .outer-container.filesFolders .container-right,
+    :host .outer-container.files .container-right {
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 9.6875rem; }
+    :host .outer-container.filesFolders .container-bottom,
+    :host .outer-container.files .container-bottom {
+      right: 0;
+      bottom: 0;
+      left: 1.875rem;
+      height: 1.0625rem; }
+  :host .outer-container.card-list.lessons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+    margin: 0.75rem 0;
+    padding: 1rem 0;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.3125rem 0.9375rem 0 rgba(40, 47, 54, 0.08); }
+    :host .outer-container.card-list.lessons .icon-container.pulsing {
+      width: 2.0625rem;
+      height: 2.0625rem;
+      margin: 0 0.9375rem;
+      border-radius: 50%; }
+    :host .outer-container.card-list.lessons .info-container {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 2; }
+      :host .outer-container.card-list.lessons .info-container .title-container.pulsing {
+        max-width: 50%;
+        min-height: 1.375rem; }
+      :host .outer-container.card-list.lessons .info-container .order-container.pulsing {
+        max-width: 100%;
+        min-height: 1.125rem;
+        margin: 0.3125rem 0; }
+      :host .outer-container.card-list.lessons .info-container .remaining-points-container {
+        display: inline-block;
+        flex-direction: row;
+        align-items: center; }
+        :host .outer-container.card-list.lessons .info-container .remaining-points-container yoo-icon {
+          float: left;
+          animation: pulseHolderShimmerGrayColor 2s infinite ease-in-out; }
+        :host .outer-container.card-list.lessons .info-container .remaining-points-container .inner-text.pulsing {
+          width: 1.84375rem;
+          min-height: 1rem;
+          margin: 0.0625rem 0.3125rem 0;
+          float: left; }
+    :host .outer-container.card-list.lessons .extra-icon-container {
+      min-width: 2.0625rem;
+      margin: 0 0.9375rem; }
+  :host .outer-container.userranks {
+    display: flex;
+    flex-direction: row;
+    min-height: 44px;
+    padding-top: 0.625rem;
+    border-bottom: 1px solid rgba(173, 173, 173, 0.2);
+    background-color: transparent; }
+    :host .outer-container.userranks .rank-container {
+      width: 15px;
+      height: 15px;
+      margin: 10px 1.25rem 0 0; }
+    :host .outer-container.userranks .avatar {
+      width: 2.0625rem;
+      height: 2.0625rem;
+      margin-right: 10px;
+      border-radius: 50%; }
+    :host .outer-container.userranks .name {
+      width: 50%;
+      height: 0.8rem;
+      margin-top: 10px; }
+    :host .outer-container.userranks yoo-icon {
+      margin-top: 7px;
+      margin-right: 40px;
+      margin-left: auto;
+      animation: pulseHolderShimmerGrayColor 2s infinite ease-in-out; }
+  :host .outer-container.card-cell {
+    height: 120px;
+    margin-top: var(--padding-5, 0.3125rem); }
+    :host .outer-container.card-cell.header {
+      width: 80%;
+      height: 20px;
+      margin-left: var(--padding-5, 0.3125rem); }
+    :host .outer-container.card-cell .animated-background {
+      display: flex;
+      justify-content: space-between;
+      height: 100%; }
+      :host .outer-container.card-cell .animated-background .masker {
+        position: relative;
+        width: var(--padding-5, 0.3125rem);
+        height: 100%; }
+  :host .animated-background {
+    position: relative;
+    background: var(--gradient-placeholder, linear-gradient(to right, #f9f9f9, rgba(223, 222, 222, 0.8)));
+    background-size: 50rem 6.5rem;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: placeHolderShimmer;
+    animation-timing-function: linear; }
+  :host .pulsing {
+    animation: pulseHolderShimmerGray 2s infinite ease-in-out; }
+    :host .pulsing.stripe {
+      width: 100%;
+      height: 80px;
+      margin-bottom: 1rem; }
+      :host .pulsing.stripe.header {
+        width: 30%;
+        height: 20px;
+        margin-bottom: .5rem; }
+        :host .pulsing.stripe.header.info, :host .pulsing.stripe.header.success, :host .pulsing.stripe.header.royal, :host .pulsing.stripe.header.energized {
+          animation: pulseHolderShimmerDarkGray 2s infinite ease-in-out; }
+      :host .pulsing.stripe.search {
+        width: 75%; }

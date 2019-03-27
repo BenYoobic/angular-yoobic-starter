@@ -1,0 +1,41 @@
+
+
+$dark-border-color: cssvar(dark-40);
+:host {
+    // Horizontal Button Group
+    .group-container {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .context-container {
+        display: flex;
+        flex-direction: column;
+        padding-top: 5px;
+        padding-bottom: 5px;
+
+        padding-left: 10px;
+
+        yoo-button {
+            width: inherit;
+        }
+    }
+}
+
+:host(.vertical) {
+    .group-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+}
+
+:host(.justified) {
+    .group-container {
+        justify-content: space-between;
+        yoo-button {
+            --border-container: 1px solid #{cssvar(dark-40)};
+            --border-radius-container: #{cssvar(border-radius-input)};
+        }
+    }
+}

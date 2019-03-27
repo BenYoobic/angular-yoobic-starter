@@ -1,0 +1,119 @@
+@mixin position-mapbox-control($target, $topPosition, $rightPosition, $bottomPosition, $leftPosition) {
+    .column-container {
+        .map-container {
+            // TARGETTING MAPBOX CODE
+            .mapboxgl-control-container {
+                .mapboxgl-ctrl-#{$target} {
+                    top: $topPosition;
+                    right: $rightPosition;
+                    bottom: $bottomPosition;
+                    left: $leftPosition;
+                    .mapboxgl-ctrl {
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+:host {
+    --locate-me-background-color: #{cssvar(gradient-success)};
+}
+
+:host {
+    @import "../../../../../../shared/styles/map/_mapbox-gl.scss";
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    .column-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        .control {
+            display: flex;
+            position: absolute;
+            align-items: center;
+            justify-content: center;
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 50%;
+            z-index: 5;
+            // Mapbox controls have a margin left and bottom of 10px and a float: left class
+            &.control-size {
+                bottom: cssvar(padding-10);
+                left: cssvar(padding-35);
+                margin: 0 0 cssvar(padding-10) cssvar(padding-10);
+                background: cssvar(black);
+                color: white;
+            }
+        }
+        .map-container {
+            @include abs-pos(0, 0, 0, 0);
+            display: flex;
+            flex-direction: row; 
+            
+            
+            
+            // TARGETTING MAPBOX CODE
+            .mapboxgl-control-container {
+                .mapboxgl-ctrl-bottom-right {
+                    .mapboxgl-ctrl.mapboxgl-ctrl-attrib.mapboxgl-compact {
+                        display: none;
+                    }
+                }
+                .mapboxgl-ctrl-bottom-left {
+                    bottom: cssvar(padding-10);
+                    .mapboxgl-ctrl {
+                        float: unset;
+                        border-radius: 50%;
+                        box-shadow: none;
+                        .mapboxgl-ctrl-logo {
+                            display: none;
+                        }
+                        button {
+                            width: 1.5rem;
+                            height: 1.5rem;
+                            border-radius: 50%;
+                            background: none;
+                            font-family: "yoobicons" !important;
+                            font-size: 1.5rem;
+                            text-align: center;
+                            &:before {
+                                content: "\e9b3";
+                            }
+                        }
+                    }
+                }
+            }
+            .mapboxgl-canvas-container {
+                .mapboxgl-user-location-dot {
+                    background: cssvar(locate-me-background-color);
+                    &:before {
+                        background: cssvar(locate-me-background-color);
+                    }
+                }
+            }
+        }
+        .marker-info {
+            padding-bottom: cssvar(padding-10);
+            border-top: cssvar(border-width) solid cssvar(border-color);
+            background: cssvar(light);
+            text-align: center;
+            .title {
+                margin-top: cssvar(padding-10);
+                font-weight: 500;
+            }
+        }
+    }
+}
+
+:host(.grid-map) {
+    @include position-mapbox-control("bottom-left", unset, unset, 6.5rem, cssvar(padding-15))
+}
+
+:host(.grid-map-card-open) {
+    @include position-mapbox-control("bottom-left", unset, unset, 11rem, cssvar(padding-15))
+}

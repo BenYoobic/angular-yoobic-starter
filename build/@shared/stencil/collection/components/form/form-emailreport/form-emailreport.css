@@ -1,0 +1,10 @@
+:host .subtitle {
+  color: var(--text-color, #807f83); }
+
+:host .readonly {
+  padding: 0.5rem;
+  padding-left: 0;
+  padding-bottom: 0; }
+
+:host(.history) .readonly {
+  padding: 0 !important; }

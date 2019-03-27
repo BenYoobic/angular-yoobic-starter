@@ -1,0 +1,23 @@
+:host .group-container {
+  display: flex;
+  flex-direction: row; }
+
+:host .context-container {
+  display: flex;
+  flex-direction: column;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px; }
+  :host .context-container yoo-button {
+    width: inherit; }
+
+:host(.vertical) .group-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%; }
+
+:host(.justified) .group-container {
+  justify-content: space-between; }
+  :host(.justified) .group-container yoo-button {
+    --border-container: 1px solid var(--dark-40, #9cabc4);
+    --border-radius-container: var(--border-radius-input, 5px); }

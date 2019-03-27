@@ -1,0 +1,317 @@
+@mixin avatar-color($class, $color) {
+    :host(.#{$class}) {
+        .avatar {
+            .image {
+                //background: cssvar($color);
+                color: cssvar(light);
+            }
+            .top-right {
+                background: cssvar($color);
+                color: cssvar(light);
+            }
+            .top-left {
+                background: cssvar($color);
+                color: cssvar(light);
+            }
+            .bottom-right {
+                background: cssvar($color);
+                color: cssvar(light);
+            }
+            .bottom-left {
+                background: cssvar($color);
+                color: cssvar(light);
+            }
+            .user-initial,
+            .image.icon-container {
+                color: cssvar($color);
+            }
+        }
+    }
+}
+@mixin avatar-size($imgSize, $initialFontSize, $iconFontSize, $squareOffset: 0rem, $iconSize: auto) {
+    .avatar {
+        @include icon-size($iconFontSize, $squareOffset, $iconSize);
+        .image {
+            width: $imgSize;
+            height: $imgSize;
+        }
+        .user-initial,
+        .image.icon-container {
+            font-size: $initialFontSize;
+        }
+    }
+    &.squared {
+        .avatar {
+            @include icon-size($iconFontSize, $squareOffset, $iconSize);
+        }
+    }
+}
+@mixin icon-placement-base($top, $left, $squareOffset) {
+    @if $top {
+        top: $squareOffset;
+    }
+    @else {
+        bottom: $squareOffset;
+    }
+    @if $left {
+        left: $squareOffset;
+    }
+    @else {
+        right: $squareOffset;
+    }
+}
+@mixin icon-size($iconFontSize, $squareOffset: 0rem, $iconSize: auto) {
+    .top-right,
+    .top-left,
+    .bottom-right,
+    .bottom-left {
+        width: $iconSize;
+        height: $iconSize;
+        font-size: $iconFontSize;
+    }
+    .top-right {
+        @include icon-placement-base(true, false, $squareOffset);
+    }
+    .top-left {
+        @include icon-placement-base(true, true, $squareOffset);
+    }
+    .bottom-right {
+        @include icon-placement-base(false, false, $squareOffset);
+    }
+    .bottom-left {
+        @include icon-placement-base(false, true, $squareOffset);
+    }
+}
+
+:host {
+    --transform-avatar: none;
+    --border-radius-image: 50%;
+    --background-size-image: auto;
+    --background-color: #{cssvar(light)};
+    --border: 1px solid #{cssvar(light)};
+    --border-initial: 1px solid #{cssvar(avatar-border-color)};
+    --image-shadow: unset;
+}
+
+:host {
+    .avatar {
+        @include icon-size(0.5rem);
+        display: inline-flex;
+        position: relative;
+        transform: cssvar(transform-avatar);
+        .top-right,
+        .top-left,
+        .bottom-left,
+        .bottom-right {
+            position: absolute;
+            padding: 0.2em 0.45em;
+            border: 1px solid cssvar(dark-10);
+            border-radius: 50%;
+            background-color: cssvar(light);
+            z-index: 1;
+        }
+        .pending {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+        .user-initial {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: cssvar(always-black);
+            font-weight: 400;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+        .image {
+            width: 2.5rem;
+            height: 2.5rem;
+            border: cssvar(border-initial);
+            border-radius: cssvar(border-radius-image);
+            background-color: white;
+            background-size: cssvar(background-size-image);
+            color: cssvar(light);
+            box-shadow: cssvar(image-shadow);
+            &.icon-container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 1px solid cssvar(avatar-border-color) !important; // color: cssvar(success);
+            }
+        }
+        .stable-border {
+            border: cssvar(border-initial);
+        }
+        .regular-color {
+            border: 1px solid cssvar(avatar-border-color);
+            background-color: cssvar(light);
+            color: cssvar(success);
+        }
+        .reversed-color {
+            border: 1px solid cssvar(light);
+            background: cssvar(gradient-success);
+            color: cssvar(light);
+        }
+    }
+    &.squared {
+        .avatar {
+            @include icon-size(0.5rem, -4%);
+            .image {
+                border-radius: 10%;
+            }
+        }
+    }
+}
+
+:host(.avatar-image) {
+    margin-top: 0.08rem;
+}
+
+:host(.xsmall) {
+    @include avatar-size(1.375rem, 0.6rem, 0.1875rem, -4%);
+    .counter {
+        font-size: 0.65rem !important;
+        font-weight: 400;
+    }
+    .avatar {
+        &.initial {
+            border-radius: 50%;
+        }
+    }
+}
+
+:host(.msmall) {
+    @include avatar-size(1.5625rem, 0.6rem, 0.1875rem, -4%);
+}
+
+:host(.small) {
+    @include avatar-size(2.25rem, 1rem, 0.3125rem, -4%);
+}
+
+:host(.list-small) {
+    @include avatar-size(1.875rem, 0.8rem, 0.5rem, -4%);
+}
+
+:host(.list-small) {
+    .avatar .image.icon-container {
+        color: cssvar(black) !important;
+        font-size: 1.2rem !important;
+    }
+}
+
+:host(.xmedium) {
+    @include avatar-size(2.8125rem, 1.375rem, 0.5rem, -4%);
+}
+
+:host(.medium) {
+    @include avatar-size(3.125rem, 1.375rem, 0.5rem, -4%);
+}
+
+:host(.large) {
+    @include avatar-size(4.375rem, 2rem, 0.640rem, -4%);
+}
+
+:host(.llarge) {
+    @include avatar-size(6.125rem, 2rem, 0.640rem, -4%);
+}
+
+:host(.xlarge) {
+    @include avatar-size(5.325rem, 3rem, cssvar(font-m), -4%);
+}
+
+:host(.xxlarge) {
+    @include avatar-size(7.625rem, 3rem, cssvar(font-m), -4%);
+}
+
+:host(.history) {
+    @include avatar-size(cssvar(font-m), cssvar(font-m), cssvar(font-m), 0%);
+    background-color: transparent !important;
+    .avatar {
+        .user-initial {
+            font-size: cssvar(icon-s);
+        }
+    }
+}
+
+:host(.list-xlarge) {
+    @include avatar-size(5.325rem, 2rem, cssvar(font-m), -4%);
+    .avatar {
+        .image {
+            border-radius: cssvar(button-border-radius);
+            &.icon-container {
+                color: cssvar(text-color);
+            } //background-color: cssvar(stable);
+        }
+    }
+}
+
+:host(.list-xmedium) {
+    @include avatar-size(2.8125rem, 2rem, cssvar(font-m), -4%);
+    .avatar {
+        .image {
+            border-radius: cssvar(button-border-radius);
+            &.icon-container {
+                color: cssvar(text-color);
+            } //background-color: cssvar(stable);
+        }
+    }
+}
+
+:host(.profile) {
+    //margin-bottom: 0.325rem !important;
+    .avatar {
+        .image {
+            width: 1.5625rem;
+            height: 1.5625rem;
+        }
+        .user-initial {
+            font-size: cssvar(font-s);
+        }
+    }
+}
+
+:host(.large-border) {
+    .avatar {
+        span:not(.user-initial) {
+            border: 2px solid cssvar(light) !important;
+        }
+    }
+}
+
+:host(.entity-display) {
+    display: flex;
+    margin-left: -1rem;
+    .avatar {
+        transform: translate(1.25rem, 0);
+        &.initial {
+            border: 1px solid cssvar(light);
+            border-radius: 50%;
+        }
+    }
+}
+
+:host(.counter) {
+    .avatar {
+        .image {
+            color: cssvar(always-light) !important;
+        }
+    }
+}
+
+:host(.web-menu) {
+    .avatar {
+        display: block;
+        transform: none;
+    }
+}
+@include avatar-color(accent, accent);
+@include avatar-color(dark, dark-40);
+@include avatar-color(success, success);
+@include avatar-color(danger, danger);
+@include avatar-color(warning, warning);
+@include avatar-color(info, info);
+@include avatar-color(gradient-danger, gradient-danger);
+@include avatar-color(gradient-success, gradient-success);

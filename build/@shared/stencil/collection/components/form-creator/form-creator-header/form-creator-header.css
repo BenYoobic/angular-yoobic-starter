@@ -1,0 +1,65 @@
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 3rem;
+  border-bottom: 1px solid var(--stable-light, #f1f1f1); }
+  :host .image-container {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 100%; }
+    :host .image-container yoo-img {
+      display: flex;
+      width: 1.5rem;
+      height: 1.5rem; }
+    :host .image-container::after {
+      position: absolute;
+      right: 0;
+      width: 1px;
+      height: 1.125rem;
+      background: var(--stable-light, #f1f1f1);
+      content: ""; }
+  :host .title {
+    display: flex;
+    flex: 1;
+    padding-left: var(--padding-20, 1.25rem);
+    font-size: var(--font-s, 13px); }
+    :host .title .stable {
+      margin-right: var(--padding-5, 0.3125rem); }
+  :host .buttons-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%; }
+    :host .buttons-container .icon-container {
+      min-width: 1.125rem;
+      margin-right: var(--padding-20, 1.25rem);
+      font-size: 1.125rem;
+      text-align: center; }
+      :host .buttons-container .icon-container.end {
+        display: flex;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        width: 3.625rem;
+        height: 100%;
+        margin-right: 0; }
+        :host .buttons-container .icon-container.end::after {
+          position: absolute;
+          left: 0;
+          width: 1px;
+          height: 1.125rem;
+          background: var(--stable-light, #f1f1f1);
+          content: ""; }
+      :host .buttons-container .icon-container.context-menu {
+        position: relative; }
+        :host .buttons-container .icon-container.context-menu yoo-button.secondary-actions {
+          --shadow: none; }
+    :host .buttons-container yoo-button {
+      --min-height-container: 1.625rem;
+      --min-width-container: 4.6875rem;
+      --font-size-text: cssvar(font-s);
+      margin-right: var(--padding-20, 1.25rem); }

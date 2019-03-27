@@ -1,0 +1,63 @@
+:host .outer-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 6rem;
+  padding: 0.2rem; }
+  :host .outer-container input[type=text] {
+    width: 4rem;
+    border-color: transparent;
+    outline: none;
+    background: transparent;
+    font-size: var(--font-m, 15px);
+    text-align: center;
+    -webkit-appearance: none; }
+  :host .outer-container .color-selector {
+    width: 1.3rem;
+    height: 1.3rem;
+    border: 1px solid var(--dark-40, #9cabc4);
+    border-radius: 50%; }
+    :host .outer-container .color-selector input[type=color] {
+      width: 1rem;
+      height: 1rem;
+      border: none;
+      outline: none;
+      background: transparent;
+      opacity: 0;
+      -webkit-appearance: none; }
+    :host .outer-container .color-selector input[type=color]::-webkit-color-swatch-wrapper {
+      padding: 0px;
+      background: transparent;
+      -webkit-appearance: none; }
+    :host .outer-container .color-selector input[type=color]::-webkit-color-swatch {
+      border: none;
+      border-radius: 50%; }
+    :host .outer-container .color-selector input {
+      margin: 0;
+      border: 0;
+      padding: 0;
+      display: inline-block;
+      vertical-align: middle;
+      white-space: normal;
+      background: none;
+      line-height: 1;
+      font-size: var(--font-m, 15px);
+      font-family: "Lato" !important;
+      min-width: 0;
+      box-sizing: content-box; }
+      :host .outer-container .color-selector input:focus {
+        outline: 0; }
+      :host .outer-container .color-selector input[type=reset], :host .outer-container .color-selector input[type=button], :host .outer-container .color-selector input[type=submit], :host .outer-container .color-selector input[type=checkbox], :host .outer-container .color-selector input[type=radio] {
+        box-sizing: border-box; }
+      :host .outer-container .color-selector input[type=search] {
+        -webkit-appearance: textfield;
+        box-sizing: content-box; }
+
+:host(.large) .outer-container .color-selector {
+  width: 1.7rem;
+  min-width: 1.7rem;
+  height: 1.7rem;
+  min-height: 1.7rem; }
+  :host(.large) .outer-container .color-selector input[type=color] {
+    width: 1.5rem;
+    height: 1.5rem; }

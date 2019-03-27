@@ -1,0 +1,81 @@
+:host {
+  --status-bar-height: 75px;
+  --status-item-size: 50px;
+  --status-bar-gap: 5px; }
+
+:host {
+  display: flex;
+  width: 100%;
+  height: 100%; }
+  :host .outer-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    background: var(--black, #000000); }
+    :host .outer-container .placeholder-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      flex-direction: column;
+      width: 100%;
+      text-align: center; }
+      :host .outer-container .placeholder-container .avatar-container {
+        width: 75px;
+        height: 75px;
+        margin-bottom: var(--status-bar-height); }
+    :host .outer-container .remote-media {
+      position: relative;
+      width: 100%;
+      height: auto;
+      max-height: 100%;
+      background: var(--black, #000000); }
+      :host .outer-container .remote-media yoo-loader {
+        position: absolute;
+        width: 100%;
+        height: 100%; }
+    :host .outer-container .status-bar {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: var(--status-bar-height);
+      background: var(--dark-two, #212936);
+      z-index: 11; }
+      :host .outer-container .status-bar .items-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%; }
+        :host .outer-container .status-bar .items-wrapper .item {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: var(--status-item-size);
+          height: var(--status-item-size);
+          margin-right: var(--status-bar-gap);
+          border-radius: 50%;
+          font-size: auto; }
+          :host .outer-container .status-bar .items-wrapper .item.danger {
+            background: var(--danger, #ff625f);
+            color: var(--light, #FFFFFF); }
+          :host .outer-container .status-bar .items-wrapper .item.success {
+            background: var(--success, #04CC99);
+            color: var(--light, #FFFFFF); }
+          :host .outer-container .status-bar .items-wrapper .item.dark {
+            background: var(--dark, #2b3648);
+            color: var(--light, #FFFFFF); }
+
+:host(.mobile) .outer-container {
+  height: 100%; }
+
+:host(.transparent) .outer-container .status-bar {
+  background: transparent; }
+
+:host(.fit) .outer-container .remote-media {
+  width: 100% !important;
+  height: 100% !important; }

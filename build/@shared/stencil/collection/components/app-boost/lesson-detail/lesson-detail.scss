@@ -1,0 +1,98 @@
+:host {
+    height: 100%;
+    font-size: cssvar(font-m);
+    font-weight: 300;
+
+    .lesson-detail {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+
+        .lesson-content {
+            .menu {
+                @include reset-list();
+                @include mission-style();
+                margin-top: 1.875rem;
+                padding: cssvar(padding);
+                list-style: none;
+                .menu-item {
+                    .menu-left {
+                        .menu-icon {
+                            yoo-icon {
+                                align-items: center;
+                                border: solid 0.03125 cssvar(danger-light);
+                                background-color: cssvar(danger-light);
+                                color: cssvar(always-light);
+                                font-size: cssvar(font-m);
+                            }
+                        }
+                    }
+                }
+
+                .menu-item:last-child {
+                    .menu-left {
+                        .border {
+                            display: none;
+                        }
+                    }
+                }
+
+                yoo-lesson-badges:last-child {
+                    --display-border: none;
+                }
+
+                yoo-lesson-highscores:last-child {
+                    --display-border: none;
+                }
+            }
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            width: 100%;
+            margin-bottom: cssvar(padding);
+        }
+
+        .heading-container {
+            margin-top: cssvar(padding);
+
+            .title {
+                margin-top: 0.3125rem;
+                padding: cssvar(padding-30) cssvar(padding);
+                background: cssvar(stable-light);
+                font-size: 1.6825rem;
+                line-height: 2.0625rem;
+            }
+
+            yoo-form-dynamic {
+                display: block;
+                margin: 0 cssvar(padding);
+            }
+        }
+    }
+}
+
+:host {
+    .web {
+        border-radius: 8px;
+        box-shadow: cssvar(tile-shadow);
+
+        .lesson-footer {
+            justify-content: flex-start;
+            padding-right: 1.875rem;
+            padding-left: 1.875rem;
+            border-radius: 8px;
+            box-shadow: cssvar(tile-shadow);
+
+            yoo-button {
+                margin-right: cssvar(padding-10);
+            }
+
+            .continue {
+                order: 1;
+            }
+        }
+    }
+}

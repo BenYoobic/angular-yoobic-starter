@@ -1,0 +1,46 @@
+:host {
+    .outer-container {
+        display: flex;
+        flex-direction: column;
+        .inputs-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 0 0.3rem;
+            .separator {
+                width: 0.75rem;
+                height: 0.125rem;
+                margin: 0 0.875rem;
+                border-radius: 1px;
+                background: cssvar(stable);
+            }
+            .input {
+                display: flex;
+                align-items: center;
+                height: 2.5rem;
+                border-radius: 5px;
+                &.single {
+                    width: 100%;
+                }
+                yoo-form-input {
+                    --display-invalid-message: none;
+                    width: 100%;
+                }
+            }
+        }
+        .slider-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+    .readonly {
+        @include form-readonly-padding();
+    }
+}
+
+:host(.history) {
+    .readonly {
+        padding: 0 !important;
+    }
+}

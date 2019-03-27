@@ -1,0 +1,272 @@
+
+:host {
+    --font-size-text-container : #{cssvar(font-s)};
+    --padding-top-container: 0.75rem;
+    --margin-top-inner-container: unset;
+}
+
+:host {
+    display: block;
+    &.closed {
+        opacity: 0;
+    }
+    .container {
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-between;
+        width:100%;
+        padding: cssvar(padding-top-container) 1rem;
+        transition: all 0.3s;
+        &.closed {
+            opacity: 0;
+        }
+        .link {
+            color: cssvar(light);
+            font-size: cssvar(font-s);
+            font-weight: 100;
+            text-decoration: underline;
+            cursor: pointer;
+            opacity: 0.5;            
+        }
+        .inner-container {
+            display: flex;
+            justify-content: center;
+            margin-top: cssvar(margin-top-inner-container);
+            .icon {
+                margin-right: 0.5rem;
+                color: cssvar(light);
+                font-family: "yoobicons";
+            }
+            .text-container {
+                display: flex;
+                justify-content: center;
+                color: cssvar(light);
+                .value {
+                    margin-bottom: 0.25rem;
+                    font-size: cssvar(font-size-text-container);
+                    line-height: 1rem;
+                }
+                .heading {
+                    align-self: baseline;
+                    font-size: cssvar(font-s);
+                    font-weight: bold;
+                }
+            }
+        }
+        .close-container {
+            display: flex;
+            justify-content: flex-end;
+            color: cssvar(light);
+            .close {
+                justify-content: flex-end;
+                margin-left: 1rem;
+                font-family: "yoobicons";
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+:host(.small) {
+    --padding-top-container: 0;
+    --font-size-text-container : #{cssvar(font-xs)};
+
+}
+
+:host(.round) {
+    .container {
+        border-radius: 0.5rem;
+    }
+}
+
+:host(.toast) {
+    .container {
+        box-shadow: cssvar(button-shadow);
+        .inner-container {
+            .text-container {
+                .value {
+                    margin-top: 0.25rem;
+                    margin-left: 0.5rem;
+                }
+            }
+        }
+    }
+    &.round {
+        .container {
+            border: 0.05rem solid;
+        }
+    }
+}
+@keyframes scaleUp {
+    0% {
+      transform:scale(.8) translateY(1000px);
+      opacity:0;
+    }
+    100% {
+      transform:scale(1) translateY(0px);
+      opacity:1;
+    }
+}
+
+:host(.stripe) {
+    .container {
+        width: 100%;
+        border-bottom: 0.05rem solid;
+
+        border-radius: 0rem;
+        .inner-container {
+            .text-container {
+                .value {
+                    margin-top: 0.25rem;
+                    margin-left: 0.5rem;
+                }
+            }
+        }
+    }
+}
+
+:host(.embedded) {
+    width: 100%;
+    .container {
+        width: 100%;
+        .inner-container {
+            .text-container {
+                .value {
+                    margin-top: 0.25rem;
+                    margin-left: 0.5rem;
+                }
+            }
+        }
+    }
+    &.round {
+        .container {
+            border: 0.05rem solid;
+        }
+    }
+}
+
+:host(.centered) {
+    display: flex;
+    .container {
+        justify-content: space-between !important;
+        // padding-left: 0;
+        .inner-container {
+            width: 100%;
+            .text-container {
+                .value {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+}
+@mixin class-color-applicator($class,$color){
+    :host(.#{$class}) {
+        background: cssvar($color);        
+        .container {
+            background: cssvar($color);
+            color: cssvar($color);
+            // &:hover {
+            //     background: cssvar($color + '-05');
+            // }
+        }
+    }
+}
+@include class-color-applicator(accent,accent);
+@include class-color-applicator(success,success);
+@include class-color-applicator(danger,danger);
+@include class-color-applicator(info,info);
+@include class-color-applicator(warning,warning);
+@mixin class-gradient-color-applicator($class, $gradient-color){
+    :host(.#{$class}) {
+        .container {
+            background: cssvar($gradient-color);
+            color: cssvar(light);
+        }
+    }
+}
+@include class-gradient-color-applicator(danger-gradient, gradient-danger);
+@include class-gradient-color-applicator(success-gradient2, gradient-success);
+
+:host(.card) {
+    .container {
+        border-left: 0.3rem solid;
+
+        border-radius: 0rem;
+        background: cssvar(light);
+        box-shadow: cssvar(button-shadow);
+        .inner-container {
+            .icon {
+                margin-right: 1.5rem;
+                margin-left: 0.5rem;
+                font-size: cssvar(font-xl);
+            }
+            .text-container {
+                flex-direction: column;
+                color: cssvar(dark);
+                .value {
+                    color: cssvar(dark-80);
+                    line-height: 1.3rem;
+                }
+                .heading {
+                    margin-top: 0.5rem;
+                }
+            }
+        }
+        .close-container {
+            align-self: flex-start;
+            color: cssvar(dark);
+            font-size: cssvar(font-xs);
+        }
+    }
+}
+
+:host(.header) {
+    .container {
+        &.iphone-x {
+            align-items: flex-end;
+            height: 3.5rem;
+            padding-bottom: 0.325rem;
+        }
+    }
+}
+
+:host(.footer) {
+    .container {
+        &.iphone-x {
+            padding-top: cssvar(padding-5);
+            padding-bottom: cssvar(padding-15);
+        }
+    }
+}
+@mixin class-gradient-card-applicator($class,$bottom-gradient,$webkit-gradient){
+    :host(.#{$class}){
+        .container {
+            border-image: cssvar(bottom-gradient);
+            border-image-slice: 1;
+            .inner-container {
+                .icon {
+                    -webkit-background-clip: text;
+                    background-clip: text;
+                    background-image: cssvar(webkit-gradient);
+                    -webkit-text-fill-color: transparent;
+                }
+            }
+        }
+    }
+}
+@include class-gradient-card-applicator(accent-gradient-card, 
+    linear-gradient(to bottom, #097be5, #87bbfd), 
+    -webkit-linear-gradient(#097be5, #87bbfd));
+@include class-gradient-card-applicator(danger-gradient-card, 
+    linear-gradient(to bottom, #f76c6c, #febd3c), 
+    -webkit-linear-gradient( #f76c6c, #febd3c));
+@include class-gradient-card-applicator(success-gradient-card, 
+    linear-gradient(to bottom, #44c3aa, #87bbfd), 
+    -webkit-linear-gradient( #44c3aa, #87bbfd));
+@include class-gradient-card-applicator(info-gradient-card, 
+    linear-gradient(to bottom, #6f3cfe, #f564b6), 
+    -webkit-linear-gradient(#6f3cfe, #f564b6));
+@include class-gradient-card-applicator(accent-gradient-card, 
+linear-gradient(to bottom, #EEC852, rgb(245, 207, 181)), 
+-webkit-linear-gradient(#EEC852, rgb(245, 207, 181)));

@@ -1,0 +1,68 @@
+:host {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    transform: translateZ(0);
+}
+
+.toolbar-title {
+    display: block;
+    font-size: cssvar(font-l);
+    letter-spacing: normal;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    pointer-events: auto;
+}
+
+:host(.left) {
+    .toolbar-title {
+        width: 100%;
+        padding-left: cssvar(padding-20);
+        text-align: left;
+    }
+}
+
+:host(.calendar-title) {
+    .toolbar-title {
+        font-size: cssvar(font-l);
+        font-style: normal;
+        font-weight: 400 !important;
+    }
+}
+
+:host(.no-bold) {
+    .toolbar-title {
+        font-weight: 400;
+    }
+}
+
+:host(.ios) {
+    align-items: flex-end !important;
+    .toolbar-title {
+        margin-bottom: 0.3125rem;
+    }
+}
+
+:host(.img) {
+    padding-bottom: 0 !important;
+}
+
+:host(.autocomplete-half-screen.ios) {
+    .toolbar-title {
+        margin-bottom: 1.20rem;
+    }
+}
+
+:host(.flex) {
+    .toolbar-title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+:host(.dark) {
+    color: cssvar(black);
+}

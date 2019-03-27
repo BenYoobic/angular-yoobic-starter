@@ -1,0 +1,29 @@
+:host {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--light, #FFFFFF);
+  opacity: 1;
+  z-index: 500; }
+  :host .progress-loader-container .logo-container {
+    display: flex;
+    justify-content: center; }
+  :host .progress-loader-container .progress-bar-container {
+    display: flex;
+    justify-content: center;
+    margin: 1.25rem 6.875rem 1.12rem 6.875rem; }
+  :host .progress-loader-container .progress-text-container {
+    margin: 0 3.75rem;
+    text-align: center; }
+    :host .progress-loader-container .progress-text-container .progress-text {
+      font-size: var(--font-m, 15px);
+      font-style: normal;
+      font-weight: 300;
+      letter-spacing: normal;
+      line-height: normal; }

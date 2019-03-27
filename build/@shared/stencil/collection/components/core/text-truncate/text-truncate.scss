@@ -1,0 +1,130 @@
+:host {
+    --current-background-color: #{cssvar(light)};
+    --more-button-size: 14px;
+    --more-button-color: #{cssvar(stable)};
+    --text-color:  #{cssvar(black)};
+    --text-max-height: 20px;
+    --ellipsis-padding-right: 2.5rem;
+    --max-line: 1;
+    --text-line-height: 1.2em;
+}
+
+:host(.dark) {
+    .content-wrapper {
+        .text {
+            color: white;
+        }
+    }
+}
+
+:host(.light) {
+    --current-background-color: white !important;
+}
+
+:host {
+    .hidden-text {
+        position: absolute;
+        opacity: 0;
+    }
+    .normal-text {
+        color: cssvar(text-color);
+        
+        &.show-break-line {
+            white-space: pre-wrap;
+        }
+    }
+    .normal-more-button {
+        padding: 0.5rem 0;
+        color: cssvar(more-button-color);
+    }
+    .single-line-truncate-container {
+        display: flex;
+        align-items: center;
+        .single-line-text {
+            color: cssvar(text-color);
+            white-space: pre-wrap !important;
+            &.truncate {
+                @include text-truncate();
+                max-height: cssvar(text-max-height);
+                line-height: 1.75;
+                p {
+                    @include text-truncate();
+                }
+            }
+            p {
+                margin: 0;
+                padding: 0;
+            }
+        }
+        .single-line-button {
+            margin-left: auto;
+            color: cssvar(more-button-color);
+        }
+    }
+    .multi-line-truncate-container {
+        position: relative;
+        max-height: cssvar(text-max-height);
+        overflow: hidden;
+        .multi-line-text {
+            color: cssvar(text-color);
+            p {
+                margin: 0;
+                padding: 0;
+            }
+        }
+        .ellipsis {
+            display: block;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 1rem;
+            padding-right: cssvar(ellipsis-padding-right);
+            padding-left: cssvar(padding-5);
+            background-color: cssvar(current-background-color);
+            color: cssvar(text-color);
+        }
+        .more-button {
+            display: block;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            min-width: 2.5rem;
+            padding-left: 2px;
+            background-color: cssvar(current-background-color);
+            color: cssvar(more-button-color);
+            font-size: 14;
+        }
+    }
+    .line-clamp {
+        .text-container {
+            display: -webkit-box;
+            color: cssvar(text-color);
+            overflow: hidden;
+            -webkit-line-clamp: cssvar(max-line);
+            -webkit-box-orient: vertical;
+            p {
+                margin: 0;
+                padding: 0;
+            }
+        }
+    }
+}
+
+:host(.card-list) {
+    .content-wrapper {
+        .text {
+            color: cssvar(black);
+            font-size: cssvar(font-l);
+            font-weight: 400;
+        }
+    }
+}
+
+:host(.form-recap) {
+    .content-wrapper {
+        .text {
+            font-size: cssvar(font-m);
+            line-height: 1.2;
+        }
+    }
+}

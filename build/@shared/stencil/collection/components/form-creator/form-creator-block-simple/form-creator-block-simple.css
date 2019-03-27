@@ -1,0 +1,40 @@
+:host .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 19.5rem;
+  height: 2.5rem;
+  margin: var(--padding-10, 0.625rem) 0;
+  border-radius: 0.25rem;
+  background-color: var(--light, #FFFFFF);
+  box-shadow: var(--card-shadow-2, 0 5px 15px 0 rgba(40, 47, 54, 0.08)); }
+  :host .container .icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 var(--padding-10, 0.625rem);
+    background: var(--accent, #1FB6FF); }
+    :host .container .icon-container.plus {
+      width: 0.875rem;
+      height: 0.875rem;
+      border-radius: 50%;
+      background: var(--stable-alt, #d0d0d0);
+      font-size: 0.625rem; }
+    :host .container .icon-container.form-icon {
+      width: 1.25rem;
+      height: 1.25rem;
+      border-radius: 0.25rem;
+      font-size: 0.875rem; }
+    :host .container .icon-container.multimedia {
+      background: var(--info, #fc459e); }
+    :host .container .icon-container.select {
+      background: var(--accent, #1FB6FF); }
+    :host .container .icon-container.text {
+      background: var(--energized, #fed05b); }
+    :host .container .icon-container.number {
+      background: var(--royal, #845cff); }
+    :host .container .icon-container.information {
+      background: var(--warning, #ff6402); }
+  :host .container .title {
+    flex: 1; }

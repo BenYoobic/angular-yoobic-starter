@@ -1,0 +1,146 @@
+
+
+@mixin border-coloration($edge,$color){
+    $border-width:0.1rem;
+    @if $edge == bottom {
+        border-bottom-width: $border-width;
+    }  
+    @if $edge == right {
+        border-right-width: $border-width;
+    }
+    @if $edge == top {
+        border-top-width: $border-width;
+    }
+    @if $edge == left {
+        border-left-width: $border-width;
+    }
+    border-top-width: 0rem;
+    border-right-width: 0rem;
+    border-bottom-width: 0rem;
+    border-left-width: 0rem;
+    border-style: solid;
+
+    border-color: cssvar($color);
+}
+@mixin focus-title($border-color){
+    border-top-width: 0.1rem;
+    border-right-width: 0.1rem;
+    border-bottom-width: 0.1rem;
+    border-left-width: 0.1rem;
+    border-style: solid;
+    border-radius: 0.2rem;
+    border-color: cssvar($border-color);
+    outline-width: 0rem;
+}
+@mixin tab-colors($edge, $color) {
+    .outer-container {
+        color: cssvar(stable);
+        .tab-selector {
+            .tab-title:hover{
+                @include border-coloration($edge, $color);
+                color: cssvar($color);
+            }
+            .tab-title:focus{
+                @include focus-title($color);
+            }
+            .tab-title.active-title{
+                @include border-coloration($edge,$color);
+                color: cssvar($color);
+            }
+        }
+    }
+}
+
+:host {
+    .outer-container{
+
+        display: flex;
+        flex-direction: column;
+        background: cssvar(light);
+
+        color: cssvar(stable);
+        .tab-selector{
+            @include border-coloration(bottom, "dark-10");
+            width: 100%;
+            .tab-title {
+                display: inline-block;
+                padding: 1rem;
+                transform: translateY(1px);
+            }
+            .tab-title:hover{
+                @include border-coloration(bottom,"success");
+                color: cssvar(success);
+                cursor: pointer;
+            }
+            .tab-title:focus{
+                @include focus-title("success");
+            }
+            .tab-title.active-title{
+                @include border-coloration(bottom,"success");
+                color: cssvar(success);
+            }
+            
+        }
+        .tab-content{
+            padding: 1rem;
+            .undisplayed-tab{
+                display: none;
+            }
+            .selected-tab{
+                display: block;
+                width: 100%;
+            }
+        }
+    }
+}
+
+:host(.vertical){
+    // Vertical variations
+    &.accent {
+        @include tab-colors("right" ,"accent");
+    }
+    &.danger {
+        @include tab-colors("right" ,"danger");
+        
+    }
+    &.info {
+        @include tab-colors("right" , "info");  
+    }
+    .outer-container{
+        display:flex;
+        flex-direction: row;
+        .tab-selector{
+            @include border-coloration(right, "dark-10");
+            display: flex;
+            flex-direction: column;
+            width: unset;
+            .tab-title{
+                display: inline;
+                padding: 1rem;
+                transform: translateX(2px) !important;
+            }
+            .tab-title:hover{
+                @include border-coloration(right,"success");
+                color: cssvar(success);
+            }
+            .tab-title.active-title{
+                @include border-coloration(right,"success");
+                color: cssvar(success);
+            }
+        }
+    }
+}
+
+// Horizontal variations
+:host(.accent) {
+    @include tab-colors("bottom" ,"accent");
+}
+
+:host(.danger) {
+    @include tab-colors("bottom" ,"danger");
+}
+
+:host(.info) {
+    @include tab-colors("bottom" ,"info"); 
+}
+

@@ -1,0 +1,33 @@
+import '../../../stencil.core';
+import { EventEmitter } from '../../../stencil.core';
+export declare class YooPaginationComponent {
+    totalItems: number;
+    itemsPerPage: number;
+    currentPage: number;
+    showTotal: boolean;
+    maxPagerSize: number;
+    pageChanged: EventEmitter<any>;
+    itemsPerPageChanged: EventEmitter<number>;
+    pagerSize: number;
+    totalVisible: boolean;
+    host: HTMLStencilElement;
+    private resizeListener;
+    componentDidLoad(): void;
+    componentDidUpdate(): void;
+    componentDidUnload(): void;
+    readonly currentPageDisplay: number;
+    readonly totalPages: number;
+    isLastPage(page: any): boolean;
+    isFirstPage(page: any): boolean;
+    hasNext(): boolean;
+    hasPrevious(): boolean;
+    isTotalVisible(width: any): boolean;
+    getPagerSize(width: number): number;
+    getDisplayValue(position: number): string | number;
+    moveToPage(page: number | string): void;
+    updateVisibility(): void;
+    updateItemsPerPage(newItemsPerPage: number): void;
+    renderTotalDescription(): JSX.Element;
+    renderPageItem(pos: number): JSX.Element;
+    render(): JSX.Element;
+}

@@ -1,0 +1,146 @@
+:host {
+    cursor: pointer;
+    .outer-container {
+        display: flex;
+        position: relative;
+        flex-direction: row;
+        width: 300px;
+        height: 209px;
+        border-radius: $border-radius-input;
+        background-position: center;
+        overflow: hidden;
+
+        .image-container {
+            width: 100%;
+            height: 90%;
+            border-radius: $border-radius-input;
+            background: cssvar(stable-light);
+            box-shadow: 0 2px 5px 0 rgba(40, 47, 54, 0.08);
+        }
+
+        .gradient-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: $border-radius-input;
+            background: linear-gradient(90deg, cssvar(light_const), cssvar(light_const) 40%, rgba(255, 255, 255, 0));
+            .text-container {
+                display: flex;
+                flex-direction: column;
+                justify-content: center; //padding-top: 1.1875rem;
+                width: 40%;
+                height: 100%;
+                margin-left: 1.25rem;
+                text-align: left;
+                .category {
+                    color: cssvar(success);
+                    font-size:cssvar(font-s);
+                }
+                .title {
+                    @include reset();
+                    margin-top: 1.25rem;
+                    font-size: cssvar(font-l);
+                }
+                .description {
+                    @include reset();
+                    color: cssvar(stable);
+                    font-size: cssvar(font-xs);
+                }
+                yoo-button {
+                    margin-top: 1.25rem;
+                }
+            }
+        }
+
+
+        &.feeds {
+            display: flex;
+            flex-direction: column;
+            width: 310px;
+            height: 210px;
+            box-shadow: cssvar(card-shadow);
+            box-shadow: 0 cssvar(padding-5) cssvar(padding-15) 0 rgba(40, 47, 54, 0.08);
+            .image-container {
+                height: 50%;
+                border-radius: 0;
+                box-shadow: none;
+            }
+            .bottom-container {
+                height: 50%;
+                background-color: white;
+                color: black;
+                line-height: normal;
+                text-align: left;
+                div{
+                    margin: cssvar(padding-15);
+                }
+                .text-wrapper {
+                    margin-bottom: 0px;
+                    yoo-text-truncate {
+                        --text-color: cssvar(always-black);
+                    }
+                }
+                .subheading{
+                    margin-top: cssvar(padding-5);
+                    color: cssvar(stable);
+                    font-size: cssvar(font-s);
+                }
+            }
+        }
+
+        &.courses {
+            display: flex;
+            flex-direction: column;
+            width: 117px;
+            height: 240px;
+            margin-right: cssvar(padding-15);
+
+            yoo-img {
+                min-height: 180px;
+                max-height: 180px;
+
+                yoo-icon {
+                    position: absolute;
+                    right: cssvar(padding-10);
+                    bottom: cssvar(padding-10);
+                    padding: 0.5rem;
+                    border: none;
+                    border-radius: 50%;
+                    background: cssvar(stable);
+                    color: cssvar(light);
+                    font-size: cssvar(font-l);
+                }
+            }
+
+            .bottom-container {
+                margin-top: cssvar(padding-10);
+                background-color: transparent;
+
+                .text-wrapper {
+                    max-height: 35px;
+                    overflow-y: auto;
+                    color: cssvar(balck);
+                }
+
+                .subheading {
+                    color: cssvar(stable);
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width: 320px) {
+    :host {
+      .outer-container {
+        &.feeds {
+            width: 280px !important;
+        }
+      }
+    }
+  }
+
+  :host(.web) {
+      .outer-container {
+          width: auto;
+      }
+  }

@@ -1,0 +1,48 @@
+// Header
+// --------------------------------------------------
+yoo-ion-header {
+    display: block;
+    position: relative;
+    order: -1;
+    width: 100%;
+    transition: 0.3s;
+    background-color: cssvar(ion-color-light);
+    z-index: $z-index-toolbar !important;
+}
+
+yoo-ion-header.secondary {
+    z-index: unset !important;
+}
+
+.header-ios yoo-ion-toolbar:last-child {
+    --border-width: 0 0 #{$hairlines-width};
+}
+
+.header-ios[no-border] yoo-ion-toolbar:last-child {
+    --border-width: 0;
+}
+
+yoo-ion-header.shadow {
+    // yoo-ion-toolbar:not(.web) {
+    //     --border-width: 0 !important;
+    //     color: cssvar(black);
+    //     box-shadow: cssvar(toolbar-shadow);
+    // }
+
+    yoo-ion-toolbar {
+        border-bottom: 1px solid cssvar(stable-30);
+    }
+}
+
+yoo-ion-header.device-min-height {
+    min-height: 64px;
+}
+
+yoo-ion-header.rounded {
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    yoo-ion-toolbar {
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+    }
+}

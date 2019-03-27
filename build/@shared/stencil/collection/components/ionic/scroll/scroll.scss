@@ -1,0 +1,61 @@
+:host {
+  --background-color: transparent;
+  --left-pos: 0;
+  --right-pos: 0;
+  --bottom-pos: 0;
+  --top-pos: 0;
+}
+
+:host {
+  @include abs-pos(#{cssvar(top-pos)}, #{cssvar(right-pos)}, #{cssvar(bottom-pos)}, #{cssvar(left-pos)});
+  display: block;
+  background-color: cssvar(background-color);
+  contain: size style layout;
+  z-index: 1;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  will-change: scroll-position;
+}
+
+:host(.isFirefox) {
+  will-change: auto;
+}
+
+:host(.overscroll)::before,
+:host(.overscroll)::after {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  content: "";
+}
+
+:host(.overscroll)::before {
+  bottom: -1px;
+}
+
+:host(.overscroll)::after {
+  top: -1px;
+}
+
+:host(.horizontal) {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+:host(.vertical-center) {
+  align-items: center;
+}
+
+:host(.no-scrollbar)::-webkit-scrollbar {
+    display: none;
+  }
+  
+:host(.relative) {
+  --relative-contain: unset;
+  position: relative;
+  height: 100%;
+  contain: cssvar(relative-contain);
+}

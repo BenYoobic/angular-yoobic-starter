@@ -1,0 +1,131 @@
+@mixin class-color-applicator($class, $color, $colorDark: null) {
+    :host(.#{$class}) {
+        .outer-container,
+        .readonly {
+            .star-container {
+                yoo-icon.solid {
+                    color: cssvar($color);
+                }
+                yoo-icon.border:hover {
+                    color: cssvar($color);
+                }
+            }
+        }
+        &.button {
+            .outer-container,
+            .readonly {
+                .star-container {
+                    .button {
+                        &.solid {
+                            border: 1px solid cssvar($colorDark);
+                            background: cssvar($color);
+                            color: cssvar(light);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+:host {
+    --star-container-size: 20px;
+}
+
+:host {
+    .outer-container,
+    .readonly {
+        display: flex;
+        flex-direction: row;
+        overflow-x: scroll !important;
+        -webkit-overflow-scrolling: touch !important;
+        .star-container {
+            padding: 0 0.4rem;
+            color: cssvar(stable);
+            font-size: 1.875rem;
+            yoo-icon.solid {
+                color: cssvar(success);
+            }
+        }
+    }
+    .readonly {
+        @include form-readonly-padding();
+    }
+}
+
+:host(.button) {
+    .outer-container,
+    .readonly {
+        .star-container {
+            padding: 0 0.4rem;
+            font-size: cssvar(font-l);
+            font-weight: 300;
+            .button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                min-width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                background: cssvar(stable-light);
+                color: cssvar(dark);
+                font-size: cssvar(font-s);
+                &.solid {
+                    background: cssvar(gradient-success);
+                    color: cssvar(light);
+                }
+            }
+        }
+    }
+    .readonly {
+        @include form-readonly-padding();
+    }
+}
+@include class-color-applicator(accent, accent, accent-120);
+@include class-color-applicator(success, success, success-120);
+@include class-color-applicator(energized, energized, warning);
+@include class-color-applicator(danger, danger, danger-120);
+@include class-color-applicator(info, info, info-120);
+@include class-color-applicator(dark, dark);
+:host(.gradient-success) {
+    .outer-container,
+    .readonly {
+        .star-container {
+            yoo-icon.solid {
+                @include text-gradient(gradient-success, 1rem);
+            }
+            yoo-icon.border {
+                color: cssvar(stable-light);
+            }
+        }
+    }
+}
+
+:host(.history) {
+    .outer-container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        height: 100%;
+        padding-bottom: 0;
+        font-size: 14px;
+        .star-container {
+            padding: 0;
+            padding-left: cssvar(padding-5);
+            font-size: cssvar(font-l);
+        }
+    }
+}
+
+:host(.web) {
+    .outer-container,
+    .readonly {
+        overflow: hidden !important;
+    }
+}
+
+:host(.ag-cell-image) {
+    .readonly {
+        padding: 0;
+    }
+}

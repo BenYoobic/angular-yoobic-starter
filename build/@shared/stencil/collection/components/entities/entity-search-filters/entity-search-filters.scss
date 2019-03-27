@@ -1,0 +1,30 @@
+:host {
+    .outer-container {
+        @include entity-search-heading();
+        @include entity-search-menu-title();
+        @include menu-item-style();
+        padding: 1rem 1rem 0 1rem;
+        .heading {
+            margin-bottom: -0.5rem;
+        }
+        .menu {
+            margin: 0 0.5rem;
+            .menu-item {
+                padding: 0;
+                cursor: pointer;
+                .menu-item-title {
+                    width: 100%;
+                }
+                yoo-form-checkbox {
+                    padding-right: cssvar(padding-5);
+                }
+            }
+        }
+        yoo-form-input-container {
+            margin-top: 1.2rem; //margin-right: 0.825rem;
+        }
+        yoo-form-dynamic.margin-top {
+            margin-top: 1.2rem;
+        }
+    }
+}

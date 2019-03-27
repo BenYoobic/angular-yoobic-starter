@@ -1,0 +1,55 @@
+import '../../../stencil.core';
+import { EventEmitter } from '../../../stencil.core';
+import { ICardListEntry } from '../../../interfaces';
+export declare class YooCardListComponent {
+    entry: ICardListEntry;
+    avatarImgs: string[];
+    isActivable: boolean;
+    actionButtonTitle: string;
+    animationName: string;
+    isCollapsed: boolean;
+    active: EventEmitter<boolean>;
+    actionPress: EventEmitter<boolean>;
+    listCollapsed: EventEmitter<{
+        collapsed: boolean;
+        item: ICardListEntry;
+    }>;
+    isActive: boolean;
+    horizontal: boolean;
+    imageWidth: number;
+    imageHeight: number;
+    showContextMenu: boolean;
+    host: HTMLStencilElement;
+    private isMap;
+    private outerDiv;
+    readonly isFormChoice: boolean;
+    componentWillLoad(): void;
+    componentDidLoad(): void;
+    onCheckboxToggled(event: any): void;
+    onActionButtonClick(): void;
+    renderAvatar(): JSX.Element;
+    renderCardImage(): JSX.Element;
+    renderBottomContent(): JSX.Element[];
+    renderKpiContainer(): JSX.Element;
+    renderImageContainerContent(): JSX.Element[];
+    imageClicked(imagePath: string): void;
+    onListCollapsed(ev: MouseEvent): void;
+    hasUsersInline(): boolean;
+    renderPointsContainerContent(): JSX.Element[];
+    renderInlineUsers(): JSX.Element;
+    renderHeading(): JSX.Element;
+    renderDistance(): JSX.Element;
+    renderProgress(): JSX.Element;
+    renderCollapsibleControls(): JSX.Element;
+    renderTopActions(): JSX.Element;
+    renderHeadingContainerBottom(): JSX.Element;
+    renderHeadingContainerContent(): JSX.Element;
+    hasHeadingBottomContent(): boolean;
+    onItemTouchStart(): void;
+    onItemTouchEnd(): void;
+    getExtraClasses(): string;
+    hostData(): {
+        class: any;
+    };
+    render(): JSX.Element[];
+}

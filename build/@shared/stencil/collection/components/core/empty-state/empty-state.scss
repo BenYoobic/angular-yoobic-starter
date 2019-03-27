@@ -1,0 +1,132 @@
+:host {
+    display: flex;
+    width: 100%;
+}
+
+.container {
+
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    // padding-top: 1.5rem;
+    text-align: center;
+
+    img {
+        width: 100%;
+        max-height: 240px; //250px;
+        padding: 1rem;
+    }
+
+    .empty-title {
+        margin: 3rem 0 1rem 0;
+        color: cssvar(black);
+    }
+
+    .empty-text {
+        padding: 1rem;
+        color: cssvar(text-color);
+        font-size: cssvar(font-m);
+        //font-weight: 600;
+        opacity: 0.7;
+    }
+}
+
+:host(.empty-state-framed) {
+    .container {
+        padding-top: 0;
+
+        .empty-text {
+            display: none !important;
+        }
+
+        img {
+            max-width: 100px;
+            max-height: 158px;
+        }
+    }
+}
+
+:host(.empty-state-grid) {
+    //bottom: 1.5rem !important;
+    flex-direction: row !important;
+
+    .container {
+        img {
+            padding-bottom: 0.5rem;
+        }
+
+        .empty-text {
+            padding-top: 0;
+        }
+    }
+}
+
+:host(.header-padding) {
+    top: 3.625rem !important;
+
+    .container {
+        .img {
+            padding-bottom: 0 !important;
+        }
+    }
+}
+
+:host(.small) {
+    .container {
+        padding: 0;
+
+        img {
+            height: 160px !important;
+            padding: 0;
+        }
+    }
+}
+
+:host(.xsmall) {
+    .container {
+        position: relative;
+        padding: 0;
+        transform: translateY(-30%);
+        img {
+            height: 100px !important;
+            padding: 0;
+        }
+    }
+}
+
+:host(.absolute) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+:host(.absolute-top-20) {
+    position: absolute;
+    top: 20%;
+}
+
+:host(.x-large) {
+    .container {
+        img {
+            max-height: 330px;
+        }
+    }
+}
+
+:host(.fade-in) {
+    .container {
+        transition: 0.3s;
+        opacity: 0;
+    }
+}
+
+:host(.fade-in.show) {
+    .container {
+        opacity: 1;
+    }
+}

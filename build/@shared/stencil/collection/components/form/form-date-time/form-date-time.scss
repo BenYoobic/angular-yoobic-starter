@@ -1,0 +1,131 @@
+@mixin icon() {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    color: cssvar(stable);
+    font-size: cssvar(icon-m);
+    .yo-down,
+    .yo-up {
+        margin: 0 0 0 -0.8rem;
+        font-size: cssvar(font-xs);
+    }
+    .yo-cross {
+        margin: 0 0 0 -0.8rem;
+    }
+}
+
+:host {
+    display: block;
+    opacity: 1;
+    .flex {
+        display: flex;
+        flex: 1;
+    }
+    .calendar-picker-container {
+        margin-top: cssvar(padding-10);
+        margin-bottom: 0.1875rem;
+        padding-top: cssvar(padding-10);
+        border-radius: 5px;
+        box-shadow: 0 5px 15px 0 rgba(40, 47, 54, 0.08); // Overriden by animation
+        // opacity: 0;
+        yoo-calendar {
+            --date-picker-margin: #{cssvar(padding-5)};
+            min-height: 28.75rem;
+        }
+        yoo-form-time {
+            margin-top: cssvar(padding-15);
+            &.time-only {
+                --margin: 0 #{cssvar(padding-15)}
+            }
+        }
+    }
+    .outer-container {
+        display: flex;
+        flex-direction: row;
+        border: 1px solid cssvar(input-container-border-color);
+        border-radius: cssvar(border-radius-input);
+        &.hidden {
+            display: none;
+        }
+        &.valid {
+            border: 1px solid cssvar(success);
+        }
+        &.invalid {
+            border: 1px solid cssvar(danger);
+        }
+        &.focused {
+            border: 1px solid cssvar(dark);
+        }
+        .input-container {
+            input {
+                @include reset-input();
+                width: 100%;
+                height: 2.5rem;
+                padding-left: cssvar(padding-15);
+                border: none;
+                border-radius: cssvar(border-radius-input);
+                background: cssvar(light);
+                color: cssvar(black);
+                font-size: cssvar(font-m);
+                line-height: 1.5;
+                vertical-align: unset;
+                &.native {
+                    padding: 0rem 1rem;
+                }
+            }
+        }
+        .icon-prefix,
+        .icon-suffix {
+            @include icon();
+            &.invalid {
+                color: cssvar(danger);
+            }
+        }
+        .icon-suffix {
+            color: cssvar(control-icon-color);
+        }
+        .icon-prefix {
+            border-right: 1px solid cssvar(input-container-border-color);
+            color: csscolor(stable);
+        }
+        .icon-close {
+            color: cssvar(stable);
+        }
+    }
+    .readonly {
+        @include form-readonly-padding();
+    }
+}
+
+:host(.schedule) {
+    .calendar-picker-container {
+        height: 100%;
+    }
+}
+
+:host(.ios) {
+    .outer-container {
+        .input-container {
+            input {
+                caret-color: transparent;
+            }
+        }
+    }
+}
+
+:host(.history) {
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    .readonly {
+        padding: 0 !important;
+    }
+}
+
+//extraClass
+:host(.x-large) {
+    .readonly {
+        font-size:cssvar(font-xl); 
+    }
+} 

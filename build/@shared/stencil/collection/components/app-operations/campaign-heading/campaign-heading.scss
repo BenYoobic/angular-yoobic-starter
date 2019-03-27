@@ -1,0 +1,100 @@
+:host {
+    .outer-container {
+        padding: cssvar(padding-20) cssvar(padding-40) 0 cssvar(padding-40);
+        background: cssvar(light);
+        .inner-container {
+            display: flex;
+            flex-direction: column;
+            .top-container {
+                display: flex;
+                .left-part {
+                    flex: 1;
+                    .heading-container {
+                        display: flex;
+                        align-items: center;
+                        .title-container {
+                            padding-right: cssvar(padding-10);
+                            font-size: cssvar(font-lx);
+                            font-weight: normal;
+                        }
+                        .badges-container {
+                            yoo-badge {
+                                margin-right: 0.3rem;
+                            }
+                        }
+                    }
+                    .description-container {
+                        margin-bottom: cssvar(padding-5);
+                        color: cssvar(text-color);
+                        font-size: cssvar(font-m);
+                        font-weight: normal;
+                        p {
+                            margin: 0;
+                        }
+                    }
+                    .tags-container {
+                        display: block;
+                        margin-bottom: cssvar(padding-5);
+                        color: cssvar(success);
+                        .hashtag {
+                            padding-right: cssvar(padding-10);
+                        }
+                    }
+                }
+                .right-part {
+                    display: flex;
+                    position: relative;
+                    align-items: center;
+                    justify-content: center;
+                    yoo-button {
+                        &.edit {
+                            --color-value: #{cssvar(black)};
+                            --shadow: none;
+                            --border-container: 1px solid #{cssvar(stable-light)};
+                            margin-right: cssvar(padding-20);
+                        }
+                        &.secondary-actions {
+                            --color-value: #{cssvar(light)};
+                            --width-icon-only-container: 1.125rem;
+                            --height-icon-only-container: 1.125rem;
+                            --font-size-icon: 0.75rem;
+                            --background-container: #{cssvar(text-color)};
+                        }
+                    }
+                }
+            }
+            .bottom-container {
+                padding-bottom: cssvar(padding-10);
+                color: cssvar(text-color);
+                font-size: cssvar(font-s);
+                &:not(.no-border) {
+                    border-bottom: 1px solid cssvar(stable-light);
+                }
+                .more-container {
+                    &.open {
+                        margin-bottom: cssvar(padding-5);
+                    }
+                    .more-icon {
+                        padding-right: cssvar(padding-5);
+                        font-size: cssvar(font-xs);
+                    }
+                }
+                .more-content {
+                    display: flex;
+                    flex-direction: column;
+                    .row {
+                        display: flex;
+                        flex: 1;
+                        margin-bottom: cssvar(padding-5);
+                        .black {
+                            color: cssvar(black);
+                        }
+                        .campaign-type {
+                            padding-right: cssvar(padding-30);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

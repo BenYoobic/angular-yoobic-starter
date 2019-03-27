@@ -1,0 +1,48 @@
+:host {
+  display: block;
+  width: 100%; }
+  :host .top-container {
+    display: flex;
+    margin: 1rem;
+    padding: 0.5rem;
+    border: 1px solid var(--stable-30, #E6E6E6);
+    border-radius: 5px;
+    background: var(--light, #FFFFFF); }
+    :host .top-container .left-part {
+      flex: 1; }
+      :host .top-container .left-part .heading-container {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0.5rem; }
+        :host .top-container .left-part .heading-container .title-container {
+          padding-right: var(--padding-10, 0.625rem);
+          font-size: var(--font-m, 15px);
+          font-weight: normal; }
+          :host .top-container .left-part .heading-container .title-container yoo-icon {
+            margin-right: 0.5rem;
+            color: var(--text-color, #807f83); }
+            :host .top-container .left-part .heading-container .title-container yoo-icon.success {
+              color: var(--success, #04CC99); }
+      :host .top-container .left-part .description-container {
+        margin-top: var(--padding-5, 0.3125rem);
+        margin-bottom: var(--padding-5, 0.3125rem);
+        margin-left: 1.4rem;
+        color: var(--text-color, #807f83);
+        font-size: var(--font-m, 15px);
+        font-weight: normal; }
+        :host .top-container .left-part .description-container p {
+          margin: 0; }
+        :host .top-container .left-part .description-container .date-spacer {
+          margin-right: 1rem; }
+        :host .top-container .left-part .description-container .black {
+          color: var(--black, #000000); }
+    :host .top-container .right-part {
+      display: flex;
+      position: relative;
+      align-items: center;
+      justify-content: center; }
+      :host .top-container .right-part yoo-button.edit {
+        --color-value: var(--black, #000000);
+        --shadow: none;
+        --border-container: 1px solid var(--stable-light, #f1f1f1);
+        margin-right: var(--padding-20, 1.25rem); }

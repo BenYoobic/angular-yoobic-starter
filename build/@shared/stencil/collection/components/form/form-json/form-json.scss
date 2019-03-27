@@ -1,0 +1,33 @@
+:host {
+    @import "../../../../../../node_modules/jsoneditor/dist/jsoneditor.min.css";
+
+    .conatainer {
+        max-width: 610px;
+    }
+    div.jsoneditor-menu a.jsoneditor-poweredBy {
+        display: none;
+    }
+
+    div.jsoneditor {
+        border:1px solid cssvar(input-container-border-color);
+    }
+
+    div.jsoneditor-menu {
+        border-bottom: 1px solid cssvar(black);
+        background: cssvar(black);
+    }
+
+    div.jsoneditor-statusbar {
+        border-top: 1px solid cssvar(input-container-border-color);
+        background: cssvar(stable-light);
+   
+    }
+
+    div.jsoneditor-menu > button, div.jsoneditor-menu > div.jsoneditor-modes > button {
+        color: cssvar(black);
+    }
+
+    .readonly {
+        word-break: break-word;
+    }
+}

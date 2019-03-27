@@ -1,0 +1,40 @@
+:host {
+  .signature-pad-dialog {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    yoo-ion-content {
+      overflow-y: hidden;
+      .signature-container {
+        height: 100%;
+        canvas {
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  .signature-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    min-height: 52px;
+    background: cssvar(light);
+    z-index: 2;
+  }
+
+  .image {
+    width: 100%;
+    height: 100%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+:host(.iphone-x) {
+  .signature-footer { 
+    padding-bottom: cssvar(padding-30);
+  }
+}

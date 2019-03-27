@@ -1,0 +1,51 @@
+:host .outer-container {
+  padding: 1rem 1rem 0 1rem; }
+  :host .outer-container .heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 1.3125rem;
+    font-size: var(--font-l, 17px);
+    margin-top: 0.625rem;
+    font-weight: 600; }
+  :host .outer-container .menu {
+    list-style: none outside none;
+    background: none repeat scroll 0 0 transparent;
+    border: 0 none;
+    font-size: 100%;
+    margin: 0;
+    outline: 0 none;
+    padding: 0;
+    vertical-align: baseline;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    margin: 0;
+    padding: 0;
+    padding-bottom: 0.3125rem;
+    list-style: none; }
+    :host .outer-container .menu .menu-item {
+      display: flex;
+      justify-content: space-between;
+      height: 100%;
+      min-height: 2.75rem;
+      padding: 0 0.9375rem 0 0;
+      font-weight: 400;
+      align-items: center; }
+      :host .outer-container .menu .menu-item div {
+        display: flex;
+        flex-direction: row;
+        align-self: center; }
+        :host .outer-container .menu .menu-item div .menu-item-title {
+          width: 100%;
+          margin-left: 0.625rem; }
+    :host .outer-container .menu .border {
+      width: 100%;
+      height: 0;
+      border-top: 1px solid var(--stable-30, #E6E6E6); }
+  :host .outer-container .menu .menu-item {
+    cursor: pointer; }
+    :host .outer-container .menu .menu-item .text {
+      flex: 1; }
+    :host .outer-container .menu .menu-item yoo-badge {
+      margin: 0 0.5rem; }
+    :host .outer-container .menu .menu-item .yo-no-data {
+      color: var(--stable-alt, #d0d0d0); }

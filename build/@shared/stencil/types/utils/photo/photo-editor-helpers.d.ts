@@ -1,0 +1,28 @@
+import { IPhotoAnnotation, XYPoint } from '../../interfaces';
+export declare type EditorMode = 'text' | 'draw' | 'annotation' | 'zoom';
+export declare type ImageOrientation = 'portrait' | 'landscape';
+export declare function setDotAnnotations(texts: IPhotoAnnotation[]): IPhotoAnnotation[];
+export declare function adjustTextArea(target: HTMLTextAreaElement, adjustWidth?: boolean): void;
+export declare function limitDragPosition(finalPosition: XYPoint, imageHeight: number, imageWidth: number, containerDimensions: {
+    width: number;
+    height: number;
+}, isPortraitImage: boolean): XYPoint;
+export declare function hasAnnotationMoved(oldAnnotation: IPhotoAnnotation, updatedAnnotation: IPhotoAnnotation): boolean;
+export declare function scaleSVGData(svgData: string, width: number, height: number): string;
+export declare function isSameViewbox(currentHeight: number, currentWidth: number, viewbox: SVGAnimatedRect): boolean;
+export declare function computeViewboxZoom(currentHeight: number, currentWidth: number, viewbox: SVGAnimatedRect): number;
+export declare function parseSVG(svgData: string): SVGElement;
+export declare function isTextBackgroundOn(backgroundStatus: string): boolean;
+export declare function isTextBackgroundOff(backgroundStatus: string): boolean;
+export declare function isTextMode(editorMode: any): boolean;
+export declare function isDrawMode(editorMode: EditorMode): boolean;
+export declare function isZoomMode(editorMode: EditorMode): boolean;
+export declare function isAnnotationMode(editorMode: EditorMode): boolean;
+export declare function isLandscape(imageOrientation: ImageOrientation): boolean;
+export declare function isPortrait(imageOrientation: ImageOrientation): boolean;
+export declare function isCanvasCurrentTarget(event: any): boolean;
+export declare function isTargetSpan(event: any): boolean;
+export declare function isTargetTextArea(event: any): boolean;
+export declare function isDotAnnotation(annotation: any): boolean;
+export declare function isTextAnnotation(annotation: any): boolean;
+export declare function isItemAnnotated(item: any): any;

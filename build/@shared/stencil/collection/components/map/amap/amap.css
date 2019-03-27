@@ -1,0 +1,552 @@
+:host {
+  display: block;
+  width: 100%;
+  height: 100%; }
+  :host .amap-copyright, :host .version {
+    font-family: Arial, sans-serif; }
+  :host .vml {
+    behavior: url(#default#VML);
+    display: inline-block;
+    position: absolute; }
+  :host .amap-sug-result {
+    position: fixed;
+    z-index: 1024;
+    background-color: #fefefe;
+    border: 1px solid #d1d1d1; }
+  :host .auto-item:hover {
+    background-color: #CAE1FF; }
+  :host .auto-item {
+    font-size: 12px;
+    cursor: pointer;
+    padding: 4px; }
+  :host .auto-item-span {
+    color: #C1C1C1;
+    padding-left: 4px; }
+  :host .amap-custom {
+    top: 0;
+    left: 0;
+    position: absolute; }
+  :host .amap-container img {
+    max-width: none !important;
+    max-height: none !important; }
+  :host .amap-container {
+    touch-action: none;
+    position: relative;
+    overflow: hidden;
+    background: url(data:image/png;base64,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) #fcf9f2;
+    -ms-touch-action: none; }
+  :host .amap-drags, :host .amap-layers {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden; }
+  :host .amap-layer img {
+    pointer-events: none; }
+  :host .amap-e, :host .amap-maps {
+    width: 100%;
+    height: 100%; }
+  :host .amap-e, :host .amap-layers, :host .amap-maps, :host .amap-tile, :host .amap-tile-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow: hidden; }
+  :host .amap-context, :host .amap-graph, :host .amap-marker, :host .amap-markers, :host .amap-overlays, :host .amap-statics {
+    position: absolute;
+    left: 0;
+    top: 0; }
+  :host .amap-layers {
+    z-index: 0; }
+  :host .amap-overlays {
+    z-index: 110;
+    cursor: default; }
+  :host .amap-info, :host .amap-markers {
+    z-index: 120; }
+  :host .amap-statics {
+    z-index: 140; }
+  :host .amap-controls {
+    z-index: 150; }
+  :host .amap-copyright, :host .amap-logo {
+    position: absolute;
+    bottom: 0;
+    z-index: 160;
+    line-height: 16px; }
+  :host .version {
+    font-size: 8px; }
+  :host .amap-copyright {
+    display: block !important;
+    left: 70px;
+    height: 16px;
+    font-size: 11px; }
+  :host .google-copyright .google_logo {
+    vertical-align: middle;
+    width: 46px;
+    height: 18px; }
+  :host .amap-logo {
+    left: 0;
+    height: 17px;
+    margin: 0 1px; }
+  :host .amap-logo img {
+    width: 67px !important;
+    height: 16px !important;
+    border: none;
+    vertical-align: baseline !important; }
+  :host .amap-icon {
+    position: relative;
+    z-index: 1;
+    overflow: hidden; }
+  :host .amap-icon img {
+    position: absolute;
+    z-index: -1; }
+  :host .amap-marker-label {
+    position: absolute;
+    z-index: 2;
+    border: 1px solid #00f;
+    background-color: #fff;
+    white-space: nowrap;
+    cursor: default;
+    padding: 3px;
+    font-size: 12px;
+    line-height: 14px; }
+  :host .amap-info, :host .amap-menu {
+    z-index: 140;
+    position: absolute; }
+  :host .amap-info {
+    left: 0; }
+  :host .amap-info-close {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    color: #C3C3C3;
+    text-decoration: none;
+    font: 700 16px/14px Tahoma, Verdana, sans-serif;
+    width: 14px;
+    height: 14px; }
+  :host .amap-info-sharp, :host .amap-marker-content {
+    position: relative; }
+  :host .amap-info-outer, :host .amap-menu-outer {
+    box-shadow: 0 3px 14px rgba(0, 0, 100, 0.6);
+    background: #fff;
+    border-radius: 2px;
+    padding: 1px;
+    text-align: left;
+    border: 1px solid silver; }
+  :host .amap-info-outer:hover, :host .amap-menu-outer:hover {
+    box-shadow: 0 3px 14px rgba(0, 0, 0, 0.75); }
+  :host .amap-info-content {
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 10px 18px 10px 10px;
+    line-height: 1.4;
+    overflow: auto; }
+  :host .amap-info {
+    width: 320px; }
+  :host .amap-info-sharp {
+    height: 23px;
+    margin: 0 auto;
+    overflow: hidden;
+    top: -1px;
+    width: 30px;
+    background-image: url(./sharp.png); }
+  :host .amap-menu-outer {
+    margin: 0;
+    padding: 0;
+    list-style-type: none; }
+  :host ul.amap-menu-outer li {
+    cursor: pointer;
+    height: 35px;
+    line-height: 35px;
+    word-break: break-word;
+    padding: 0 10px;
+    font-size: 12px;
+    white-space: nowrap; }
+  :host ul.amap-menu-outer li a {
+    text-decoration: none;
+    font-size: 13px;
+    margin: 0 5px;
+    color: #000;
+    padding: 5px; }
+  :host ul.amap-menu-outer li:hover {
+    background-color: #F3F3EE; }
+  :host .amap-menu-split {
+    border-bottom: #ccc solid 1px; }
+  :host .amap-menu-cp {
+    font-size: 10px; }
+  :host .amap-maptypecontrol, :host .amap-overviewcontrol, :host .amap-scalecontrol, :host .amap-toolbar {
+    z-index: 150; }
+  :host .amap-toolbar {
+    position: absolute;
+    width: 52px;
+    overflow: visible; }
+  :host .amap-pancontrol {
+    width: 52px;
+    height: 52px;
+    background: url(./map_view.png) 0 -140px;
+    position: absolute; }
+  :host .amap-pan-bottom, :host .amap-pan-left, :host .amap-pan-right, :host .amap-pan-top {
+    position: absolute;
+    cursor: pointer; }
+  :host .amap-pan-left, :host .amap-pan-right {
+    width: 12px;
+    height: 18px;
+    top: 17px; }
+  :host .amap-pan-bottom, :host .amap-pan-top {
+    width: 18px;
+    height: 12px;
+    left: 17px; }
+  :host .amap-pan-left {
+    left: 8px; }
+  :host .amap-pan-right {
+    left: 32px; }
+  :host .amap-pan-top {
+    top: 8px; }
+  :host .amap-pan-bottom {
+    top: 31px; }
+  :host .amap-pan-bottom:hover, :host .amap-pan-left:hover, :host .amap-pan-right:hover, :host .amap-pan-top:hover {
+    background: url(./map_view.png); }
+  :host .amap-pan-left:hover {
+    background-position: -52px -110px; }
+  :host .amap-pan-top:hover {
+    background-position: -70px -112px; }
+  :host .amap-pan-right:hover {
+    background-position: -61px -110px; }
+  :host .amap-pan-bottom:hover {
+    background-position: -84px -110px; }
+  :host .amap-pan-left-hover {
+    background-position: -52px -110px; }
+  :host .amap-pan-top-hover {
+    background-position: -70px -112px; }
+  :host .amap-pan-right-hover {
+    background-position: -61px -110px; }
+  :host .amap-pan-bottom-hover {
+    background-position: -84px -110px; }
+  :host .amap-zoomcontrol {
+    width: 24px;
+    position: absolute;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none; }
+  :host .amap-zoom-cursor, :host .amap-zoom-label-city, :host .amap-zoom-label-country, :host .amap-zoom-label-province, :host .amap-zoom-label-street, :host .amap-zoom-minus, :host .amap-zoom-plus {
+    background: url(./map_view.png);
+    cursor: pointer; }
+  :host .amap-zoom-mask, :host .amap-zoom-ruler {
+    background: url(./toolbar_rbg.png);
+    cursor: pointer; }
+  :host .amap-zoom-minus, :host .amap-zoom-plus {
+    width: 24px;
+    height: 21px; }
+  :host .amap-zoom-plus {
+    background-position: 0 -217px; }
+  :host .amap-zoom-plus:hover {
+    background-position: 0 -194px; }
+  :host .amap-zoom-minus {
+    background-position: -26px -224px; }
+  :host .amap-zoom-minus:hover {
+    background-position: -26px -195px; }
+  :host .amap-zoom-plus2:hover {
+    background-position: -50px -194px;
+    cursor: default; }
+  :host .amap-zoom-minus2:hover {
+    background-position: -50px -223px;
+    cursor: default; }
+  :host .amap-zoom-ruler {
+    overflow: visible;
+    width: 12px;
+    height: 147px;
+    position: relative;
+    left: 6px;
+    background-position: 0 0; }
+  :host .amap-locate, :host .amap-scalecontrol, :host .amap-toolbar-geo, :host .amap-zoom-cursor, :host .amap-zoom-label-city, :host .amap-zoom-label-country, :host .amap-zoom-label-province, :host .amap-zoom-label-street, :host .amap-zoom-labels, :host .amap-zoom-mask {
+    position: absolute; }
+  :host .amap-zoom-mask {
+    width: 12px;
+    height: 106px;
+    background-position: -14px 0; }
+  :host .amap-zoom-cursor {
+    width: 24px;
+    height: 20px;
+    left: -6px;
+    top: 106px;
+    background-position: -127px -164px; }
+  :host .amap-zoom-cursor:hover {
+    background-position: -127px -141px; }
+  :host .amap-zoom-labels {
+    display: none; }
+  :host .amap-zoom-label-city, :host .amap-zoom-label-country, :host .amap-zoom-label-province, :host .amap-zoom-label-street {
+    width: 39px;
+    height: 31px;
+    left: 20px; }
+  :host .amap-zoom-label-street {
+    top: 0;
+    background-position: -87px -140px; }
+  :host .amap-zoom-label-city {
+    top: 54px;
+    background-position: -87px -171px; }
+  :host .amap-zoom-label-province {
+    top: 92px;
+    background-position: -87px -203px; }
+  :host .amap-zoom-label-country {
+    top: 129px;
+    background-position: -87px -235px; }
+  :host .amap-locate {
+    width: 18px;
+    height: 18px;
+    background: url(./map_view.png) -130px -185px;
+    cursor: pointer; }
+  :host .amap-geo {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    bottom: 18px;
+    right: 7px; }
+  :host .amap-scale-text {
+    text-align: center;
+    font-size: 10px; }
+  :host .amap-scale-line {
+    position: relative;
+    height: 8px; }
+  :host .amap-scale-line div {
+    -webkit-box-sizing: content-box !important;
+    -moz-box-sizing: content-box !important;
+    box-sizing: content-box !important; }
+  :host .amap-scale-edgeleft, :host .amap-scale-edgeright, :host .amap-scale-middle {
+    position: absolute;
+    background-color: #333;
+    overflow: hidden; }
+  :host .amap-scale-edgeleft, :host .amap-scale-edgeright {
+    width: 1px;
+    height: 6px;
+    border: 1px solid #fff; }
+  :host .amap-scale-middle {
+    height: 2px;
+    left: 2px;
+    top: 2px;
+    border-top: solid 1px #fff;
+    border-bottom: solid 1px #fff; }
+  :host .amap-overviewcontrol {
+    width: 120px;
+    height: 120px;
+    background: #fff;
+    position: absolute;
+    right: 0;
+    bottom: 0; }
+  :host .amap-overview-main {
+    width: 115px;
+    height: 115px;
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    overflow: hidden; }
+  :host .amap-overview-main, :host .amap-overviewcontrol {
+    border-top: solid 1px #ccc;
+    border-left: solid 1px #ccc; }
+  :host .amap-overview-map {
+    position: absolute; }
+  :host .amap-overview-button {
+    width: 17px;
+    height: 17px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background: url(./mapcontrols.png) -40px -386px;
+    cursor: pointer; }
+  :host .amap-overview-win {
+    width: 62px;
+    height: 35px;
+    background: #91a3d8;
+    opacity: .25;
+    border: 2px solid #44b;
+    filter: alpha(opacity=25);
+    position: absolute;
+    top: 40px;
+    left: 26px;
+    cursor: move; }
+  :host .amap-maptypecontrol {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 304; }
+  :host .amap-maptype-wrap {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 64px;
+    height: 64px; }
+  :host .amap-maptype-con {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    background: #fff;
+    border: 1px solid #ccc;
+    cursor: pointer; }
+  :host .amap-maptype-win {
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    width: 56px;
+    height: 56px;
+    overflow: hidden;
+    background: #ccc;
+    border: 1px solid #ccc; }
+  :host .amap-maptype-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 20px;
+    color: #333;
+    text-align: center;
+    font-size: 12px;
+    line-height: 20px;
+    background: #fff; }
+  :host .amap-maptype-title:hover {
+    background-color: #eee; }
+  :host .amap-maptype-list {
+    position: absolute;
+    top: 64px;
+    right: 0;
+    width: 100px;
+    background: #fff;
+    border: 1px solid #ccc;
+    overflow: hidden; }
+  :host .amap-maptype-list p {
+    width: 100px;
+    height: 20px;
+    margin: 0;
+    cursor: pointer;
+    background: #fff; }
+  :host .amap-maptype-lsit p:hover {
+    background: #eee; }
+  :host .amap-maptype-check {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-left: 2px;
+    background: url(./maptype-bg.png) -30px 4px no-repeat; }
+  :host .amap-maptype-checked {
+    background-position: 0 4px; }
+  :host .amap-maptype-check-hover {
+    background-position: -15px 4px; }
+  :host .amap-maptype-label {
+    display: inline-block;
+    width: 60px;
+    height: 15px;
+    color: #333;
+    font-size: 12px;
+    line-height: 15px;
+    margin-left: 10px; }
+  :host .amap-ranging-label {
+    font-size: 12px;
+    line-height: 14px;
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 3px 7px 3px 2px;
+    white-space: nowrap; }
+  :host .amap-dis {
+    border-width: 0;
+    -moz-box-shadow: 0 3px 3px #888;
+    box-shadow: 0 3px 3px #888; }
+  :host .amap-ranging-label span {
+    height: 12px;
+    vertical-align: center;
+    display: inline-block;
+    white-space: nowrap;
+    margin-left: 5px; }
+  :host .amap-ranging-label span img {
+    margin-top: -2px; }
+  :host .amap-ranging-label span .delimg {
+    margin-bottom: -3px; }
+  :host .amap-touch-toolbar .amap-zoomcontrol {
+    position: absolute;
+    right: 4px;
+    bottom: -80px;
+    z-index: 500;
+    width: 35px;
+    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 10px 0 #ccc; }
+  :host .amap-touch-toolbar .amap-zoomcontrol:after {
+    position: absolute;
+    content: '';
+    height: 1px;
+    background: #ddd;
+    top: 48px;
+    width: 60%;
+    margin: auto;
+    left: 0;
+    right: 0; }
+  :host .amap-geolocation-con .amap-geo, :host .amap-touch-toolbar .amap-geo {
+    background: url(./markers/b/loc_gray.png) 50% 50% no-repeat #fff;
+    width: 35px;
+    height: 35px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    right: 4px; }
+  :host .amap-toolbar-geo-secc {
+    background-image: url(./markers/b/loc.png) !important;
+    background-size: 22px 22px !important;
+    background-position-x: 6px !important; }
+  :host .amap-locate-loading .amap-geo, :host .amap-touch-toolbar .amap-locate-loading {
+    background-image: url(./loading.gif); }
+  :host .amap-zoom-touch-plus {
+    margin-bottom: 5px; }
+  :host .amap-zoom-touch-minus, :host .amap-zoom-touch-plus {
+    width: 100%;
+    height: 43px;
+    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.5); }
+  :host .amap-zoom-touch-minus > div, :host .amap-zoom-touch-plus > div {
+    margin: auto;
+    font-size: 26px;
+    line-height: 43px;
+    font-family: verdana;
+    text-align: center;
+    color: #666;
+    height: 100%;
+    cursor: pointer; }
+  :host .amap-zoom-touch > div {
+    opacity: .2; }
+  :host .amap-popup {
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-left: -165px;
+    margin-top: -170px; }
+  :host .amap-popup-content {
+    vertical-align: middle;
+    line-height: 200px;
+    overflow: hidden;
+    background-color: #fff;
+    border: solid #ddf;
+    border-width: 3px 1px;
+    border-radius: 5px;
+    margin: 0 auto;
+    text-align: center;
+    height: 340px; }
+  :host .column-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%; }
+    :host .column-container #map-container {
+      display: flex;
+      position: relative;
+      flex-direction: row;
+      width: 100%;
+      height: 600px;
+      border: var(--border-width, 1px) solid var(--stable-30, #E6E6E6);
+      background: var(--dark, #2b3648); }
+    :host .column-container .marker-info {
+      padding-bottom: var(--padding-10, 0.625rem);
+      border-top: var(--border-width, 1px) solid var(--border-color);
+      background: var(--light, #FFFFFF);
+      text-align: center; }
+      :host .column-container .marker-info .title {
+        margin-top: var(--padding-10, 0.625rem);
+        font-weight: 500; }

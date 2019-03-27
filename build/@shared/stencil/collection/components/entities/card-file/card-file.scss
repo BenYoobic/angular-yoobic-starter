@@ -1,0 +1,111 @@
+:host {
+  --height-image-container: 260px;
+  cursor: pointer;
+  .close-btn {
+    @include abs-pos(0, 0, auto, auto);
+  }  
+  .outer-container {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 3.75rem; //border-radius: 0.5rem;
+    padding: 0.75rem $padding-15 0.75rem $padding-15;
+    background-color: cssvar(light-card-background);
+    box-shadow: cssvar(grid-frame-shadow);
+    .image-container {
+      min-width: 36px;
+      height: 36px;
+      margin-right: cssvar(padding-15);
+      yoo-icon {
+        display: flex;
+        justify-content: center;
+        padding: 0.5rem;
+        border: solid 0.03125rem #f1f1f1;
+        border-radius: 50%;
+        background-color: cssvar(light);
+        font-size: cssvar(font-l);
+      }
+    }
+    .top-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      .heading-container {
+        margin-top: 0.15625rem;
+        font-size: cssvar(font-l);
+        line-height: 1rem;
+      }
+      .subheading-container {
+        color: cssvar(stable);
+        font-size: cssvar(font-xs);
+      }
+    }
+  }
+}
+
+:host(.dark) {
+  .outer-container {
+    border: 0.5px solid cssvar(stable); 
+    background: transparent;
+    background: cssvar(black);
+    box-shadow: none;
+    .top-container {
+      color: cssvar(light);
+    }
+  }
+}
+
+:host(.document) {
+  .outer-container {
+    display: flex;
+    width: auto;
+    min-height: auto;
+    border-radius: 8px;
+    .top-container{
+      display: flex;
+      flex-direction: column;
+      text-align: right;
+      overflow: hidden;
+      .heading-container{
+        @include text-truncate();
+        flex: 1;
+        min-width: 0;
+        font-size: 14px; 
+      }
+      .subheading-container{
+        @include text-truncate();
+        flex: 1;
+        min-width: 0;
+      }
+    }
+    .image-container{
+      &.video {
+        display: flex;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        border: solid 0.5px cssvar(stable-light);
+        border: none; 
+        border-radius: 50%;
+        border-radius: 2px;
+        background: transparent;
+        .overlay {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          border-radius: 2px;
+          background-color: rgba(0, 0, 0, 0.4);
+        }
+        yoo-icon {
+          position: absolute;
+          border: none;
+          background-color: transparent;
+          color: white;
+          font-size: cssvar(attachment-icon-size);
+        }
+      }
+    }
+  }
+}

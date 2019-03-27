@@ -1,0 +1,34 @@
+import '../../../stencil.core';
+import { EventEmitter } from '../../../stencil.core';
+import { IProgressCircle, IProgressCore, ISessionService } from '../../../interfaces';
+export declare class YooProgressBarCircleComponent {
+    progressCoreParameters: IProgressCore;
+    progressInstance: any;
+    progressAnimationDuration: number;
+    progressLabelClassAttribute: string;
+    allowNonAvailableValue: boolean;
+    progressUnitLabel: string;
+    getFormatedLabelToDisplay: Function;
+    addBaseClass: Function;
+    percentColorScheme: boolean;
+    progressColorClassAttribute: Function;
+    progressValue: number;
+    progressCustomParameters: IProgressCircle;
+    timeFinished: EventEmitter<any>;
+    sendTimerCountDownState: EventEmitter<number>;
+    timerDisplay: string;
+    circleElement: any;
+    host: HTMLStencilElement;
+    protected session: ISessionService;
+    private progressContainer;
+    private progressBarElement;
+    onprogressCustomParametersChange(newParams: IProgressCircle): void;
+    onProgressChange(newProgress: number): void;
+    componentWillLoad(): void;
+    componentDidLoad(): void;
+    private initProgressLine;
+    private initTimer;
+    private animateProgressBar;
+    renderProgressContainer(): JSX.Element;
+    render(): JSX.Element;
+}

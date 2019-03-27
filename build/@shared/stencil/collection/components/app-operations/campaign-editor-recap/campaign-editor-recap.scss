@@ -1,0 +1,63 @@
+:host {
+    display: block;
+    width: 100%;
+    .top-container {
+        display: flex;
+        margin: 1rem;
+        padding: 0.5rem;
+        border: 1px solid cssvar(stable-30);
+        border-radius: $border-radius-input;
+        background: cssvar(light);
+        .left-part {
+            flex: 1;
+            .heading-container {
+                display: flex;
+                align-items: center;
+                margin-bottom: 0.5rem;
+                .title-container {
+                    padding-right: cssvar(padding-10);
+                    font-size: cssvar(font-m);
+                    font-weight: normal;
+                    yoo-icon {
+                        margin-right: 0.5rem;
+                        color: cssvar(text-color);
+                        &.success {
+                            color: cssvar(success);
+                        }
+                    }
+                }
+            }
+            .description-container {
+                margin-top: cssvar(padding-5);
+                margin-bottom: cssvar(padding-5);
+                margin-left: 1.4rem;
+                color: cssvar(text-color);
+                font-size: cssvar(font-m);
+                font-weight: normal;
+                p {
+                    margin: 0;
+                }
+                .date-spacer {
+                    margin-right: 1rem;
+                }
+                .black {
+                    color: cssvar(black);
+                }
+            }
+        }
+        .right-part {
+            display: flex;
+            position: relative;
+            align-items: center;
+            justify-content: center;
+            yoo-button {
+                &.edit {
+                    --color-value: #{cssvar(black)};
+                    --shadow: none;
+                    --border-container: 1px solid #{cssvar(stable-light)};
+                    margin-right: cssvar(padding-20);
+                }
+            }
+        }
+    }
+}

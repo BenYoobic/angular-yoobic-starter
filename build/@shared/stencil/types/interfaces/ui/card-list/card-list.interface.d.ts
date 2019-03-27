@@ -1,0 +1,41 @@
+import { IUser } from '../../entities/user/user.interface';
+import { IBadgeEntry } from '../../entities/badge/badge.interface';
+import { IButton } from '../button/button.interface';
+import { IKpiData } from '../../entities/tenant/tenant.interface';
+export interface ICardListEntry {
+    heading?: string;
+    subheadings?: string[];
+    imgSrc?: string;
+    icon?: string;
+    iconText?: string;
+    avatarSize?: string;
+    topLeftBadge?: string;
+    topRightBadge?: string;
+    bottomLeftBadge?: string;
+    bottomRightBadge?: string;
+    bottomRightBadgeCssClass?: string;
+    date?: string;
+    badges?: IBadgeEntry[];
+    isChildComment?: boolean;
+    users?: Array<IUser>;
+    usersInline?: Array<IUser>;
+    tags?: Array<string>;
+    icons?: Array<{
+        icon: string;
+        value?: string;
+        handler?: () => void;
+    }>;
+    actions?: Array<IButton>;
+    topActions?: Array<IButton>;
+    bottomActions?: Array<IButton>;
+    distance?: string;
+    rank?: number;
+    points?: number;
+    kpiData?: Array<IKpiData>;
+    isCollapsible?: boolean;
+    isMap?: boolean;
+    progress?: number | string;
+    progressClass?: string;
+    vip?: boolean;
+    hasPending?: boolean;
+}

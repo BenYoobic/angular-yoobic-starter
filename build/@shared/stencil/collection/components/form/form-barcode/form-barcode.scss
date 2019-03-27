@@ -1,0 +1,57 @@
+:host {
+    .outer-container {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        padding-bottom: 1rem;
+        .barcode-container {
+            display: flex;
+            position: relative;
+            align-items: center;
+            justify-content: center;
+            width: 98px;
+            height: 98px;
+            border: 1px solid cssvar(input-container-border-color);
+            border-radius: 0.5rem;
+            cursor: pointer;
+            .required {
+                @include abs-pos(auto, auto, auto, 0.625rem);
+                color: cssvar(success);
+                font-size: cssvar(font-m);
+            }
+            yoo-icon {
+                // left: 35px;
+                font-size: cssvar(font-xl);
+            }
+        }
+        .value-container {
+            display: flex;
+            flex-direction: row;
+            align-content: center;
+            align-items: center;
+            justify-content: flex-start;
+            height: 98px;
+            padding-left: 2rem;
+            color:cssvar(text-color);
+            font-size: cssvar(font-m);
+        }
+    }
+    .center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .readonly {
+        @include form-readonly-padding();
+    }
+}
+
+:host(.history) {
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    .readonly {
+        padding: 0 !important;
+    }
+} 

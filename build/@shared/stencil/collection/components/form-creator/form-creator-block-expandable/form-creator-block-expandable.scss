@@ -1,0 +1,90 @@
+:host {
+    .outer-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        min-height: 2.5rem;
+        transition: 0.3s;
+        border-radius: 0.25rem;
+        background: cssvar(light);
+        box-shadow: 0 5px 15px 0 rgba(40, 47, 54, 0.08);
+
+        &.expanded {
+            min-height: 100px;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            min-height: 2.5rem;
+
+            .form-icon {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 1.25rem;
+                height: 1.25rem;
+                margin-left: cssvar(padding-10);
+                border-radius: 0.25rem;
+
+                // this is a default until the colors for the missing categories have been decided
+                background: cssvar(accent);
+                font-size: 0.875rem;
+
+                &.multimedia {
+                    background: cssvar(info);
+                }
+
+                &.select {
+                    background: cssvar(accent);
+                }
+
+                &.text {
+                    background: cssvar(energized);
+                }
+
+                &.number {
+                    background: cssvar(royal);
+                }
+
+                &.information {
+                    background: cssvar(warning);
+                }
+            }
+
+            .title {
+                flex: 1;
+                margin-left: cssvar(padding-10);
+            }
+
+            .icons-container {
+                display: flex;
+
+                .icon-container {
+                    display: flex;
+                    position: relative;
+                    align-items: center;
+                    justify-content: center;
+                    width: cssvar(padding-20);
+                    margin-right: cssvar(padding-10);
+
+                    &:last-child {
+                        width: 34px;
+                        margin-right: 0;
+                        font-size: cssvar(font-s);
+
+                        &::after {
+                            position: absolute;
+                            left: 0;
+                            width: 1px;
+                            height: 1.125rem;
+                            background: cssvar(stable-light);
+                            content: "";
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}

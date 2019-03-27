@@ -1,0 +1,59 @@
+:host .outer-container {
+  display: flex;
+  align-items: center;
+  min-height: 5.625rem;
+  margin: var(--padding-10, 0.625rem) var(--padding-15, 0.9375rem);
+  border-radius: 5px;
+  background-color: var(--light-card-background, #FFFFFF);
+  text-align: left;
+  box-shadow: var(--tile-shadow, 0 5px 15px 3px rgba(40, 47, 54, 0.08)); }
+  :host .outer-container .icon-outer-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4.0625rem;
+    height: 100%; }
+  :host .outer-container .icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.1875rem;
+    height: 2.1875rem;
+    border-radius: 50%;
+    color: var(--light, #FFFFFF);
+    font-size: 1rem; }
+    :host .outer-container .icon-container.locked {
+      background-color: var(--stable, #adadad); }
+    :host .outer-container .icon-container.valid {
+      background: var(--gradient-success, #04CC99); }
+    :host .outer-container .icon-container.invalid {
+      background: var(--danger, #ff625f); }
+    :host .outer-container .icon-container.step {
+      position: relative;
+      border: 1px solid var(--success, #04CC99);
+      color: var(--success, #04CC99);
+      overflow: hidden; }
+    :host .outer-container .icon-container .percentage-fill {
+      top: auto;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      transition: 0.3s all;
+      background: var(--success, #04CC99); }
+  :host .outer-container .text-container {
+    width: calc(100% - 4.375rem);
+    padding: var(--padding-10, 0.625rem) var(--padding-5, 0.3125rem) var(--padding-10, 0.625rem) 0; }
+  :host .outer-container .step-container {
+    color: var(--black, #000000);
+    font-size: var(--font-m, 15px);
+    font-weight: bold;
+    letter-spacing: 1px;
+    line-height: 1.31;
+    text-transform: uppercase; }
+    :host .outer-container .step-container yoo-icon {
+      padding-right: var(--padding-5, 0.3125rem);
+      font-weight: bold; }
+  :host .outer-container .subtitle-container {
+    color: var(--text-color, #807f83);
+    font-size: var(--font-s, 13px); }

@@ -1,0 +1,82 @@
+//OUR OWN CUSTOM CSS HERE
+.scroll-inner.full-height {
+    height: 100%;
+}
+
+//STENCIL
+// @import "../style/ionic.theme.default";
+// Content
+// --------------------------------------------------
+:host {
+    --height: 100%;
+}
+
+:host {
+    --ion-color-base: #{$background-color};
+    --ion-color-contrast: #{$text-color};
+    --padding-top: 0;
+    --padding-bottom: 0;
+    --padding-start: 0;
+    --padding-end: 0;
+    --keyboard-offset: 0px;
+    --offset-top: 0px;
+    --offset-bottom: 0px;
+    display: block;
+    position: relative;
+    flex: 1;
+    width: 100%;
+    height: cssvar(height);
+    margin: 0 !important; // scss-lint:disable all
+    padding: 0 !important; // scss-lint:disable all
+    //color: #{current-color(contrast)};
+    background-color: cssvar(light);
+    font-family: $font-family-base;
+    contain: layout size style;
+}
+
+:host(.scroll-disabled),
+yoo-ion-scroll {
+    @include padding( calc(#{cssvar(padding-top)} +#{cssvar(offset-top)}), #{cssvar(padding-end)}, calc(#{cssvar(padding-bottom)} + #{cssvar(keyboard-offset)} + #{cssvar(offset-bottom)}), #{cssvar(padding-start)});
+}
+
+:host(.ion-color-outer),
+:host(.outer-content) {
+    --ion-color-base: #{cssvar(stable-light)};
+}
+
+::slotted(hr) {
+    height: $hairlines-width;
+    background-color: rgba(#{cssvar(ion-text-color-rgb)}, .12);
+}
+
+:host(.feed-detail-page) {
+    display: flex;
+    yoo-ion-scroll {
+        --background-color: #{cssvar(dark)};
+    }
+}
+
+:host(.manager-insight-page) {
+    display: flex;
+    yoo-ion-scroll {
+        --background-color: #{cssvar(dark)};
+    }
+}
+
+:host(.flex) {
+    display: flex;
+}
+
+:host(.flex-column) {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+:host(.padding) {
+    yoo-ion-scroll {
+        top: 1rem;
+        bottom: 1rem;
+        left: 1rem;
+    }
+}

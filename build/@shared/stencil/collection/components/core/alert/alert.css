@@ -1,0 +1,138 @@
+@-webkit-keyframes bounce {
+  0% {
+    transform: translateY(2rem);
+    opacity: 0; }
+  30% {
+    -webkit-transform: translateY(-2rem);
+    opacity: 0.5; }
+  60%,
+  100% {
+    -webkit-transform: translateY(0);
+    opacity: 1; }
+  80% {
+    -webkit-transform: translateY(-0.3rem); } }
+
+@keyframes bounce {
+  0% {
+    transform: translateY(2rem);
+    opacity: 0; }
+  30% {
+    transform: translateY(-2rem);
+    opacity: 0.5; }
+  60%,
+  100% {
+    transform: translateY(0);
+    opacity: 1; }
+  80% {
+    transform: translateY(-0.3rem); } }
+
+:host .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 20001; }
+
+:host .outer-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  :host .outer-container .alert-container {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    width: 70%;
+    max-width: 270px;
+    min-height: 90px;
+    padding-top: 1rem;
+    border-radius: 8px;
+    background: var(--light, #FFFFFF); }
+    :host .outer-container .alert-container .img-container {
+      display: flex;
+      position: absolute;
+      top: -4rem;
+      left: 33%;
+      justify-content: center;
+      width: 5.5rem;
+      height: 5.5rem;
+      border-radius: 50%;
+      background-color: white;
+      -webkit-animation: bounce 0.7s ease-out 0.3s 1 normal both;
+      animation: bounce 0.7s ease-out 0.3s 1 normal both; }
+      :host .outer-container .alert-container .img-container yoo-avatar {
+        position: absolute;
+        top: 10%; }
+    :host .outer-container .alert-container .header-container,
+    :host .outer-container .alert-container .message-container,
+    :host .outer-container .alert-container .icon-container {
+      display: flex;
+      justify-content: center; }
+    :host .outer-container .alert-container .icon-container {
+      font-size: var(--icon-alert, 50px); }
+    :host .outer-container .alert-container .header-container {
+      padding: 0 0.5rem;
+      color: var(--dark, #2b3648);
+      font-size: var(--font-l, 17px);
+      font-weight: 700;
+      text-align: center; }
+      :host .outer-container .alert-container .header-container span {
+        color: var(--black, #000000); }
+      :host .outer-container .alert-container .header-container.with-image {
+        padding-top: 1rem; }
+    :host .outer-container .alert-container .message-container {
+      padding: 0.5rem 1rem 0;
+      color: var(--text-color, #807f83);
+      font-size: var(--font-m, 15px);
+      text-align: center; }
+    :host .outer-container .alert-container .input-container {
+      padding: 1rem 1rem 0; }
+    :host .outer-container .alert-container .buttons-container {
+      display: flex;
+      justify-content: space-around;
+      height: 43px;
+      margin-top: 1.5rem;
+      border-top: 1px solid var(--stable-light, #f1f1f1);
+      color: var(--dark, #2b3648);
+      font-weight: 700; }
+      :host .outer-container .alert-container .buttons-container .button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        border-right: 1px solid var(--stable-light, #f1f1f1);
+        color: var(--black, #000000); }
+        :host .outer-container .alert-container .buttons-container .button.last {
+          border-right: none; }
+        :host .outer-container .alert-container .buttons-container .button.danger {
+          font-weight: 300; }
+
+:host yoo-ion-toolbar yoo-icon.yo-close {
+  color: var(--always-light, #FFFFFF); }
+
+:host(.photo-editor-alert) .outer-container .alert-container .buttons-container .button.danger {
+  color: var(--dark, #2b3648);
+  font-weight: normal; }
+
+:host(.photo-editor-alert) .outer-container .alert-container .buttons-container .button.last {
+  color: var(--danger, #ff625f);
+  font-weight: normal; }
+
+:host(.badge) yoo-ion-toolbar {
+  padding: 0; }
+
+:host(.badge) .outer-container .alert-container .header-container {
+  font-weight: 400; }
+
+:host(.badge) .outer-container .alert-container .message-container {
+  color: var(--stable, #adadad); }
+
+:host(.timed-lesson) .outer-container .alert-container .buttons-container .last {
+  color: var(--danger-light, #F46885);
+  font-weight: 400; }

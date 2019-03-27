@@ -1,0 +1,25 @@
+:host {
+    .outer-container,
+    .readonly {
+        .map-container {
+            position: relative;
+            height: 180px;
+            border-radius: cssvar(border-radius-input);
+            background: cssvar(stable);
+            overflow: hidden;
+        }
+        yoo-form-input-container {
+            margin-top: 0.5rem;
+            yoo-form-checkbox {
+                color: cssvar(text-color);
+            }
+        }
+    }
+}
+
+:host(.history) {
+    border: none !important;
+    .readonly {
+        border: none !important;
+    }
+} 

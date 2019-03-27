@@ -1,0 +1,365 @@
+:host {
+    .readonly {
+        .item {
+            display: block !important;
+            height: 100%; // min-height: 2.75rem;
+            padding: 0.3rem;
+            padding-left: 0; //border-bottom: 1px solid cssvar(stable-30);
+            font-size: cssvar(font-m);
+            cursor: pointer;
+            .badge-inner {
+                width: 1.25rem;
+                height: 1.25rem;
+                margin-top: 1px;
+                margin-right: cssvar(padding-10);
+                float: left;
+                border-radius: 50%;
+                color: cssvar(light);
+                font-size: cssvar(font-xs);
+                line-height: 1.25rem;
+                text-align: center;
+            }
+        }
+    }
+    .outer-container {
+        &.droppable {
+            touch-action: none;
+        }
+        .radio-button-choice {
+            margin-top: -0.5rem;
+        }
+        .grid-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            &.singleColumn {
+                grid-template-columns: 90%;
+            }
+            &.doubleColumn {
+                justify-content: space-between; // grid-template-columns: 45% 45%;
+                yoo-button {
+                    &.btn-form-choice {
+                        margin-bottom: 0.4rem;
+                    }
+                }
+            }
+        }
+        .input-zone {
+            position: relative;
+            height: 2.375rem;
+            margin-top: 0.5rem;
+            margin-right: 1rem;
+            margin-left: 1rem;
+            padding: cssvar(padding-5);
+            border: 1px solid cssvar(stable);
+            border-radius: 0.3125rem;
+            background-color: cssvar(light);
+            textarea {
+                @include textarea-style();
+            }
+        }
+        .item {
+            display: block !important;
+            height: 100%; // min-height: 2.75rem;
+            padding: 0.75rem;
+            border-bottom: 1px solid cssvar(stable-30);
+            color: cssvar(dark);
+            font-size: cssvar(font-m);
+            cursor: pointer;
+            &:last-child {
+                border-bottom: none;
+            }
+            .badge-inner {
+                width: 1.25rem;
+                height: 1.25rem;
+                margin-top: 3px;
+                margin-right: cssvar(padding-10);
+                float: left;
+                border-radius: 50%;
+                color: cssvar(always-light);
+                font-size: cssvar(font-xs);
+                line-height: 1.25rem;
+                text-align: center;
+            }
+            &.drag-target {
+                position: relative;
+                background: cssvar(light);
+                box-shadow: cssvar(button-shadow);
+                z-index: 50;
+            }
+            &.drop-target {
+                background: cssvar(stable-30);
+            }
+        }
+        .messages-container {
+            display: flex;
+            flex-direction: column;
+            padding: 0rem 1rem 1rem 1rem;
+            .chat-title.alternate {
+                text-align: end;
+            }
+            .chat-title,
+            .chat-item,
+            yoo-chat-message {
+                margin-bottom: 0.5rem;
+            }
+            yoo-chat-message {
+                display: block;
+            }
+        }
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            .card-select {
+                position: relative;
+                width: calc(50% - 1.5625rem);
+                margin: 0 cssvar(padding-20) cssvar(padding-10) 0;
+                border: solid 1px cssvar(stable-light);
+                border-radius: 0.5rem;
+                .card-heading,
+                .card-description {
+                    font-size: cssvar(font-s);
+                    white-space: normal;
+                    word-break: break-word;
+                }
+                .card-heading {
+                    padding: cssvar(padding-20) cssvar(padding-40) cssvar(padding-10) cssvar(padding-20);
+                }
+                .card-description {
+                    padding: 0 cssvar(padding-20) cssvar(padding-20);
+                    color: cssvar(text-color);
+                }
+                .check-container {
+                    @include abs-pos(cssvar(padding-20), cssvar(padding-20), auto, auto);
+                    color: cssvar(stable);
+                    font-size: cssvar(font-l);
+                }
+                &.selected {
+                    border: solid 1px cssvar(success);
+                    .check-container {
+                        color: cssvar(success);
+                    }
+                }
+            }
+        }
+    }
+    .outer-container,
+    .readonly {
+        .images-container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-content: center;
+            align-items: center;
+            justify-content: center;
+            .image-container {
+                display: flex;
+                position: relative;
+                flex-direction: column;
+                margin: cssvar(padding-10);
+                margin-top: 0;
+                .image-content {
+                    display: flex;
+                    position: relative;
+                    flex-direction: column;
+                    align-content: center;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
+                    .image {
+                        width: 6.5625rem;
+                        height: 6.5625rem;
+                        border: solid 1px cssvar(stable-alt);
+                        border-radius: cssvar(video-border);
+                    }
+                    .boost-image {
+                        width: 7.1255rem;
+                        height: 7.1255rem;
+                    }
+                    yoo-form-checkbox {
+                        @include abs-pos(0, 0, auto, auto);
+                    }
+                }
+                .maximize-container {
+                    display: flex;
+                    position: absolute;
+                    right: 0.5rem;
+                    bottom: 2rem;
+                    align-items: center;
+                    justify-content: center;
+                    width: 1.875rem;
+                    height: 1.875rem;
+                    border-radius: 50%;
+                    background: cssvar(backdrop-black-transparent);
+                    cursor: pointer;
+                    z-index: 1;
+                    .yo-maximize {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 1.125rem;
+                        height: 1.125rem;
+                        color: cssvar(light);
+                        object-fit: contain;
+                    }
+                }
+                .text {
+                    @include text-truncate();
+                    max-width: 6.5625rem;
+                    margin-top: cssvar(padding-10);
+                    color: cssvar(black);
+                    font-size: cssvar(font-s);
+                    line-height: 1.0625rem;
+                    text-align: center;
+                    cursor: pointer;
+                }
+                .boost-text {
+                    position: absolute;
+                    top: 6.6rem;
+                    max-height: 2.4rem;
+                    margin-top: cssvar(padding-20);
+                    margin-right: -1rem;
+                    padding-right: 1rem;
+                    font-size: cssvar(font-l);
+                    line-height: 1.2rem; 
+                    text-align: justify;  
+                    white-space: normal; 
+                    overflow: hidden;
+
+                    &::before {
+                        position: absolute;
+                        right: 0;
+                        bottom: 0;
+                        content: "...";
+                    }
+
+                    &::after {
+                        position: absolute;
+                        right: 0;width: 1rem;
+                        height: 1rem;
+                        margin-top: 0.2rem;
+                        background: white;
+                        content: "";
+                    }
+                }
+            }
+        }
+    }
+    .readonly {
+        @include form-readonly-padding();
+        .images-container {
+            justify-content: left;
+        }
+    }
+}
+
+:host(.boost) {
+    .item span {
+        font-size: cssvar(font-l);
+    }
+}
+
+:host(.boost) {
+    .outer-container {
+        .images-container {
+            .image-container {
+                margin-bottom: 2.4rem;
+                .maximize-container {
+                    bottom: 0.6rem;
+                }
+                &.twoline-description {
+                    margin-bottom: 4rem;
+                }
+                &.twoline-description-tablet {
+                    margin-bottom: 4.938rem;
+                }
+            }
+        }
+    }
+}
+
+:host(.boost) {
+    .readonly {
+        .images-container {
+            .image-container {
+                .maximize-container {
+                    bottom: 0.6rem;
+                }
+            }
+        }
+    }
+}
+
+:host(.round) {
+    .outer-container {
+        .grid-container {
+            .choice-container {
+                border-radius: 0.3125rem;
+            }
+        }
+    }
+}
+
+:host(.history) {
+    .readonly {
+        padding: 0 !important;
+        .text {
+            max-width: 80px;
+        }
+        .item {
+            width: auto;
+        }
+        .images-container {
+            display: flex;
+            flex-wrap: wrap;
+            .image-container {
+                margin: 0;
+                .image-content {
+                    .image {
+                        width: 30px;
+                        height: 30px;
+                        margin-right: 10px;
+                        border-radius: 2px;
+                    }
+                }
+            }
+        }
+    }
+}
+@mixin form-choice-color($app, $color, $gradient) {
+    :host(.#{$app}) {
+        .readonly {
+            .item {
+                .badge-inner {
+                    background: cssvar($gradient);
+                }
+            }
+        }
+        .outer-container {
+            .item {
+                .badge-inner {
+                    background: cssvar($gradient);
+                }
+            }
+            .messages-container {
+                yoo-chat-message {
+                    --background-message-content: #{cssvar($gradient)};
+                }
+            }
+        }
+        .outer-container,
+        .readonly {
+            .images-container {
+                .image-container {
+                    .text {
+                        &.link {
+                            color: cssvar($color);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@include form-choice-color(operations, success, gradient-success);
+@include form-choice-color(boost, danger-light, danger-light);

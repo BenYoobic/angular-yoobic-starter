@@ -1,0 +1,16 @@
+:host .readonly {
+  margin-bottom: 0.5rem; }
+  :host .readonly yoo-img {
+    height: 200px;
+    margin: 0rem 1rem 1rem; }
+  :host .readonly .title {
+    font-size: var(--font-l, 17px);
+    font-weight: bold;
+    line-height: 1.18; }
+  :host .readonly .subtitle {
+    font-size: var(--font-l, 17px); }
+    :host .readonly .subtitle .value {
+      padding-left: 0.5rem;
+      color: var(--text-color, #807f83); }
+  :host .readonly yoo-badge {
+    margin-top: 0.5rem; }

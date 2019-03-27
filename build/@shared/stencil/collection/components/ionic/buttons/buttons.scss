@@ -1,0 +1,127 @@
+
+
+// // iOS Toolbar
+// // --------------------------------------------------
+/// @prop - Order of the toolbar elements
+$toolbar-order-ios: ( back-button: 0, menu-toggle-start: 1, buttons-start: 2, buttons-secondary: 3, content: 4, buttons-primary: 5, buttons-end: 6, menu-toggle-end: 7, );
+/// @prop - Font family of the toolbar
+$toolbar-ios-font-family : $font-family-base !default;
+/// @prop - Font size of the toolbar button
+$toolbar-ios-button-font-size : 17px !default;
+/// @prop - Text color of the toolbar button
+$toolbar-ios-button-color : ion-color(primary, base) !default;
+/// @prop - Background color of the toolbar button
+$toolbar-ios-button-background-color : $toolbar-ios-background-color !default;
+/// @prop - Background color of the toolbar button when activated
+$toolbar-ios-button-background-color-activated : $toolbar-ios-color-active !default;
+/// @prop - Border radius of the toolbar button
+$toolbar-ios-button-border-radius : 4px !default;
+/// @prop - Font weight of the strong toolbar button
+$toolbar-ios-button-strong-font-weight : 600 !default;
+/// @prop - Fill color of the toolbar button icon
+$toolbar-ios-button-icon-fill-color : currentColor !default;
+/// @prop - Filter of the translucent toolbar
+$toolbar-ios-translucent-filter : saturate(180%) blur(20px) !default;
+
+:host {
+
+  display: flex;
+  align-items: center;
+  transform: translateZ(0);
+  z-index: $z-index-toolbar-buttons;
+
+  pointer-events: none;
+}
+
+// Toolbar Buttons
+// --------------------------------------------------
+
+::slotted(*) yoo-ion-button {
+  --margin-top: 0;
+  --margin-bottom: 0;
+  --margin-start: 0;
+  --margin-end: 0;
+  --padding-top: 0;
+  --padding-bottom: 0;
+  --padding-start: 0;
+  --padding-end: 0;
+  --box-shadow: none;
+
+  pointer-events: auto;
+}
+
+
+// iOS Toolbar Button Default
+// --------------------------------------------------
+
+::slotted(*) yoo-ion-button {
+  --padding-top: 0;
+  --pading-bottom: 0;
+  --padding-start: #{cssvar(padding-10)};
+  --padding-end: #{cssvar(padding-10)};
+  --border-radius: #{$toolbar-ios-button-border-radius};
+  --height: 32px;
+  font-size: #{$toolbar-ios-button-font-size};
+  font-weight: 400;
+}
+
+:host-context(.ion-color)::slotted(*) .button {
+  --ion-color-base: currentColor;
+}
+
+
+::slotted(*) yoo-ion-button.button-clear {
+  --height: 35px;
+}
+
+// iOS Toolbar Button Solid
+// --------------------------------------------------
+
+::slotted(*) yoo-ion-button.button-solid-ios:hover {
+  opacity: .4;
+}
+
+  // iOS Toolbar Menu Toggle
+  // --------------------------------------------------
+
+  .button-menutoggle-ios {
+    --margin-top: 0;
+    --margin-bottom: 0;
+    --margin-start: 6px;
+    --margin-end: 6px;
+    --padding-top: 0;
+    --padding-bottom: 0;
+    --padding-start: 0;
+    --padding-end: 0;
+    order: map-get($toolbar-order-ios, menu-toggle-start);
+    min-width: 36px;
+  }
+
+// iOS Toolbar Button Placement
+// --------------------------------------------------
+
+:host([slot="start"]) {
+  order: map-get($toolbar-order-ios, buttons-start);
+}
+
+:host([slot="secondary"]) {
+  order: map-get($toolbar-order-ios, buttons-secondary);
+}
+
+:host([slot="primary"]) {
+  order: map-get($toolbar-order-ios, buttons-primary);
+  text-align: end;
+}
+
+:host([slot="end"]) {
+  order: map-get($toolbar-order-ios, buttons-end);
+  text-align: end;
+}
+
+:host(.iphone-x) {
+  padding-bottom: 2px;
+}
+
+:host(.pointer-events) {
+  pointer-events: unset;
+}

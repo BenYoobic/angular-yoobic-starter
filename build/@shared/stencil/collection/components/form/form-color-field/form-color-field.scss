@@ -1,0 +1,16 @@
+@import "../../../../../../node_modules/pickr-widget/src/scss/pickr.scss";
+:host {
+    .readonly {
+        width: 2rem;
+        height: 2rem;
+        border-radius: cssvar(border-radius-input);
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+    }
+    .outer-container {
+        .pickr {
+            .pcr-button {
+                border: 1px solid cssvar(stable-30);
+            }
+        }
+    }
+}

@@ -1,0 +1,119 @@
+:host {
+    .outer-container,
+    .readonly {
+        @include form-readonly-padding();
+        .or {
+            padding: 0.5rem;
+            color: cssvar(text-color);
+            font-size: cssvar(font-s);
+            text-align: center;
+        }
+        .selected {
+            background-color: cssvar(light);
+        }
+        .error {
+            color:cssvar(danger);
+        }
+        .products {
+            >.title {
+                display: flex;
+                flex-direction: row;
+                margin-top: 0.5rem;
+                color: cssvar(black); //margin-bottom: 0.25rem;
+                font-size: cssvar(font-m);
+                font-weight: normal;
+                line-height: 1.5;
+                text-align: left;
+                text-transform: uppercase;
+            }
+            .subtitle {
+                margin-top: 0.125rem;
+                color: cssvar(text-color);
+                font-size: cssvar(font-xs);
+            }
+            .remove {
+                display: flex;
+                align-content: center;
+                align-items: center;
+                justify-content: center;
+                min-width: 40px;
+                border-bottom: 1px solid cssvar(stable-light);
+                text-align: center;
+            }
+            .entity {
+                display: flex;
+                flex-direction: row;
+            }
+            .toolbar {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                padding: 0.5rem;
+                padding-left: 110px;
+                border-bottom: 1px solid cssvar(stable-light);
+                font-size: cssvar(font-m);
+                &.history {
+                    font-size: cssvar(font-s);
+                }
+                .title {
+                    flex: 1;
+                    padding: 3px .5rem 3px 0;
+                    color: cssvar(black);
+                    font-size: cssvar(font-xs);
+                    &.align-right {
+                        text-align: right;
+                    }
+                }
+                .quantity {
+                    // flex: 1;
+                    padding: 0 .5rem;
+                    color: cssvar(black);
+                    text-align: center;
+                }
+                .price {
+                    flex: 1;
+                    padding-left: .5rem;
+                    color: cssvar(black);
+                    text-align: right;
+                    white-space: nowrap;
+                }
+                .icon {
+                    width: 22px;
+                    min-width: 22px;
+                    height: 22px;
+                    min-height: 22px;
+                    border-radius: 50%;
+                    background: cssvar(stable-light); //padding: 0 1rem; //min-width: 50px;
+                    //color: cssvar(text-color);
+                    text-align: center; // &.left {
+                    //     text-align: left;
+                    // }
+                    // &.right {
+                    //     text-align: right;
+                    // }
+                }
+            }
+            .footer {
+                display: flex;
+                flex-direction: row;
+                padding: 0.5rem;
+                padding-top: 1rem;
+                padding-bottom: 0.5rem;
+                color: cssvar(black);
+                .title {
+                    flex: 1;
+                    text-transform: uppercase;
+                }
+                .price {
+                    text-align: right;
+                }
+            }
+        }
+    }
+}
+
+:host(.history) {
+    .readonly {
+        max-width: 800px;
+    }
+}

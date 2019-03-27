@@ -1,0 +1,63 @@
+:host {
+    .outer-container {
+        width: 100%;
+    }
+
+    .list-item {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 45px;
+    }
+
+    .item-content {
+        height: 100%;
+        padding: 0 1rem;
+        border-bottom: 1px solid cssvar(stable-30);
+        background-color: rgb(255, 255, 255);
+
+        span {
+            display: inline-block;
+            max-width: calc(100vw - 120px);
+            margin-top: 0.6rem;
+            font-size: var(--font-l, 17px);
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .badge {
+            display: none;
+        }
+
+        .icon {
+            display: block;
+            float: right;
+            color: var(--stable, #adadad);
+        }
+
+        .badge.active {
+            display: block;
+            width: 1.25rem;
+            height: 1.25rem;
+            margin-top: 0.75rem;
+            margin-right: var(--padding-10, 0.625rem);
+            float: left;
+            border-radius: 50%;
+            background: cssvar(success);
+            color: var(--light, #ffffff);
+            font-size: var(--font-xs, 10px);
+            line-height: 1.25rem;
+            text-align: center;
+        }
+    }
+}
+
+:host(.boost) {
+    .item-content {
+        .badge.active {
+            background: cssvar(danger-light);
+        }
+    }
+}

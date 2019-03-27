@@ -1,0 +1,111 @@
+:host {
+  --curve: cubic-bezier(0.650, 0.000, 0.450, 1.000); }
+
+:host {
+  display: block; }
+  :host .container {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    text-align: center; }
+
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: 0; } }
+
+@keyframes scale {
+  0%, 100% {
+    transform: none; }
+  50% {
+    transform: scale3d(1.1, 1.1, 1); } }
+
+@keyframes fill {
+  100% {
+    box-shadow: inset 0px 0px 0px 30px var(--success, #04CC99); } }
+    :host .container .value {
+      font-size: var(--font-l, 17px);
+      font-weight: bold;
+      line-height: 1.5;
+      text-align: center; }
+      :host .container .value img {
+        width: 1rem;
+        height: 1rem; }
+    :host .container .checkmark-circle {
+      stroke-dasharray: 166;
+      stroke-dashoffset: 166;
+      stroke-width: 2;
+      stroke-miterlimit: 10;
+      stroke: var(--success, #04CC99);
+      fill: none; }
+    :host .container .checkmark {
+      display: block;
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      margin: 10% auto;
+      border-radius: 50%;
+      box-shadow: inset 0px 0px 0px var(--success, #04CC99);
+      opacity: 0;
+      stroke-width: 2;
+      stroke: #fff;
+      stroke-miterlimit: 10; }
+      :host .container .checkmark.active {
+        position: initial;
+        opacity: 1;
+        animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both; }
+        :host .container .checkmark.active .checkmark-check {
+          animation: stroke 0.3s var(--curve) 0.8s forwards; }
+        :host .container .checkmark.active .checkmark-circle {
+          animation: stroke 0.6s var(--curve) forwards; }
+    :host .container .checkmark-check {
+      transform-origin: 50% 50%;
+      stroke-dasharray: 48;
+      stroke-dashoffset: 48; }
+    :host .container .text {
+      margin: 1rem;
+      color: var(--text-color, #807f83);
+      font-weight: 400; }
+
+:host(.absolute) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9; }
+
+:host(.absolute.safari) .container {
+  position: absolute; }
+
+:host(.fixed) {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9; }
+
+:host(.backdrop) .container {
+  background: var(--backdrop-light, rgba(255, 255, 255, 0.8)); }
+
+:host(.backdrop-dark) .container {
+  background: var(--backdrop, rgba(4, 4, 15, 0.4)); }
+
+:host(.dark) .container {
+  background: var(--black, #000000); }
+
+:host(.small) .container .value img {
+  width: 1rem;
+  height: 1rem; }
+
+:host(.medium) .container .value img {
+  width: 1.75rem;
+  height: 1.75rem; }
+
+:host(.large) .container .value img {
+  width: 2.5rem;
+  height: 2.5rem; }

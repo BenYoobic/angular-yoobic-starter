@@ -1,0 +1,182 @@
+:host {
+  --margin-top-container: 0;
+  --yo-circle-color: #{cssvar(stable)};
+  --font-size-outer-container: #{cssvar(font-l)};
+}
+
+:host {
+  .optional {
+    margin-left: 0.5rem !important;
+    color: cssvar(stable);
+    white-space: nowrap;
+}
+  .outer-container {
+    display: flex;
+    flex-direction: row;
+    // align-items: center;
+    // height: 1.25rem;
+    font-size: cssvar(font-size-outer-container); //cssvar(font-l);
+    word-break: break-word;
+    yoo-icon{
+      font-size: cssvar(checkbox-size);
+      line-height: 1;
+    }
+
+    .yo-circle {
+      color: cssvar(yo-circle-color);
+    }
+    .yo-circle.undefined {
+      color: cssvar(yo-circle-color);
+    }
+
+    .yo-check {
+      flex: 0;
+    }
+    .label {
+      display: flex;
+      flex: 1;
+      flex-direction: row;
+      align-items: center;
+      padding-left: cssvar(padding-10);
+      color: inherit;
+      //  color: cssvar(black);
+      //margin-bottom: 0.25rem;
+      font-size: cssvar(font-m);
+      font-weight: normal;
+      //  letter-spacing: 2px;
+      line-height: 1.5;
+      text-align: left;
+      font-variant-caps: normal;
+
+        .required {
+          margin-right: 0.25rem;
+          color: cssvar(danger);
+          font-variant-caps: normal;
+        }
+
+        .label-required {
+          margin-left: 0.25rem;
+          color: cssvar(danger);
+        }
+
+        &.readonly {
+          letter-spacing: 0px;
+          //font-variant-caps: inherit;
+        }
+    }
+  }
+  .readonly {
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    // height: 1.25rem;
+    font-size: cssvar(font-size-outer-container); //cssvar(font-l);
+    word-break: break-word;
+
+    yoo-icon{
+      font-size: cssvar(checkbox-size);
+      line-height: 1;
+    }
+
+    .yo-circle {
+      color: cssvar(yo-circle-color);
+    }
+    .yo-circle.undefined {
+      color: cssvar(yo-circle-color);
+    }
+    .yo-circle.disabled {
+      border-radius: 50%;
+      background: cssvar(stable-light);
+    }
+    .yo-check {
+      flex: 0;
+    }
+
+    .label {
+      display: flex;
+      flex: 1;
+      flex-direction: row;
+      align-items: center;
+      padding-bottom: cssvar(padding-15);
+      color: cssvar(text-color);
+      //  color: cssvar(black);
+      //margin-bottom: 0.25rem;
+      font-size: cssvar(font-m);
+      font-weight: normal;
+      //  letter-spacing: 2px;
+      line-height: 1.5;
+      text-align: left;
+      font-variant-caps: normal;
+
+        .required {
+          margin-right: 0.25rem;
+          color: cssvar(danger);
+          font-variant-caps: normal;
+        }
+
+        .label-required {
+          margin-left: 0.25rem;
+          color: cssvar(danger);
+        }
+    }
+  }
+}
+
+:host(.btn-form-choice) {
+  .outer-container {
+    display: flex;
+    position: relative;
+    width: cssvar(checkbox-size);
+    height: cssvar(checkbox-size);
+    margin: 0.3125rem;
+    border-radius: 50%;
+    background-color: transparent;
+    font-size: cssvar(font-m);
+    .check-background-mask {
+      position: absolute;
+      width: cssvar(checkbox-size);
+      height: cssvar(checkbox-size);
+      border-radius: 50%;
+      background: cssvar(light);
+      color: cssvar(light);
+    }
+    yoo-icon.form-choice {
+      z-index: 1;
+    }
+    yoo-icon.yoo-circle {
+      color: cssvar(yo-circle-color);
+    }
+    yoo-icon.yo-check{
+      z-index: 1;
+    }
+  }
+}
+
+:host(.history) {
+  .readonly {
+    font-size: 14px !important;
+    yoo-icon {
+      font-size: 14px !important;
+    }
+  }
+}
+@mixin form-checkbox-color($app, $color) {
+  :host(.#{$app}) {
+    .outer-container {
+      .yo-circle
+      &:hover {
+        color: cssvar($color);
+      }
+      .yo-check {
+        color: cssvar($color);
+      }
+    }
+    .readonly {
+      .yo-check {
+        color: cssvar($color);
+      }
+    }
+  }
+}
+@include form-checkbox-color(operations, success);
+@include form-checkbox-color(boost, danger-light);

@@ -1,0 +1,5 @@
+:host yoo-ion-content {
+  background: var(--light, #FFFFFF); }
+  :host yoo-ion-content #webcamHolder {
+    width: 100%;
+    height: 100%; }

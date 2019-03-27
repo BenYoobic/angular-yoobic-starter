@@ -1,0 +1,140 @@
+:host {
+  cursor: pointer;
+
+  .outer-container {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0.75rem 0 0.75rem 0;
+    padding: 1rem 0;
+    border-radius: 0.5rem;
+    background-color: cssvar(light-to-dark);
+    box-shadow: 0 0.3125rem $padding-15 0 rgba(40, 47, 54, 0.08);
+
+    .type-icon-container,
+    .extra-icon-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      min-width: 33px;
+      margin: 0 $padding-15;
+      color: cssvar(black);
+
+      yoo-icon {
+        display: flex;
+        justify-content: center;
+        padding: 0.5rem;
+        border: none;
+        border-radius: 50%;
+        background: cssvar(danger-light-to-dark-two);
+        color: cssvar(light_const);
+        font-size: cssvar(font-l);
+      }
+    }
+
+    .info-container {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 2;
+      justify-content: flex-start;
+
+      .title-container {
+        color: cssvar(black);
+        font-size: cssvar(font-m);
+        font-weight: bold;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+
+      .order-container {
+        margin-top: 0.1875rem;
+        color: cssvar(black);
+        font-size: cssvar(font-m);
+        line-height: 1.125rem;
+      }
+
+      .remaining-points-container {
+        display: flex;
+        align-items: center;
+        min-height: 1.5625rem;
+        margin-top: 0.1875rem;
+        color: cssvar(black);
+
+        yoo-badge {
+          --background: transparent;
+          --inner-container-default-padding: 0.25rem 0.53rem 0.25rem 0;
+          --color-inner-text: #{cssvar(black)};
+          --font-size-inner-container: #{cssvar(font-m)};
+        }
+      }
+    }
+
+    &.finished {
+      background-color: cssvar(danger-light);
+      .type-icon-container,
+      .extra-icon-container {
+        yoo-icon {
+          background: cssvar(light_const);
+          color: cssvar(danger-light);
+        }
+      }
+
+      .info-container {
+        .order-container {
+          color: cssvar(light_const);
+        }
+
+        .title-container {
+          color: cssvar(light_const);
+        }
+
+        .remaining-points-container {
+            yoo-badge {
+                --color-inner-text: #{cssvar(light_const)};
+            }
+        }
+      }
+    }
+
+    &.locked {
+      background-color: cssvar(stable-light2);
+      .type-icon-container,
+      .extra-icon-container {
+        yoo-icon {
+          background: cssvar(stable);
+          color: cssvar(always-light);
+        }
+      }
+
+      .info-container {
+        .order-container {
+          color: cssvar(text-color);
+        }
+
+        .title-container {
+          color: cssvar(text-color);
+        }
+
+        .remaining-points-container {
+          color: cssvar(text-color);
+            yoo-badge {
+                --color-inner-text: #{cssvar(text-color)};
+            }
+        }
+      }
+    }
+  }
+}
+
+:host(.dark) {
+  .outer-container {
+    border: 0.5px solid cssvar(stable);
+    background: transparent;
+    background: cssvar(black);
+    box-shadow: none;
+    .info-container {
+      color: cssvar(light);
+    }
+  }
+}

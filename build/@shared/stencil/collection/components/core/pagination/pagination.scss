@@ -1,0 +1,123 @@
+
+@mixin context-container() {
+
+    position: relative;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid;
+    line-height: 1.5;
+}
+@mixin color-pagination($color, $color-20, $color-05) {
+    .container {
+        .inner-container {
+            .page-number {
+                color: $color;
+                font-size: cssvar(font-s);
+                font-weight: 400;
+                &:hover {
+                    background: $color-20;
+                }
+                &.active {
+                    background: $color;
+                    color: cssvar(light);
+                }
+                &.disabled {
+                    color: $color-05;
+                    &:hover {
+
+                        background: transparent;
+                        cursor: not-allowed;
+                    }
+                }
+                &.ellipsis {
+                    &:hover{
+
+                        background: transparent;
+                        cursor: default;
+                    }
+                }
+            }
+        }
+    }  
+}
+
+:host {
+    .container {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        &.show-total-disabled {
+            justify-content: center;
+        }
+         &.show-total {
+            justify-content: space-between;
+        }
+        .total-container {
+            display: flex;
+            flex-direction: row;
+
+            align-items: center;
+            min-width: 7.6rem;
+            color: cssvar(dark-80);
+            .text-container {
+                padding-left: 0.3rem;
+            }
+            .dropdown-entry {
+                width: 100%;
+                padding: 0.5rem 1rem;
+                line-height: 1.5;
+                cursor: pointer;
+                &:hover {
+                    background: cssvar(accent-05);
+                    color: cssvar(dark);
+                }
+            }
+            .items-container {
+                display: flex;
+                flex-direction: row;
+                padding-left: 0.5rem;
+            }
+        }
+        .inner-container {
+            display: flex;
+            flex-direction: row;
+            .page-number {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                width: 2.5rem;
+
+                height: 2.5rem;
+                border-radius: $border-radius-input;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+:host(.accent) {
+    @include color-pagination(cssvar(accent), cssvar(accent-20), cssvar(accent-05));
+}
+
+:host(.danger) {
+    @include color-pagination(cssvar(danger), cssvar(danger-20), cssvar(danger-05));
+}
+
+:host(.success) {
+     @include color-pagination(cssvar(success), cssvar(success-20), cssvar(success-05));
+}
+
+:host(.info) {
+    @include color-pagination(cssvar(info), cssvar(info-20), cssvar(info-05));
+}
+
+:host(.warning) {
+     @include color-pagination(cssvar(warning), cssvar(warning-20), cssvar(warning-05));
+}
+
+:host(.dark) {
+    @include color-pagination(cssvar(dark-80), cssvar(dark-40), cssvar(stable-30));
+}

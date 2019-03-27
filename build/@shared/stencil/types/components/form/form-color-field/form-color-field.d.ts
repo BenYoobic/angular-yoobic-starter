@@ -1,0 +1,31 @@
+import '../../../stencil.core';
+import { EventEmitter } from '../../../stencil.core';
+import { IFormInputBase } from '../../../interfaces';
+export declare class YooFormColorFieldComponent implements IFormInputBase<string | number> {
+    value: string | number;
+    readonly: boolean;
+    required: boolean;
+    hexInput: boolean;
+    rgbaInput: boolean;
+    hsvaInput: boolean;
+    position: string;
+    name: string;
+    validityChanged: EventEmitter<boolean>;
+    inputBlurred: EventEmitter<any>;
+    inputFocused: EventEmitter<any>;
+    inputChanged: EventEmitter<any>;
+    host: HTMLStencilElement;
+    _pickr: any;
+    private default;
+    private formDynamic;
+    private formDynamicBottom;
+    private fieldPlaceholder;
+    private clickListener;
+    componentWillLoad(): void;
+    componentDidLoad(): void;
+    componentDidUnload(): void;
+    pickrClicked(): void;
+    renderEditable(): JSX.Element;
+    renderReadonly(): JSX.Element;
+    render(): JSX.Element;
+}

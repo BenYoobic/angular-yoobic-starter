@@ -1,0 +1,58 @@
+:host .outer-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 2.5rem;
+  transition: 0.3s;
+  border-radius: 0.25rem;
+  background: var(--light, #FFFFFF);
+  box-shadow: 0 5px 15px 0 rgba(40, 47, 54, 0.08); }
+  :host .outer-container.expanded {
+    min-height: 100px; }
+  :host .outer-container .header {
+    display: flex;
+    align-items: center;
+    min-height: 2.5rem; }
+    :host .outer-container .header .form-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 1.25rem;
+      height: 1.25rem;
+      margin-left: var(--padding-10, 0.625rem);
+      border-radius: 0.25rem;
+      background: var(--accent, #1FB6FF);
+      font-size: 0.875rem; }
+      :host .outer-container .header .form-icon.multimedia {
+        background: var(--info, #fc459e); }
+      :host .outer-container .header .form-icon.select {
+        background: var(--accent, #1FB6FF); }
+      :host .outer-container .header .form-icon.text {
+        background: var(--energized, #fed05b); }
+      :host .outer-container .header .form-icon.number {
+        background: var(--royal, #845cff); }
+      :host .outer-container .header .form-icon.information {
+        background: var(--warning, #ff6402); }
+    :host .outer-container .header .title {
+      flex: 1;
+      margin-left: var(--padding-10, 0.625rem); }
+    :host .outer-container .header .icons-container {
+      display: flex; }
+      :host .outer-container .header .icons-container .icon-container {
+        display: flex;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        width: var(--padding-20, 1.25rem);
+        margin-right: var(--padding-10, 0.625rem); }
+        :host .outer-container .header .icons-container .icon-container:last-child {
+          width: 34px;
+          margin-right: 0;
+          font-size: var(--font-s, 13px); }
+          :host .outer-container .header .icons-container .icon-container:last-child::after {
+            position: absolute;
+            left: 0;
+            width: 1px;
+            height: 1.125rem;
+            background: var(--stable-light, #f1f1f1);
+            content: ""; }

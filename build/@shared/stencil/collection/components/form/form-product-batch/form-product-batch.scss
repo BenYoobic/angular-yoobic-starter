@@ -1,0 +1,24 @@
+:host {
+    .readonly {
+        margin-bottom: 0.5rem;
+        yoo-img {
+            height: 200px;
+            margin: 0rem 1rem 1rem;
+        }
+        .title {
+            font-size: cssvar(font-l);
+            font-weight: bold;
+            line-height: 1.18;
+        }
+        .subtitle {
+            font-size: cssvar(font-l);
+            .value {
+                padding-left: 0.5rem;
+                color: cssvar(text-color);
+            }
+        }
+        yoo-badge {
+            margin-top: 0.5rem;
+        }
+    }
+}

@@ -1,0 +1,12 @@
+:host yoo-ion-scroll {
+  --relative-contain: strict;
+  height: 6.875rem;
+  margin-right: -cssvar(padding-15); }
+  :host yoo-ion-scroll .cards-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: var(--padding-10, 0.625rem); }
+    :host yoo-ion-scroll .cards-container yoo-form-creator-page-card {
+      margin-top: var(--padding-10, 0.625rem);
+      margin-right: var(--padding-10, 0.625rem); }

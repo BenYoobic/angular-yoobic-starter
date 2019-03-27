@@ -1,0 +1,90 @@
+:host {
+  display: block; }
+  :host .readonly .signature-container,
+  :host .outer-container .signature-container {
+    position: relative;
+    width: var(--camera-container-height, 98px);
+    height: var(--camera-container-height, 98px);
+    border: 1px solid var(--input-container-border-color, #E6E6E6);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    position: relative; }
+    :host .readonly .signature-container .required,
+    :host .outer-container .signature-container .required {
+      top: auto;
+      right: auto;
+      bottom: auto;
+      left: 0.625rem;
+      position: absolute;
+      color: var(--success, #04CC99);
+      font-size: 15px; }
+    :host .readonly .signature-container yoo-icon,
+    :host .outer-container .signature-container yoo-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: var(--camera-container-size, 30px); }
+      :host .readonly .signature-container yoo-icon.light,
+      :host .outer-container .signature-container yoo-icon.light {
+        color: var(--light, #FFFFFF); }
+      :host .readonly .signature-container yoo-icon.success,
+      :host .outer-container .signature-container yoo-icon.success {
+        color: var(--success, #04CC99); }
+    :host .readonly .signature-container .preview,
+    :host .readonly .signature-container .edit,
+    :host .readonly .signature-container .overlay,
+    :host .outer-container .signature-container .preview,
+    :host .outer-container .signature-container .edit,
+    :host .outer-container .signature-container .overlay {
+      top: 0;
+      right: auto;
+      bottom: auto;
+      left: auto;
+      position: absolute;
+      width: var(--camera-container-height, 98px);
+      height: var(--camera-container-height, 98px);
+      border-radius: 0.5rem; }
+      :host .readonly .signature-container .preview.edit,
+      :host .readonly .signature-container .edit.edit,
+      :host .readonly .signature-container .overlay.edit,
+      :host .outer-container .signature-container .preview.edit,
+      :host .outer-container .signature-container .edit.edit,
+      :host .outer-container .signature-container .overlay.edit {
+        top: 0;
+        right: auto;
+        bottom: auto;
+        left: 0;
+        position: absolute;
+        z-index: 0; }
+    :host .readonly .signature-container .overlay,
+    :host .outer-container .signature-container .overlay {
+      background: var(--dark-two, #212936);
+      opacity: 0.5; }
+    :host .readonly .signature-container yoo-icon,
+    :host .outer-container .signature-container yoo-icon {
+      font-size: 30px; }
+  :host .readonly {
+    padding: 0.5rem;
+    padding-left: 0;
+    padding-bottom: 0; }
+
+:host(.history) {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important; }
+  :host(.history) .readonly {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding: 0;
+    padding-bottom: 2px; }
+    :host(.history) .readonly .signature-container {
+      width: 30px;
+      height: 30px;
+      border: none; }
+      :host(.history) .readonly .signature-container .preview {
+        width: 30px;
+        height: 30px;
+        border: 1px solid var(--stable, #adadad);
+        border-radius: 2px !important; }

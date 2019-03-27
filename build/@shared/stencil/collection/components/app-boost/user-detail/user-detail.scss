@@ -1,0 +1,67 @@
+:host {
+    .user-detail {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: cssvar(padding-30);
+        text-align: center;
+
+        &.no-padding {
+            padding-bottom: 0;
+        }
+
+        .points {
+            font-size: cssvar(font-s);
+            span {
+                margin-left: 5px;
+            }
+        }
+
+        .description {
+          padding: cssvar(padding-10) cssvar(padding-10) 0;
+          font-size: cssvar(font-s);
+          font-weight: 300;
+        }
+    }
+
+    yoo-grid {
+      div[slot="header"] {
+        display: flex;
+        font-size: cssvar(font-s);
+
+        .title {
+          display: flex;
+        }
+
+        .action {
+          margin-left: auto;
+          padding-right: 1rem;
+          color: cssvar(stable);
+          font-weight: 300;
+        }
+
+        .total-number {
+            padding-left: 0.2rem;
+            color: cssvar(stable);
+        }
+
+        &.small-margin-bottom {
+          margin-bottom: -$padding-5;
+        }
+      }
+    }
+
+    .dates {
+      padding: cssvar(padding-30) 0;
+      color: cssvar(stable);
+      font-size: cssvar(font-s);
+      font-weight: 300;
+
+      span.date-label {
+        margin-right: cssvar(padding-5);
+        color: cssvar(black);
+        font-weight: normal;
+      }
+    }
+}

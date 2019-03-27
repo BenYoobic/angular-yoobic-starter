@@ -1,0 +1,17 @@
+{
+  "name": "common",
+  "version": "6.0.259-2",
+  "main": "bundles/common.umd.js",
+  "module": "fesm5/common.js",
+  "es2015": "fesm2015/common.js",
+  "esm5": "esm5/common.js",
+  "esm2015": "esm2015/common.js",
+  "fesm5": "fesm5/common.js",
+  "fesm2015": "fesm2015/common.js",
+  "typings": "common.d.ts",
+  "metadata": "common.metadata.json",
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^1.9.0"
+  }
+}

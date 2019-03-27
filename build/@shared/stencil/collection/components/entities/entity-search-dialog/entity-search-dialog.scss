@@ -1,0 +1,10 @@
+:host {
+
+    .spacer {
+        height: 5.75rem;
+    }
+
+    .footer {
+        @include footer-style();
+    }
+}

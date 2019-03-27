@@ -1,0 +1,418 @@
+// iOS Item
+// --------------------------------------------------
+/// @prop - Font family of the item
+$item-ios-font-family : $font-family !default;
+/// @prop - Font size of the item
+$item-ios-font-size : 17px !default;
+/// @prop - Margin top of the item paragraph
+$item-ios-paragraph-margin-top : 0 !default;
+/// @prop - Margin end of the item paragraph
+$item-ios-paragraph-margin-end : 0 !default;
+/// @prop - Margin bottom of the item paragraph
+$item-ios-paragraph-margin-bottom : 2px !default;
+/// @prop - Margin start of the item paragraph
+$item-ios-paragraph-margin-start : $item-ios-paragraph-margin-end !default;
+/// @prop - Font size of the item paragraph
+$item-ios-paragraph-font-size : 14px !default;
+/// @prop - Color of the item paragraph
+$item-ios-paragraph-text-color : cssvar(stable-alt) !default;
+/// @prop - Width of the avatar in the item
+$item-ios-avatar-width : 36px !default;
+/// @prop - Height of the avatar in the item
+$item-ios-avatar-height : $item-ios-avatar-width !default;
+/// @prop - Width of the thumbnail in the item
+$item-ios-thumbnail-width : 56px !default;
+/// @prop - Height of the thumbnail in the item
+$item-ios-thumbnail-height : $item-ios-thumbnail-width !default;
+/// @prop - Color of the detail arrow icon
+$item-ios-detail-push-color : $item-ios-border-color !default;
+/// @prop - Padding top for the item content
+$item-ios-padding-top : 10px !default;
+/// @prop - Padding end for the item content
+$item-ios-padding-end : 16px !default;
+/// @prop - Padding bottom for the item content
+$item-ios-padding-bottom : 10px !default;
+/// @prop - Padding start for the item content
+$item-ios-padding-start : 16px !default;
+/// @prop - Border bottom width for the item when lines are displayed
+$item-ios-border-bottom-width : $hairlines-width !default;
+/// @prop - Border bottom style for the item when lines are displayed
+$item-ios-border-bottom-style : solid !default;
+/// @prop - Border bottom color for the item when lines are displayed
+$item-ios-border-bottom-color : $item-ios-border-color !default;
+/// @prop - Border bottom for the item
+$item-ios-border-bottom : $item-ios-border-bottom-width $item-ios-border-bottom-style $item-ios-border-bottom-color !default;
+// Item Slots
+// --------------------------------------------------
+/// @prop - Margin top for the start slot
+$item-ios-slot-start-margin-top : 2px !default;
+/// @prop - Margin end for the start slot
+$item-ios-slot-start-margin-end : $item-ios-padding-end !default;
+/// @prop - Margin bottom for the start slot
+$item-ios-slot-start-margin-bottom : $item-ios-slot-start-margin-top !default;
+/// @prop - Margin start for the start slot
+$item-ios-slot-start-margin-start : 0 !default;
+/// @prop - Margin top for the end slot
+$item-ios-slot-end-margin-top : null !default;
+/// @prop - Margin end for the end slot
+$item-ios-slot-end-margin-end : ($item-ios-padding-start / 2) !default;
+/// @prop - Margin bottom for the end slot
+$item-ios-slot-end-margin-bottom : $item-ios-slot-end-margin-top !default;
+/// @prop - Margin start for the end slot
+$item-ios-slot-end-margin-start : $item-ios-slot-end-margin-end !default;
+/// @prop - Margin top for an icon in the start/end slot
+$item-ios-icon-slot-margin-top : 7px !default;
+/// @prop - Margin end for an icon in the start/end slot
+$item-ios-icon-slot-margin-end : null !default;
+/// @prop - Margin bottom for an icon in the start/end slot
+$item-ios-icon-slot-margin-bottom : 7px !default;
+/// @prop - Margin start for an icon in the start/end slot
+$item-ios-icon-slot-margin-start : 0 !default;
+/// @prop - Margin top for the end slot inside of a floating/stacked label
+$item-ios-label-slot-end-margin-top : 7px !default;
+/// @prop - Margin end for the end slot inside of a floating/stacked label
+$item-ios-label-slot-end-margin-end : null !default;
+/// @prop - Margin bottom for the end slot inside of a floating/stacked label
+$item-ios-label-slot-end-margin-bottom : $item-ios-label-slot-end-margin-top !default;
+/// @prop - Margin start for the end slot inside of a floating/stacked label
+$item-ios-label-slot-end-margin-start : $item-ios-label-slot-end-margin-end !default;
+
+// Item Mixins
+// --------------------------------------------------
+@mixin item-push-svg-url($fill) {
+  $item-detail-push-svg: "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 20'><path d='M2,20l-2-2l8-8L0,2l2-2l10,10L2,20z' fill='#{$fill}'/></svg>";
+  @include svg-background-image($item-detail-push-svg, true);
+}
+
+// Item
+// --------------------------------------------------
+/// @prop - Minimum height of the item
+$item-min-height : 44px !default;
+
+// iOS Item
+// --------------------------------------------------
+:host {
+  --ion-color-contrast: #{$item-ios-text-color};
+  --ion-color-tint: #{$item-ios-background-color-active};
+  --ion-color-shade: #{$item-ios-border-bottom-color};
+  --transition: background-color 200ms linear;
+  --padding-start: #{$item-ios-padding-start};
+  --inner-padding-end: #{$item-ios-padding-end / 2};
+  --inner-border-width: #{0 0 $item-ios-border-bottom-width 0};
+  --padding-entity: 0;
+  --padding-content-container-card-list: 0;
+  --margin-left-card-placeholder: 0;
+  font-family: $item-ios-font-family;
+  font-size: $item-ios-font-size;
+}
+
+:host {
+  yoo-entity {
+    --padding: #{cssvar(padding-entity)};
+  }
+  yoo-card-list {
+    --padding-content-container: #{cssvar(padding-content-container-card-list)};
+  }
+  yoo-card-placeholder {
+    margin-left: #{cssvar(margin-left-card-placeholder)};
+  }
+}
+
+:host(.activated) {
+  --transition: none;
+}
+@media screen and (orientation: landscape) {
+  .item-inner {
+    @include safe-area-padding-horizontal(#{cssvar(inner-padding-start)}, #{cssvar(inner-padding-end)});
+  }
+}
+
+// iOS Item Lines
+// --------------------------------------------------
+// Full lines - apply the border to the item
+// Inset lines - apply the border to the item inner
+:host(.item-lines-full) {
+  --border-width: #{0 0 $item-ios-border-bottom-width 0};
+}
+
+:host(.item-lines-inset) {
+  --inner-border-width: #{0 0 $item-ios-border-bottom-width 0};
+}
+
+// Full lines - remove the border from the item inner (inset list items)
+// Inset lines - remove the border on the item (full list items)
+// No lines - remove the border on both (full / inset list items)
+:host(.item-lines-inset),
+:host(.item-lines-none) {
+  --border-width: 0;
+}
+
+:host(.item-lines-full),
+:host(.item-lines-none) {
+  --inner-border-width: 0;
+}
+
+// iOS Item Slots
+// --------------------------------------------------
+::slotted(:not(.interactive)[slot="start"]) {
+  @include margin($item-ios-slot-start-margin-top, $item-ios-slot-start-margin-end, $item-ios-slot-start-margin-bottom, $item-ios-slot-start-margin-start);
+}
+
+::slotted(:not(.interactive)[slot="end"]) {
+  @include margin($item-ios-slot-end-margin-top, $item-ios-slot-end-margin-end, $item-ios-slot-end-margin-bottom, $item-ios-slot-end-margin-start);
+}
+
+::slotted(ion-icon[slot="start"]),
+::slotted(ion-icon[slot="end"]) {
+  @include margin($item-ios-icon-slot-margin-top, $item-ios-icon-slot-margin-end, $item-ios-icon-slot-margin-bottom, $item-ios-icon-slot-margin-start);
+}
+
+:host(.item-label-stacked) ::slotted([slot="end"]),
+:host(.item-label-floating) ::slotted([slot="end"]) {
+  @include margin($item-ios-label-slot-end-margin-top, $item-ios-label-slot-end-margin-end, $item-ios-label-slot-end-margin-bottom, $item-ios-label-slot-end-margin-start);
+}
+
+// iOS Item Button
+// --------------------------------------------------
+::slotted(.button-small) {
+  --padding-top: 0;
+  --padding-bottom: 0;
+  --padding-start: .5em;
+  --padding-end: .5em;
+  --height: 24px;
+  font-size: 13px;
+}
+
+::slotted(ion-avatar) {
+  width: $item-ios-avatar-width;
+  height: $item-ios-avatar-height;
+}
+
+::slotted(ion-thumbnail) {
+  width: $item-ios-thumbnail-width;
+  height: $item-ios-thumbnail-height;
+}
+
+::slotted(ion-avatar[slot="end"]),
+::slotted(ion-thumbnail[slot="end"]) {
+  @include margin(($item-ios-padding-end / 2));
+}
+
+// iOS Item Detail Push
+// --------------------------------------------------
+.item-detail-icon {
+
+  color: cssvar(detail-push-color);
+  font-size: 20px;
+}
+
+:host(.item-radio) ::slotted(ion-label),
+:host(.item-toggle) ::slotted(ion-label) {
+  @include margin-horizontal(0, null);
+}
+
+// iOS Stacked & Floating Inputs
+// --------------------------------------------------
+:host(.item-label-stacked) ::slotted(ion-input),
+:host(.item-label-floating) ::slotted(ion-input),
+:host(.item-label-stacked) ::slotted(ion-textarea),
+:host(.item-label-floating) ::slotted(ion-textarea) {
+  --padding-top: 8px;
+  --padding-bottom: 8px;
+  --padding-start: 0;
+}
+
+:host {
+  --min-height: #{$item-min-height};
+  --background: transparent;
+  --background-active: #{current-color(tint)};
+  --color: #{current-color(contrast)};
+  --detail-push-color: #{current-color(shade)};
+  --border-radius: 0;
+  --border-width: 0;
+  --border-style: solid;
+  --border-color: #{current-color(shade)};
+  --inner-border-width: 0;
+  --padding-top: 0;
+  --padding-bottom: 0;
+  --padding-end: 0;
+  --padding-start: 0;
+  --inner-padding-top: 0;
+  --inner-padding-bottom: 0;
+  --inner-padding-start: 0;
+  --inner-padding-end: 0;
+  --box-shadow: none;
+  --inner-box-shadow: none;
+  --highlight-color-focus: #{ion-color(primary, base)};
+  --highlight-color-valid: #{ion-color(success, base)};
+  --highlight-color-invalid: #{ion-color(danger, base)};
+  --highlight-height: 2px;
+  @include font-smoothing();
+
+  display: block;
+  background: cssvar(background);
+  color: #{current-color(contrast)};
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+:host(.activated) {
+  --background: #{cssvar(background-active)};
+}
+
+:host(.item-disabled) {
+  cursor: default;
+  opacity: .3;
+
+  pointer-events: none;
+}
+
+
+.item-native {
+  @include padding(#{cssvar(padding-top)}, #{cssvar(padding-end)}, #{cssvar(padding-bottom)}, #{cssvar(padding-start)});
+  @include border-radius(#{cssvar(border-radius)});
+  @include margin(0);
+  @include text-align(initial);
+  display: flex;
+
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: cssvar(min-height);
+  transition: cssvar(transition);
+  border-width: cssvar(border-width);
+  border-style: cssvar(border-style);
+  border-color: cssvar(border-color);
+  outline: none;
+  background-color: cssvar(background);
+
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  text-decoration: inherit;
+  text-transform: inherit;
+  box-shadow: cssvar(box-shadow);
+
+  overflow: hidden;
+
+  box-sizing: border-box;
+}
+
+button, a {
+  cursor: pointer;
+  user-select: none;
+
+  -webkit-user-drag: none;
+}
+
+.item-state {
+  @include position(null, 0, 0, 0);
+
+  position: absolute;
+  height: cssvar(highlight-height);
+}
+
+.item-inner {
+  @include margin(0);
+  @include padding(#{cssvar(inner-padding-top)}, #{cssvar(inner-padding-end)}, #{cssvar(inner-padding-bottom)}, #{cssvar(inner-padding-start)});
+
+  display: flex;
+  flex: 1;
+  flex-direction: inherit;
+  align-items: inherit;
+  align-self: stretch;
+  min-height: inherit;
+  border-width: cssvar(inner-border-width);
+  border-style: cssvar(border-style);
+  border-color: cssvar(border-color);
+  box-shadow: cssvar(inner-box-shadow);
+
+  overflow: hidden;
+
+  box-sizing: border-box;
+}
+
+.input-wrapper {
+
+  display: flex;
+  flex: 1;
+  flex-direction: inherit;
+  align-items: inherit;
+  align-self: stretch;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+:host([vertical-align-top]),
+:host(.item-input) {
+  align-items: flex-start;
+}
+
+::slotted(ion-icon) {
+  font-size: 1.6em;
+}
+
+::slotted(ion-button) {
+  --margin-top: 0;
+  --margin-bottom: 0;
+  --margin-start: 0;
+  --margin-end: 0;
+
+  z-index: 1;
+}
+
+
+// FROM LABEL
+:host(.item-label-stacked) .input-wrapper,
+:host(.item-label-floating) .input-wrapper {
+  flex: 1;
+  flex-direction: column;
+}
+
+:host(.item-label-stacked)::slotted(ion-select),
+:host(.item-label-floating)::slotted(ion-select) {
+  align-self: stretch;
+  max-width: 100%;
+}
+
+:host(.item-textarea) {
+  align-items: stretch;
+}
+
+// FROM SELECT
+:host(.item-multiple-inputs) ::slotted(ion-select) {
+  position: relative;
+}
+
+:host(.item-label-stacked) ::slotted(ion-select),
+:host(.item-label-floating) ::slotted(ion-select) {
+  max-width: 100%;
+}
+
+:host(.overflow-visible) {
+  .input-wrapper {
+    overflow: visible;
+  }
+  .item-inner {
+    overflow: visible;
+  }
+  .item-native {
+    overflow: visible;
+  }
+}
+
+:host(.card-feed.web) {
+  .input-wrapper {
+    justify-content: center;
+  }
+}
+
+// Item Reorder
+// --------------------------------------------------
+
+::slotted(ion-reorder[slot]) {
+  @include margin(0, null);
+}

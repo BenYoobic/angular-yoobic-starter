@@ -1,0 +1,71 @@
+:host .outer-container yoo-button {
+  --margin-container: auto; }
+
+:host yoo-icon {
+  font-size: var(--font-m, 15px); }
+
+:host .border {
+  width: 100%;
+  height: 0;
+  border-top: 1px solid var(--stable-30, #E6E6E6); }
+
+:host .newtodo {
+  display: flex;
+  flex-direction: row;
+  margin-top: 0.875rem;
+  font-size: var(--font-m, 15px); }
+  :host .newtodo.nomargin {
+    margin-top: 0; }
+  :host .newtodo .margin-right {
+    margin-right: 0.5rem; }
+  :host .newtodo .success {
+    color: var(--success, #04CC99); }
+  :host .newtodo .icon {
+    display: flex;
+    align-items: center;
+    margin-right: 0.125rem; }
+    :host .newtodo .icon .yo-plus {
+      font-size: 0.5rem; }
+    :host .newtodo .icon .yo-cross {
+      font-size: var(--icon-m, 20px); }
+  :host .newtodo .flex {
+    flex: 1; }
+
+:host .readonly .todo-container {
+  margin-bottom: 1.5625rem; }
+  :host .readonly .todo-container .content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0.6875rem 0 0.5rem 0; }
+    :host .readonly .todo-container .content .content-left yoo-icon {
+      margin-right: var(--padding-10, 0.625rem); }
+      :host .readonly .todo-container .content .content-left yoo-icon.stable-alt {
+        color: var(--stable-alt, #d0d0d0); }
+    :host .readonly .todo-container .content .content-left .break-line {
+      text-decoration: line-through; }
+    :host .readonly .todo-container .content .content-right {
+      display: flex;
+      align-items: center; }
+      :host .readonly .todo-container .content .content-right .date {
+        color: var(--stable-alt, #d0d0d0);
+        font-size: 13px;
+        font-weight: 300; }
+  :host .readonly .todo-container .comments {
+    margin-bottom: var(--padding-15, 0.9375rem);
+    color: var(--stable, #adadad);
+    font-size: 14px;
+    font-weight: 300; }
+  :host .readonly .todo-container .photo-container {
+    margin-bottom: 0.875rem; }
+  :host .readonly .todo-container .comment-container {
+    margin-top: 0.875rem; }
+    :host .readonly .todo-container .comment-container .yo-comment {
+      font-size: 1.25rem; }
+  :host .readonly .todo-container .textarea-container {
+    margin-top: var(--padding-10, 0.625rem); }
+  :host .readonly .todo-container .border {
+    width: 100%;
+    height: 0;
+    border-top: 1px solid var(--stable-30, #E6E6E6);
+    margin-bottom: var(--padding-10, 0.625rem); }

@@ -1,0 +1,17 @@
+{
+  "name": "data-core",
+  "version": "6.0.259-2",
+  "main": "bundles/data-core.umd.js",
+  "module": "fesm5/data-core.js",
+  "es2015": "fesm2015/data-core.js",
+  "esm5": "esm5/data-core.js",
+  "esm2015": "esm2015/data-core.js",
+  "fesm5": "fesm5/data-core.js",
+  "fesm2015": "fesm2015/data-core.js",
+  "typings": "data-core.d.ts",
+  "metadata": "data-core.metadata.json",
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^1.9.0"
+  }
+}

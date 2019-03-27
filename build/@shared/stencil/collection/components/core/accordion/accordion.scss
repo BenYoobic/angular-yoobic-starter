@@ -1,0 +1,173 @@
+@mixin accordion-color($color) {
+    .outer-container {
+        border-color: $color;
+        .accordion-selector {
+            .title-container {
+                border-color: $color;
+                .icon {
+                    color: $color;
+                }
+            }
+        }
+    }
+}
+@mixin accordion-color-gradient($color) {
+    .outer-container {
+        border-image: linear-gradient(to right, $color);
+        border-image-slice: 1;
+        .accordion-selector {
+            .title-container {
+                border-image: linear-gradient(to right, $color);
+                border-image-slice: 1;
+                .icon,
+                .title {
+                    -webkit-background-clip: text;
+                    background-clip: text;
+                    background-image: -webkit-linear-gradient($color);
+                    -webkit-text-fill-color: transparent;
+                }
+            }
+        }
+    }
+}
+@keyframes toggle-opacity {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+:host() {
+    --title-font-size: #{cssvar(font-m)};
+    --outer-container-padding: none;
+    --outer-container-width: 100%;
+    --accordion-background: #{cssvar(light)};
+}
+
+:host {
+    .outer-container {
+        display: flex;
+        flex-direction: column;
+        width: cssvar(outer-container-width);
+        padding: cssvar(outer-container-padding);
+        transition: all 0.3s;
+        background: cssvar(accordion-background);
+        .title-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            width: 100%;
+            margin: cssvar(padding-10) 0;
+            .left-container {
+                display: flex;
+                flex: 1;
+                align-items: center;
+                .icon {
+                    padding-right: cssvar(padding-5);
+                    font-size: cssvar(font-xs);
+                }
+                .title {
+                    padding-right: cssvar(padding-5);
+                    color: cssvar(black);
+                    font-size: cssvar(title-font-size);
+                    font-weight: 600;
+                }
+                .count {
+                    color: cssvar(text-color);
+                    font-weight: 600;
+                }
+            }
+            .right-container {
+                yoo-button.new-page {
+                    --color-value: #{cssvar(black)};
+                    --shadow: none;
+                    --border-container: 1px solid #{cssvar(stable-light)};
+                }
+            }
+        }
+        .accordion-selector {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            width: 100%;
+            &:first-child {
+                .title-container {
+                    margin-top: 0;
+                }
+            }
+          
+            .accordion-title:hover {
+                cursor: pointer;
+            }
+            .accordion-title.active-title {
+                .icon {
+                    transition: all 0.3s;
+                }
+            }
+            .undisplayed-accordion {
+                display: none;
+            }
+            .selected-accordion {
+                display: block;
+                transition: all 0.3s;
+                color: cssvar(dark);
+                animation: toggle-opacity 0.3s ease;
+                
+            }
+        }
+    }
+}
+
+:host(.bottom-border) {
+    .outer-container {
+        .title-container {
+            padding-bottom: cssvar(padding-10);
+            border-bottom: 1px solid cssvar(stable-light);
+        }
+    }
+}
+
+:host(.sub-accordion) {
+    .outer-container {
+        .accordion-selector {
+            .title-container {
+                .left-container {
+                    .title,
+                    .count {
+                        font-size: cssvar(font-s);
+                        font-weight: 400;
+                    }
+                }
+            }
+        }
+    }
+}
+
+:host(.accent) {
+    @include accordion-color(cssvar(accent));
+}
+
+:host(.danger) {
+    @include accordion-color(cssvar(danger));
+}
+
+:host(.success) {
+    @include accordion-color(cssvar(success));
+}
+
+:host(.info) {
+    @include accordion-color(cssvar(info));
+}
+
+:host(.warning) {
+    @include accordion-color(cssvar(warning));
+}
+
+:host(.dark) {
+    @include accordion-color(cssvar(dark-40));
+}

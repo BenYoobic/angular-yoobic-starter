@@ -1,0 +1,53 @@
+import '../../../stencil.core';
+import { EventEmitter } from '../../../stencil.core';
+import { ValidatorEntry, AsyncValidator, Validator } from '../../../interfaces';
+export declare class YooFormTimeComponent {
+    value: any;
+    validators: Array<Validator<string> | ValidatorEntry>;
+    asyncValidators: Array<AsyncValidator<string>>;
+    placeholder: string;
+    required: boolean;
+    readonly: boolean;
+    type: string;
+    minDate: Date;
+    maxDate: Date;
+    clearable: boolean;
+    isSchedule: boolean;
+    validity: boolean;
+    validityChanged: EventEmitter<boolean>;
+    inputBlurred: EventEmitter<any>;
+    inputFocused: EventEmitter<any>;
+    inputChanged: EventEmitter<any>;
+    amPmToggled: EventEmitter<string>;
+    is24Hour: boolean;
+    isCordovaTimePicker: boolean;
+    isCordovaTimePickerOpen: boolean;
+    timePeriod: string;
+    host: HTMLStencilElement;
+    componentWillLoad(): void;
+    incrementValue(date?: Date | string, timePortion?: string): void;
+    decrementValue(date?: Date | string, timePortion?: string): void;
+    isAm(date: Date | string): boolean;
+    setAmPm(date: Date | string): void;
+    toggleAmPm(): void;
+    onInputChanged(ev: any): void;
+    onInputClick(ev: any): void;
+    onDateInputFocused(ev: any): void;
+    onClearClicked(ev: any): void;
+    renderTimeControls(timePortion: string): JSX.Element;
+    renderMinutesInput(): JSX.Element;
+    renderAmPmContainer(): JSX.Element;
+    getDisplayHours(value: any): string | number;
+    renderHoursInput(): JSX.Element;
+    renderInputField(): JSX.Element;
+    renderNativeInput(): JSX.Element;
+    renderCustomInput(): JSX.Element;
+    renderReadonly(): JSX.Element;
+    renderEditable(): JSX.Element;
+    hostData(): {
+        class: {
+            'cordova': boolean;
+        };
+    };
+    render(): JSX.Element;
+}

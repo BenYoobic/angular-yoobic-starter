@@ -1,0 +1,124 @@
+:host {
+    --margin: #{cssvar(padding-15)};
+}
+
+:host {
+    .outer-container {
+        display: flex;
+        flex: 1;
+        flex-direction: row;
+        margin: 0 cssvar(padding-15);
+        border: 1px solid cssvar(stable-30);
+        border-radius: cssvar(border-radius-input);
+        &.focused {
+            border: 1px solid cssvar(dark);
+        }
+        .flex {
+            display: flex;
+            flex: 1;
+        }
+        .input-container {
+            input {
+                @include reset-input();
+                width: 100%;
+                height: 2.5rem;
+                padding-left: cssvar(padding-15);
+                border: none;
+                border-radius: cssvar(border-radius-input);
+                background: cssvar(light);
+                color: cssvar(tex-color);
+                font-size: cssvar(font-m);
+                line-height: 1.5;
+                vertical-align: unset;
+                &.native {
+                    padding: 0rem 1rem;
+                }
+            }
+        }
+        .icon-prefix,
+        .icon-suffix {
+            display: flex;
+            flex-direction: row;
+            color: cssvar(dark);
+        }
+        .icon-prefix {
+            align-content: center;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem 1rem;
+            padding-left: cssvar(padding-15);
+            border-right: 1px solid cssvar(stable-30);
+            color: csscolor(stable);
+            font-size: cssvar(font-m);
+        }
+        .icon-close {
+            color: cssvar(stable);
+        }
+        .icon-suffix {
+            display: flex;
+            align-items: center;
+            padding-right: cssvar(padding-15);
+            &.toggle {
+                font-size: cssvar(font-xs);
+            }
+            &.clear {
+                padding-right: cssvar(padding-10);
+            }
+        }
+    }
+    .time-input-container {
+        margin: cssvar(margin);
+        padding-bottom: cssvar(padding-15);
+        .time-input-header {
+            padding-bottom: cssvar(padding-10);
+        }
+        .time-inputs {
+            @include flex();
+            flex-direction: row;
+            .hours-container,
+            .minutes-container,
+            .am-pm-container {
+                @include flex();
+                width: 4.375rem;
+                height: 2.5rem;
+                border: solid 1px cssvar(form-time-border-color);
+                border-radius: 0.3125rem;
+                .time-controls-container {
+                    @include flex();
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: cssvar(font-xs);
+                    .time-control-up,
+                    .time-control-down {
+                        @include flex();
+                        align-items: center;
+                        justify-content: center;
+                        width: 100%;
+                        height: 100%;
+                        margin-right: cssvar(padding-10);
+                        color: cssvar(black);
+                        yoo-icon {
+                            font-weight: bold;
+                        }
+                    }
+                }
+                .input-hours,
+                .input-minutes,
+                .input-am-pm {
+                    @include reset-input();
+                    max-width: 2.0625rem;
+                    padding-left: cssvar(padding-15);
+                    opacity: 0.3;
+                }
+            }
+            .minutes-container {
+                margin: 0 cssvar(padding-15);
+            }
+        }
+    }
+}
+
+:host(.cordova) {
+    display: flex;
+}

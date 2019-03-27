@@ -1,0 +1,320 @@
+ @mixin text-color($color, $color-20) {
+     :host(.#{$color}) {
+         .hint-container {
+             color: cssvar($color-20);
+         }
+         .description {
+             color: cssvar($color);
+         }
+     }
+ }
+
+ :host {
+     display: block;
+     .optional {
+         margin-left: 0.5rem !important;
+         color: cssvar(stable);
+         white-space: nowrap;
+     }
+     .description,
+     .top-container {
+         .label,
+         .optional {
+             display: flex;
+             flex-direction: row;
+            //  font-size: cssvar(font-m);
+             font-weight: normal;
+             line-height: 1.5;
+             text-align: left;
+             overflow-wrap: break-word;
+             word-break: break-word;
+             .required {
+                 height: 22px;
+                 margin-right: 0.25rem;
+                 color: cssvar(danger);
+                 font-size: cssvar(icon-large);
+                 font-weight: 700;
+                 font-variant-caps: normal;
+             }
+             .label-required {
+                 margin-left: 0.25rem;
+                 color: cssvar(danger);
+             }
+             &.readonly {
+                 color: cssvar(text-color);
+                 letter-spacing: 0px;
+                 text-transform: initial;
+                 font-variant-caps: initial;
+             }
+             &.invalid {
+                 color: cssvar(danger);
+             }
+             &.center {
+                 text-align: center;
+             }
+         }
+         .boost-heading:not(.center) {
+             font-size: cssvar(font-xs);
+             text-transform: uppercase;
+             &.password-title {
+                 .field-title-name {
+                     font-size: cssvar(font-xs);
+                     font-weight: normal;
+                     text-transform: uppercase;
+                 }
+             }
+         }
+         .description {
+             display: flex;
+             align-items: flex-start;
+             font-size: cssvar(font-m);
+             &.invalid {
+                 color: cssvar(danger);
+             }
+             &.slotted {
+                 padding-right: cssvar(padding-5);
+             }
+             .required {
+                 height: 22px;
+                 height: cssvar(icon-large);
+                 margin-right: 0.25rem;
+                 color: cssvar(danger);
+                 font-size: cssvar(icon-large);
+                 font-weight: 700;
+                 font-variant-caps: normal;
+             }
+             &.within-chat {
+                 margin-bottom: $padding-15;
+             }
+         }
+     }
+     .hint-container {
+         margin-top: 0.25rem;
+         margin-bottom: 0.25rem;
+         color: cssvar(text-color);
+         font-size: cssvar(font-s);
+         line-height: 1.33;
+         text-align: left;
+     }
+     .footer-container {
+         display: inline-flex;
+         flex-direction: row;
+         align-items: center;
+         padding: 0.5rem;
+         padding-bottom: 0;
+         padding-left: 1px;
+         font-size: cssvar(font-s);
+         .comment-container,
+         .feed-container,
+         .newtask {
+             display: flex;
+             align-items: center;
+             min-height: 22px;
+         }
+         yoo-form-task {
+             padding-left: 0.5rem;
+         }
+         yoo-icon {
+             display: flex;
+             flex: 1;
+             margin-right: 0.5rem;
+             font-size: cssvar(font-ll);
+         }
+         yoo-icon.stable {
+             color: cssvar(stable);
+         }
+         .newtask {
+             display: flex;
+             flex: 1;
+             flex-direction: row;
+             font-size: cssvar(font-m);
+             .icon {
+                 display: flex;
+                 align-items: center;
+                 margin-right: 0.125rem;
+                 .yo-plus {
+                     margin-right: 0;
+                     font-size: 0.5rem;
+                 }
+             }
+         }
+     }
+     .content-container {
+         position: relative;
+         padding-top: 0.625rem;
+         &.no-margin {
+             margin-bottom: -1rem;
+         }
+         &.readonly {
+             padding: 0;
+         }
+         yoo-form-toggle:not(.line) {
+             @include abs-pos(auto, 0, 0.25rem, auto);
+         }
+         yoo-form-checkbox:not(.line) {
+             @include abs-pos(auto, 0, 0.25rem, auto);
+         }
+         yoo-form-checkbox[type="normal"] {
+             @include abs-pos(-1.3rem, 0, auto, auto);
+         }
+         yoo-form-toggle[type="normal"] {
+             @include abs-pos(-1rem, 0, auto, auto);
+         }
+     }
+     p {
+         -webkit-margin-before: 0;
+         -webkit-margin-after: 0;
+         -webkit-margin-start: 0;
+         -webkit-margin-end: 0;
+         -webkit-padding-start: 0;
+     }
+     .instructions {
+         display: block;
+         margin: $padding-10 auto $padding-50;
+         color: cssvar(stable);
+         font-size: cssvar(font-l);
+         letter-spacing: normal;
+         &.under-title {
+             margin: 0 auto $padding-30;
+         }
+     }
+ }
+
+ :host(.line) {
+     display: flex;
+     flex-direction: column;
+     padding-bottom: 0.5rem;
+     border-bottom: 1px solid cssvar(stable-30);
+     .top-container {
+         display: flex;
+         flex-direction: row;
+         .label,
+         .description {
+             flex: 1;
+             align-self: center;
+             margin-left: 0.5rem;
+         }
+         .label {
+             color: inherit;
+             font-variant-caps: normal;
+         }
+         .content-container {
+             flex: 0;
+             padding-top: 0;
+             yoo-form-checkbox {
+                 --margin-top-container: -0.5rem;
+             }
+             &.full-width {
+                 flex: 1;
+             }
+             &.no-margin {
+                 margin-bottom: -1rem;
+             }
+         }
+         slot {
+             flex: 1;
+         }
+     }
+ } //
+ //ALIGN OPTIONAL RIGHT
+ //  :host(.web) {
+ //     .top-container {
+ //         .label, .description {
+ //             display: block;
+ //             .optional {
+ //                 float: right;
+ //             }
+ //         }
+ //     }
+ //  }
+ :host(.no-border) {
+     padding-bottom: 0;
+     border-bottom: none;
+ }
+
+ :host(.line.reversed) {
+     .top-container {
+         flex-direction: row-reverse;
+     }
+ }
+
+ :host(.line.noborder) {
+     border-bottom: none;
+ }
+
+ :host(.autocomplete) {
+     position: relative;
+     z-index: 20004;
+ }
+
+ :host(.readonly) {
+     padding: 1rem;
+     padding-bottom: 0;
+     border: none;
+     .top-container {
+         &.column {
+             flex-direction: column;
+             .description {
+                 align-self: flex-start;
+                 margin-bottom: cssvar(padding-15);
+                 margin-left: 0;
+                 color: cssvar(text-color);
+             }
+         }
+     }
+ }
+
+ :host(.form-readonly) {
+     padding: 1rem 0rem;
+     border-bottom: 1px solid cssvar(stable-30);
+ }
+
+ :host(.form-readonly.no-border) {
+     padding-bottom: 0;
+     border-bottom: none;
+ }
+
+ :host(.login-screen) {
+     .top-container {
+         .label {
+             span {
+                 color: cssvar(text-color-to-white);
+             }
+         }
+     }
+ }
+
+ :host(:not(.boost)) {
+     .description {
+         @include reset();
+     }
+ }
+
+ :host(.lesson) {
+     --font-size-title-name: 27px;
+     --font-weight-title-name: 600;
+     --text-tranform-title-name: none;
+     --field-title-color: black;
+     .top-container .description {
+         &.choice {
+             font-size: cssvar(font-lx);
+             font-weight: 600;
+         }
+     }
+     .title.within-chat,
+     .field-title-name {
+         display: contents;
+         margin: 0 auto;
+         color: cssvar(field-title-color);
+         font-size: cssvar(font-size-title-name);
+         font-weight: cssvar(font-weight-title-name);
+         text-transform: cssvar(text-tranform-title-name);
+     }
+ }
+ @include text-color(accent, accent-20);
+ @include text-color(dark, stable-30);
+ @include text-color(danger, danger-20);
+ @include text-color(success, success-20);
+ @include text-color(warning, warning-20);
+ @include text-color(info, info-20);
+ @include text-color(stable, stable);

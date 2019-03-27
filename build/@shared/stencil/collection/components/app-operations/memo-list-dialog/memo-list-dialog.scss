@@ -1,0 +1,63 @@
+:host {
+    .inner-container {
+        display: flex;
+        flex-direction: row;
+        padding: 1rem 0.5rem;
+        padding-bottom: 0;
+        .left-container {
+            padding: 0.25rem 0.5rem;
+        }
+        .right-container {
+            display: flex;
+            flex-direction: column;
+            .title {
+                padding-top: 0.1rem;
+                font-size: cssvar(font-l);
+            }
+            .completed {
+                transition: 0.3s;
+                color: cssvar(success);
+                text-decoration: line-through;
+            }
+            .active {
+                transition: 0.3s;
+                color: cssvar(black);
+                text-decoration: none;
+            }
+            .description {
+                padding-top: 0.5rem;
+                padding-bottom: 0.5rem;
+                color: #{cssvar(text-color)};
+                font-size: cssvar(font-s);
+            }
+            .date {
+                &.danger {
+                    color: cssvar(danger);
+                }
+            }
+            .avatar-box {
+                padding-top: 0.5rem;
+                padding-right: 0.4rem;
+                .avatar-container {
+                    yoo-avatar {
+                        height: 24px;
+                    }
+                }
+                .avatar-container ul {
+                    margin: auto;
+                    padding: 0;
+                    line-height: 2rem;
+                    list-style: none;
+                }
+                .avatar-container ul li {
+                    display: inline-table; // used for firefox
+                    margin-right: 0.25rem
+                }
+            }
+        }
+    }
+    .photo {
+        margin: 1rem;
+        margin-top: 0;
+    }
+}

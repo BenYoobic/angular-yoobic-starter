@@ -1,0 +1,45 @@
+:host .inner-container {
+  display: flex;
+  flex-direction: row;
+  padding: 1rem 0.5rem;
+  padding-bottom: 0; }
+  :host .inner-container .left-container {
+    padding: 0.25rem 0.5rem; }
+  :host .inner-container .right-container {
+    display: flex;
+    flex-direction: column; }
+    :host .inner-container .right-container .title {
+      padding-top: 0.1rem;
+      font-size: var(--font-l, 17px); }
+    :host .inner-container .right-container .completed {
+      transition: 0.3s;
+      color: var(--success, #04CC99);
+      text-decoration: line-through; }
+    :host .inner-container .right-container .active {
+      transition: 0.3s;
+      color: var(--black, #000000);
+      text-decoration: none; }
+    :host .inner-container .right-container .description {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      color: var(--text-color, #807f83);
+      font-size: var(--font-s, 13px); }
+    :host .inner-container .right-container .date.danger {
+      color: var(--danger, #ff625f); }
+    :host .inner-container .right-container .avatar-box {
+      padding-top: 0.5rem;
+      padding-right: 0.4rem; }
+      :host .inner-container .right-container .avatar-box .avatar-container yoo-avatar {
+        height: 24px; }
+      :host .inner-container .right-container .avatar-box .avatar-container ul {
+        margin: auto;
+        padding: 0;
+        line-height: 2rem;
+        list-style: none; }
+      :host .inner-container .right-container .avatar-box .avatar-container ul li {
+        display: inline-table;
+        margin-right: 0.25rem; }
+
+:host .photo {
+  margin: 1rem;
+  margin-top: 0; }

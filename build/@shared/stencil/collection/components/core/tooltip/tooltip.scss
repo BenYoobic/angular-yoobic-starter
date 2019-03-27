@@ -1,0 +1,10 @@
+:host {
+    @import "../../../../../../node_modules/hint.css/hint.css";
+    display: block;
+    outline: none;
+    cursor: pointer;
+    [class*="hint--"]:after {
+        font-family: "Lato";
+        font-size: 0.875rem;
+    }
+}

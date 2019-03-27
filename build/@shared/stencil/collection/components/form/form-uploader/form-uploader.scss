@@ -1,0 +1,15 @@
+:host {
+    .filepond--root {
+        position: relative;
+        margin-bottom: 1em;
+        font-family: $font-family;
+        font-size: 1rem;
+        line-height: normal;
+        text-align: left;
+        text-rendering: optimizeLegibility;
+        contain: layout style size;
+        box-sizing: border-box;
+        direction: ltr;
+    }
+}
+@import "../../../../../../node_modules/filepond/dist/filepond.min.css";

@@ -1,0 +1,29 @@
+:host .outer-container {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  height: 100%; }
+  :host .outer-container yoo-ion-toolbar {
+    box-shadow: var(--toolbar-shadow, 0 1px 10px 0 rgba(0, 0, 0, 0.15)); }
+  :host .outer-container .content {
+    position: relative;
+    height: calc(100% - 44px);
+    background-color: var(--light, #FFFFFF); }
+    :host .outer-container .content yoo-ion-scroll {
+      top: auto;
+      height: 100%;
+      transition: 0.3s; }
+  :host .outer-container .fullscreen-container {
+    top: auto;
+    right: 1.25rem;
+    bottom: 1.25rem;
+    left: auto;
+    position: absolute;
+    z-index: 3000; }
+    :host .outer-container .fullscreen-container yoo-button {
+      --border-radius-container: var(--button-border-radius-18, 1.125rem); }
+
+:host(.iphone-x.fullscreen) .outer-container yoo-ion-toolbar {
+  --title-margin-top: 1.6875rem;
+  height: 4.6875rem;
+  padding-top: var(--padding-30, 1.875rem); }

@@ -1,0 +1,12 @@
+:host {
+    yoo-ion-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    yoo-barcode {
+        width: 100%;
+        height: 100px;
+        margin: 1rem 0;
+    }
+}

@@ -1,0 +1,10 @@
+import Highcharts from 'highcharts';
+import 'highcharts/highcharts-more';
+import 'highcharts/modules/treemap';
+import 'highcharts/modules/heatmap';
+import 'highcharts/modules/drilldown';
+import 'highcharts/modules/exporting';
+import 'highcharts/modules/offline-exporting';
+export import HighchartsOptions = Highcharts.Options;
+export import HighchartsSeriesOptions = Highcharts.SeriesOptions;
+export { Highcharts };

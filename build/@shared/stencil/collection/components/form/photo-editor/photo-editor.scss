@@ -1,0 +1,533 @@
+@mixin center-content() {
+    top: 50%;
+    /* position the top  edge of the element at the middle of the parent */
+    left: 50%;
+    width: auto;
+    /* position the left edge of the element at the middle of the parent */
+    transform: translate(-50%, -50%);
+}
+@mixin abs-full-width() {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+}
+@mixin custom-textarea() {
+    position: absolute;
+    padding: cssvar(padding-5);
+    border: none;
+    border-radius: 0.5rem;
+    background: transparent;
+    color: white;
+    font-size: cssvar(font-l);
+    overflow: hidden;
+    resize: none;
+    &:focus {
+        outline: none;
+    }
+}
+
+:host {
+    @include abs-pos(0, 0, 0, 0);
+    width: 100%;
+    height: 100%;
+    .photo-editor-container {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: black;
+        yoo-form-slider,
+        yoo-slider {
+            position: absolute;
+            top: 30%;
+            left: 5%;
+            width: 1.875rem;
+            height: 15rem;
+            z-index: 10;
+        }
+        .action-buttons {
+            @include abs-full-width();
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding-bottom: cssvar(padding-5);
+            background: transparent;
+            color: cssvar(always-light);
+            z-index: 10;
+            &.portrait {
+                background-image: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(248, 248, 248, 0.04) 6%, rgba(239, 239, 239, 0.09) 12%, rgba(229, 229, 229, 0.13) 19%, rgba(219, 219, 219, 0.18) 26%, rgba(207, 207, 207, 0.24) 34%, rgba(194, 194, 194, 0.29) 42%, rgba(180, 180, 180, 0.35) 50%, rgba(165, 165, 165, 0.41) 58%, rgba(149, 149, 149, 0.46) 66%, rgba(131, 131, 131, 0.51) 74%, rgba(111, 111, 111, 0.57) 81%, rgba(89, 89, 89, 0.62) 88%, rgba(61, 61, 61, 0.66) 94%, rgba(0, 0, 0, 0.7));
+            }
+            .close {
+                display: flex;
+                align-items: center;
+                padding: cssvar(padding-15) 0 cssvar(padding-15) cssvar(padding-10);
+                yoo-button {
+                    --font-size-icon: #{cssvar(font-ll)}
+                }
+                &.menu {
+                    flex: 0.5;
+                }
+            }
+            .more{
+                padding-top: cssvar(padding-15);
+                padding-right: 0.5rem;
+                yoo-button {
+                    --font-size-icon: #{cssvar(font-ll)}
+                }
+            }
+            .editing-tools {
+                display: flex;
+                flex: auto;
+                flex-direction: row;
+                justify-content: space-around;
+                .clear,
+                .draw,
+                .annotate,
+                .add-text {
+                    font-size: cssvar(font-ll);
+                    cursor: pointer;
+                    span {
+                        display: block;
+                        padding: cssvar(padding-15);
+                    }
+                }
+            }
+        }
+        .toolbar-edit-drawmode {
+            justify-content: space-between;
+        }
+        .toolbar-edit {
+            @include abs-full-width();
+            display: flex;
+            flex-direction: row;
+            padding-top: cssvar(padding-15);
+            padding-bottom: cssvar(padding-5);
+            color: cssvar(always-light);
+            z-index: 12;
+            &.annotating {
+                justify-content: space-between;
+            }
+            .done,
+            .cancel,
+            .undo,
+            .predefined-comments {
+                align-self: center;
+                font-size: cssvar(font-l);
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                span {
+                    display: block;
+                    padding: cssvar(padding-15);
+                }
+
+            }
+            .done.text {
+                display: flex;
+                flex: 1;
+                justify-content: flex-end;
+            }
+            .text-editor-tools {
+                display: flex;
+                flex: 0.5;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-around;
+                .text-background,
+                .align-text {
+                    font-size: cssvar(font-l);
+                    span {
+                        display: block;
+                        padding: cssvar(padding-15);
+                    }
+                }
+            }
+        }
+        yoo-fab-container {
+            &.delete-annotation {
+                margin-left: -2.125rem;
+                transition: all 250ms linear;
+                opacity: 0;
+                z-index: 3;
+            }
+            &.large {
+                margin-left: -2.125rem;
+            }
+            &.delete-annotation.fade-in {
+                transition: all 250ms linear;
+                opacity: 1;
+            }
+        }
+        yoo-zoom {
+            height: 100%;
+            background: cssvar(always-black);
+            .photo-editor-body {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .canvas {
+            @include center-content();
+            position: absolute;
+            cursor: pointer;
+            opacity: 0;
+            &.editing {
+                z-index: 2;
+            }
+            &.text-mode {
+                z-index: -1;
+            }
+        }
+        .image {
+            @include center-content();
+            position: absolute;
+            width: 100%;
+            max-width: 100%;
+            // Unset max-height coming from the slides
+            height: auto;
+            max-height: unset;
+            background: cssvar(light);
+            &.edit {
+                width: 100%;
+                height: 100%;
+                background: transparent;
+                z-index: -1;
+            }
+        }
+        .new-annotations-placeholder {
+            position: absolute;
+            
+        }
+        .overlays-container {
+            @include center-content();
+            position: absolute;
+            .edit {
+                position: absolute;
+                // left: 0;
+            }
+            .annotations-placeholder {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                .text-annotation-container {
+                    position: absolute;
+                    opacity: 1;
+                    &.deleting {
+                        opacity: 0.5;
+                    }
+                    .text-annotation {
+                        // Override the absolute position for this case
+                        @include custom-textarea();
+                        position: relative;
+                        &.text-center {
+                            text-align: center;
+                        }
+                        &.text-left {
+                            text-align: left;
+                        }
+                        &.text-right {
+                            text-align: right;
+                        }
+                    }
+                }
+                .annotation-container {
+                    // See touchHold prop description
+                    // https://atomiks.github.io/tippyjs/all-options/
+                    user-select: none;
+                    &.deleting {
+                        transform: scale(0.2);
+                        transition: all 200ms linear;
+                    }
+                    yoo-tooltip {
+                        padding: cssvar(padding-10);
+                        z-index: 9999;
+                        .tooltip-number {
+                            padding: cssvar(padding-10);
+                        }
+                    }
+                }
+            }
+            .annotations-overlay {
+                display: flex;
+                position: absolute;
+                flex-direction: row;
+                align-content: center;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.5);
+                z-index: 11;
+                textarea.dot-annotation-input {
+                    position: absolute;
+                    border: none;
+                    background: none;
+                    color: white;
+                    font-size: cssvar(font-l);
+                    text-align: center;
+                    resize: none;
+                    caret-color: cssvar(success);
+                    &:focus {
+                        outline: none;
+                    }
+                }
+                span {
+                    position: absolute;
+                    color: white;
+                    font-size: cssvar(font-l);
+                    font-style: normal;
+                    font-weight: normal;
+                    z-index: 86;
+                }
+                .dot-annotation-area {
+                    border: none;
+                    background: none;
+                    color: white;
+                    caret-color: white;
+                    &:focus {
+                        outline: none;
+                    }
+                }
+            }
+        }
+        .description-container {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            padding: 1rem;
+            color: cssvar(always-light);
+            font-size: cssvar(font-m);
+            text-align: center;
+        }
+
+        .annotation-container {
+            display: flex;
+            position: absolute;
+            align-items: center;
+            justify-content: center;
+            width: 2.75rem;
+            height: 2.75rem;
+            transform: scale(1);
+            transition: transform 0.5s;
+            border: solid 2px cssvar(light);
+            border-radius: 100%;
+            background: cssvar(gradient-success);
+            color: cssvar(always-light);
+            font-size: cssvar(font-m);
+            box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.3);
+            z-index: 10;
+            &.is-scaled-down {
+                transform: scale(0.2);
+            }
+        }
+        .drawing-container {
+            @include center-content();
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        .color-selector {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            z-index: 20;
+        }
+        .text-input-container,
+        .text-annotation-update {
+            @include center-content();
+            display: flex;
+            position: absolute;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 11;
+            &.text-center {
+                align-items: center;
+                textarea {
+                    text-align: center;
+                }
+            }
+            &.text-left {
+                align-items: flex-start;
+                textarea {
+                    text-align: left;
+                }
+            }
+            &.text-right {
+                align-items: flex-end;
+                textarea {
+                    text-align: right;
+                }
+            }
+            textarea {
+                @include custom-textarea();
+            }
+        }
+    }
+}
+
+:host(.feed-image) {
+    &.initialscale {
+        img.image {
+            height: auto;
+            transition: height .5s ease;
+        }
+    }
+    img.image.fullscale{
+        height: auto !important;
+        transition: height .5s ease;
+    }
+
+    .photo-editor-container {
+        yoo-zoom {
+            height: 100%;
+            background: cssvar(always-black) !important;
+            z-index: 100;
+        }
+    }
+}
+
+:host(.portrait) {
+    .photo-editor-container {
+        .canvas {
+            width: auto;
+            height: 100%;
+            max-height: 100%;
+        }
+        // .overlays-container {
+        //     width: auto;
+        //     // Needed for correct tooltip position calculation for portrait photos
+        //     height: calc(100% - 1px);
+        // }
+        .image:not(.edit) {
+            width: auto;
+            max-width: 100%;
+            height: 100%;
+            max-height: 100%;
+        }
+        yoo-fab-container.delete-annotation {
+            margin-bottom: 1.5625rem;
+        }
+
+    }
+}
+
+
+:host(.readonly) {
+    .photo-editor-container {
+        yoo-zoom {
+            height: 100%;
+            background: cssvar(always-black);
+            z-index: 100;
+            .text-annotation-container {
+                pointer-events: none;
+            }
+        }
+    }
+}
+
+:host(.with-svg-data.with-annotated-image:not(.stitch-mode):not(.with-stitch-image)) {
+    .photo-editor-container {
+        .overlays-container {
+            .image.edit {
+                opacity: 0;
+            }
+        }
+    }
+}
+
+:host(.without-svg.with-annotated-image) {
+    .photo-editor-container {
+        .canvas {
+            opacity: 1;
+        }
+    }
+}
+
+:host(.stitch-mode) {
+    .photo-editor-container {
+        background: transparent;
+        yoo-zoom {
+            background: transparent;
+        }
+        .image {
+            left: -36%;
+            width: auto;
+            max-width: initial;
+            height: 100%;
+            opacity: .5;
+        }
+    }
+}
+
+:host(.iphone-x) {
+    .photo-editor-container {
+        .action-buttons {
+            padding-top: 2.6875rem;
+        }
+        .toolbar-edit {
+            padding-top: 2.75rem;
+        }
+        .color-picker-container {
+            margin-bottom: 1.5625rem;
+        }
+        yoo-fab-container#save-annotation {
+            margin-bottom: 1.5625rem;
+        }
+    }
+}
+
+:host(.light) {
+    .photo-editor-container,
+    yoo-zoom {
+        background: cssvar(light) !important;
+    }
+}
+
+:host(.rotate-image) {
+    .photo-editor-container { 
+        .image {
+            top: 30% !important;
+            left: 0 !important;
+            transform: rotate(90deg);
+        }
+    }
+}
+
+:host(.document) {
+    .photo-editor-container {
+        .photo-editor-body {
+            img {
+                width: unset;
+                max-height: 100%;
+            }
+        }
+    }
+}
+
+:host(.web.landscape) {
+    .photo-editor-container {
+        .photo-editor-body {
+            img {
+                width: auto;
+            }
+        }
+    }
+}
+@media only screen and (min-width: 375px) {
+    :host {
+        .photo-editor-container {
+            .color-picker-container {
+                .color-container {
+                    .color-icon {
+                        width: 1.75rem;
+                        height: 1.75rem;
+                        font-size: cssvar(font-l);
+                    }
+                }
+            }
+        }
+    }
+}

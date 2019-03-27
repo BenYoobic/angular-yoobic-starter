@@ -1,0 +1,422 @@
+:host {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%; }
+  :host .photo-editor-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: black; }
+    :host .photo-editor-container yoo-form-slider,
+    :host .photo-editor-container yoo-slider {
+      position: absolute;
+      top: 30%;
+      left: 5%;
+      width: 1.875rem;
+      height: 15rem;
+      z-index: 10; }
+    :host .photo-editor-container .action-buttons {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding-bottom: var(--padding-5, 0.3125rem);
+      background: transparent;
+      color: var(--always-light, #FFFFFF);
+      z-index: 10; }
+      :host .photo-editor-container .action-buttons.portrait {
+        background-image: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(248, 248, 248, 0.04) 6%, rgba(239, 239, 239, 0.09) 12%, rgba(229, 229, 229, 0.13) 19%, rgba(219, 219, 219, 0.18) 26%, rgba(207, 207, 207, 0.24) 34%, rgba(194, 194, 194, 0.29) 42%, rgba(180, 180, 180, 0.35) 50%, rgba(165, 165, 165, 0.41) 58%, rgba(149, 149, 149, 0.46) 66%, rgba(131, 131, 131, 0.51) 74%, rgba(111, 111, 111, 0.57) 81%, rgba(89, 89, 89, 0.62) 88%, rgba(61, 61, 61, 0.66) 94%, rgba(0, 0, 0, 0.7)); }
+      :host .photo-editor-container .action-buttons .close {
+        display: flex;
+        align-items: center;
+        padding: var(--padding-15, 0.9375rem) 0 var(--padding-15, 0.9375rem) var(--padding-10, 0.625rem); }
+        :host .photo-editor-container .action-buttons .close yoo-button {
+          --font-size-icon: var(--font-ll, 20px)
+                ; }
+        :host .photo-editor-container .action-buttons .close.menu {
+          flex: 0.5; }
+      :host .photo-editor-container .action-buttons .more {
+        padding-top: var(--padding-15, 0.9375rem);
+        padding-right: 0.5rem; }
+        :host .photo-editor-container .action-buttons .more yoo-button {
+          --font-size-icon: var(--font-ll, 20px)
+                ; }
+      :host .photo-editor-container .action-buttons .editing-tools {
+        display: flex;
+        flex: auto;
+        flex-direction: row;
+        justify-content: space-around; }
+        :host .photo-editor-container .action-buttons .editing-tools .clear,
+        :host .photo-editor-container .action-buttons .editing-tools .draw,
+        :host .photo-editor-container .action-buttons .editing-tools .annotate,
+        :host .photo-editor-container .action-buttons .editing-tools .add-text {
+          font-size: var(--font-ll, 20px);
+          cursor: pointer; }
+          :host .photo-editor-container .action-buttons .editing-tools .clear span,
+          :host .photo-editor-container .action-buttons .editing-tools .draw span,
+          :host .photo-editor-container .action-buttons .editing-tools .annotate span,
+          :host .photo-editor-container .action-buttons .editing-tools .add-text span {
+            display: block;
+            padding: var(--padding-15, 0.9375rem); }
+    :host .photo-editor-container .toolbar-edit-drawmode {
+      justify-content: space-between; }
+    :host .photo-editor-container .toolbar-edit {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      display: flex;
+      flex-direction: row;
+      padding-top: var(--padding-15, 0.9375rem);
+      padding-bottom: var(--padding-5, 0.3125rem);
+      color: var(--always-light, #FFFFFF);
+      z-index: 12; }
+      :host .photo-editor-container .toolbar-edit.annotating {
+        justify-content: space-between; }
+      :host .photo-editor-container .toolbar-edit .done,
+      :host .photo-editor-container .toolbar-edit .cancel,
+      :host .photo-editor-container .toolbar-edit .undo,
+      :host .photo-editor-container .toolbar-edit .predefined-comments {
+        align-self: center;
+        font-size: var(--font-l, 17px);
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal; }
+        :host .photo-editor-container .toolbar-edit .done span,
+        :host .photo-editor-container .toolbar-edit .cancel span,
+        :host .photo-editor-container .toolbar-edit .undo span,
+        :host .photo-editor-container .toolbar-edit .predefined-comments span {
+          display: block;
+          padding: var(--padding-15, 0.9375rem); }
+      :host .photo-editor-container .toolbar-edit .done.text {
+        display: flex;
+        flex: 1;
+        justify-content: flex-end; }
+      :host .photo-editor-container .toolbar-edit .text-editor-tools {
+        display: flex;
+        flex: 0.5;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around; }
+        :host .photo-editor-container .toolbar-edit .text-editor-tools .text-background,
+        :host .photo-editor-container .toolbar-edit .text-editor-tools .align-text {
+          font-size: var(--font-l, 17px); }
+          :host .photo-editor-container .toolbar-edit .text-editor-tools .text-background span,
+          :host .photo-editor-container .toolbar-edit .text-editor-tools .align-text span {
+            display: block;
+            padding: var(--padding-15, 0.9375rem); }
+    :host .photo-editor-container yoo-fab-container.delete-annotation {
+      margin-left: -2.125rem;
+      transition: all 250ms linear;
+      opacity: 0;
+      z-index: 3; }
+    :host .photo-editor-container yoo-fab-container.large {
+      margin-left: -2.125rem; }
+    :host .photo-editor-container yoo-fab-container.delete-annotation.fade-in {
+      transition: all 250ms linear;
+      opacity: 1; }
+    :host .photo-editor-container yoo-zoom {
+      height: 100%;
+      background: var(--always-black, #000000); }
+      :host .photo-editor-container yoo-zoom .photo-editor-body {
+        width: 100%;
+        height: 100%; }
+    :host .photo-editor-container .canvas {
+      top: 50%;
+      /* position the top  edge of the element at the middle of the parent */
+      left: 50%;
+      width: auto;
+      /* position the left edge of the element at the middle of the parent */
+      transform: translate(-50%, -50%);
+      position: absolute;
+      cursor: pointer;
+      opacity: 0; }
+      :host .photo-editor-container .canvas.editing {
+        z-index: 2; }
+      :host .photo-editor-container .canvas.text-mode {
+        z-index: -1; }
+    :host .photo-editor-container .image {
+      top: 50%;
+      /* position the top  edge of the element at the middle of the parent */
+      left: 50%;
+      width: auto;
+      /* position the left edge of the element at the middle of the parent */
+      transform: translate(-50%, -50%);
+      position: absolute;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      max-height: unset;
+      background: var(--light, #FFFFFF); }
+      :host .photo-editor-container .image.edit {
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        z-index: -1; }
+    :host .photo-editor-container .new-annotations-placeholder {
+      position: absolute; }
+    :host .photo-editor-container .overlays-container {
+      top: 50%;
+      /* position the top  edge of the element at the middle of the parent */
+      left: 50%;
+      width: auto;
+      /* position the left edge of the element at the middle of the parent */
+      transform: translate(-50%, -50%);
+      position: absolute; }
+      :host .photo-editor-container .overlays-container .edit {
+        position: absolute; }
+      :host .photo-editor-container .overlays-container .annotations-placeholder {
+        position: absolute;
+        width: 100%;
+        height: 100%; }
+        :host .photo-editor-container .overlays-container .annotations-placeholder .text-annotation-container {
+          position: absolute;
+          opacity: 1; }
+          :host .photo-editor-container .overlays-container .annotations-placeholder .text-annotation-container.deleting {
+            opacity: 0.5; }
+          :host .photo-editor-container .overlays-container .annotations-placeholder .text-annotation-container .text-annotation {
+            position: absolute;
+            padding: var(--padding-5, 0.3125rem);
+            border: none;
+            border-radius: 0.5rem;
+            background: transparent;
+            color: white;
+            font-size: var(--font-l, 17px);
+            overflow: hidden;
+            resize: none;
+            position: relative; }
+            :host .photo-editor-container .overlays-container .annotations-placeholder .text-annotation-container .text-annotation:focus {
+              outline: none; }
+            :host .photo-editor-container .overlays-container .annotations-placeholder .text-annotation-container .text-annotation.text-center {
+              text-align: center; }
+            :host .photo-editor-container .overlays-container .annotations-placeholder .text-annotation-container .text-annotation.text-left {
+              text-align: left; }
+            :host .photo-editor-container .overlays-container .annotations-placeholder .text-annotation-container .text-annotation.text-right {
+              text-align: right; }
+        :host .photo-editor-container .overlays-container .annotations-placeholder .annotation-container {
+          user-select: none; }
+          :host .photo-editor-container .overlays-container .annotations-placeholder .annotation-container.deleting {
+            transform: scale(0.2);
+            transition: all 200ms linear; }
+          :host .photo-editor-container .overlays-container .annotations-placeholder .annotation-container yoo-tooltip {
+            padding: var(--padding-10, 0.625rem);
+            z-index: 9999; }
+            :host .photo-editor-container .overlays-container .annotations-placeholder .annotation-container yoo-tooltip .tooltip-number {
+              padding: var(--padding-10, 0.625rem); }
+      :host .photo-editor-container .overlays-container .annotations-overlay {
+        display: flex;
+        position: absolute;
+        flex-direction: row;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 11; }
+        :host .photo-editor-container .overlays-container .annotations-overlay textarea.dot-annotation-input {
+          position: absolute;
+          border: none;
+          background: none;
+          color: white;
+          font-size: var(--font-l, 17px);
+          text-align: center;
+          resize: none;
+          caret-color: var(--success, #04CC99); }
+          :host .photo-editor-container .overlays-container .annotations-overlay textarea.dot-annotation-input:focus {
+            outline: none; }
+        :host .photo-editor-container .overlays-container .annotations-overlay span {
+          position: absolute;
+          color: white;
+          font-size: var(--font-l, 17px);
+          font-style: normal;
+          font-weight: normal;
+          z-index: 86; }
+        :host .photo-editor-container .overlays-container .annotations-overlay .dot-annotation-area {
+          border: none;
+          background: none;
+          color: white;
+          caret-color: white; }
+          :host .photo-editor-container .overlays-container .annotations-overlay .dot-annotation-area:focus {
+            outline: none; }
+    :host .photo-editor-container .description-container {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      padding: 1rem;
+      color: var(--always-light, #FFFFFF);
+      font-size: var(--font-m, 15px);
+      text-align: center; }
+    :host .photo-editor-container .annotation-container {
+      display: flex;
+      position: absolute;
+      align-items: center;
+      justify-content: center;
+      width: 2.75rem;
+      height: 2.75rem;
+      transform: scale(1);
+      transition: transform 0.5s;
+      border: solid 2px var(--light, #FFFFFF);
+      border-radius: 100%;
+      background: var(--gradient-success, #04CC99);
+      color: var(--always-light, #FFFFFF);
+      font-size: var(--font-m, 15px);
+      box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.3);
+      z-index: 10; }
+      :host .photo-editor-container .annotation-container.is-scaled-down {
+        transform: scale(0.2); }
+    :host .photo-editor-container .drawing-container {
+      top: 50%;
+      /* position the top  edge of the element at the middle of the parent */
+      left: 50%;
+      width: auto;
+      /* position the left edge of the element at the middle of the parent */
+      transform: translate(-50%, -50%);
+      position: absolute;
+      width: 100%;
+      height: 100%; }
+    :host .photo-editor-container .color-selector {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      z-index: 20; }
+    :host .photo-editor-container .text-input-container,
+    :host .photo-editor-container .text-annotation-update {
+      top: 50%;
+      /* position the top  edge of the element at the middle of the parent */
+      left: 50%;
+      width: auto;
+      /* position the left edge of the element at the middle of the parent */
+      transform: translate(-50%, -50%);
+      display: flex;
+      position: absolute;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 11; }
+      :host .photo-editor-container .text-input-container.text-center,
+      :host .photo-editor-container .text-annotation-update.text-center {
+        align-items: center; }
+        :host .photo-editor-container .text-input-container.text-center textarea,
+        :host .photo-editor-container .text-annotation-update.text-center textarea {
+          text-align: center; }
+      :host .photo-editor-container .text-input-container.text-left,
+      :host .photo-editor-container .text-annotation-update.text-left {
+        align-items: flex-start; }
+        :host .photo-editor-container .text-input-container.text-left textarea,
+        :host .photo-editor-container .text-annotation-update.text-left textarea {
+          text-align: left; }
+      :host .photo-editor-container .text-input-container.text-right,
+      :host .photo-editor-container .text-annotation-update.text-right {
+        align-items: flex-end; }
+        :host .photo-editor-container .text-input-container.text-right textarea,
+        :host .photo-editor-container .text-annotation-update.text-right textarea {
+          text-align: right; }
+      :host .photo-editor-container .text-input-container textarea,
+      :host .photo-editor-container .text-annotation-update textarea {
+        position: absolute;
+        padding: var(--padding-5, 0.3125rem);
+        border: none;
+        border-radius: 0.5rem;
+        background: transparent;
+        color: white;
+        font-size: var(--font-l, 17px);
+        overflow: hidden;
+        resize: none; }
+        :host .photo-editor-container .text-input-container textarea:focus,
+        :host .photo-editor-container .text-annotation-update textarea:focus {
+          outline: none; }
+
+:host(.feed-image).initialscale img.image {
+  height: auto;
+  transition: height .5s ease; }
+
+:host(.feed-image) img.image.fullscale {
+  height: auto !important;
+  transition: height .5s ease; }
+
+:host(.feed-image) .photo-editor-container yoo-zoom {
+  height: 100%;
+  background: var(--always-black, #000000) !important;
+  z-index: 100; }
+
+:host(.portrait) .photo-editor-container .canvas {
+  width: auto;
+  height: 100%;
+  max-height: 100%; }
+
+:host(.portrait) .photo-editor-container .image:not(.edit) {
+  width: auto;
+  max-width: 100%;
+  height: 100%;
+  max-height: 100%; }
+
+:host(.portrait) .photo-editor-container yoo-fab-container.delete-annotation {
+  margin-bottom: 1.5625rem; }
+
+:host(.readonly) .photo-editor-container yoo-zoom {
+  height: 100%;
+  background: var(--always-black, #000000);
+  z-index: 100; }
+  :host(.readonly) .photo-editor-container yoo-zoom .text-annotation-container {
+    pointer-events: none; }
+
+:host(.with-svg-data.with-annotated-image:not(.stitch-mode):not(.with-stitch-image)) .photo-editor-container .overlays-container .image.edit {
+  opacity: 0; }
+
+:host(.without-svg.with-annotated-image) .photo-editor-container .canvas {
+  opacity: 1; }
+
+:host(.stitch-mode) .photo-editor-container {
+  background: transparent; }
+  :host(.stitch-mode) .photo-editor-container yoo-zoom {
+    background: transparent; }
+  :host(.stitch-mode) .photo-editor-container .image {
+    left: -36%;
+    width: auto;
+    max-width: initial;
+    height: 100%;
+    opacity: .5; }
+
+:host(.iphone-x) .photo-editor-container .action-buttons {
+  padding-top: 2.6875rem; }
+
+:host(.iphone-x) .photo-editor-container .toolbar-edit {
+  padding-top: 2.75rem; }
+
+:host(.iphone-x) .photo-editor-container .color-picker-container {
+  margin-bottom: 1.5625rem; }
+
+:host(.iphone-x) .photo-editor-container yoo-fab-container#save-annotation {
+  margin-bottom: 1.5625rem; }
+
+:host(.light) .photo-editor-container,
+:host(.light) yoo-zoom {
+  background: var(--light, #FFFFFF) !important; }
+
+:host(.rotate-image) .photo-editor-container .image {
+  top: 30% !important;
+  left: 0 !important;
+  transform: rotate(90deg); }
+
+:host(.document) .photo-editor-container .photo-editor-body img {
+  width: unset;
+  max-height: 100%; }
+
+:host(.web.landscape) .photo-editor-container .photo-editor-body img {
+  width: auto; }
+
+@media only screen and (min-width: 375px) {
+  :host .photo-editor-container .color-picker-container .color-container .color-icon {
+    width: 1.75rem;
+    height: 1.75rem;
+    font-size: var(--font-l, 17px); } }

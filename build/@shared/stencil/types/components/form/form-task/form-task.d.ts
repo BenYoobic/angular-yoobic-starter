@@ -1,0 +1,36 @@
+import '../../../stencil.core';
+import { EventEmitter } from '../../../stencil.core';
+import { ValidatorEntry, AsyncValidator, Validator, IFormTask, ITodoTaskSimple } from '../../../interfaces';
+export declare class YooFormTaskComponent implements IFormTask {
+    value: Array<ITodoTaskSimple>;
+    validators: Array<Validator<Array<ITodoTaskSimple>> | ValidatorEntry>;
+    asyncValidators: Array<AsyncValidator<Array<ITodoTaskSimple>>>;
+    placeholder: string;
+    required: boolean;
+    readonly: boolean;
+    type: string;
+    hideTitle: boolean;
+    name: string;
+    validity: boolean;
+    isHistory: boolean;
+    validityChanged: EventEmitter<boolean>;
+    inputBlurred: EventEmitter<any>;
+    inputFocused: EventEmitter<any>;
+    inputChanged: EventEmitter<any>;
+    fetchCustomData: EventEmitter<any>;
+    fieldFetchData: EventEmitter<any>;
+    host: HTMLStencilElement;
+    private slidesTask;
+    onTaskClicked(ev: any): void;
+    setSlides(data: any): void;
+    componentWillLoad(): void;
+    onAddNewTask(): void;
+    onEditTask(task: ITodoTaskSimple, index: number): void;
+    onRemoveTask(task: ITodoTaskSimple, index: number): void;
+    onShowActionSheet(task: ITodoTaskSimple, index: number): void;
+    upsertTask(task: ITodoTaskSimple, index: number): void;
+    renderTasks(): JSX.Element;
+    renderReadonly(): JSX.Element;
+    renderEditable(): JSX.Element;
+    render(): JSX.Element;
+}

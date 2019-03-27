@@ -1,0 +1,32 @@
+import '../../../stencil.core';
+import { EventEmitter } from '../../../stencil.core';
+import { ValidatorEntry, AsyncValidator, Validator } from '../../../interfaces';
+import JSONEditor from 'jsoneditor/dist/jsoneditor.min';
+export declare class YooFormJsonComponent {
+    value: string;
+    validators: Array<Validator<string> | ValidatorEntry>;
+    asyncValidators: Array<AsyncValidator<string>>;
+    readonly: boolean;
+    required: boolean;
+    validityChanged: EventEmitter<boolean>;
+    inputBlurred: EventEmitter<any>;
+    inputFocused: EventEmitter<any>;
+    inputChanged: EventEmitter<any>;
+    host: HTMLStencilElement;
+    validity: boolean;
+    protected containerEl: HTMLElement;
+    protected jsonEditor: JSONEditor;
+    protected copyButtonEl: HTMLElement;
+    protected copyIntance: any;
+    requiredWatch(): void;
+    componentWillLoad(): void;
+    componentDidLoad(): void;
+    componentDidUnload(): void;
+    onChange(): void;
+    onChangeMode(mode: any): void;
+    validate(): boolean;
+    renderBase(): JSX.Element[];
+    renderReadonly(): JSX.Element[];
+    renderEditable(): JSX.Element[];
+    render(): JSX.Element;
+}

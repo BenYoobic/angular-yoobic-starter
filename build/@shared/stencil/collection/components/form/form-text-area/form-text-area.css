@@ -1,0 +1,65 @@
+:host {
+  --textarea-placeholder-font-size: var(--font-m, 15px); }
+  :host .outer-container {
+    display: flex; }
+    :host .outer-container textarea {
+      width: 100%;
+      color: var(--dark, #2b3648);
+      font-size: var(--textarea-placeholder-font-size);
+      font-weight: normal;
+      line-height: normal;
+      resize: none;
+      white-space: pre;
+      -webkit-appearance: none;
+      font-family: "Lato" !important;
+      height: 100%;
+      padding: 0.5rem;
+      border: solid 0.0625rem var(--input-container-border-color, #E6E6E6);
+      border-radius: var(--border-radius-input, 5px);
+      background: var(--light, #FFFFFF);
+      white-space: pre-wrap; }
+      :host .outer-container textarea.invalid {
+        border-color: var(--danger, #ff625f); }
+      :host .outer-container textarea.valid {
+        border-color: var(--success, #04CC99); }
+      :host .outer-container textarea:focus {
+        outline: none; }
+      :host .outer-container textarea.focused {
+        border: 1px solid var(--dark, #2b3648); }
+  :host .readonly {
+    width: 100%;
+    color: var(--dark, #2b3648);
+    font-size: var(--textarea-placeholder-font-size);
+    font-weight: normal;
+    line-height: normal;
+    resize: none;
+    white-space: pre;
+    padding: 0.5rem;
+    padding-left: 0;
+    padding-bottom: 0;
+    color: var(--black, #000000);
+    line-height: 1.5rem;
+    white-space: pre-wrap;
+    word-break: break-word; }
+
+:host(.italic) .readonly {
+  font-style: italic; }
+
+:host(.input-bar) {
+  width: 100%; }
+  :host(.input-bar) textarea {
+    padding: 0.5rem 0;
+    border: none !important; }
+
+:host(.ios) {
+  -webkit-overflow-scrolling: auto; }
+
+:host(.history) {
+  padding: 0 !important; }
+  :host(.history) .readonly {
+    display: -webkit-box;
+    padding: 0 !important;
+    line-height: normal;
+    white-space: normal;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical; }

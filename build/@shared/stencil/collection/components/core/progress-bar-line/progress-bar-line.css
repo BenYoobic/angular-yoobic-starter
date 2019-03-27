@@ -1,0 +1,133 @@
+:host .extra-small {
+  font-size: var(--font-xs, 10px) !important; }
+
+:host .small {
+  font-size: var(--font-s, 13px) !important; }
+
+:host .medium {
+  font-size: var(--font-m, 15px) !important; }
+
+:host .large {
+  font-size: var(--font-l, 17px) !important; }
+
+:host .extra-large {
+  font-size: var(--font-xl, 36px) !important; }
+
+:host .extra-extra-large {
+  font-size: var(--font-xxl, 60px) !important; }
+
+:host .dark {
+  color: var(--dark, #2b3648) !important; }
+
+:host .stable {
+  color: var(--stable, #adadad) !important; }
+
+:host .text-color {
+  color: var(--text-color, #807f83) !important; }
+
+:host .lowercase {
+  text-transform: lowercase !important; }
+
+:host .uppercase {
+  text-transform: uppercase !important; }
+
+:host .capitalize {
+  text-transform: capitalize !important; }
+
+:host .pb-success {
+  stroke: var(--success, #04CC99) !important; }
+
+:host .pb-warning {
+  stroke: var(--warning, #ff6402) !important; }
+
+:host .pb-danger {
+  stroke: var(--danger, #ff625f) !important; }
+
+:host .pb-stable {
+  stroke: var(--trail-bar-color, #ebebeb) !important; }
+
+:host .pb-danger-light {
+  stroke: var(--danger-light, #F46885) !important; }
+
+:host .progressbar-container-line {
+  display: flex;
+  position: relative; }
+  :host .progressbar-container-line svg {
+    max-height: 0.125rem;
+    padding: 0; }
+  :host .progressbar-container-line.negative-display svg {
+    transform: rotate(180deg); }
+  :host .progressbar-container-line.negative-display .marker {
+    position: absolute;
+    height: 0.5rem;
+    border: 0.5px solid var(--royal, #845cff);
+    z-index: 2; }
+  :host .progressbar-container-line.negative-display .base-graduation {
+    position: absolute;
+    font-size: var(--font-xs, 10px); }
+  :host .progressbar-container-line.negative-display[class*="top"] .marker {
+    right: 50%;
+    margin-top: 0.15rem; }
+  :host .progressbar-container-line.negative-display[class*="top"] .base-graduation {
+    right: 49.5%;
+    margin-top: 1.15rem; }
+  :host .progressbar-container-line.negative-display[class*="bottom"] .marker {
+    right: 50%;
+    margin-top: -0.15rem; }
+  :host .progressbar-container-line.negative-display[class*="bottom"] .base-graduation {
+    right: 49.5%;
+    margin-top: 0.5rem; }
+  :host .progressbar-container-line.negative-display.middle-left svg {
+    padding-right: 1rem !important;
+    padding-left: 0 !important; }
+  :host .progressbar-container-line.negative-display.middle-left .marker {
+    right: calc(50% - 1.45rem);
+    margin-top: 0.3rem; }
+  :host .progressbar-container-line.negative-display.middle-left .base-graduation {
+    top: 0.9rem;
+    right: calc(50% - 1.6rem); }
+  :host .progressbar-container-line.negative-display.middle-right svg {
+    padding-right: 0 !important;
+    padding-left: 1rem !important; }
+  :host .progressbar-container-line.negative-display.middle-right .marker {
+    right: calc(50% + 1.75rem);
+    margin-top: 0.35rem; }
+  :host .progressbar-container-line.negative-display.middle-right .base-graduation {
+    top: 0.9rem;
+    right: calc(50% + 1.6rem); }
+  :host .progressbar-container-line[class*="top"] {
+    flex-direction: column-reverse; }
+  :host .progressbar-container-line[class*="bottom"] {
+    flex-direction: column; }
+  :host .progressbar-container-line.middle-right {
+    flex-direction: row;
+    align-items: center; }
+    :host .progressbar-container-line.middle-right svg {
+      padding-right: 1rem !important; }
+  :host .progressbar-container-line.middle-left {
+    flex-direction: row-reverse;
+    align-items: center; }
+    :host .progressbar-container-line.middle-left svg {
+      padding-left: 1rem !important; }
+  :host .progressbar-container-line .progressbar-text {
+    position: inherit !important;
+    left: auto !important;
+    transform: inherit !important;
+    white-space: nowrap; }
+    :host .progressbar-container-line .progressbar-text p {
+      margin: 0; }
+    :host .progressbar-container-line .progressbar-text[class*="right"] {
+      text-align: right; }
+    :host .progressbar-container-line .progressbar-text[class*="middle"] {
+      text-align: center; }
+    :host .progressbar-container-line .progressbar-text[class*="left"] {
+      text-align: left; }
+    :host .progressbar-container-line .progressbar-text[class*="top"] {
+      padding-bottom: 0.25rem !important; }
+    :host .progressbar-container-line .progressbar-text[class*="bottom"] {
+      padding-top: 0.25rem !important; }
+
+/** MOBILE SPECIFIC STYLE **/
+/** WEB SPECIFIC STYLE **/
+:host(.web) .progressbar-container-line svg path {
+  stroke-width: 1 !important; }

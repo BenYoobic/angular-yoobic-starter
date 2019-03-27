@@ -1,0 +1,33 @@
+:host .outer-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  text-align: center; }
+  :host .outer-container .content {
+    padding-top: 1.25rem; }
+    :host .outer-container .content .informations {
+      margin-top: 1.4375rem; }
+      :host .outer-container .content .informations .information {
+        font-size: 12px;
+        font-weight: 300;
+        text-transform: capitalize; }
+    :host .outer-container .content .links-container {
+      margin-top: 1.3125rem; }
+      :host .outer-container .content .links-container a {
+        margin-right: var(--padding-15, 0.9375rem);
+        color: var(--dark, #2b3648);
+        text-decoration: none; }
+  :host .outer-container .footer {
+    padding-bottom: 1.25rem; }
+    :host .outer-container .footer .powered-by {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px; }
+      :host .outer-container .footer .powered-by .powered-img {
+        display: flex;
+        align-items: center;
+        padding-right: 0.25rem;
+        padding-left: 0.3125rem; }

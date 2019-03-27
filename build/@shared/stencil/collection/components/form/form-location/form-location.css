@@ -1,0 +1,19 @@
+:host .outer-container .map-container,
+:host .readonly .map-container {
+  position: relative;
+  height: 180px;
+  border-radius: var(--border-radius-input, 5px);
+  background: var(--stable, #adadad);
+  overflow: hidden; }
+
+:host .outer-container yoo-form-input-container,
+:host .readonly yoo-form-input-container {
+  margin-top: 0.5rem; }
+  :host .outer-container yoo-form-input-container yoo-form-checkbox,
+  :host .readonly yoo-form-input-container yoo-form-checkbox {
+    color: var(--text-color, #807f83); }
+
+:host(.history) {
+  border: none !important; }
+  :host(.history) .readonly {
+    border: none !important; }

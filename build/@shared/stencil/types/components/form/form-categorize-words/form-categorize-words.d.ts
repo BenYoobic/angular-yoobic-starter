@@ -1,0 +1,45 @@
+import '../../../stencil.core';
+import { EventEmitter } from '../../../stencil.core';
+import { ValidatorEntry, AsyncValidator, Validator } from '../../../interfaces';
+export declare class YooFormCategorizeWordsComponent {
+    categories: Array<string>;
+    answer: Array<any>;
+    value: Array<any>;
+    values: Array<string>;
+    validity: boolean;
+    validators: Array<Validator<string> | ValidatorEntry>;
+    asyncValidators: Array<AsyncValidator<string>>;
+    required: boolean;
+    readonly: boolean;
+    type: string;
+    validityChanged: EventEmitter<boolean>;
+    inputBlurred: EventEmitter<any>;
+    inputFocused: EventEmitter<any>;
+    inputChanged: EventEmitter<any>;
+    host: HTMLStencilElement;
+    topContainerWords: Array<string>;
+    bottomContainerWords: Array<string>;
+    categoriesAnswer: Array<{
+        value: string;
+        container: string;
+    }>;
+    isValid(): Promise<boolean>;
+    componentWillLoad(): void;
+    componentDidLoad(): void;
+    initInteract(): void;
+    initInteractDraggable(): void;
+    initInteractDroppable(): void;
+    findDroppedWord(word: string, from: string): string;
+    isDropped(word: string, from: string): boolean;
+    updateContainer(): void;
+    updateArrays(from: string, droppedWord: string): void;
+    onDropWord(event: any): void;
+    clearInteractEvents(): void;
+    dragMoveListener(event: any): void;
+    dragEndListener(event: any): void;
+    checkAnswer(val: string, answer: string): "success" | "danger";
+    badgesCount(container: string): string;
+    renderReadonly(): JSX.Element;
+    renderEditable(): JSX.Element;
+    render(): JSX.Element;
+}

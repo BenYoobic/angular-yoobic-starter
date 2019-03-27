@@ -1,0 +1,82 @@
+:host {
+    .readonly,
+    .outer-container {
+        @include tasks-style();
+        display: flex;
+        flex-direction: column; //margin-top: $padding-15;
+        .border {
+            @include border-profile();
+        }
+        .title {
+            font-size: cssvar(font-m);
+        }
+        .newtask {
+            display: flex;
+            flex-direction: row;
+            margin-top: 0.875rem;
+            font-size: cssvar(font-m);
+            &.nomargin {
+                margin-top: 0;
+            }
+            .icon {
+                display: flex;
+                align-items: center;
+                margin-right: 0.125rem;
+                .yo-plus {
+                    font-size: 0.5rem;
+                }
+            }
+        }
+        .task {
+            align-items: flex-start;
+            .task-part {
+                yoo-icon {
+                    line-height: 39px;
+                }
+                .description-container{
+                    display: flex;
+                }
+                .text-container{
+                    padding: 7px 0 1rem 0.625rem;
+                    line-height: 1.5rem;
+                    .text {
+                        color: cssvar(black);
+                        font-size: cssvar(font-m);
+                        // line-height: 1.5rem;
+                        // word-break: break-word;
+                    }
+                }
+                yoo-button {
+                    padding-top: 0.2rem;
+                }
+            }
+        }
+    }
+    .readonly {
+        @include tasks-style-readonly();
+        // .title {
+        //     margin-left: 0.5rem;
+        // }
+    }
+}
+
+:host(.history) {
+    .readonly {
+        margin-top: 0 !important;
+    }
+}
+
+:host(.tasks-container) {
+    display: block; //.readonly,
+    margin-top: 1rem;
+    .outer-container {
+        padding: cssvar(padding-10) 0 0 0;
+        &:not(.outer-container-empty){
+            margin-bottom: 1rem;
+        }
+    }
+    .outer-container-empty {
+        padding: 0;
+    }
+    
+}

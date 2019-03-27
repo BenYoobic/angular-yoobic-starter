@@ -1,0 +1,271 @@
+:host {
+  --active-day-circle-size: 2.0625rem;
+  --mobile-days-height: 100%;
+  --date-picker-margin: 0;
+  display: block;
+  background-color: var(--light, #FFFFFF);
+  opacity: 1; }
+  :host .toolbar-tools {
+    display: flex;
+    flex-direction: row;
+    align-items: center; }
+    :host .toolbar-tools yoo-tooltip {
+      padding: 0.25rem; }
+      :host .toolbar-tools yoo-tooltip yoo-button {
+        padding: 0; }
+    :host .toolbar-tools h2 {
+      font-weight: 500;
+      text-transform: capitalize; }
+    :host .toolbar-tools yoo-button {
+      padding: 0.25rem; }
+    :host .toolbar-tools .active-day {
+      flex: 1 2 auto;
+      text-align: center; }
+  :host .days {
+    display: flex;
+    flex-direction: column; }
+  :host .week-header {
+    display: flex;
+    flex-direction: row;
+    min-height: 1.875rem;
+    margin-bottom: 0.875rem;
+    background: var(--light, #FFFFFF);
+    font-size: var(--font-s, 13px);
+    font-weight: 400; }
+    :host .week-header .day {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      align-content: center;
+      align-items: center;
+      justify-content: center;
+      padding: 0.3125rem;
+      font-size: var(--font-m, 15px);
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      text-align: center; }
+  :host .week {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    border-bottom: var(--border-width, 1px) solid var(--stable-30, #E6E6E6); }
+    :host .week .day {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      align-content: center;
+      align-items: center;
+      justify-content: center;
+      height: 3.4375rem;
+      margin-top: 0.3125rem;
+      text-align: center;
+      cursor: pointer; }
+      :host .week .day.grey-day {
+        opacity: 0.3; }
+      :host .week .day.today.active .day-number {
+        background: var(--gradient-success, #04CC99);
+        color: var(--light, #FFFFFF); }
+      :host .week .day.today .day-number {
+        color: var(--success, #04CC99); }
+      :host .week .day.today .markers .marker.no-count {
+        background: var(--success, #04CC99); }
+      :host .week .day.single-range .day-number {
+        background: var(--gradient-success, #04CC99);
+        color: var(--light, #FFFFFF); }
+      :host .week .day.active .day-number {
+        background: var(--black, #000000);
+        color: var(--light, #FFFFFF); }
+      :host .week .day .day-number {
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+        width: var(--active-day-circle-size);
+        min-width: 1.625rem;
+        height: var(--active-day-circle-size);
+        border-radius: 50%;
+        font-size: var(--font-l, 17px);
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal; }
+    :host .week .markers {
+      display: flex;
+      flex: 1;
+      flex-direction: row;
+      align-content: center;
+      align-items: center;
+      justify-content: center;
+      min-height: 1.3125rem; }
+      :host .week .markers .marker {
+        width: 1rem;
+        height: 1rem;
+        margin-right: 0.0625rem;
+        border-radius: 50%;
+        background: var(--accent, #1FB6FF);
+        color: var(--light, #FFFFFF);
+        font-size: var(--padding-10, 0.625rem);
+        line-height: 1rem; }
+        :host .week .markers .marker.extra {
+          background: var(--warning, #ff6402); }
+        :host .week .markers .marker.no-count {
+          width: 0.3125rem;
+          height: 0.3125rem;
+          background: var(--stable, #adadad); }
+  :host .ion-slide {
+    display: flex;
+    flex-direction: column; }
+  :host .mobile-calendar-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1.25rem; }
+    :host .mobile-calendar-header .active-month-container {
+      display: flex;
+      align-items: baseline; }
+      :host .mobile-calendar-header .active-month-container .prev-month {
+        padding: 0rem 0.3125rem 0rem 0.9375rem;
+        color: var(--stable-alt, #d0d0d0); }
+      :host .mobile-calendar-header .active-month-container .next-month {
+        padding-left: 0.3125rem;
+        color: var(--stable-alt, #d0d0d0); }
+      :host .mobile-calendar-header .active-month-container .active-month {
+        color: var(--black, #000000);
+        font-size: 1.3125rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal; }
+    :host .mobile-calendar-header .calendar-tools {
+      display: flex;
+      flex: 1;
+      justify-content: flex-end; }
+      :host .mobile-calendar-header .calendar-tools .calendar-toggle {
+        padding-right: var(--padding-15, 0.9375rem);
+        color: var(--stable-alt, #d0d0d0);
+        font-size: var(--font-m, 15px);
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal; }
+        :host .mobile-calendar-header .calendar-tools .calendar-toggle:last-child {
+          padding-right: 0.4375rem; }
+        :host .mobile-calendar-header .calendar-tools .calendar-toggle.today:hover {
+          color: var(--success, #04CC99); }
+        :host .mobile-calendar-header .calendar-tools .calendar-toggle.active {
+          color: var(--success, #04CC99); }
+  :host .mobile-days {
+    display: flex;
+    flex-direction: column;
+    width: 100%; }
+    :host .mobile-days .in-range .day-number {
+      width: 100%;
+      border-radius: 0;
+      background: var(--success, #04CC99);
+      color: var(--light, #FFFFFF) !important;
+      opacity: 0.6; }
+    :host .mobile-days .in-range.first-day {
+      position: relative;
+      background: none; }
+      :host .mobile-days .in-range.first-day .day-number {
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+        width: var(--active-day-circle-size);
+        min-width: 1.625rem;
+        height: var(--active-day-circle-size);
+        border-radius: 50%;
+        font-size: var(--font-l, 17px);
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        background: var(--gradient-success, #04CC99);
+        color: var(--light, #FFFFFF);
+        opacity: 1;
+        z-index: 1; }
+      :host .mobile-days .in-range.first-day:after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: calc(50% - var(--active-day-circle-size) / 2);
+        height: 2.0625rem;
+        margin-left: 0.8125rem;
+        background: var(--success, #04CC99);
+        content: "";
+        opacity: 0.6; }
+    :host .mobile-days .in-range.last-day {
+      position: relative;
+      background: none; }
+      :host .mobile-days .in-range.last-day .day-number {
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+        width: var(--active-day-circle-size);
+        min-width: 1.625rem;
+        height: var(--active-day-circle-size);
+        border-radius: 50%;
+        font-size: var(--font-l, 17px);
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        background: var(--gradient-success, #04CC99);
+        color: var(--light, #FFFFFF);
+        opacity: 1;
+        z-index: 1; }
+      :host .mobile-days .in-range.last-day:before {
+        position: absolute;
+        top: 0;
+        right: calc(50% - var(--active-day-circle-size) / 2);
+        left: 0;
+        height: 2.0625rem;
+        margin-right: var(--padding-15, 0.9375rem);
+        background: var(--success, #04CC99);
+        content: "";
+        opacity: 0.6; }
+
+:host(.week) .week {
+  border-bottom: none; }
+
+:host(.month) .calendar-container .swiper-control {
+  padding-top: var(--padding-20, 1.25rem); }
+
+:host(.date-picker) {
+  min-height: 28.75rem;
+  margin: 0 var(--date-picker-margin); }
+  :host(.date-picker) .mobile-days {
+    height: var(--picker-mobile-days-height); }
+
+:host(.range-picker) .week .day.grey-day,
+:host(.min-max) .week .day.grey-day {
+  pointer-events: none; }
+
+:host(.date) .mobile-days .week:last-child {
+  border-bottom: none; }
+
+:host(.web) .days {
+  height: 100%; }
+  :host(.web) .days .week-header {
+    margin-right: 0.75rem;
+    margin-left: 0.75rem; }
+  :host(.web) .days yoo-ion-scroll .web-days {
+    margin-bottom: var(--padding-20, 1.25rem); }
+  :host(.web) .days yoo-ion-scroll .active-month {
+    margin-left: var(--padding-20, 1.25rem);
+    font-size: var(--font-l, 17px); }
+  :host(.web) .days yoo-ion-scroll .week .day {
+    height: 3.125rem; }
+    :host(.web) .days yoo-ion-scroll .week .day .day-number {
+      width: 1.75rem;
+      height: 1.75rem;
+      font-size: var(--font-s, 13px); }
+
+@media only screen and (max-width: 350px) {
+  :host .mobile-calendar-header .calendar-tools .calendar-toggle {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 4rem; } }

@@ -1,0 +1,23 @@
+:host .heading-container {
+  padding: var(--padding, 1rem); }
+  :host .heading-container.stable-light {
+    background: var(--stable-light, #f1f1f1); }
+  :host .heading-container.border-bottom {
+    border-bottom: 1px solid var(--stable-30, #E6E6E6); }
+  :host .heading-container .lesson-order {
+    margin-top: 1.625rem;
+    color: var(--danger-light, #F46885);
+    font-size: var(--font-xs, 10px);
+    letter-spacing: 1px;
+    line-height: normal;
+    text-transform: uppercase; }
+  :host .heading-container .lesson-title {
+    margin-top: 0.3125rem;
+    font-size: 1.6825rem;
+    line-height: 2.0625rem; }
+  :host .heading-container .lesson-date {
+    margin-top: 0.3125rem;
+    color: var(--danger-light, #F46885); }
+    :host .heading-container .lesson-date .date-label {
+      margin-right: 0.5rem;
+      color: var(--black, #000000); }

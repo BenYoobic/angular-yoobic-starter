@@ -1,0 +1,30 @@
+import { Broker, ResponseObject, Session, User } from '@shared/data-core';
+import { Filter } from '@shared/stencil';
+import { Channel as ChannelInterface } from '../../interfaces/channel/channel.interface';
+import { Channels } from '../../interfaces/channels/channels.interface';
+import { Pubnub } from '../pubnub/pubnub.service';
+import { Observable } from 'rxjs';
+import { Translate } from '@shared/translate';
+export { ChannelInterface };
+export declare class Channel {
+    private broker;
+    private pubnub;
+    private session;
+    protected translate: Translate;
+    constructor(broker: Broker, pubnub: Pubnub, session: Session, translate: Translate);
+    createChannels(channels: Channels): Observable<Channels>;
+    getChannelsById(channelsId: string): Observable<any>;
+    getChannelById(channelId: string): Observable<any>;
+    update(channel: ChannelInterface): Observable<any>;
+    deleteChannel(channel: ChannelInterface): Observable<any>;
+    updateChannels(channel: Channels): Observable<any>;
+    deleteChannels(channels: Channels): Observable<any>;
+    getFilter(user1: User, user2?: User, isSupport?: boolean): Filter;
+    getChannelsFilter(user: User): Filter;
+    hydrateOthers(channel: ChannelInterface | Channels, isGroup?: boolean): ChannelInterface | Channels;
+    getByUsers(user1: User, user2?: User, isSupport?: boolean): Observable<ChannelInterface>;
+    getSupportByUser(user: User): Observable<ChannelInterface>;
+    getTransform(userId: string, isGroup?: boolean): (res: ResponseObject) => Observable<ResponseObject>;
+    getTransformChannel(userId: string): (res: ResponseObject) => Observable<ResponseObject>;
+    getTransformChannels(userId: string): (res: ResponseObject) => Observable<ResponseObject>;
+}

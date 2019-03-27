@@ -1,0 +1,40 @@
+import { IEntity, IAcl } from '../entity/entity.interface';
+import { IUser } from '../user/user.interface';
+import { IPlan } from '../plan/plan.interface';
+import { IMissionDescription } from '../mission-description/mission-description.interface';
+import { ICourse } from '../course/course.interface';
+export declare class ILesson extends IEntity {
+    _id: string;
+    _acl: IAcl;
+    _lmt?: string;
+    _ect?: string;
+    _tenantRef?: string;
+    title: string;
+    status: string;
+    description: IMissionDescription;
+    descriptionRef: string;
+    planRef: string;
+    plan?: IPlan;
+    courseRef: string;
+    course?: ICourse;
+    locationRef?: string;
+    owner: IUser;
+    ownerRef: string;
+    ownerDisplayName: string;
+    points?: number;
+    badges?: Array<string>;
+    type: string;
+    score: {
+        value: number;
+        total?: number;
+        isPercentage?: boolean;
+        title?: string;
+        completed?: number;
+    };
+    validated: boolean;
+    locked?: boolean;
+    actualDuration?: number;
+    finishedDate: Date;
+    currentValidated: boolean;
+}
+export declare type LessonMode = 'lesson-detail' | 'lesson-form';

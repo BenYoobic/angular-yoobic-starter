@@ -1,0 +1,116 @@
+:host {
+  --padding-container: 0.75rem 1rem; }
+
+:host {
+  display: block; }
+  :host .container {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    padding: var(--padding-container); }
+    :host .container :not(:last-child) {
+      margin-right: 1rem; }
+    :host .container .actions {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+      height: 80px;
+      color: var(--light, #FFFFFF); }
+      :host .container .actions .action {
+        text-align: center;
+        cursor: pointer; }
+        :host .container .actions .action .circle-container {
+          position: relative;
+          width: 46px;
+          height: 50px;
+          margin: auto; }
+          :host .container .actions .action .circle-container .circle {
+            top: 0.1875rem;
+            right: auto;
+            bottom: auto;
+            left: 0.1875rem;
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            margin: auto;
+            margin-bottom: 5px;
+            border-width: var(--border-width, 1px);
+            border-radius: 50%;
+            color: var(--stable, #adadad);
+            font-size: 1rem;
+            line-height: 40px; }
+            :host .container .actions .action .circle-container .circle.accent {
+              background: var(--accent, #1FB6FF); }
+            :host .container .actions .action .circle-container .circle.danger {
+              background: var(--danger, #ff625f); }
+            :host .container .actions .action .circle-container .circle.success {
+              background: var(--success, #04CC99); }
+            :host .container .actions .action .circle-container .circle.info {
+              background: var(--info, #fc459e); }
+            :host .container .actions .action .circle-container .circle.warning {
+              background: var(--warning, #ff6402); }
+            :host .container .actions .action .circle-container .circle.dark-60 {
+              background: var(--dark-60, #6b81a6); }
+          :host .container .actions .action .circle-container:hover .circle-border {
+            display: none; }
+          :host .container .actions .action .circle-container .circle-border {
+            top: 0;
+            right: auto;
+            bottom: auto;
+            left: auto;
+            position: absolute;
+            width: 46px;
+            height: 46px;
+            border-width: 1px;
+            border-style: solid;
+            border-radius: 50%; }
+            :host .container .actions .action .circle-container .circle-border.border-accent {
+              border-color: var(--accent, #1FB6FF); }
+            :host .container .actions .action .circle-container .circle-border.border-danger {
+              border-color: var(--danger, #ff625f); }
+            :host .container .actions .action .circle-container .circle-border.border-success {
+              border-color: var(--success, #04CC99); }
+            :host .container .actions .action .circle-container .circle-border.border-info {
+              border-color: var(--info, #fc459e); }
+            :host .container .actions .action .circle-container .circle-border.border-warning {
+              border-color: var(--warning, #ff6402); }
+            :host .container .actions .action .circle-container .circle-border.border-dark-60 {
+              border-color: var(--dark-60, #6b81a6); }
+        :host .container .actions .action .label {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          padding: 2px 10px;
+          color: var(--dark-60, #6b81a6);
+          font-size: var(--font-s, 13px); }
+        :host .container .actions .action.active .circle-container .circle {
+          background: var(--success, #04CC99);
+          color: var(--light, #FFFFFF); }
+
+:host(.top-grid) {
+  display: flex;
+  z-index: 10; }
+  :host(.top-grid) .container {
+    border-bottom: none; }
+  :host(.top-grid) yoo-icon {
+    color: var(--control-icon-color, #adadad); }
+
+:host(.accent) .container {
+  border-bottom: 1px solid var(--accent, #1FB6FF);
+  background: var(--accent-10, #e9f8ff); }
+
+:host(.top) .container {
+  border-bottom: 1px solid var(--stable-30, #E6E6E6); }
+
+:host(.bottom) {
+  display: block;
+  background: var(--light, #FFFFFF); }
+  :host(.bottom) .container {
+    border-top: 1px solid var(--stable-30, #E6E6E6); }
+
+:host(.menu-page) .toolbar-background {
+  border: none; }

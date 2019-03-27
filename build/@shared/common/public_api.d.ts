@@ -1,0 +1,14 @@
+export { CommonModule } from './lib/common.module';
+export * from './lib/decorators/mixin/mixin.decorator';
+export * from './lib/decorators/persistent/persistent.decorator';
+export * from './lib/decorators/autounsubscribe/autounsubscribe.decorator';
+export * from './lib/interfaces/colors/colors.interface';
+export * from './lib/interfaces/position/position.interface';
+export * from './lib/services/core-config/core-config.service';
+export * from './lib/services/geo-location/geo-location.service';
+export * from './lib/services/local-forage/local-forage.service';
+export * from './lib/services/local-storage/local-storage.service';
+export * from './lib/services/log/log.service';
+export * from './lib/services/network/network.service';
+export * from './lib/services/promise/promise.service';
+export * from './lib/services/utils/utils.service';

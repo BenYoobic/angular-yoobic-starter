@@ -1,0 +1,44 @@
+import '../../../stencil.core';
+import { EventEmitter } from '../../../stencil.core';
+import { IEntity, IEntitySearchRequest, IAppSearchTab, IEntitySearchTags, IFormSearch, IGridSearch } from '../../../index';
+export declare class YooEntitySearchComponent {
+    config: Array<IAppSearchTab>;
+    search: EventEmitter<IEntitySearchRequest>;
+    cancel: EventEmitter<any>;
+    select: EventEmitter<{
+        entity: IEntity;
+        tab: IAppSearchTab;
+    }>;
+    clearRecents: EventEmitter<IAppSearchTab>;
+    fieldFetchData: EventEmitter<IFormSearch>;
+    isLoading: boolean;
+    host: HTMLStencilElement;
+    private currentTagsSelected;
+    private currentSortsAndFilters;
+    private ionSlides;
+    private navBar;
+    private currentSearch;
+    private tabs;
+    private refreshers;
+    private grids;
+    updateData(data: Array<IEntity>, request: IEntitySearchRequest): void;
+    upsertData(item: IEntity, tabIndex: number): void;
+    removeData(item: IEntity, tabIndex: number): void;
+    componentWillLoad(): void;
+    componentDidLoad(): void;
+    onCancel(): void;
+    refresh(gridSearch?: IGridSearch): void;
+    onGridFetchData(ev: CustomEvent<IGridSearch>, tab: IAppSearchTab): void;
+    onGridPullToRefresh(tab: IAppSearchTab): void;
+    onEntitySelect(ev: CustomEvent<IEntity>, tab: IAppSearchTab): void;
+    onShowFilterAdvanced(model: IAppSearchTab): void;
+    onIonSlideDidChange(ev: any): void;
+    onTabSelected(ev: any): void;
+    onTagSelect(ev: CustomEvent<IEntitySearchTags[]>): void;
+    onRecentSearchSelect(ev: CustomEvent<string>): void;
+    onRecentClear(tab: IAppSearchTab): void;
+    onInputChanged(ev: CustomEvent<string>): void;
+    renderHeader(): JSX.Element;
+    renderBody(): JSX.Element;
+    render(): JSX.Element[];
+}

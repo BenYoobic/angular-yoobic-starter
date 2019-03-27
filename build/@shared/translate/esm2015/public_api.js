@@ -1,0 +1,8 @@
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+export { TranslateModule } from './lib/translate.module';
+export { AVAILABLE_LANGUAGES, Translate } from './lib/services/translate/translate.service';
+export { TranslatePipe } from './lib/pipes/translate/translate.pipe';
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicHVibGljX2FwaS5qcyIsInNvdXJjZVJvb3QiOiJuZzovL3RyYW5zbGF0ZS8iLCJzb3VyY2VzIjpbInB1YmxpY19hcGkudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7OztBQUFBLE9BQU8sRUFBRSxlQUFlLEVBQUUsTUFBTSx3QkFBd0IsQ0FBQztBQUN6RCwrQ0FBYyw0Q0FBNEMsQ0FBQztBQUMzRCw4QkFBYyxzQ0FBc0MsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbImV4cG9ydCB7IFRyYW5zbGF0ZU1vZHVsZSB9IGZyb20gJy4vbGliL3RyYW5zbGF0ZS5tb2R1bGUnO1xuZXhwb3J0ICogZnJvbSAnLi9saWIvc2VydmljZXMvdHJhbnNsYXRlL3RyYW5zbGF0ZS5zZXJ2aWNlJztcbmV4cG9ydCAqIGZyb20gJy4vbGliL3BpcGVzL3RyYW5zbGF0ZS90cmFuc2xhdGUucGlwZSc7XG4iXX0=

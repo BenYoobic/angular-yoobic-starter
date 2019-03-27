@@ -1,0 +1,159 @@
+:host {
+    @keyframes fadeInTransition {
+        0% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0.5;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+    height: 100%;
+    background: cssvar(black);
+
+    .fade-in {
+        animation: fadeInTransition .5s;
+        animation-fill-mode: forwards;  
+        margin-bottom: 2.5rem!important;
+    }
+
+    .content-container {
+        display: flex;
+        width: 100%;
+        height: 100%;
+
+        yoo-form-videoplayer {
+            width: 100%;
+            background: cssvar(always-black);
+            z-index: 6;
+        }
+    }
+
+    .photo-editors-container {
+        width: 100%;
+        height: 100%;
+
+        .slides-container {
+            height: 100%;
+
+            yoo-ion-slides {
+                --host-background-color: #{cssvar(always-black)};
+                height: 100%;
+            }
+        }
+
+        yoo-swipe-container {
+            --swiper-background: #{cssvar(black)};
+        }
+    }
+
+    mark {
+        background-color: transparent;
+        color: cssvar(always-light);
+    }
+
+    .bottom-container {
+        @include abs-pos(auto, cssvar(padding-15), cssvar(padding-15), cssvar(padding-15));
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 0;
+        transition: 0.3s;
+        color: cssvar(stable);
+        z-index: 6;
+        word-break: break-word;
+
+        .white-text {
+            padding: 0 cssvar(padding-5);
+            color: cssvar(always-light);
+        }
+
+        .user-info {
+            display: flex;
+            justify-content: flex-start;
+
+            .user-title {
+                padding-left: cssvar(padding-10);
+                color: cssvar(stable);
+                text-align: left;
+            }
+        }
+
+        .photo-information {
+            text-align: left;
+        }
+
+        .tags {
+            display: flex;
+            padding-top: cssvar(padding-5);
+            padding-right: cssvar(padding-5);
+            color: cssvar(success);
+        }
+
+        .time {
+            font-size: cssvar(font-s);
+        }
+
+        &.iphone-x {
+            padding-bottom: cssvar(padding-15);
+        }
+
+    }
+
+    .top-container {
+        @include abs-pos(0, 0, auto, 0);
+        display: flex;
+        width: 100%;
+        padding-top: cssvar(padding-10);
+        // justify-content: flex-end;
+        transition: 0.3s;
+        z-index: 11;
+
+        &.iphone-x {
+            padding-top: 2rem;
+        }
+        .action-buttons {
+            justify-content: space-between;
+            width: 100%;
+            .close {
+                padding-left: 0.625rem;
+                yoo-button {
+                    --font-size-icon: #{cssvar(font-ll)};
+                }
+            }
+            .more {
+                yoo-button {
+                    --font-size-icon: #{cssvar(font-ll)};
+                }
+            }
+        }
+    }
+
+    .action-buttons {
+        display: flex;
+        padding-top: cssvar(padding-5);
+        color: cssvar(always-light);
+        font-size: 20px;
+
+        yoo-icon {
+            padding-right: cssvar(padding-20);
+        }
+    }
+
+
+    .toolbar-shadow-portrait {
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        width: 100%;
+        height: 120px;
+        background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.03) 18%, rgba(0, 0, 0, 0.7));
+        z-index: 5;
+    }
+
+    yoo-loader {
+        position: absolute;
+    }
+}

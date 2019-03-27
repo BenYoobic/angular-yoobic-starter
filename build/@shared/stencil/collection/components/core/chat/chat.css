@@ -1,0 +1,121 @@
+:host {
+  --typing-username-padding-left: 45px;
+  display: flex;
+  flex-direction: column;
+  height: 100%; }
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(3rem); }
+  100% {
+    transform: translateY(0); } }
+
+@keyframes slide-down {
+  0% {
+    transform: translateY(-3rem); }
+  100% {
+    transform: translateY(0); } }
+  :host .chat-header {
+    text-align: center; }
+  :host .delete-mode-header {
+    animation: slide-down 0.4s ease; }
+  :host .load-more {
+    justify-content: center;
+    background: var(--dark-10, #e6eaf0);
+    color: var(--text-color, #807f83); }
+  :host .messages-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.2rem;
+    padding: 0.3125rem 0.625rem 3.625rem 0.625rem; }
+    :host .messages-container.iphone-x {
+      padding-bottom: 4.25rem; }
+    :host .messages-container .someone-typing-container {
+      display: flex;
+      flex-direction: column;
+      padding-top: var(--padding-10, 0.625rem); }
+      :host .messages-container .someone-typing-container .user-typing {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 56px;
+        height: 36px;
+        border-radius: 18px;
+        background-color: var(--stable-light); }
+        :host .messages-container .someone-typing-container .user-typing .typing-indicator {
+          background-color: #E6E7ED;
+          will-change: transform;
+          width: auto;
+          border-radius: 50px;
+          display: flex;
+          margin: 0 auto;
+          position: relative;
+          animation: 2s bulge infinite ease-out; }
+          :host .messages-container .someone-typing-container .user-typing .typing-indicator::before, :host .messages-container .someone-typing-container .user-typing .typing-indicator::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: -2px;
+            height: 8px;
+            width: 8px;
+            border-radius: 50%;
+            background-color: #E6E7ED; }
+          :host .messages-container .someone-typing-container .user-typing .typing-indicator::after {
+            height: 3px;
+            width: 3px;
+            left: -3px;
+            bottom: -3px; }
+          :host .messages-container .someone-typing-container .user-typing .typing-indicator span {
+            height: 8px;
+            width: 8px;
+            float: left;
+            margin: 0 1px;
+            background-color: #9E9EA1;
+            display: block;
+            border-radius: 50%;
+            opacity: 0.4; }
+            :host .messages-container .someone-typing-container .user-typing .typing-indicator span:nth-of-type(1) {
+              animation: 1s blink infinite 0.3333s; }
+            :host .messages-container .someone-typing-container .user-typing .typing-indicator span:nth-of-type(2) {
+              animation: 1s blink infinite 0.6666s; }
+            :host .messages-container .someone-typing-container .user-typing .typing-indicator span:nth-of-type(3) {
+              animation: 1s blink infinite 0.9999s; }
+
+@keyframes blink {
+  50% {
+    opacity: 1; } }
+
+@keyframes bulge {
+  50% {
+    transform: scale(1.05); } }
+      :host .messages-container .someone-typing-container .username {
+        padding-bottom: 3px;
+        padding-left: var(--typing-username-padding-left);
+        color: var(--text-color, #807f83);
+        font-size: var(--font-s, 13px); }
+      :host .messages-container .someone-typing-container .bottom-part {
+        display: flex;
+        flex-direction: row;
+        padding-left: var(--padding-5, 0.3125rem); }
+  :host .delete-mode-footer {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    align-items: center;
+    min-height: 3rem;
+    background: var(--light, #FFFFFF);
+    font-weight: 300;
+    box-shadow: var(--footer-shadow, 0 1px 10px 0 rgba(0, 0, 0, 0.15));
+    animation: slide-up 0.4s ease; }
+    :host .delete-mode-footer .inner-container {
+      margin-left: var(--padding-15, 0.9375rem); }
+    :host .delete-mode-footer.enabled {
+      color: var(--success, #04CC99); }
+    :host .delete-mode-footer.disabled {
+      color: var(--stable-30, #E6E6E6); }
+  :host yoo-input-bar {
+    --padding-input-container: 0;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    z-index: 40000; }

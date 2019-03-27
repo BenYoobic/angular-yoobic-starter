@@ -1,0 +1,30 @@
+yoo-ion-header {
+  display: block;
+  position: relative;
+  order: -1;
+  width: 100%;
+  transition: 0.3s;
+  background-color: var(--ion-color-light, #FFFFFF);
+  z-index: 11 !important; }
+
+yoo-ion-header.secondary {
+  z-index: unset !important; }
+
+.header-ios yoo-ion-toolbar:last-child {
+  --border-width: 0 0 0.55px; }
+
+.header-ios[no-border] yoo-ion-toolbar:last-child {
+  --border-width: 0; }
+
+yoo-ion-header.shadow yoo-ion-toolbar {
+  border-bottom: 1px solid var(--stable-30, #E6E6E6); }
+
+yoo-ion-header.device-min-height {
+  min-height: 64px; }
+
+yoo-ion-header.rounded {
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px; }
+  yoo-ion-header.rounded yoo-ion-toolbar {
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px; }

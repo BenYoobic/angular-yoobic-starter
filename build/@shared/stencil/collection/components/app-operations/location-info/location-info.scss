@@ -1,0 +1,29 @@
+:host {
+    .outer-container {
+        padding: 0.5rem 1rem;
+        border-top: 1px solid cssvar(stable-30);
+        background: cssvar(light);
+        .menu-content {
+            line-height: 1.75;
+            span {
+                //font-size: cssvar(font-s);    
+                color: cssvar(black);
+                font-size: cssvar(font-ll);
+                font-weight: 600;
+                line-height: 1em;
+            }
+            .menu-content-contact {
+                text-decoration: none;
+                &.name {
+                    font-size: cssvar(font-l);
+                }
+                &.email {
+                    color: cssvar(success);
+                }
+                &.phone {
+                    color: cssvar(dark);
+                }
+            }
+        }
+    }
+}

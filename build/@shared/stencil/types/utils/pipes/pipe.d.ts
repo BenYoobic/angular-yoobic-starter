@@ -1,0 +1,28 @@
+import { CurrencyPipe } from './currency/currency.pipe';
+import { DateFormatPipe } from './date-format/date-format.pipe';
+import { DecimalPipe } from './decimal/decimal.pipe';
+import { DistancePipe } from './distance/distance.pipe';
+import { FileSizePipe } from './file-size/file-size.pipe';
+import { HttpsPipe } from './https/https.pipe';
+import { NumberPipe } from './number/number.pipe';
+import { OrderByPipe } from './order-by/order-by.pipe';
+import { PercentPipe } from './percent/percent.pipe';
+import { RoundPipe } from './round/round.pipe';
+import { TimeAgoPipe } from './time-ago/time-ago.pipe';
+import { TimerPipe } from './timer/timer.pipe';
+import { UserInitialPipe } from './user-initial/user-initial';
+export declare const pipes: {
+    currency: CurrencyPipe;
+    dateFormat: DateFormatPipe;
+    decimal: DecimalPipe;
+    fileSize: FileSizePipe;
+    number: NumberPipe;
+    orderBy: OrderByPipe;
+    round: RoundPipe;
+    timeAgo: TimeAgoPipe;
+    timer: TimerPipe;
+    userInitial: UserInitialPipe;
+    https: HttpsPipe;
+    distance: DistancePipe;
+    percent: PercentPipe;
+};

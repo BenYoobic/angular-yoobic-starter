@@ -1,0 +1,21 @@
+:host {
+  --display-border: inherit;
+}
+
+:host {
+  @include mission-style();
+  .menu-item {
+    .menu-right {
+      .menu-content {
+        .menu-content-contact {
+          margin-bottom: cssvar(padding-10);
+        }
+      }
+    }
+    .menu-left {
+      .border {
+        display: cssvar(display-border);
+      }
+    }
+  }
+}

@@ -1,0 +1,54 @@
+:host .outer-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 49px;
+  user-select: none; }
+  :host .outer-container .item-container {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    min-width: 48px;
+    padding-top: 0.4875rem;
+    color: var(--tab-bar-color, #adadad);
+    overflow: hidden; }
+    :host .outer-container .item-container.active {
+      display: inline; }
+      :host .outer-container .item-container.active .icon-container {
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: var(--success, #04CC99);
+        text-align: center; }
+      :host .outer-container .item-container.active .text-container {
+        color: var(--success, #04CC99);
+        text-align: center; }
+    :host .outer-container .item-container .icon-container {
+      position: relative;
+      max-height: 22px;
+      margin-bottom: -5px; }
+      :host .outer-container .item-container .icon-container yoo-icon {
+        font-size: 20px;
+        line-height: 1.4rem; }
+        :host .outer-container .item-container .icon-container yoo-icon yoo-badge {
+          position: absolute;
+          top: -20px; }
+    :host .outer-container .item-container .text {
+      font-size: var(--font-xs, 10px); }
+
+:host(.iphone-x) .outer-container {
+  align-items: flex-start;
+  height: 73px !important; }
+  :host(.iphone-x) .outer-container .item-container {
+    justify-content: initial !important;
+    height: 100%; }
+    :host(.iphone-x) .outer-container .item-container .dot {
+      top: 35%; }
+
+:host(.boost) .outer-container .item-container.active .icon-container {
+  color: var(--danger-light, #F46885) !important; }
+
+:host(.boost) .outer-container .item-container.active .text-container {
+  color: var(--danger-light, #F46885) !important; }

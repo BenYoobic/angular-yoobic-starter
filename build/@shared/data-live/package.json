@@ -1,0 +1,17 @@
+{
+  "name": "data-live",
+  "version": "6.0.259-2",
+  "main": "bundles/data-live.umd.js",
+  "module": "fesm5/data-live.js",
+  "es2015": "fesm2015/data-live.js",
+  "esm5": "esm5/data-live.js",
+  "esm2015": "esm2015/data-live.js",
+  "fesm5": "fesm5/data-live.js",
+  "fesm2015": "fesm2015/data-live.js",
+  "typings": "data-live.d.ts",
+  "metadata": "data-live.metadata.json",
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^1.9.0"
+  }
+}

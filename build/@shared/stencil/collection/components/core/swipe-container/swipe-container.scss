@@ -1,0 +1,32 @@
+:host {
+    --swiper-background: #fcfcfc;
+    --wrapper-border: none;
+    --wrapper-border-radius: #{cssvar(padding-30)} #{cssvar(padding-30)} 0 0;
+    --wrapper-shadow: none;
+    --wrapper-margin-top: none;
+    --swiper-wrapper-height: 100%;
+    --swiper-container-overflow: visible;
+    .swipe-container-wrapper {
+        height: cssvar(swiper-wrapper-height);
+        margin-top: cssvar(wrapper-margin-top);
+        border-top: cssvar(wrapper-border);
+        border-radius: cssvar(wrapper-border-radius);
+        background: cssvar(swiper-background);
+        box-shadow: cssvar(wrapper-shadow);
+        overflow: cssvar(swiper-container-overflow);
+        .swiper-control {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding-top: cssvar(padding-20);
+            padding-bottom: cssvar(padding-25);
+            .swiper-control-inner {
+                width: 3.125rem;
+                height: 0.3125rem;
+                border-radius: 6.25rem;
+                background: cssvar(stable-alt);
+            }
+        }
+    }
+}

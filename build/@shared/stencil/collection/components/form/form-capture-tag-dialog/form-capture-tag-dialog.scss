@@ -1,0 +1,69 @@
+:host {
+    background: cssvar(light);
+    .outer-container {
+        display: flex;
+        flex-direction: column; 
+        height: 100%;
+        .image-container {
+            display: flex;
+            width: 375px; 
+            width: 100%;
+            height: 375px;
+            yoo-img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .tags-container {
+            padding: cssvar(padding-15);   
+            .tag-header {
+                padding-bottom: cssvar(padding-5);
+                .optional {
+                    padding-left: cssvar(padding-5);
+                    color: cssvar(text-color);
+                }
+            }
+        }
+        
+        .button-container {   
+
+            margin-top: auto;
+            padding: cssvar(padding-15);
+        }
+    }
+    .title-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 64px;
+        yoo-ion-button {
+            position: absolute;
+            left: 0;
+            color: cssvar(text-color);
+            z-index: 1;
+        }
+        yoo-ion-button.list {
+            position: relative;
+            right: 0;
+            yoo-icon.yo-list-view {
+                yoo-badge {
+                    position: absolute;
+                    top: 2px;
+                    right: 5px;
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+    
+}
+
+:host(.iphone-x) {
+    .title-container {
+        padding-top: 50px; 
+    }
+
+    .bottom-container {
+        padding-bottom: 35px;
+    }
+}

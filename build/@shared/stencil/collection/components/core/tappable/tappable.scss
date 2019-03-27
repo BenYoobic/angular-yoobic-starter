@@ -1,0 +1,29 @@
+:host {
+    display: flex;
+    position: relative;
+    width: 100%;
+    z-index: 0;
+}
+
+:host(.neutral) {
+    .dot {
+        @include tap-animation-dot("dark", "important");
+    }
+}
+
+:host(.operations) {
+    .dot {
+        @include tap-animation-dot("success", "");
+    }
+}
+
+:host(.boost) {
+    .dot {
+        @include tap-animation-dot("danger-light", "");
+    }
+}
+
+:host(.center) {
+    align-items: center;
+    justify-content: center;
+}

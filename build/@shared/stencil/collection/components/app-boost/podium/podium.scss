@@ -1,0 +1,302 @@
+:host {
+  --container-position: initial;
+  --container-display: initial;
+  --container-top: initial;
+
+  .outer-container {
+    display: flex;
+    justify-content: center;
+    width:100%;
+    height: 100%;
+
+    .users-ranked-container {
+      display: cssvar(container-display);
+      position: cssvar(container-position);
+      justify-content: space-around;
+      padding-top: 6.5vh;
+
+      .user-container {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        text-align: center;
+
+        .username {
+          display: inherit;
+          width: 5.75rem;
+          margin: 0 auto;
+          font-size: cssvar(font-s);
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
+        }
+        .points {
+          color: cssvar(always-light);
+        }
+
+        &.first {
+          .points {
+            margin-top: 4.25rem;
+            margin-left: 0.5rem;
+          }
+        }
+
+        &.second {
+          div {
+            padding-top: 50%;;
+          }
+          .points {
+            margin-top: 1rem;
+            margin-left:0.25rem;
+
+          }
+        }
+
+        &.third {
+          div {
+            padding-top: 85%;
+          }
+          .points {
+            margin-top: -0.25rem;
+            margin-right: 0.75rem;
+          }
+        }
+      }
+    }
+  }
+
+}
+@media only screen and (-webkit-max-device-pixel-ratio: 1.0) {
+    .users-ranked-container {
+        padding-top: 11.75vh !important;
+    }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.1) and (-webkit-max-device-pixel-ratio: 1.9) {
+    .users-ranked-container {
+        padding-top: 5.5vh !important;
+    }
+
+    &.first {
+        .points {
+          margin-top: 4.25rem!important;
+          margin-left: 0.5rem!important;
+        }
+    }
+
+    &.second {
+        .points {
+          margin-top: 1.5rem!important;
+          margin-left: -0.25rem!important;
+        }
+    }
+
+    &.third {
+        .points {
+          margin-top: -0.5rem!important;
+          margin-right: 1rem!important;
+        }
+    }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (-webkit-max-device-pixel-ratio: 2.9) and (max-width:320px) {
+    .users-ranked-container {
+        padding-top: 5.5vh !important;
+    }
+
+    &.first {
+        .points {
+            margin-top: 4rem !important;
+            margin-left: 0.25rem !important;
+        }
+    }
+
+    &.second {
+        .points {
+            margin-top: 0.25rem !important;
+            margin-left: 1rem !important;
+        }
+    }
+
+    &.third {
+        .points {
+            margin-top: -1.75rem !important;
+            margin-right: 1.75rem !important;
+        }
+    }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (-webkit-max-device-pixel-ratio: 2.9) and (min-width:321px) and (max-width:375px) {
+    .users-ranked-container {
+        padding-top: 7vh !important;
+    }
+
+    &.first {
+        .points {
+            margin-top: 3.25rem !important;
+            margin-left: 0.25rem !important;
+        }
+    }
+
+    &.second {
+        .points {
+            margin-top: 1.5rem !important;
+            margin-left: 0.25rem !important;
+        }
+    }
+
+    &.third {
+        .points {
+            margin-top: -0.5rem !important;
+            margin-right: 1rem !important;
+        }
+    }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (-webkit-max-device-pixel-ratio: 2.4) and (min-width:376px) and (max-width:999px) {
+    .users-ranked-container {
+        padding-top: 11vh !important;
+    }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 2.9) and (min-width:376px) and (max-width:999px) {
+    .users-ranked-container {
+        padding-top: 8vh !important;
+    }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (-webkit-max-device-pixel-ratio: 2.9) and (min-width:1000px) {
+    .users-ranked-container {
+        padding-top: 9.5vh !important;
+    }
+
+    &.first {
+        .points {
+            margin-top: 3.25rem !important;
+            margin-left: 0.25rem !important;
+        }
+    }
+
+    &.second {
+        .points {
+          margin-top: 0.5rem!important;
+          margin-left: 1.5rem!important;
+        }
+    }
+
+    &.third {
+        .points {
+            margin-top: -1rem !important;
+            margin-right: 2.25rem !important;
+        }
+    }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 3) and (-webkit-max-device-pixel-ratio: 3.4) {
+    .users-ranked-container {
+        padding-top: 4.5vh !important;
+    }
+
+    &.first {
+        .points {
+            margin-top: 3.75rem !important;
+            margin-left: 0.25rem !important;
+        }
+    }
+
+    &.second {
+        .points {
+            margin-top: 1.5rem !important;
+            margin-left: 0.5rem !important;
+        }
+    }
+
+    &.third {
+        .points {
+            margin-top: -0.5rem !important;
+            margin-right: 1.25rem !important;
+        }
+    }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 3.5) and (max-width:411px) {
+    .users-ranked-container {
+        padding-top: 5.5vh !important;
+    }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 3.5) and (min-width:412px) {
+    .users-ranked-container {
+        padding-top: 3.5vh !important;
+    }
+
+    &.first {
+        .points {
+            margin-top: 3.75rem !important;
+            margin-left: 0.25rem !important;
+        }
+    }
+
+    &.second {
+        .points {
+            margin-top: 1.75rem !important;
+            margin-left: 0 !important;
+        }
+    }
+
+    &.third {
+        .points {
+            margin-top: 1rem !important;
+            margin-right: 1rem !important;
+        }
+    }
+}
+@media only screen and (min-width:750px) and (max-width:1000px) {
+    .users-ranked-container {
+        padding-top: 6.5vh !important;
+    }
+
+    &.first {
+        .points {
+            margin-top: 4rem !important;
+            margin-left: 0.25rem !important;
+        }
+    }
+
+    &.second {
+        .points {
+            margin-top: 2.25rem !important;
+            margin-left: 0 !important;
+        }
+    }
+
+    &.third {
+        .points {
+            margin-top: 1.75rem !important;
+            margin-right: 1.25rem !important;
+        }
+    }
+}
+@media only screen and (min-width:1001px) {
+    .users-ranked-container {
+        padding-top: 4.5vh !important;
+    }
+
+    &.first {
+        .points {
+            margin-top: 5.75rem !important;
+            margin-left: 0.5rem !important;
+        }
+    }
+
+    &.second {
+        div {
+            padding-top: 75%;
+        }
+        .points {
+            margin-top: 5rem !important;
+            margin-left: 0.25rem !important;
+        }
+    }
+
+    &.third {
+        div {
+            padding-top: 125%;
+        }
+        .points {
+            margin-top: 5.25rem !important;
+            margin-right: 1.5rem !important;
+        }
+    }
+}

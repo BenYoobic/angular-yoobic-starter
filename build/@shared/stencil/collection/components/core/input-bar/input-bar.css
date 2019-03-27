@@ -1,0 +1,149 @@
+:host {
+  --padding-input-container: 0.5625rem var(--padding-15, 0.9375rem) 1rem var(--padding-15, 0.9375rem);
+  --input-bar-placeholder-font-size: var(--font-m, 15px); }
+
+:host .outer-container {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: flex-end;
+  background: var(--light, #FFFFFF); }
+  :host .outer-container .indications-container {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding-left: var(--padding-15, 0.9375rem);
+    background: var(--stable-light, #f1f1f1);
+    color: var(--text-color, #807f83);
+    font-size: var(--font-xs, 10px); }
+    :host .outer-container .indications-container .close-reply {
+      padding-right: var(--padding-15, 0.9375rem); }
+      :host .outer-container .indications-container .close-reply yoo-icon {
+        color: var(--black, #000000);
+        font-weight: 600; }
+    :host .outer-container .indications-container .indications-inner {
+      flex: 1;
+      padding-left: var(--padding-15, 0.9375rem); }
+      :host .outer-container .indications-container .indications-inner .user-indication {
+        flex: 1;
+        color: var(--black, #000000);
+        font-weight: 600; }
+  :host .outer-container .input-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: var(--padding-input-container);
+    padding: 0; }
+    :host .outer-container .input-container .icon-container {
+      align-self: center;
+      margin-right: 0.5rem;
+      margin-left: var(--padding-15, 0.9375rem); }
+      :host .outer-container .input-container .icon-container .capture-icon {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 2rem;
+        height: 2rem;
+        border: 1px solid var(--success, #04CC99);
+        border-radius: 50%;
+        background-color: var(--light, #FFFFFF);
+        color: var(--success, #04CC99); }
+    :host .outer-container .input-container .input-zone {
+      display: flex;
+      position: relative;
+      align-items: center;
+      width: 100%;
+      margin-right: 0.875rem;
+      padding: 0 0.75rem 0 0.8125rem;
+      border: 1px solid var(--control-icon-color, #adadad);
+      border-radius: 1.03125rem;
+      background-color: var(--light, #FFFFFF); }
+      :host .outer-container .input-container .input-zone yoo-form-text-area {
+        --textarea-placeholder-font-size: var(--input-bar-placeholder-font-size);
+        padding-right: 4rem; }
+      :host .outer-container .input-container .input-zone .input-action {
+        top: auto;
+        right: 0.8125rem;
+        bottom: 7px;
+        left: auto;
+        position: absolute;
+        color: var(--success, #04CC99); }
+        :host .outer-container .input-container .input-zone .input-action div.text {
+          margin-bottom: 0.2rem; }
+        :host .outer-container .input-container .input-zone .input-action div span {
+          display: inline-block; }
+        :host .outer-container .input-container .input-zone .input-action .invisible {
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 50%;
+          width: 70px;
+          margin-left: -50px;
+          border-radius: 50%;
+          outline: none;
+          background: white;
+          text-align: right;
+          cursor: inherit;
+          opacity: 0;
+          filter: alpha(opacity=0); }
+        :host .outer-container .input-container .input-zone .input-action yoo-icon {
+          font-size: var(--font-m, 15px); }
+        :host .outer-container .input-container .input-zone .input-action input[type=file] {
+          pointer-events: none; }
+
+:host(.footer) .outer-container {
+  display: flex;
+  justify-content: center;
+  min-height: 3rem;
+  box-shadow: var(--footer-shadow, 0 1px 10px 0 rgba(0, 0, 0, 0.15)); }
+  :host(.footer) .outer-container .input-container .input-zone {
+    margin: 0.5rem 0.875rem 0.5rem 0; }
+
+:host(.iphone-x-padding) .outer-container {
+  justify-content: flex-start;
+  min-height: 4.375rem; }
+
+:host(.boost) .outer-container .input-container .icon-container .capture-icon {
+  border: 1px solid var(--danger-light, #F46885);
+  background-color: var(--danger-light, #F46885);
+  color: var(--always-light, #FFFFFF); }
+
+:host(.boost) .outer-container .input-container .input-zone .input-action {
+  color: var(--danger-light, #F46885); }
+
+:host(.accent) .outer-container .input-container {
+  background-color: var(--accent, #1FB6FF); }
+  :host(.accent) .outer-container .input-container .input-zone {
+    border: 1px solid var(--accent, #1FB6FF); }
+
+:host(.info) .outer-container .input-container {
+  background-color: var(--info, #fc459e); }
+  :host(.info) .outer-container .input-container .input-zone {
+    border: 1px solid var(--info, #fc459e); }
+
+:host(.dark) .outer-container .input-container {
+  background-color: var(--dark, #2b3648); }
+  :host(.dark) .outer-container .input-container .input-zone {
+    border: 1px solid var(--dark, #2b3648); }
+
+:host(.danger) .outer-container .input-container {
+  background-color: var(--danger, #ff625f); }
+  :host(.danger) .outer-container .input-container .input-zone {
+    border: 1px solid var(--danger, #ff625f); }
+
+:host(.warning) .outer-container .input-container {
+  background-color: var(--warning, #ff6402); }
+  :host(.warning) .outer-container .input-container .input-zone {
+    border: 1px solid var(--warning, #ff6402); }
+
+:host(.success) .outer-container .input-container {
+  background-color: rgba(46, 219, 183, 0.5); }
+  :host(.success) .outer-container .input-container .input-zone {
+    border: 1px solid var(--success, #04CC99); }
+
+:host(.squared) .outer-container .input-container .input-zone {
+  border-radius: 0.25rem; }

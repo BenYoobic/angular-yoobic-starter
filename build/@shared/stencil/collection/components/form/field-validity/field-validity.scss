@@ -1,0 +1,33 @@
+:host {
+    display: block;
+    padding: cssvar(padding-10) 0;
+
+    .validity-label {
+        margin: cssvar(padding-10) auto;
+        font-size: cssvar(font-m);
+
+        &.valid {
+            color: cssvar(success);
+        }
+        &.invalid {
+            color: cssvar(danger);
+        }
+    }
+    .explanation-container {
+        font-size: cssvar(font-m);
+
+        .explanation-label {
+            margin-bottom: cssvar(padding-10);
+            color: cssvar(black);
+        }
+
+        .explanation-text {
+            margin-bottom: cssvar(padding-10);
+            color: cssvar(text-color);
+        }
+    }
+}
+
+:host(.border) {
+    border-bottom: 1px solid cssvar(stable-30);
+}

@@ -1,0 +1,36 @@
+:host .outer-container {
+  display: flex;
+  flex-direction: column; }
+  :host .outer-container .inputs-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 0.3rem; }
+    :host .outer-container .inputs-container .separator {
+      width: 0.75rem;
+      height: 0.125rem;
+      margin: 0 0.875rem;
+      border-radius: 1px;
+      background: var(--stable, #adadad); }
+    :host .outer-container .inputs-container .input {
+      display: flex;
+      align-items: center;
+      height: 2.5rem;
+      border-radius: 5px; }
+      :host .outer-container .inputs-container .input.single {
+        width: 100%; }
+      :host .outer-container .inputs-container .input yoo-form-input {
+        --display-invalid-message: none;
+        width: 100%; }
+  :host .outer-container .slider-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+
+:host .readonly {
+  padding: 0.5rem;
+  padding-left: 0;
+  padding-bottom: 0; }
+
+:host(.history) .readonly {
+  padding: 0 !important; }

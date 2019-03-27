@@ -1,0 +1,48 @@
+:host .outer-container {
+  display: flex;
+  flex-direction: row;
+  flex-flow: row wrap;
+  align-items: stretch;
+  padding: 0.8em 0;
+  padding-bottom: 0;
+  background: var(--light, #FFFFFF); }
+  :host .outer-container .image-container {
+    display: flex;
+    position: relative;
+    flex: 0.4;
+    align-items: center;
+    justify-content: center;
+    text-align: center; }
+    :host .outer-container .image-container .top-right-vip {
+      position: absolute;
+      top: -5px;
+      right: 10px; }
+      :host .outer-container .image-container .top-right-vip yoo-badge {
+        --inner-container-default-padding: 0.5rem 0.5rem;
+        --outer-container-border: 2px solid var(--light, #FFFFFF);
+        --font-size-inner-container: var(--font-l, 17px); }
+  :host .outer-container .large-address {
+    padding-top: 1em; }
+  :host .outer-container .text-container {
+    flex: 1;
+    padding-top: 0.3rem;
+    padding-right: 0.5em;
+    font-size: var(--font-s, 13px); }
+    :host .outer-container .text-container .title {
+      color: var(--black, #000000);
+      font-size: var(--font-l, 17px); }
+    :host .outer-container .text-container .black {
+      color: var(--black, #000000); }
+    :host .outer-container .text-container .address,
+    :host .outer-container .text-container .last-visit {
+      padding-top: 0.1em;
+      color: var(--text-color, #807f83); }
+    :host .outer-container .text-container .tags-container {
+      color: var(--success, #04CC99);
+      word-break: break-all; }
+      :host .outer-container .text-container .tags-container .hashtag {
+        padding-right: var(--padding-10, 0.625rem); }
+
+:host(.vip) .outer-container .image-container yoo-avatar {
+  --border-initial: 2px solid var(--light, #FFFFFF);
+  --image-shadow: 0 0 0 3px var(--energized, #fed05b); }

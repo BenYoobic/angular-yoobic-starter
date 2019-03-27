@@ -1,0 +1,87 @@
+import { EventEmitter } from '../../stencil.core';
+import { OverlayEventDetail } from '../ionic/overlays';
+import { IToastEntry, ISessionService, IActionSheetButton, IConfigService } from '../../interfaces';
+export declare function loadScript(url?: string): Promise<{}>;
+export declare function cleanupWKWebViewImagePath(value: string): any;
+export declare function getScreenWidth(): number | null;
+export declare function getScreenHeight(): number | null;
+export declare function replaceSuffix(url: any, newSuffix: string): string;
+export declare function debounceEvent(event: EventEmitter, wait: number): EventEmitter;
+export declare function debounce(func: Function, wait?: number, immediate?: boolean): (...args: any[]) => void;
+export declare function resizeObserve(target: Element, callback: Function): {
+    observe(target: Element): void;
+    unobserve(target: Element): void;
+    disconnect(): void;
+};
+export declare function intersectionObserve(target: Element, callback: IntersectionObserverCallback, options?: IntersectionObserverInit): IntersectionObserver;
+export declare function execHandlerAndStopEvent(event: CustomEvent | MouseEvent, handler: () => void): void;
+export declare function isBlank(obj: any): boolean;
+export declare function isPresent(obj: any): boolean;
+export declare function getSizeModal(host: HTMLStencilElement, maxHeight: number, customName?: string): number;
+export declare function decreaseMaxHeight(maxHeight: number, name: string, html: any): number;
+export declare function decreaseMaxHeights(maxHeight: number, name: string, html: any): number;
+export declare function showModal(component: string | Function | HTMLElement, options?: any, cssClass?: string, enterAnimation?: string, leaveAnimation?: string, showBackdrop?: boolean, displayFullscreenButton?: boolean, host?: HTMLElement): Promise<OverlayEventDetail>;
+export declare function closeModal(result: any): void;
+export declare function showAlert(header: string, buttonText?: string[], subHeader?: string, message?: string, cssClass?: string): Promise<boolean>;
+export declare function showRename(header: string, subHeader?: string, message?: string, value?: string, cssClass?: string): Promise<string>;
+export declare function showToast(entry: IToastEntry): Promise<HTMLYooToastElement>;
+export declare function showActionSheet(buttons: Array<IActionSheetButton>, cssClass?: string): Promise<OverlayEventDetail>;
+export declare function showImageModal(src: string, description?: string, isBackBtn?: boolean): Promise<OverlayEventDetail<any>>;
+export declare function showImagePhotoEditorsModal(items: any, index?: number): Promise<OverlayEventDetail<any>>;
+export declare function disableKeyboardResize(keyboard: any): void;
+export declare function enableKeyboardResize(keyboard: any): void;
+export declare function getBoxViewingSession(boxId: string): Promise<any>;
+export declare function getSession(): ISessionService;
+export declare function getConfig(): IConfigService;
+export declare function getAppContext(includeMobilePlatform?: boolean): any;
+export declare function isOffline(): boolean;
+export declare function isDarkTheme(): boolean;
+export declare function getNextValueInArray<A>(array: Array<A>, value: A): A;
+export declare function lockSwipes(ionSlides: HTMLYooIonSlidesElement, shouldLock: boolean): void;
+export declare function findParent(element: HTMLElement, tagName?: string): any;
+export declare function getActiveElementShadow(): any;
+export declare function querySelectorAllDeep(elementHost: HTMLElement, selector: any): Array<any>;
+export declare function querySelectorDeep(elementHost: HTMLElement, selector: any): any;
+export declare function lifecycleEvents(modalEvent: CustomEvent, usersElement: HTMLElement, LIFECYCLE_MAP: any): void;
+export declare function copyToClipboard(text: string): void;
+export declare function hideShowTabbar(ev: CustomEvent, tabbarElement: HTMLElement, isTabbarHidden: boolean): boolean;
+export declare type CropMode = string | 'scale' | 'fit' | 'limit' | 'mfit' | 'fill' | 'lfill' | 'pad' | 'lpad' | 'mpad' | 'crop' | 'thumb' | 'imagga_crop' | 'imagga_scale';
+export declare type QualityMode = 'best' | 'good' | 'eco' | 'low';
+export declare type Gravity = string | 'north_west' | 'north' | 'north_east' | 'west' | 'center' | 'east' | 'south_west' | 'south' | 'south_east' | 'xy_center' | 'face' | 'face:center' | 'face:auto' | 'faces' | 'faces:center' | 'faces:auto' | 'body' | 'body:face' | 'adv_face' | 'adv_faces' | 'adv_eyes' | 'custom' | 'custom:face' | 'custom:faces' | 'custom:adv_face' | 'custom:adv_faces' | 'auto' | 'auto:adv_face' | 'auto:adv_faces' | 'auto:adv_eyes' | 'auto:body' | 'auto:face' | 'auto:faces' | 'auto:custom_no_override' | 'auto:none';
+export declare type ImageFileExtension = string | 'jpg' | 'jpe' | 'jpeg' | 'jpc' | 'jp2' | 'j2k' | 'wdp' | 'jxr' | 'hdp' | 'png' | 'gif' | 'webp' | 'bmp' | 'tif' | 'tiff' | 'ico' | 'pdf' | 'ps' | 'ept' | 'eps' | 'eps3' | 'psd' | 'svg' | 'ai' | 'djvu' | 'flif';
+export declare type ImageFlag = string | Array<string> | 'any_format' | 'attachment' | 'awebp' | 'clip' | 'cutter' | 'force_strip' | 'ignore_aspect_ratio' | 'keep_iptc' | 'layer_apply' | 'lossy' | 'preserve_transparency' | 'png8' | 'progressive' | 'rasterize' | 'region_relative' | 'relative' | 'strip_profile' | 'text_no_trim' | 'no_overflow' | 'tiled';
+export interface ICloudinaryLayer {
+    toString(): any;
+}
+export declare class Cloudinary {
+    private src;
+    private baseLayer;
+    private layers;
+    private protocol;
+    constructor(src: string);
+    getUrl(): any;
+    setProtocol(protocol: string): this;
+    width(width: number, pixelRatio?: number): this;
+    height(height: number, pixelRatio?: number): this;
+    blur(level: number): this;
+    opacity(level: number): this;
+    gravity(type: Gravity): this;
+    zoom(level: number): this;
+    brightness(level: any): this;
+    crop(mode?: CropMode): this;
+    quality(mode: QualityMode): this;
+    videoCodec(type?: string): this;
+    format(format: ImageFileExtension): this;
+    flag(name: ImageFlag): this;
+    addLayer(layer: ICloudinaryLayer): this;
+}
+export declare class CloudinaryGradientLayer implements ICloudinaryLayer {
+    axis: 'x' | 'y';
+    direction: number;
+    backgroundColor: string;
+    constructor(axis?: 'x' | 'y', direction?: number, backgroundColor?: string);
+    toString(): string;
+}
+export declare function cloudinary(value: string, width?: number, height?: number, blur?: number, opacity?: number, trackFaces?: boolean, brightness?: number, pad?: boolean, isVideoParam?: boolean, noRatio?: boolean): any;
+export declare function isCloudinaryLink(url: string): boolean;
+export declare function isFile(file: any): boolean;

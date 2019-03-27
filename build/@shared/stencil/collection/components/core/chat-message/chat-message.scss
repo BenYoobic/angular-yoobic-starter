@@ -1,0 +1,169 @@
+:host(.operations) {
+ --background-message-content: #{cssvar(success)};
+}
+:host(.boost) {
+  --background-message-content: #{cssvar(danger-light)};
+ }
+:host {
+  --icon-total-width: 54px;
+  --message-container-padding-left: 15%;
+  .message{
+    @keyframes slide-left {
+      0% {
+        transform: translateX(-$padding-10);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    max-width: 100%;
+    margin: 0.0625rem 0.2rem;
+    .empty-checkbox {
+      width: cssvar(padding-15);
+      height: cssvar(padding-15);
+      margin: cssvar(padding-5);
+      animation: slide-left 0.4s ease;
+    }
+    yoo-form-checkbox {
+      --yo-circle-color: #{cssvar(stable)} !important;
+      animation: slide-left 0.4s ease;
+    }
+    .message-content {
+      display: flex;
+      flex-direction: column;
+      align-self: flex-end;
+      width: fit-content;
+      max-width: 68%;
+      padding: 0.5rem 1rem;
+      border-radius: 1.25rem;
+      white-space: pre-wrap;
+      cursor: pointer;
+      user-select: none;
+      word-wrap: break-word;
+      &.img {
+        padding: 0 !important;
+        background-color: transparent !important;
+      }
+      .image-container {
+        width: 232px;
+        max-width: 100%;
+        height: 208px;
+        pointer-events:none;
+        .image {
+          width: 100%;
+          min-width: 150px;
+          height: 100%;
+          min-height: 100px;
+          border-radius: 10px;
+          background:cssvar(light);
+        }
+      }
+      .text {
+      pointer-events:none;
+      }
+    }
+    .info-container {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      margin: 0.2rem;
+      color: cssvar(text-color);
+      font-size: cssvar(font-s);
+      white-space: nowrap;
+      yoo-avatar {
+        margin-right: 0.3rem;
+      }
+      &.center {
+        justify-content: center;
+      }
+    }
+    &.user-message {
+      .message-content{
+        max-width: 68%;
+        margin-left: auto;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        background: cssvar(background-message-content);
+        color: cssvar(light);
+        word-wrap: break-word;
+        &.last {
+          border-bottom-right-radius: 1.25rem;
+        }
+        &.first {
+          border-top-right-radius: 1.25rem;
+        }
+      }
+      .info-container{
+        margin-left: auto;
+      }
+    }
+    &.other-message{
+      .message-content{
+        align-self: flex-start;
+        width: fit-content;
+        margin-right: auto;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        background: cssvar(dark-10);
+        &.last {
+          border-bottom-left-radius: 1.25rem;
+        }
+        &.first {
+          border-top-left-radius: 1.25rem;
+        }
+      }
+    }
+    .username {
+      display: flex;
+      width: 100%;
+      padding-bottom: 3px;
+      padding-left: var(--icon-total-width);
+      color: cssvar(text-color);
+      font-size: cssvar(font-s);
+      text-align: left;
+    }
+    .group-message-container {
+      display: flex;
+      align-items: flex-end;
+      margin-bottom: cssvar(padding-15);
+      padding-right: var(--message-container-padding-left);
+      .user-container {
+        min-width: 3.375rem;
+      }
+      .message-content {
+        &.next-img {
+          border-radius: 1.25rem;
+        }
+      }
+    }
+  }
+}
+
+:host(.choice) {
+  .message {
+    &.user-message {
+      .message-content {
+
+        align-self: flex-end;
+        width: fit-content;
+        border: cssvar(border-width) solid cssvar(danger-light);
+        border-radius: 1.25rem;
+        background: cssvar(light);
+        color: cssvar(dark);
+      }
+    }
+  }
+}
+
+:host(.boost){
+  .message{
+    .message-content{
+      border-radius: 1.25rem;
+    }
+  }
+}

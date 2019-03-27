@@ -1,0 +1,70 @@
+:host .outer-container {
+  padding: var(--padding-20, 1.25rem) var(--padding-40, 2.5rem) 0 var(--padding-40, 2.5rem);
+  background: var(--light, #FFFFFF); }
+  :host .outer-container .inner-container {
+    display: flex;
+    flex-direction: column; }
+    :host .outer-container .inner-container .top-container {
+      display: flex; }
+      :host .outer-container .inner-container .top-container .left-part {
+        flex: 1; }
+        :host .outer-container .inner-container .top-container .left-part .heading-container {
+          display: flex;
+          align-items: center; }
+          :host .outer-container .inner-container .top-container .left-part .heading-container .title-container {
+            padding-right: var(--padding-10, 0.625rem);
+            font-size: var(--font-lx, 27px);
+            font-weight: normal; }
+          :host .outer-container .inner-container .top-container .left-part .heading-container .badges-container yoo-badge {
+            margin-right: 0.3rem; }
+        :host .outer-container .inner-container .top-container .left-part .description-container {
+          margin-bottom: var(--padding-5, 0.3125rem);
+          color: var(--text-color, #807f83);
+          font-size: var(--font-m, 15px);
+          font-weight: normal; }
+          :host .outer-container .inner-container .top-container .left-part .description-container p {
+            margin: 0; }
+        :host .outer-container .inner-container .top-container .left-part .tags-container {
+          display: block;
+          margin-bottom: var(--padding-5, 0.3125rem);
+          color: var(--success, #04CC99); }
+          :host .outer-container .inner-container .top-container .left-part .tags-container .hashtag {
+            padding-right: var(--padding-10, 0.625rem); }
+      :host .outer-container .inner-container .top-container .right-part {
+        display: flex;
+        position: relative;
+        align-items: center;
+        justify-content: center; }
+        :host .outer-container .inner-container .top-container .right-part yoo-button.edit {
+          --color-value: var(--black, #000000);
+          --shadow: none;
+          --border-container: 1px solid var(--stable-light, #f1f1f1);
+          margin-right: var(--padding-20, 1.25rem); }
+        :host .outer-container .inner-container .top-container .right-part yoo-button.secondary-actions {
+          --color-value: var(--light, #FFFFFF);
+          --width-icon-only-container: 1.125rem;
+          --height-icon-only-container: 1.125rem;
+          --font-size-icon: 0.75rem;
+          --background-container: var(--text-color, #807f83); }
+    :host .outer-container .inner-container .bottom-container {
+      padding-bottom: var(--padding-10, 0.625rem);
+      color: var(--text-color, #807f83);
+      font-size: var(--font-s, 13px); }
+      :host .outer-container .inner-container .bottom-container:not(.no-border) {
+        border-bottom: 1px solid var(--stable-light, #f1f1f1); }
+      :host .outer-container .inner-container .bottom-container .more-container.open {
+        margin-bottom: var(--padding-5, 0.3125rem); }
+      :host .outer-container .inner-container .bottom-container .more-container .more-icon {
+        padding-right: var(--padding-5, 0.3125rem);
+        font-size: var(--font-xs, 10px); }
+      :host .outer-container .inner-container .bottom-container .more-content {
+        display: flex;
+        flex-direction: column; }
+        :host .outer-container .inner-container .bottom-container .more-content .row {
+          display: flex;
+          flex: 1;
+          margin-bottom: var(--padding-5, 0.3125rem); }
+          :host .outer-container .inner-container .bottom-container .more-content .row .black {
+            color: var(--black, #000000); }
+          :host .outer-container .inner-container .bottom-container .more-content .row .campaign-type {
+            padding-right: var(--padding-30, 1.875rem); }

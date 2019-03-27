@@ -1,0 +1,44 @@
+:host .slider-container .slider {
+  position: relative;
+  user-select: none; }
+  :host .slider-container .slider .slot {
+    height: 1rem; }
+  :host .slider-container .slider.horizontal {
+    height: 1.25rem; }
+    :host .slider-container .slider.horizontal .slot {
+      display: inline-flex;
+      position: relative;
+      height: 1rem; }
+    :host .slider-container .slider.horizontal .slider-thumb {
+      top: 0.625rem;
+      right: 0;
+      left: 0;
+      width: 1.25rem;
+      height: 1.25rem;
+      margin: auto; }
+  :host .slider-container .slider.vertical {
+    width: 1.875rem;
+    height: 15rem; }
+    :host .slider-container .slider.vertical .slot {
+      display: flex;
+      width: auto; }
+    :host .slider-container .slider.vertical .slider-thumb {
+      width: 1.875rem;
+      height: 1.875rem;
+      margin-top: 0rem; }
+  :host .slider-container .slider .triangle-background {
+    position: absolute;
+    width: 1.875rem;
+    height: 15rem;
+    transform: rotate(-180deg);
+    background: white;
+    opacity: 0.4;
+    clip-path: polygon(50% 0, 0 100%, 100% 100%); }
+  :host .slider-container .slider .line-background {
+    height: 0.125rem;
+    background-color: lightgray; }
+
+:host .slider-container .slider-thumb {
+  position: relative;
+  border-radius: 50%;
+  background-color: white; }

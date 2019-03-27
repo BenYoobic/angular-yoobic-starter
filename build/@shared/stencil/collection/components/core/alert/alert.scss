@@ -1,0 +1,184 @@
+$border: 1px solid cssvar(stable-light);
+:host {
+    @-webkit-keyframes bounce {
+        0% {
+            transform: translateY(2rem);
+            opacity: 0;
+        }
+        30% {
+            -webkit-transform: translateY(-2rem);
+            opacity: 0.5;
+        }
+        60%,
+        100% {
+            -webkit-transform: translateY(0);
+            opacity: 1;
+        }
+        80% {
+            -webkit-transform: translateY(-0.3rem);
+        }
+    }
+    @keyframes bounce {
+        0% {
+            transform: translateY(2rem);
+            opacity: 0;
+        }
+        30% {
+            transform: translateY(-2rem);
+            opacity: 0.5;
+        }
+        60%,
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        80% {
+            transform: translateY(-0.3rem);
+        }
+    }
+    .overlay {
+        @include abs-pos-full-width();
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: 20001;
+    }
+    .outer-container {
+        @include abs-pos-full-width();
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .alert-container {
+            display: flex;
+            position: relative;
+            flex-direction: column;
+            width: 70%;
+            max-width: 270px;
+            min-height: 90px;
+            padding-top: 1rem;
+            border-radius: 8px;
+            background: cssvar(light);
+            .img-container {
+                display: flex;
+                position: absolute;
+                top: -4rem;
+                left: 33%;
+                justify-content: center;
+                width: 5.5rem;
+                height: 5.5rem;
+                border-radius: 50%;
+                background-color: white;
+                -webkit-animation: bounce 0.7s ease-out 0.3s 1 normal both;
+                animation: bounce 0.7s ease-out 0.3s 1 normal both;
+                yoo-avatar {
+                    position: absolute;
+                    top: 10%;
+                }
+            }
+            .header-container,
+            .message-container,
+            .icon-container {
+                display: flex;
+                justify-content: center;
+            }
+            .icon-container {
+                font-size: cssvar(icon-alert);
+            }
+            .header-container {
+                padding: 0 0.5rem;
+                color: cssvar(dark);
+                font-size: cssvar(font-l);
+                font-weight: 700;
+                text-align: center;
+                span {
+                    color: cssvar(black);
+                }
+                &.with-image {
+                    padding-top: 1rem;
+                }
+            }
+            .message-container {
+                padding: 0.5rem 1rem 0;
+                color: cssvar(text-color);
+                font-size: cssvar(font-m);
+                text-align: center;
+            }
+            .input-container {
+                padding: 1rem 1rem 0;
+            }
+            .buttons-container {
+                //@include base-class-color();
+                display: flex;
+                justify-content: space-around;
+                height: 43px;
+                margin-top: 1.5rem;
+                border-top: $border;
+                color: cssvar(dark);
+                font-weight: 700;
+                .button {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 100%;
+                    border-right: $border;
+                    color: cssvar(black);
+                    &.last {
+                        border-right: none;
+                    }
+                    &.danger {
+                        font-weight: 300;
+                    }
+                }
+            }
+        }
+    }
+    yoo-ion-toolbar {
+        yoo-icon.yo-close {
+            color: cssvar(always-light);
+        }
+    }
+}
+
+:host(.photo-editor-alert) {
+    .outer-container {
+        .alert-container {
+            .buttons-container {
+                .button.danger {
+                    color: cssvar(dark);
+                    font-weight: normal;
+                }
+                .button.last {
+                    color: cssvar(danger);
+                    font-weight: normal;
+                }
+            }
+        }
+    }
+}
+
+:host(.badge) {
+    yoo-ion-toolbar{
+        @include padding(0);
+    }
+    .outer-container {
+        .alert-container {
+            .header-container {
+                font-weight: 400;
+            }
+            .message-container {
+                color: cssvar(stable);
+            }
+        }
+    }
+}
+
+:host(.timed-lesson) {
+    .outer-container {
+        .alert-container {
+            .buttons-container {
+                .last {
+                    color: cssvar(danger-light);
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+}

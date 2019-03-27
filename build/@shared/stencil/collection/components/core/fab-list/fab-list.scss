@@ -1,0 +1,56 @@
+
+
+$fab-btn-size: 2.625rem;
+
+:host {
+    position: absolute;
+
+    top: 0;
+    flex-direction: column;
+    align-items: center;
+    min-width:  $fab-btn-size;
+
+    min-height: $fab-btn-size;
+}
+
+:host(.right) {
+    @include flex;
+
+    left: $fab-btn-size + 0.5rem;
+    flex-direction: row;
+}
+
+:host(.right[mini]) {
+    margin: 0.1875rem 0;
+}
+
+:host(.left) {
+    @include flex;
+
+    right: $fab-btn-size + 0.5rem;        
+    flex-direction: row-reverse;
+}
+
+:host(.left[mini]) {
+    margin: 0.1875rem 0;
+}
+
+:host(.top) {
+    @include flex;        
+    top: auto;
+    bottom: $fab-btn-size + 0.5rem;
+    flex-direction: column-reverse;
+}
+
+:host(.top[mini]) {
+    margin: 0 0.25rem;            
+}
+
+:host(.bottom) {
+    @include flex;
+    top: $fab-btn-size + 0.5rem;
+}
+
+:host(.bottom[mini]) {
+    margin: 0 0.25rem;            
+}

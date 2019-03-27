@@ -1,0 +1,161 @@
+:host .outer-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  bottom: unset;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.25rem;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--stable-30, #E6E6E6);
+  background: var(--light, #FFFFFF);
+  font-size: var(--font-m, 15px); }
+  :host .outer-container .button-container {
+    padding: 0 1rem; }
+    :host .outer-container .button-container .danger {
+      color: var(--danger, #ff625f); }
+    :host .outer-container .button-container .success {
+      color: var(--success, #04CC99); }
+  :host .outer-container .text-container {
+    flex: 1;
+    color: var(--dark, #2b3648); }
+  :host .outer-container .icon-container {
+    flex: 0.1; }
+    :host .outer-container .icon-container yoo-icon {
+      display: block; }
+  :host .outer-container .image-container {
+    display: flex;
+    flex: 0.25;
+    align-items: center;
+    justify-content: center; }
+    :host .outer-container .image-container yoo-img {
+      width: 25px;
+      height: 25px;
+      border-radius: 50%; }
+  :host .outer-container .extra-button {
+    min-width: 55px;
+    min-height: 55px;
+    margin-right: 0.8rem;
+    margin-bottom: 0.5rem;
+    border-radius: 50%;
+    line-height: 55px;
+    text-align: center; }
+    :host .outer-container .extra-button.bg-danger {
+      background: var(--danger, #ff625f); }
+    :host .outer-container .extra-button.bg-success {
+      background: var(--success, #04CC99); }
+
+:host .overlay {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  background-color: var(--black, #000000);
+  opacity: 0.4; }
+
+:host(.bg-stable-light) .outer-container {
+  background: var(--stable-light, #f1f1f1); }
+
+:host(.bg-danger) .outer-container {
+  background: var(--danger, #ff625f); }
+  :host(.bg-danger) .outer-container .text-container {
+    flex: 1;
+    color: var(--light, #FFFFFF); }
+  :host(.bg-danger) .outer-container .button-container {
+    padding: 0 1rem; }
+    :host(.bg-danger) .outer-container .button-container .danger {
+      color: var(--black, #000000); }
+    :host(.bg-danger) .outer-container .button-container .success {
+      color: var(--light, #FFFFFF); }
+
+:host(.global-actions) {
+  box-shadow: 0 5px 30px 0 rgba(40, 47, 54, 0.2); }
+  :host(.global-actions) .outer-container {
+    height: 2.75rem !important;
+    margin-bottom: 0 !important;
+    padding: 0;
+    border-radius: 5px;
+    overflow: hidden; }
+    :host(.global-actions) .outer-container .count-container {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      padding: 0 1rem;
+      background: var(--success, #04CC99);
+      color: var(--light, #FFFFFF);
+      line-height: 44px; }
+    :host(.global-actions) .outer-container .text-container {
+      flex: 1; }
+    :host(.global-actions) .outer-container .extra-button {
+      width: 2rem;
+      min-width: initial;
+      height: 2rem;
+      min-height: initial;
+      margin: 0;
+      font-size: var(--font-ll, 20px);
+      line-height: 2rem; }
+      :host(.global-actions) .outer-container .extra-button:last-child {
+        margin-right: 1rem; }
+
+:host(.bottom) .outer-container {
+  top: unset;
+  bottom: 0;
+  border-top: 1px solid var(--stable-30, #E6E6E6);
+  border-bottom: none; }
+
+:host(.progress) .outer-container {
+  flex-direction: column;
+  height: inherit;
+  padding: 0.75rem 1rem; }
+  :host(.progress) .outer-container .text-container {
+    display: flex;
+    align-self: flex-start;
+    padding: 0.5rem 0rem; }
+    :host(.progress) .outer-container .text-container .message,
+    :host(.progress) .outer-container .text-container .icon-container {
+      display: initial;
+      margin: 0; }
+  :host(.progress) .outer-container .progressbar-wrapper {
+    width: 100%; }
+
+:host(.header) .outer-container.iphone-x {
+  padding-top: 2.75rem !important; }
+
+:host(.header.ios) .outer-container {
+  padding-top: 1.75rem; }
+
+:host(.web) {
+  display: flex;
+  justify-content: center;
+  height: 100%; }
+  :host(.web) .outer-container {
+    display: flex;
+    position: relative;
+    align-items: center;
+    width: 450px;
+    height: 60px;
+    margin-top: 4.25rem;
+    border-radius: 0.375rem;
+    box-shadow: 0 5px 30px 0 rgba(40, 47, 54, 0.2); }
+    :host(.web) .outer-container .message {
+      margin: 0 0 0 var(--padding-15, 0.9375rem); }
+    :host(.web) .outer-container .button {
+      margin-bottom: 0; }
+
+:host(.web.top.progress) .outer-container .message {
+  display: block;
+  white-space: nowrap; }
+
+:host(.web.top.header) .outer-container {
+  border-bottom: none; }
+  :host(.web.top.header) .outer-container .icon-container {
+    margin-bottom: 0; }
+
+:host(.web.bottom) .outer-container {
+  align-self: flex-end;
+  margin-top: 0;
+  margin-bottom: var(--padding-20, 1.25rem); }

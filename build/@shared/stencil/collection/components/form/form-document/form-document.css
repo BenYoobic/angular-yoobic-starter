@@ -1,0 +1,30 @@
+:host {
+  --height-image-container: 260px;
+  --outer-container-padding: 0.5rem 0rem; }
+
+:host .outer-container,
+:host .readonly {
+  padding: var(--outer-container-padding); }
+  :host .outer-container .image-container,
+  :host .readonly .image-container {
+    height: var(--height-image-container);
+    margin-right: auto;
+    margin-left: auto;
+    border: 1px solid var(--stable-30, #E6E6E6);
+    border-radius: 0.5rem; }
+    :host .outer-container .image-container.contain,
+    :host .readonly .image-container.contain {
+      height: 320px;
+      margin: 0 1rem;
+      border: none; }
+    :host .outer-container .image-container.relative-to-window,
+    :host .readonly .image-container.relative-to-window {
+      height: 25vh; }
+
+:host .readonly .image-container {
+  width: 98px;
+  height: 98px;
+  margin-left: 0; }
+
+:host(.boost.tablet) {
+  --height-image-container: 520px; }

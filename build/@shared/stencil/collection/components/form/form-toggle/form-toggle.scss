@@ -1,0 +1,171 @@
+:host {
+    .optional {
+        margin-left: 0.5rem !important;
+        color: cssvar(stable);
+        white-space: nowrap;
+    }
+    .readonly {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        word-break: break-word;
+
+
+        .label {
+            display: flex;
+            flex: 1;
+            flex-direction: row;
+            padding-bottom: cssvar(padding-15);
+            color: cssvar(text-color);
+            //  color: cssvar(black);
+            //margin-bottom: 0.25rem;
+            font-size: cssvar(font-m);
+            font-weight: normal;
+            //  letter-spacing: 2px;
+            line-height: 1.5;
+            text-align: left;
+            font-variant-caps: normal;
+
+            .required {
+                margin-right: 0.25rem;
+                color: cssvar(danger);
+                font-variant-caps: normal;
+            }
+
+            .label-required {
+                margin-left: 0.25rem;
+                color: cssvar(danger);
+            }
+
+            &.readonly {
+                letter-spacing: 0px;
+                //font-variant-caps: inherit;
+            }
+        }
+        yoo-icon {
+            font-size: cssvar(checkbox-size);
+        }
+    }
+
+    .outer-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        word-break: break-word;
+
+        yoo-icon {
+            font-size: cssvar(checkbox-size);
+        }
+
+        .text-container {
+            flex: 1;
+        }
+    
+        .toggle-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            width: 3.1875rem;
+            height: 1.9375rem;
+            transition: .2s cubic-bezier(.24, 0, .5, 1);
+            border: solid 1px cssvar(light_toggle);
+            border-radius: 60px;
+            &.active {
+                transition: width .2s cubic-bezier(0, 0, 0, .1);
+                transition: .2s cubic-bezier(.54, 1.60, .5, 1);
+                background-color: cssvar(success);
+            }
+            &:hover {
+                cursor: pointer;
+            }
+            .inner-container {
+                width: 28px;
+                height: 28px;
+                transform: translateX(-1px);
+                transition: .2s cubic-bezier(.54, 1.60, .5, 1);
+                border: solid 0.5px cssvar(light_toggle);
+                border-radius: 50%;
+                background-color: cssvar(light_const);
+                box-shadow: 0 0 0 1px hsla(0, 0%, 0%, 0.1), 0 4px 0px 0 hsla(0, 0%, 0%, .04), 0 4px 9px hsla(0, 0%, 0%, .13), 0 3px 3px hsla(0, 0%, 0%, .05);
+                box-sizing: content-box;
+                &:hover {
+                    cursor: pointer;
+                }
+                &.active {
+                    width: 28px;
+                    height: 28px;
+                    transform: translateX(1.4375rem);
+                    transition: .2s cubic-bezier(.54, 1.60, .5, 1);
+                    border: solid 1px cssvar(success);
+                }
+            }
+        }
+
+        .label {
+            display: flex;
+            flex: 1;
+            flex-direction: row;
+            color: inherit;
+            //  color: cssvar(black);
+            //margin-bottom: 0.25rem;
+            font-size: cssvar(font-m);
+            font-weight: normal;
+            //  letter-spacing: 2px;
+            line-height: 1.5;
+            text-align: left;
+            font-variant-caps: normal;
+
+            .required {
+                margin-right: 0.25rem;
+                color: cssvar(danger);
+                font-variant-caps: normal;
+            }
+
+            .label-required {
+                margin-left: 0.25rem;
+                color: cssvar(danger);
+            }
+
+            &.readonly {
+                letter-spacing: 0px;
+                //font-variant-caps: inherit;
+            }
+        }
+    }
+}
+
+:host(.line) {
+    .outer-container {
+        .text-container {
+            order: 1;
+            margin-left: 1rem;
+        }
+    }
+}
+@mixin class-color-applicator($class, $color) {
+    :host(.#{$class}) {
+        .outer-container {
+            .toggle-container {
+                &.active {
+                    border-color: cssvar($color);
+                    background-color: cssvar($color);
+                }
+
+                .inner-container {
+                    &.active {
+                        border-color: cssvar($color);
+                    }
+                }
+            }
+        }
+    }
+}
+@include class-color-applicator(accent, accent);
+@include class-color-applicator(operations, success);
+@include class-color-applicator(boost, danger-light);
+@include class-color-applicator(danger, danger);
+@include class-color-applicator(info, info);
+@include class-color-applicator(warning, warning);
+@include class-color-applicator(dark, dark);

@@ -1,0 +1,70 @@
+:host {
+    .slider-container {
+        .slider {
+            position: relative;
+            user-select: none;
+
+            .slot {
+                height: 1rem;
+            }
+    
+            &.horizontal {
+                height: 1.25rem;
+
+                .slot {
+                    display: inline-flex;
+                    position:relative;
+                    height: 1rem;
+                }
+    
+                .slider-thumb {
+                    top: 0.625rem;
+                    right: 0;
+                    left: 0;
+                    width: 1.25rem;
+                    height: 1.25rem;
+                    margin: auto;
+                }
+            }
+    
+            &.vertical {
+                width:1.875rem;
+                height: 15rem;
+
+                .slot {
+                    display: flex;
+                    width: auto;
+                }
+
+                .slider-thumb {
+                    width: 1.875rem;
+                    height: 1.875rem;
+                    margin-top: 0rem;
+                }
+            }
+    
+            .triangle-background {
+                position: absolute;
+                width: 1.875rem;
+                height: 15rem;
+                transform: rotate(-180deg);
+                background: white;
+                opacity: 0.4;
+                clip-path: polygon(50% 0, 0 100%, 100% 100%);
+            }
+    
+            .line-background {
+                height:  0.125rem;
+                background-color: lightgray;
+            }
+    
+        }
+    
+        .slider-thumb {
+            position: relative;
+            border-radius: 50%;
+            background-color:white;
+        }
+
+    }
+}

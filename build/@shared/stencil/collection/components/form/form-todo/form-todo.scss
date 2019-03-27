@@ -1,0 +1,118 @@
+:host {
+    .outer-container {
+        yoo-button {
+            --margin-container: auto;
+        }
+    }
+
+    yoo-icon {
+        font-size: cssvar(font-m);
+    }
+
+    .border {
+        @include border-profile();
+    }
+
+    .newtodo {
+        display: flex;
+        flex-direction: row;
+        margin-top: 0.875rem;
+        font-size: cssvar(font-m);
+
+        &.nomargin {
+            margin-top: 0;
+        }
+
+        .margin-right {
+            margin-right: 0.5rem;
+        }
+
+        .success {
+            color: cssvar(success);
+        }
+
+        .icon {
+            display: flex;
+            align-items: center;
+            margin-right: 0.125rem;
+
+            .yo-plus {
+                font-size: 0.5rem;
+            }
+
+            .yo-cross {
+                font-size: cssvar(icon-m);
+            }
+        }
+
+        .flex {
+            flex: 1;
+        }
+    }
+
+    .readonly {
+        .todo-container {
+            margin-bottom: 1.5625rem;
+
+            .content {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                margin: 0.6875rem 0 0.5rem 0;
+
+                .content-left {
+                    yoo-icon {
+                        margin-right: cssvar(padding-10);
+
+                        &.stable-alt {
+                            color: cssvar(stable-alt);
+                        }
+                    }
+
+                    .break-line {
+                        text-decoration: line-through;
+                    }
+                }
+
+                .content-right {
+                    display: flex;
+                    align-items: center;
+
+                    .date {
+                        color: cssvar(stable-alt);
+                        font-size: 13px;
+                        font-weight: 300;
+                    }
+                }
+            }
+
+            .comments {
+                margin-bottom: cssvar(padding-15);
+                color: cssvar(stable);
+                font-size: 14px;
+                font-weight: 300;
+            }
+
+            .photo-container {
+                margin-bottom: 0.875rem;
+            }
+
+            .comment-container {
+                margin-top: 0.875rem;
+
+                .yo-comment {
+                    font-size: 1.25rem;
+                }
+            }
+
+            .textarea-container {
+                margin-top: cssvar(padding-10);
+            }
+
+            .border {
+                @include border-profile();
+                margin-bottom: cssvar(padding-10);
+            }
+        }
+    }
+}

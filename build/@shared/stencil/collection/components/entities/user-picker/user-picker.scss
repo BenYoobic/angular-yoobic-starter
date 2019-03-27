@@ -1,0 +1,46 @@
+:host {
+    .user-picker-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin-left: cssvar(padding-15);
+        
+        yoo-button {
+            --width-icon-only-container: 2.25rem;
+            --height-icon-only-container: 1.875rem;
+            --color-value: #{cssvar(black)};
+            --font-size-icon: #{cssvar(font-ll)};
+            --border-radius-container: #{cssvar(button-border-radius-15)};
+            --border-container: 1px solid #{cssvar(stable-light)};
+        }
+
+        // Total padding - 10px (5px on scroll, 5 px on users list)
+        // This makes the shadow visible
+        yoo-ion-scroll {
+            position: relative;
+            flex: 1;
+            width: 100%;
+            height: 2.8125rem;
+            margin-left: cssvar(padding-5);
+            padding: cssvar(padding-5) 0px;
+            .user-list-container {
+                display: flex;
+                flex: 1;
+                flex-direction: row;
+                align-items: center;
+                padding: cssvar(padding-5) cssvar(padding-5) cssvar(padding-5) cssvar(padding-10);
+                yoo-avatar {
+                    display: flex;
+                    margin-right: cssvar(padding-15);
+                    border-radius: 50%;
+                    box-shadow: 0 5px 15px 0 rgba(40, 47, 54, 0.22);
+                    &.selected {
+                        --border: 1px solid #{cssvar(success)};
+                        --border-initial: 1px solid #{cssvar(success)};
+                    }
+                }
+            }
+        }
+    }
+}

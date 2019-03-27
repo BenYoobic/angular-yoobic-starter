@@ -1,0 +1,98 @@
+:host {
+    --status-bar-height: 75px;
+    --status-item-size: 50px;
+    --status-bar-gap: 5px;
+}
+:host {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    .outer-container {
+        @include flex-center-xy();
+        position: relative;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        background: cssvar(black);
+        .placeholder-container {
+            @include flex-center-xy();
+            position: absolute;
+            flex-direction: column;
+            width: 100%;
+            text-align: center;
+            .avatar-container {
+                width: 75px;
+                height: 75px;
+                margin-bottom: cssvar(status-bar-height);
+            }
+        }
+        .remote-media {
+            position: relative;
+            width: 100%;
+            height: auto;
+            max-height: 100%;
+            background: cssvar(black);
+            yoo-loader {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .status-bar {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: cssvar(status-bar-height);
+            background: cssvar(dark-two);
+            z-index: 11;
+            .items-wrapper {
+                @include flex-center-xy();
+                width: 100%;
+                height: 100%;
+                .item {
+                    @include flex-center-xy();
+                    width: cssvar(status-item-size);
+                    height: cssvar(status-item-size);
+                    margin-right: cssvar(status-bar-gap);
+                    border-radius: 50%;
+                    font-size: auto;
+                    &.danger {
+                        background: cssvar(danger);
+                        color: cssvar(light);
+                    }
+                    &.success {
+                        background: cssvar(success);
+                        color: cssvar(light);
+                    }
+                    &.dark {
+                        background: cssvar(dark);
+                        color: cssvar(light);
+                    }
+                }
+            }
+        }
+    }
+}
+
+:host(.mobile) {
+    .outer-container {
+        height: 100%;
+    }
+}
+
+:host(.transparent) {
+    .outer-container {
+        .status-bar {
+            background: transparent;
+        }
+    }
+}
+
+:host(.fit) {
+    .outer-container {
+        .remote-media {
+            width: 100% !important;
+            height: 100% !important;
+        }
+    }
+}

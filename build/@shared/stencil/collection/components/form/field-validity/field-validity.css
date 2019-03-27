@@ -1,0 +1,21 @@
+:host {
+  display: block;
+  padding: var(--padding-10, 0.625rem) 0; }
+  :host .validity-label {
+    margin: var(--padding-10, 0.625rem) auto;
+    font-size: var(--font-m, 15px); }
+    :host .validity-label.valid {
+      color: var(--success, #04CC99); }
+    :host .validity-label.invalid {
+      color: var(--danger, #ff625f); }
+  :host .explanation-container {
+    font-size: var(--font-m, 15px); }
+    :host .explanation-container .explanation-label {
+      margin-bottom: var(--padding-10, 0.625rem);
+      color: var(--black, #000000); }
+    :host .explanation-container .explanation-text {
+      margin-bottom: var(--padding-10, 0.625rem);
+      color: var(--text-color, #807f83); }
+
+:host(.border) {
+  border-bottom: 1px solid var(--stable-30, #E6E6E6); }

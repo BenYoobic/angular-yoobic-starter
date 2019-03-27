@@ -1,0 +1,154 @@
+@mixin radio-color($class, $color) {
+    :host(.#{$class}) {
+        .outer-container {
+            .icon-container {
+                &.enabled {
+                    border-color: cssvar($color);
+                }
+                .icon {
+                    background: cssvar($color);
+                }
+            }
+            .text-container {
+                color: cssvar(text-color);
+            }
+        }
+    }
+}
+@mixin radio-color-gradient($color) {
+    .outer-container {
+        .icon-container {
+            &.enabled {
+                @include gradient-curved-border($color);
+            }
+            &.empty {
+                &.enabled {
+                    background-color: cssvar(light);
+                }
+            }
+            .icon {
+                background-image: -webkit-linear-gradient($color);
+            }
+        }
+    }
+}
+
+:host {
+    .outer-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .icon-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            justify-content: center;
+            width: 1rem;
+            height: 1rem;
+            transition: all 0.3s;
+            border: 0.0625rem solid;
+
+            border-radius: 1rem;
+            &.enabled {
+                background-color: cssvar(light);
+                // border-color: cssvar(dark-40);
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+            &.disabled {
+                border-color: cssvar(stable-30);
+            }
+            &.empty {
+                &.enabled {
+                    border-color: cssvar(stable);
+                    background-color: cssvar(light);                    
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+                &.disabled {
+                    border-color: cssvar(stable-30);
+                    background-color: cssvar(light);
+                }
+            }
+            .icon {
+                width: 0.375rem;
+                height: 0.375rem;
+                transition: all 0.3s;
+                border-radius: 0.1875rem;
+                // width: 100%; // added
+                // height: 100%; // added
+                // border-radius: 40%; // added
+                // color: cssvar(light); // added
+                background: cssvar(dark-40);                
+                &.disabled {
+                    background: cssvar(stable-30);
+                }
+                &.empty {
+                    opacity: 0;
+                }
+            }
+        }
+        .text-container {
+            display: flex;
+            justify-content: flex-start;
+            padding-left: 0.5rem;
+            color: cssvar(dark);
+            font-size: cssvar(font-m);
+            &.disabled {
+                color: cssvar(stable-30);
+            }
+            &.enabled {
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+@include radio-color(accent, accent);
+@include radio-color(danger, danger);
+@include radio-color(success, success);
+@include radio-color(info, info);
+@include radio-color(warning, warning);
+@include radio-color(dark, stable-30);
+
+
+:host(.stable) {
+    .outer-container {
+        .text-container {
+            color: cssvar(stable);
+            &.disabled {
+              color: cssvar(stable-30);
+            }
+        }
+        .icon-container {
+            &.disabled {
+                border-color: cssvar(stable-30);
+            }
+
+            &.empty {
+                &.enabled {
+                  border-color: cssvar(stable);
+                }
+                &.disabled {
+
+                    border-color: cssvar(stable-30);
+                    background-color: cssvar(light);
+                }
+            }
+            .icon {
+                width: 100%; // added
+                height: 100%; // added
+                border-radius: 40%; // added
+                color: cssvar(light); // added
+
+                &.disabled {
+                  background-color: cssvar(stable-30);
+                }
+            }
+        }
+    }
+}

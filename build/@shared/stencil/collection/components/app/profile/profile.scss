@@ -1,0 +1,150 @@
+:host {
+    height: 100%;
+    font-size: cssvar(font-l);
+    font-weight: 400;
+    .border {
+        @include border-profile();
+    }
+    .profile-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; //height: 100%;
+        .profile-user {
+            margin-top: 0.5rem;
+            text-align: center;
+            &.margin-bottom {
+                margin-bottom: 2rem;
+            }
+            .profile-user-name {
+                line-height: 1.3125rem;
+            }
+            .profile-user-role {
+                color: cssvar(stable);
+                font-size: cssvar(font-s);
+                font-weight: 300;
+                line-height: 1rem;
+            }
+            .profile-cta {
+                color: cssvar(success);
+                font-size: cssvar(font-s);
+            }
+        }
+        .profile-details {
+            yoo-user-detail {
+                display: block;
+                padding: cssvar(padding-5) cssvar(padding-15);
+            }
+        }
+        .profile-links {
+            padding-left: 1rem;
+            .profile-links-title {
+                display: flex;
+                align-items: center;
+                width: 100%;
+                height: 1.875rem;
+                margin-top: 2rem;
+                color: cssvar(stable);
+                font-size: cssvar(font-s);
+            }
+            .profile-links-menu {
+                @include reset-list();
+                margin: 0;
+                padding: 0; //padding-bottom: 0.3125rem;
+                list-style: none;
+                cursor: pointer;
+                .profile-links-menu-item {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    height: 2.6875rem;
+                    font-weight: 400;
+                    cursor: pointer;
+                    &.web {
+                        .title-container {
+                            margin-right: cssvar(padding-15);
+                        }
+                    }
+                    &.active {
+                        margin-left: -26px;
+                        padding-left: 26px;
+                        background-color: cssvar(success-light);
+                    }
+                    .title-container {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        width: 100%;
+                        height: 2.6875rem;
+                        border-bottom: 1px solid cssvar(stable-light);
+                    }
+                    yoo-icon {
+                        margin-right: 1rem;
+                    }
+                    .end-container {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    } // yoo-icon {
+                    //     color: cssvar(black);
+                    // }
+                    // .yo-right {
+                    //     font-size: cssvar(font-xs);
+                    // }
+                    .yo-right,
+                    yoo-form-toggle {
+                        margin-right: 1rem;
+                    }
+                    yoo-badge {
+                        padding-right: cssvar(padding-5);
+                    }
+                }
+            }
+        }
+        .profile-logout {
+            display: block;
+            height: 2.75rem;
+            margin-top: 0.6875rem;
+            margin-bottom: 2.75rem;
+            padding-left: 1rem;
+            color: cssvar(danger-light);
+            yoo-icon {
+                margin-right: 1rem;
+            } // .profile-logout-text {
+            //     display: flex;
+            //     align-items: center;
+            //     justify-content: space-between;
+            // }
+        }
+    }
+}
+
+:host(.boost) {
+    .profile-content {
+        .profile-user {
+            .profile-cta {
+                color: cssvar(danger-light);
+            }
+        }
+    }
+}
+
+// :host(.separator) {
+//     .profile-details {
+//         //border-bottom: cssvar(padding-10) solid cssvar(stable-ultralight);
+//     }
+// }
+:host(.side-menu) {
+    .profile-content {
+        margin-right: cssvar(padding-10);
+        padding: cssvar(padding-10) 0 cssvar(padding-10) cssvar(padding-10);
+        border-radius: $border-radius-input;
+        background: cssvar(light);
+        box-shadow: 0 5px 13px 0 rgba(40, 47, 54, 0.08);
+    }
+}
+
+:host(.boost) {
+    .profile-details {
+        font-size: cssvar(font-s);
+    }
+}

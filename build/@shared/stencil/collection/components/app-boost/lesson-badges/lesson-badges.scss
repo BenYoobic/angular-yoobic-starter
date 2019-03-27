@@ -1,0 +1,46 @@
+:host {
+    --display-border: inherit;
+}
+
+:host {
+    @include mission-style();
+
+    .menu-item {
+        .menu-right {
+            .menu-content {
+                .badge {
+                    display: flex;
+                    flex-direction: column;
+                    width: 60px;
+                    font-size: cssvar(font-xs);
+                    
+                    yoo-img {
+                        max-width: $icon-m * 3;
+                        min-height: 50px;
+                        max-height: $icon-m * 3;
+                        margin: cssvar(padding-10) 0;
+                    }
+                    
+                    .badge-title {
+                        text-align: center;
+                    }
+                }
+            }
+        }
+
+        .menu-left {
+            .border {
+                display: cssvar(display-border);
+            }
+            .menu-icon{
+                yoo-icon{
+                    align-items: center;
+                    border: solid 0.03125 cssvar(danger-light);
+                    background-color: cssvar(danger-light);
+                    color: cssvar(always-light);
+                    font-size: cssvar(font-m);
+                }
+            }
+        }
+    }
+}

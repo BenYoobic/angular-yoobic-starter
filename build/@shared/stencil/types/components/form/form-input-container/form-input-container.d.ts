@@ -1,0 +1,41 @@
+import '../../../stencil.core';
+import { EventEmitter } from '../../../stencil.core';
+import { IFormInputContainer, IFormField } from '../../../interfaces';
+export declare class YooFormInputContainerComponent implements IFormInputContainer {
+    field: IFormField;
+    required: boolean;
+    readonly: boolean;
+    forceReadonly: boolean;
+    comments: string;
+    invalid: boolean;
+    hideOptional: boolean;
+    commented: EventEmitter<string>;
+    commentFocused: EventEmitter<HTMLYooFormTextAreaElement>;
+    taskClicked: EventEmitter;
+    showComments: boolean;
+    checkboxLine: any;
+    toggleLine: any;
+    formLocation: any;
+    host: HTMLStencilElement;
+    onCommentsChange: (...args: any[]) => void;
+    componentDidLoad(): void;
+    componentDidUpdate(): void;
+    setInlineStyle(): void;
+    onToggleComments(): void;
+    onFocusComments(): void;
+    showRequiredStar(): boolean;
+    showOptional(): boolean;
+    onCommentFocused(): void;
+    onAddNewTaskContainer(): void;
+    showDescription(): boolean;
+    isCheckboxOrToggle(): boolean;
+    getComponentDescriptionExtraClass(): string;
+    renderContainer(): JSX.Element;
+    renderHint(): JSX.Element;
+    renderFooter(): JSX.Element;
+    renderComments(): JSX.Element;
+    hostData(): {
+        class: any;
+    };
+    render(): JSX.Element;
+}

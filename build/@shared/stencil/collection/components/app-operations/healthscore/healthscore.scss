@@ -1,0 +1,171 @@
+:host {
+    .progress-container {
+        width:100%;
+    }
+    .regular-container {
+        display: flex;
+        flex-direction: column;
+
+            .title-row {
+                text-align: center;
+            }
+
+            .healthscore-container {
+                padding: 1rem;
+
+                .semi-circle-row {
+                    display: flex;
+                    flex-direction: row;
+
+                    .low-container {
+                        display: flex;
+                        align-items: flex-end;
+                        padding-right: 1rem;
+                        color: cssvar(danger);
+                    }
+
+                    .semi-circle-container {
+                        flex-grow: 1;
+                    }
+
+                    .high-container {
+                        display: flex;
+                        flex-direction: column;
+                        padding-left: 1rem;
+                        span {
+                            color: cssvar(success);
+                        }
+                    }
+
+                }
+            }
+
+        .show-details-row {
+            padding: 0 1rem;
+        }
+
+        .tiles-row {
+            padding: 1rem;
+
+            .tile-container {
+                margin: 0.75rem 0;
+                padding: 0.75rem 1rem 1rem 1rem;
+                border-radius: 0.5rem;
+                background-color: cssvar(ion-item-background-color);
+                box-shadow: cssvar(tile-shadow);
+                .options {
+                    position: absolute;
+                    right: 2rem;
+                    width:10%;
+                    color: cssvar(dark);
+                    z-index:6;
+            
+                    .change-container {
+                        float:right;
+                    }
+                }
+            }
+        }
+
+        .help-button {
+            color: cssvar(stable-alt);
+            text-align: right;
+        }
+
+        .change-container {
+            height:100%;
+            color: cssvar(dark);
+            font-size: cssvar(font-s);
+
+            .change {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                yoo-icon {
+                    font-size: 8px;
+                }
+                .change-amount {
+                    width: 100%;
+                    padding-left:0.25rem;
+                    text-align: right;
+                }
+            }
+        }
+    }
+
+    .mini-container {
+        @media only screen and (min-width: 500px) { 
+            &.container {
+                padding: 1.5rem 1rem;
+            }
+        }
+        display:flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        margin-bottom: 0.75rem;
+        padding-bottom: 0.75rem;
+        background-color: cssvar(light);
+
+        .header-container {
+            padding: 0.5rem 1rem;
+            color: cssvar(dark);
+            font-size: cssvar(font-s);
+        }
+
+        .content-container {
+            display: flex;
+            padding: 0.5rem 1rem;
+            .circle-container {
+                flex: 1.25;
+            }
+
+            .lines-container {
+                display: flex;
+                flex: 2;
+                flex-direction: column;
+                flex-flow: wrap;
+                align-items: center;
+                padding: 0 0.5rem;
+            }
+        }
+    }
+
+
+    .subtitle {
+        color: cssvar(stable);
+    }
+
+}
+
+:host(.web) {
+    .regular-container {
+        height: 100%;
+        .progress-block {
+            position: relative;
+            padding: cssvar(padding-15);
+            background-color: cssvar(light); 
+        }
+    }
+    .mini-container {
+        .header-container {
+            .title {
+                font-size: cssvar(font-l);
+            }
+        }
+    }
+}
+
+
+:host(.location-detail) {
+    .mini-container {
+        .content-container {
+            .circle-container {
+                flex: initial;
+                width: var(circle-size);
+                height: var(circle-size); 
+                margin-right: 40px;
+            }
+        }
+    }
+}

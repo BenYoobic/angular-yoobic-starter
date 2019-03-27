@@ -1,0 +1,99 @@
+@import "../item/item";
+
+// iOS Item Options
+// --------------------------------------------------
+.item-options-ios {
+  border-bottom-width: 0;
+  border-bottom-style: $item-ios-border-bottom-style;
+  border-bottom-color: $item-ios-border-bottom-color;
+  &.item-options-end {
+    border-bottom-width: $item-ios-border-bottom-width;
+  }
+}
+
+// iOS No Lines List
+// --------------------------------------------------
+.list-ios-lines-none .item-options-ios {
+  border-bottom-width: 0;
+}
+
+// iOS Full/Inset Lines List
+// --------------------------------------------------
+// If the lines are full put a border on both item options
+// If the lines are inset we should only show the border on the end
+// because dragging open start options isn't continuous
+.list-ios-lines-full .item-options-ios,
+.list-ios-lines-inset .item-options-ios.item-options-end {
+  border-bottom-width: $item-ios-border-bottom-width;
+}
+
+// Item Options
+// --------------------------------------------------
+yoo-ion-item-options {
+  @include multi-dir() {
+    // scss-lint:disable PropertySpelling
+    top: 0;
+    right: 0;
+  }
+  @include ltr() {
+    justify-content: flex-end;
+  }
+  @include rtl() {
+    justify-content: flex-start;
+    &:not(.item-options-end) {
+      // scss-lint:disable PropertySpelling
+      right: auto;
+      left: 0;
+      justify-content: flex-end;
+    }
+  }
+
+  display: none;
+  position: absolute;
+  height: 100%;
+  font-size: 14px;
+  z-index: $z-index-item-options;
+  // &.hydrated {
+  //   visibility: hidden;
+  // }
+}
+
+.item-options-start {
+  @include multi-dir() {
+    // scss-lint:disable PropertySpelling
+    right: auto;
+    left: 0;
+  }
+  @include ltr() {
+    justify-content: flex-start;
+  }
+  @include rtl() {
+    justify-content: flex-end;
+  }
+}
+
+.item-sliding-active-slide {
+  @include rtl() {
+    &.item-sliding-active-options-start yoo-ion-item-options:not(.item-options-end) {
+      width: 100%;
+      visibility: visible;
+    }
+  }
+  yoo-ion-item-options {
+    display: flex;
+  }
+  &.item-sliding-active-options-start .item-options-start,
+  &.item-sliding-active-options-end yoo-ion-item-options:not(.item-options-start) {
+    width: 100%;
+    visibility: visible;
+  }
+}
+
+yoo-ion-item-options.visible {
+  display: flex;
+  width: 100%;
+  visibility: visible;
+  z-index: 10;
+}
+
+// #fffff10

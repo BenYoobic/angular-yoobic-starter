@@ -1,0 +1,270 @@
+:host .outer-container {
+  display: flex;
+  flex-direction: column;
+  background: var(--light, #FFFFFF);
+  color: var(--stable, #adadad); }
+  :host .outer-container .tab-selector {
+    border-bottom-width: 0.1rem;
+    border-top-width: 0rem;
+    border-right-width: 0rem;
+    border-bottom-width: 0rem;
+    border-left-width: 0rem;
+    border-style: solid;
+    border-color: var(--dark-10, #e6eaf0);
+    width: 100%; }
+    :host .outer-container .tab-selector .tab-title {
+      display: inline-block;
+      padding: 1rem;
+      transform: translateY(1px); }
+    :host .outer-container .tab-selector .tab-title:hover {
+      border-bottom-width: 0.1rem;
+      border-top-width: 0rem;
+      border-right-width: 0rem;
+      border-bottom-width: 0rem;
+      border-left-width: 0rem;
+      border-style: solid;
+      border-color: var(--success, #04CC99);
+      color: var(--success, #04CC99);
+      cursor: pointer; }
+    :host .outer-container .tab-selector .tab-title:focus {
+      border-top-width: 0.1rem;
+      border-right-width: 0.1rem;
+      border-bottom-width: 0.1rem;
+      border-left-width: 0.1rem;
+      border-style: solid;
+      border-radius: 0.2rem;
+      border-color: var(--success, #04CC99);
+      outline-width: 0rem; }
+    :host .outer-container .tab-selector .tab-title.active-title {
+      border-bottom-width: 0.1rem;
+      border-top-width: 0rem;
+      border-right-width: 0rem;
+      border-bottom-width: 0rem;
+      border-left-width: 0rem;
+      border-style: solid;
+      border-color: var(--success, #04CC99);
+      color: var(--success, #04CC99); }
+  :host .outer-container .tab-content {
+    padding: 1rem; }
+    :host .outer-container .tab-content .undisplayed-tab {
+      display: none; }
+    :host .outer-container .tab-content .selected-tab {
+      display: block;
+      width: 100%; }
+
+:host(.vertical).accent .outer-container {
+  color: var(--stable, #adadad); }
+  :host(.vertical).accent .outer-container .tab-selector .tab-title:hover {
+    border-right-width: 0.1rem;
+    border-top-width: 0rem;
+    border-right-width: 0rem;
+    border-bottom-width: 0rem;
+    border-left-width: 0rem;
+    border-style: solid;
+    border-color: var(--accent, #1FB6FF);
+    color: var(--accent, #1FB6FF); }
+  :host(.vertical).accent .outer-container .tab-selector .tab-title:focus {
+    border-top-width: 0.1rem;
+    border-right-width: 0.1rem;
+    border-bottom-width: 0.1rem;
+    border-left-width: 0.1rem;
+    border-style: solid;
+    border-radius: 0.2rem;
+    border-color: var(--accent, #1FB6FF);
+    outline-width: 0rem; }
+  :host(.vertical).accent .outer-container .tab-selector .tab-title.active-title {
+    border-right-width: 0.1rem;
+    border-top-width: 0rem;
+    border-right-width: 0rem;
+    border-bottom-width: 0rem;
+    border-left-width: 0rem;
+    border-style: solid;
+    border-color: var(--accent, #1FB6FF);
+    color: var(--accent, #1FB6FF); }
+
+:host(.vertical).danger .outer-container {
+  color: var(--stable, #adadad); }
+  :host(.vertical).danger .outer-container .tab-selector .tab-title:hover {
+    border-right-width: 0.1rem;
+    border-top-width: 0rem;
+    border-right-width: 0rem;
+    border-bottom-width: 0rem;
+    border-left-width: 0rem;
+    border-style: solid;
+    border-color: var(--danger, #ff625f);
+    color: var(--danger, #ff625f); }
+  :host(.vertical).danger .outer-container .tab-selector .tab-title:focus {
+    border-top-width: 0.1rem;
+    border-right-width: 0.1rem;
+    border-bottom-width: 0.1rem;
+    border-left-width: 0.1rem;
+    border-style: solid;
+    border-radius: 0.2rem;
+    border-color: var(--danger, #ff625f);
+    outline-width: 0rem; }
+  :host(.vertical).danger .outer-container .tab-selector .tab-title.active-title {
+    border-right-width: 0.1rem;
+    border-top-width: 0rem;
+    border-right-width: 0rem;
+    border-bottom-width: 0rem;
+    border-left-width: 0rem;
+    border-style: solid;
+    border-color: var(--danger, #ff625f);
+    color: var(--danger, #ff625f); }
+
+:host(.vertical).info .outer-container {
+  color: var(--stable, #adadad); }
+  :host(.vertical).info .outer-container .tab-selector .tab-title:hover {
+    border-right-width: 0.1rem;
+    border-top-width: 0rem;
+    border-right-width: 0rem;
+    border-bottom-width: 0rem;
+    border-left-width: 0rem;
+    border-style: solid;
+    border-color: var(--info, #fc459e);
+    color: var(--info, #fc459e); }
+  :host(.vertical).info .outer-container .tab-selector .tab-title:focus {
+    border-top-width: 0.1rem;
+    border-right-width: 0.1rem;
+    border-bottom-width: 0.1rem;
+    border-left-width: 0.1rem;
+    border-style: solid;
+    border-radius: 0.2rem;
+    border-color: var(--info, #fc459e);
+    outline-width: 0rem; }
+  :host(.vertical).info .outer-container .tab-selector .tab-title.active-title {
+    border-right-width: 0.1rem;
+    border-top-width: 0rem;
+    border-right-width: 0rem;
+    border-bottom-width: 0rem;
+    border-left-width: 0rem;
+    border-style: solid;
+    border-color: var(--info, #fc459e);
+    color: var(--info, #fc459e); }
+
+:host(.vertical) .outer-container {
+  display: flex;
+  flex-direction: row; }
+  :host(.vertical) .outer-container .tab-selector {
+    border-right-width: 0.1rem;
+    border-top-width: 0rem;
+    border-right-width: 0rem;
+    border-bottom-width: 0rem;
+    border-left-width: 0rem;
+    border-style: solid;
+    border-color: var(--dark-10, #e6eaf0);
+    display: flex;
+    flex-direction: column;
+    width: unset; }
+    :host(.vertical) .outer-container .tab-selector .tab-title {
+      display: inline;
+      padding: 1rem;
+      transform: translateX(2px) !important; }
+    :host(.vertical) .outer-container .tab-selector .tab-title:hover {
+      border-right-width: 0.1rem;
+      border-top-width: 0rem;
+      border-right-width: 0rem;
+      border-bottom-width: 0rem;
+      border-left-width: 0rem;
+      border-style: solid;
+      border-color: var(--success, #04CC99);
+      color: var(--success, #04CC99); }
+    :host(.vertical) .outer-container .tab-selector .tab-title.active-title {
+      border-right-width: 0.1rem;
+      border-top-width: 0rem;
+      border-right-width: 0rem;
+      border-bottom-width: 0rem;
+      border-left-width: 0rem;
+      border-style: solid;
+      border-color: var(--success, #04CC99);
+      color: var(--success, #04CC99); }
+
+:host(.accent) .outer-container {
+  color: var(--stable, #adadad); }
+  :host(.accent) .outer-container .tab-selector .tab-title:hover {
+    border-bottom-width: 0.1rem;
+    border-top-width: 0rem;
+    border-right-width: 0rem;
+    border-bottom-width: 0rem;
+    border-left-width: 0rem;
+    border-style: solid;
+    border-color: var(--accent, #1FB6FF);
+    color: var(--accent, #1FB6FF); }
+  :host(.accent) .outer-container .tab-selector .tab-title:focus {
+    border-top-width: 0.1rem;
+    border-right-width: 0.1rem;
+    border-bottom-width: 0.1rem;
+    border-left-width: 0.1rem;
+    border-style: solid;
+    border-radius: 0.2rem;
+    border-color: var(--accent, #1FB6FF);
+    outline-width: 0rem; }
+  :host(.accent) .outer-container .tab-selector .tab-title.active-title {
+    border-bottom-width: 0.1rem;
+    border-top-width: 0rem;
+    border-right-width: 0rem;
+    border-bottom-width: 0rem;
+    border-left-width: 0rem;
+    border-style: solid;
+    border-color: var(--accent, #1FB6FF);
+    color: var(--accent, #1FB6FF); }
+
+:host(.danger) .outer-container {
+  color: var(--stable, #adadad); }
+  :host(.danger) .outer-container .tab-selector .tab-title:hover {
+    border-bottom-width: 0.1rem;
+    border-top-width: 0rem;
+    border-right-width: 0rem;
+    border-bottom-width: 0rem;
+    border-left-width: 0rem;
+    border-style: solid;
+    border-color: var(--danger, #ff625f);
+    color: var(--danger, #ff625f); }
+  :host(.danger) .outer-container .tab-selector .tab-title:focus {
+    border-top-width: 0.1rem;
+    border-right-width: 0.1rem;
+    border-bottom-width: 0.1rem;
+    border-left-width: 0.1rem;
+    border-style: solid;
+    border-radius: 0.2rem;
+    border-color: var(--danger, #ff625f);
+    outline-width: 0rem; }
+  :host(.danger) .outer-container .tab-selector .tab-title.active-title {
+    border-bottom-width: 0.1rem;
+    border-top-width: 0rem;
+    border-right-width: 0rem;
+    border-bottom-width: 0rem;
+    border-left-width: 0rem;
+    border-style: solid;
+    border-color: var(--danger, #ff625f);
+    color: var(--danger, #ff625f); }
+
+:host(.info) .outer-container {
+  color: var(--stable, #adadad); }
+  :host(.info) .outer-container .tab-selector .tab-title:hover {
+    border-bottom-width: 0.1rem;
+    border-top-width: 0rem;
+    border-right-width: 0rem;
+    border-bottom-width: 0rem;
+    border-left-width: 0rem;
+    border-style: solid;
+    border-color: var(--info, #fc459e);
+    color: var(--info, #fc459e); }
+  :host(.info) .outer-container .tab-selector .tab-title:focus {
+    border-top-width: 0.1rem;
+    border-right-width: 0.1rem;
+    border-bottom-width: 0.1rem;
+    border-left-width: 0.1rem;
+    border-style: solid;
+    border-radius: 0.2rem;
+    border-color: var(--info, #fc459e);
+    outline-width: 0rem; }
+  :host(.info) .outer-container .tab-selector .tab-title.active-title {
+    border-bottom-width: 0.1rem;
+    border-top-width: 0rem;
+    border-right-width: 0rem;
+    border-bottom-width: 0rem;
+    border-left-width: 0rem;
+    border-style: solid;
+    border-color: var(--info, #fc459e);
+    color: var(--info, #fc459e); }

@@ -1,0 +1,40 @@
+:host {
+    display: block;
+    .readonly,
+    .outer-container {
+        .signature-container {
+            @include icon-capture-overlay(dark-two,camera-container-height);
+            position: relative;
+            yoo-icon {
+                font-size: 30px;
+            }
+        }
+    }
+    .readonly {
+        @include form-readonly-padding();
+    }
+}
+
+:host(.history) {
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    .readonly {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        padding: 0;
+        padding-bottom: 2px;
+        .signature-container {
+            width: 30px;
+            height: 30px;
+            border: none;
+            .preview {
+                width: 30px;
+                height: 30px;
+                border: 1px solid cssvar(stable);
+                border-radius: 2px !important;
+            }
+        }
+    }
+}

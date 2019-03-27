@@ -1,0 +1,250 @@
+:host(.success):host(.operations),
+:host(.ion-color-success):host(.operations),
+:host([color=success]):host(.operations) {
+  color: var(--success, #04CC99) !important; }
+
+:host(.success):host(.boost),
+:host(.ion-color-success):host(.boost),
+:host([color=success]):host(.boost) {
+  color: var(--danger-light, #F46885) !important; }
+
+:host(.energized),
+:host(.ion-color-energized),
+:host([color=energized]) {
+  color: var(--energized, #fed05b) !important; }
+
+:host(.boost.energized),
+:host(.boost.ion-color-energized),
+:host(.boost[color=energized]) {
+  color: var(--danger-light, #F46885) !important; }
+
+:host(.text-color) {
+  color: var(--text-color, #807f83) !important; }
+
+:host {
+  --ion-color-base: var(--ion-color-primary, #1FB6FF);
+  --ion-color-contrast: var(--ion-color-primary-contrast, #fff);
+  --ion-color-shade: var(--ion-color-primary-shade, get-color-shade(#1FB6FF));
+  --ripple-color: currentColor;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align: top;
+  vertical-align: -webkit-baseline-middle; }
+
+:host([disabled]) {
+  pointer-events: none; }
+
+:host(.button-disabled) {
+  pointer-events: none; }
+
+:host(.button-outline) {
+  --border-color: var(--ion-color-base);
+  --background: transparent;
+  color: var(--ion-color-base); }
+
+:host(.button-clear) {
+  --border-width: 0;
+  --background: transparent;
+  color: var(--ion-color-base); }
+
+:host(.button-block) {
+  display: block; }
+
+:host(.button-block) .button-native {
+  margin-left: 0;
+  margin-right: 0;
+  display: block;
+  width: 100%;
+  clear: both;
+  contain: strict; }
+
+:host(.button-block) .button-native::after {
+  clear: both; }
+
+:host(.button-full) {
+  display: block; }
+
+:host(.button-full) .button-native {
+  margin-left: 0;
+  margin-right: 0;
+  display: block;
+  width: 100%;
+  contain: strict; }
+
+:host(.button-full:not(.button-round)) .button-native {
+  border-radius: 0;
+  border-right-width: 0;
+  border-left-width: 0; }
+
+:host(.ion-color-dark) {
+  color: var(--black, #000000); }
+
+:host(.ion-color-success) {
+  color: var(--success, #04CC99); }
+
+:host(.ion-color-stable) {
+  color: var(--stable, #adadad); }
+  :host(.ion-color-stable):hover {
+    color: var(--black, #000000); }
+
+:host(.ion-color-stable-alt) {
+  color: var(--stable-alt, #d0d0d0); }
+
+:host(.ion-color-text-color) {
+  color: var(--text-color, #807f83); }
+
+:host(.ion-color-energized) {
+  color: var(--energized, #fed05b); }
+
+:host(.ion-color-danger-light) {
+  color: var(--danger-light, #F46885); }
+
+:host(.ion-color-always-light) {
+  color: var(--white); }
+
+.button-native {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: var(--border-radius, 1px);
+  margin: var(--margin-top) var(--margin-end) var(--margin-bottom) var(--margin-start);
+  padding: var(--padding-top) var(--padding-end) var(--padding-bottom) var(--padding-start);
+  display: inline-block;
+  position: relative;
+  min-width: var(--padding-35, 2.1875rem);
+  height: var(--height);
+  transition: var(--transition);
+  transition: opacity 300ms;
+  border-width: var(--border-width, 1px);
+  border-style: var(--border-style);
+  border-color: var(--border-color);
+  outline: none;
+  background: var(--background);
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  line-height: 1;
+  text-align: inherit;
+  text-decoration: inherit;
+  text-overflow: inherit;
+  text-transform: inherit;
+  white-space: inherit;
+  box-shadow: var(--box-shadow);
+  contain: content;
+  cursor: pointer;
+  opacity: var(--opacity);
+  overflow: hidden;
+  user-select: none;
+  vertical-align: top;
+  vertical-align: -webkit-baseline-middle;
+  z-index: 0;
+  font-kerning: none;
+  appearance: none; }
+
+.button-native[disabled] {
+  cursor: default;
+  opacity: .5;
+  pointer-events: none; }
+
+.button-native:active,
+.button-native:focus {
+  outline: none; }
+
+.button-inner {
+  display: flex;
+  flex-flow: row nowrap;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%; }
+
+::slotted(ion-icon) {
+  font-size: 1.4em;
+  pointer-events: none; }
+
+::slotted(ion-icon[slot="start"]) {
+  margin: 0 0.3em 0 -0.3em; }
+
+::slotted(ion-icon[slot="end"]) {
+  margin: 0 -0.2em 0 0.3em; }
+
+::slotted(ion-icon[slot="icon-only"]) {
+  font-size: 1.8em; }
+
+ion-ripple-effect {
+  color: var(--ripple-color); }
+
+:host {
+  --border-radius: 12px;
+  --margin-top: 4px;
+  --margin-bottom: 4px;
+  --margin-start: 2px;
+  --margin-end: 2px;
+  --padding-top: 0;
+  --padding-bottom: 0;
+  --padding-start: 1em;
+  --padding-end: 1em;
+  --height: 2.8em;
+  --transition: background-color, opacity 100ms linear;
+  font-family: Lato !important;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.03em; }
+
+:host(.button-outline) {
+  --border-radius: 12px;
+  --border-width: 1px;
+  --border-style: solid; }
+
+:host(.button-outline.activated) {
+  --background: var(--ion-color-base);
+  color: var(--ion-color-contrast); }
+
+:host(.button-outline.focused) {
+  --background: rgba(var(--ion-color-base-rgb), 0.1); }
+
+:host(.button-outline.activated.focused) {
+  --border-color: var(--ion-color-shade);
+  --background-color: var(--ion-color-shade); }
+
+:host(.button-clear.activated) {
+  --opacity: 0.4; }
+
+:host(.button-clear.focused) {
+  --background: rgba(var(--ion-color-base-rgb), 0.1); }
+
+:host(.button-round) {
+  --border-radius: 64px;
+  --padding-top: 0;
+  --padding-start: 26px;
+  --padding-end: 26px;
+  --padding-bottom: 0; }
+
+:host(.button-large) {
+  --border-radius: 14px;
+  --padding-top: 0;
+  --padding-start: 1em;
+  --padding-end: 1em;
+  --padding-bottom: 0;
+  --height: 2.8em;
+  font-size: 20px; }
+
+:host(.button-small) {
+  --border-radius: 8px;
+  --padding-top: 0;
+  --padding-start: 0.9em;
+  --padding-end: 0.9em;
+  --padding-bottom: 0;
+  --height: 2.1em;
+  font-size: 13px; }
+
+:host(.button-strong) {
+  font-weight: 600; }
+
+:host(.header) {
+  padding-bottom: 0.2rem; }

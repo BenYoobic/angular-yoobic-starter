@@ -1,0 +1,216 @@
+:host {
+    .outer-container {
+        @include abs-pos-full-width();
+        display: flex;
+        bottom: unset;
+        align-items: center;
+        justify-content: center;
+        min-height: 2.25rem;
+        padding: 0.75rem 1rem;
+        border-bottom: 1px solid cssvar(stable-30);
+        background: cssvar(light);
+        font-size: cssvar(font-m);
+        .button-container {
+            padding: 0 1rem;
+            .danger {
+                color: cssvar(danger);
+            }
+            .success {
+                color: cssvar(success);
+            }
+        }
+        .text-container {
+            flex: 1;
+            color: cssvar(dark);
+        }
+        .icon-container {
+            flex: 0.1;
+            yoo-icon {
+                display: block;
+            }
+        }
+        .image-container {
+            display: flex;
+            flex: 0.25;
+            align-items: center;
+            justify-content: center;
+            yoo-img {
+                width: 25px;
+                height: 25px;
+                border-radius: 50%;
+            }
+        }
+        .extra-button {
+            min-width: 55px;
+            min-height: 55px;
+            margin-right: 0.8rem;
+            margin-bottom: 0.5rem;
+            border-radius: 50%;
+            line-height: 55px;
+            text-align: center;
+            &.bg-danger {
+                background: cssvar(danger);
+            }
+            &.bg-success {
+                background: cssvar(success);
+            }
+        }
+    }
+    .overlay {
+        @include abs-pos(0, 0, 0, 0);
+        background-color: cssvar(black);
+        opacity: 0.4;
+    }
+}
+
+:host(.bg-stable-light) {
+    .outer-container {
+        background: cssvar(stable-light);
+    }
+}
+
+:host(.bg-danger) {
+    .outer-container {
+        background: cssvar(danger);
+        .text-container {
+            flex: 1;
+            color: cssvar(light);
+        }
+        .button-container {
+            padding: 0 1rem;
+            .danger {
+                color: cssvar(black);
+            }
+            .success {
+                color: cssvar(light);
+            }
+        }
+    }
+}
+
+:host(.global-actions) {
+    box-shadow: 0 5px 30px 0 rgba(40, 47, 54, 0.2);
+    .outer-container {
+        height: 2.75rem !important;
+        margin-bottom: 0 !important;
+        padding: 0;
+        border-radius: 5px;
+        overflow: hidden;
+        .count-container {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            padding: 0 1rem;
+            background: cssvar(success);
+            color: cssvar(light);
+            line-height: 44px;
+        }
+        .text-container {
+            flex: 1;
+        }
+        .extra-button {
+            width: 2rem;
+            min-width: initial;
+            height: 2rem;
+            min-height: initial;
+            margin: 0;
+            font-size: cssvar(font-ll);
+            line-height: 2rem;
+            &:last-child {
+                margin-right: 1rem;
+            }
+        }
+    }
+}
+
+:host(.bottom) {
+    .outer-container {
+        top: unset;
+        bottom: 0;
+        border-top: 1px solid cssvar(stable-30);
+        border-bottom: none;
+    }
+}
+
+:host(.progress) {
+    .outer-container {
+        flex-direction: column;
+        height: inherit;
+        padding: 0.75rem 1rem;
+        .text-container {
+            display: flex;
+            align-self: flex-start;
+            padding: 0.5rem 0rem;
+            .message,
+            .icon-container {
+                display: initial;
+                margin: 0;
+            }
+        }
+        .progressbar-wrapper {
+            width: 100%;
+        }
+    }
+}
+
+:host(.header) {
+    .outer-container {
+        &.iphone-x {
+            padding-top: 2.75rem !important;
+        }
+    }
+}
+
+:host(.header.ios) {
+    .outer-container {
+        padding-top: 1.75rem;
+    }
+}
+
+:host(.web) {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    .outer-container {
+        display: flex;
+        position: relative;
+        align-items: center;
+        width: 450px;
+        height: 60px;
+        margin-top: 4.25rem;
+        border-radius: 0.375rem;
+        box-shadow: 0 5px 30px 0 rgba(40, 47, 54, 0.2);
+        .message {
+            margin: 0 0 0 cssvar(padding-15);
+        }
+        .button {
+            margin-bottom: 0;
+        }
+    }
+}
+
+:host(.web.top.progress) {
+    .outer-container {
+        .message {
+            display: block;
+            white-space: nowrap;
+        }
+    }
+}
+
+:host(.web.top.header) {
+    .outer-container {
+        border-bottom: none;
+        .icon-container {
+            margin-bottom: 0;
+        }
+    }
+}
+
+:host(.web.bottom) {
+    .outer-container {
+        align-self: flex-end;
+        margin-top: 0;
+        margin-bottom: cssvar(padding-20);
+    }
+}

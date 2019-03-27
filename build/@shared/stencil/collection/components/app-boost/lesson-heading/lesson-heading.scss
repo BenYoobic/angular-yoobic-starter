@@ -1,0 +1,39 @@
+:host {
+  .heading-container{
+    padding: cssvar(padding);
+    
+    &.stable-light {
+      background: cssvar(stable-light);
+    }
+
+    &.border-bottom {
+      border-bottom: 1px solid cssvar(stable-30);
+    }
+
+    .lesson-order {
+      margin-top: 1.625rem;
+      color: cssvar(danger-light);
+      font-size: cssvar(font-xs);
+      letter-spacing: 1px;
+      line-height: normal;
+      text-transform: uppercase;
+    }
+    .lesson-title {
+      margin-top: 0.3125rem;
+      font-size: 1.6825rem;
+      line-height: 2.0625rem;
+    }
+    .lesson-date {
+      margin-top: 0.3125rem;
+      color: cssvar(danger-light);
+  
+      .date-label {
+        margin-right: 0.5rem;
+        color: cssvar(black);
+      }
+    }
+    // div:last-child {
+    //   margin-bottom: 2.1875rem;
+    // }
+  }
+}

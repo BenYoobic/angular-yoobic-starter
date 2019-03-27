@@ -1,0 +1,149 @@
+:host .optional {
+  margin-left: 0.5rem !important;
+  color: var(--stable, #adadad);
+  white-space: nowrap; }
+
+:host .readonly {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  word-break: break-word; }
+  :host .readonly .label {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    padding-bottom: var(--padding-15, 0.9375rem);
+    color: var(--text-color, #807f83);
+    font-size: var(--font-m, 15px);
+    font-weight: normal;
+    line-height: 1.5;
+    text-align: left;
+    font-variant-caps: normal; }
+    :host .readonly .label .required {
+      margin-right: 0.25rem;
+      color: var(--danger, #ff625f);
+      font-variant-caps: normal; }
+    :host .readonly .label .label-required {
+      margin-left: 0.25rem;
+      color: var(--danger, #ff625f); }
+    :host .readonly .label.readonly {
+      letter-spacing: 0px; }
+  :host .readonly yoo-icon {
+    font-size: var(--checkbox-size, 20px); }
+
+:host .outer-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  word-break: break-word; }
+  :host .outer-container yoo-icon {
+    font-size: var(--checkbox-size, 20px); }
+  :host .outer-container .text-container {
+    flex: 1; }
+  :host .outer-container .toggle-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 3.1875rem;
+    height: 1.9375rem;
+    transition: 0.2s cubic-bezier(0.24, 0, 0.5, 1);
+    border: solid 1px var(--light_toggle, rgba(0, 0, 0, 0.1));
+    border-radius: 60px; }
+    :host .outer-container .toggle-container.active {
+      transition: width 0.2s cubic-bezier(0, 0, 0, 0.1);
+      transition: 0.2s cubic-bezier(0.54, 1.6, 0.5, 1);
+      background-color: var(--success, #04CC99); }
+    :host .outer-container .toggle-container:hover {
+      cursor: pointer; }
+    :host .outer-container .toggle-container .inner-container {
+      width: 28px;
+      height: 28px;
+      transform: translateX(-1px);
+      transition: 0.2s cubic-bezier(0.54, 1.6, 0.5, 1);
+      border: solid 0.5px var(--light_toggle, rgba(0, 0, 0, 0.1));
+      border-radius: 50%;
+      background-color: var(--light_const, #FFFFFF);
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 4px 0px 0 rgba(0, 0, 0, 0.04), 0 4px 9px rgba(0, 0, 0, 0.13), 0 3px 3px rgba(0, 0, 0, 0.05);
+      box-sizing: content-box; }
+      :host .outer-container .toggle-container .inner-container:hover {
+        cursor: pointer; }
+      :host .outer-container .toggle-container .inner-container.active {
+        width: 28px;
+        height: 28px;
+        transform: translateX(1.4375rem);
+        transition: 0.2s cubic-bezier(0.54, 1.6, 0.5, 1);
+        border: solid 1px var(--success, #04CC99); }
+  :host .outer-container .label {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    color: inherit;
+    font-size: var(--font-m, 15px);
+    font-weight: normal;
+    line-height: 1.5;
+    text-align: left;
+    font-variant-caps: normal; }
+    :host .outer-container .label .required {
+      margin-right: 0.25rem;
+      color: var(--danger, #ff625f);
+      font-variant-caps: normal; }
+    :host .outer-container .label .label-required {
+      margin-left: 0.25rem;
+      color: var(--danger, #ff625f); }
+    :host .outer-container .label.readonly {
+      letter-spacing: 0px; }
+
+:host(.line) .outer-container .text-container {
+  order: 1;
+  margin-left: 1rem; }
+
+:host(.accent) .outer-container .toggle-container.active {
+  border-color: var(--accent, #1FB6FF);
+  background-color: var(--accent, #1FB6FF); }
+
+:host(.accent) .outer-container .toggle-container .inner-container.active {
+  border-color: var(--accent, #1FB6FF); }
+
+:host(.operations) .outer-container .toggle-container.active {
+  border-color: var(--success, #04CC99);
+  background-color: var(--success, #04CC99); }
+
+:host(.operations) .outer-container .toggle-container .inner-container.active {
+  border-color: var(--success, #04CC99); }
+
+:host(.boost) .outer-container .toggle-container.active {
+  border-color: var(--danger-light, #F46885);
+  background-color: var(--danger-light, #F46885); }
+
+:host(.boost) .outer-container .toggle-container .inner-container.active {
+  border-color: var(--danger-light, #F46885); }
+
+:host(.danger) .outer-container .toggle-container.active {
+  border-color: var(--danger, #ff625f);
+  background-color: var(--danger, #ff625f); }
+
+:host(.danger) .outer-container .toggle-container .inner-container.active {
+  border-color: var(--danger, #ff625f); }
+
+:host(.info) .outer-container .toggle-container.active {
+  border-color: var(--info, #fc459e);
+  background-color: var(--info, #fc459e); }
+
+:host(.info) .outer-container .toggle-container .inner-container.active {
+  border-color: var(--info, #fc459e); }
+
+:host(.warning) .outer-container .toggle-container.active {
+  border-color: var(--warning, #ff6402);
+  background-color: var(--warning, #ff6402); }
+
+:host(.warning) .outer-container .toggle-container .inner-container.active {
+  border-color: var(--warning, #ff6402); }
+
+:host(.dark) .outer-container .toggle-container.active {
+  border-color: var(--dark, #2b3648);
+  background-color: var(--dark, #2b3648); }
+
+:host(.dark) .outer-container .toggle-container .inner-container.active {
+  border-color: var(--dark, #2b3648); }

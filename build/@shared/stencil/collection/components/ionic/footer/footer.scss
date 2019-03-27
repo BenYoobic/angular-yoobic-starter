@@ -1,0 +1,35 @@
+// iOS Borders
+// --------------------------------------------------
+.footer-ios yoo-ion-toolbar:first-child {
+  --border-width: #{$hairlines-width} 0 0;
+}
+
+.footer-ios[no-border] yoo-ion-toolbar:first-child {
+  --border-width: 0;
+}
+
+// Footer
+// --------------------------------------------------
+
+:host, yoo-ion-footer {
+
+  display: block;
+  position: relative;
+  order: 1;
+  width: 100%;
+  z-index: $z-index-toolbar;
+}
+
+yoo-ion-footer {
+  //box-shadow: cssvar(footer-shadow);
+  border-top: 1px solid cssvar(footer-border-top-color);
+  background: cssvar(light);
+  z-index: 1;
+  &.no-border {
+    border-top: none;
+  }
+}
+
+yoo-ion-footer.iphone-x:not(.tabbar) {
+  padding-bottom: cssvar(padding-20) !important;
+}

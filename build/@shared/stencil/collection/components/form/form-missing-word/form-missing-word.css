@@ -1,0 +1,67 @@
+:host .outer-container .sentence {
+  margin-top: 1.25rem;
+  font-size: var(--font-m, 15px);
+  line-height: var(--font-xl, 36px);
+  touch-action: none;
+  user-select: none; }
+  :host .outer-container .sentence yoo-badge {
+    --font-size-inner-container: var(--font-m, 15px);
+    --inner-container-default-padding: 0.375rem 0.625rem;
+    margin: 0.3125rem 0.125rem 1px 0.125rem;
+    text-align: center; }
+    :host .outer-container .sentence yoo-badge.drag-target {
+      position: relative;
+      z-index: 1; }
+  :host .outer-container .sentence .word {
+    display: inline-block;
+    margin: 0 2px;
+    padding-top: var(--padding-5, 0.3125rem);
+    user-select: none; }
+    :host .outer-container .sentence .word.hidden {
+      border-bottom: 1px solid var(--danger-light, #F46885);
+      color: transparent; }
+    :host .outer-container .sentence .word.droppable {
+      min-width: 85px;
+      text-align: center; }
+    :host .outer-container .sentence .word.dynamic {
+      color: var(--danger, #ff625f); }
+      :host .outer-container .sentence .word.dynamic.drop-target {
+        background: var(--danger, #ff625f);
+        color: var(--light, #FFFFFF); }
+    :host .outer-container .sentence .word.drop-target {
+      background: var(--stable-alt-to-dark, #d0d0d0);
+      color: var(--light, #FFFFFF); }
+
+:host .outer-container .placeholder {
+  margin: 1.25rem auto;
+  color: var(--stable, #adadad);
+  font-size: var(--font-m, 15px);
+  letter-spacing: normal; }
+
+:host .outer-container .suggestions {
+  padding: 0.3125rem;
+  background: var(--light, #FFFFFF);
+  font-size: var(--font-l, 17px); }
+  :host .outer-container .suggestions yoo-badge {
+    --font-size-inner-container: var(--font-m, 15px);
+    --inner-container-default-padding: 0.375rem 0.625rem;
+    margin: 0 0.3125rem 0.3125rem 0.3125rem;
+    cursor: pointer;
+    touch-action: none; }
+    :host .outer-container .suggestions yoo-badge.transparent {
+      --color-inner-text: var(--stable-alt, #d0d0d0); }
+    :host .outer-container .suggestions yoo-badge.drag-target {
+      position: relative;
+      z-index: 1; }
+  :host .outer-container .suggestions.drop-target {
+    padding: 0.25rem;
+    border: 1px dashed var(--stable-alt-to-dark, #d0d0d0); }
+
+:host .readonly {
+  padding: 0.5rem;
+  padding-left: 0;
+  padding-bottom: 0; }
+  :host .readonly .sentence-answers .word.success {
+    color: var(--success, #04CC99); }
+  :host .readonly .sentence-answers .word.danger {
+    color: var(--danger, #ff625f); }

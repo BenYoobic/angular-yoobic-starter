@@ -1,0 +1,14 @@
+:host {
+    .subtitle {
+        color: cssvar(text-color);
+    }
+    .readonly {
+        @include form-readonly-padding();
+    }
+}
+
+:host(.history) {
+    .readonly {
+        padding: 0 !important;
+    }
+}

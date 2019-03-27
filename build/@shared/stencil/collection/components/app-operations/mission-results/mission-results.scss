@@ -1,0 +1,62 @@
+:host {
+    height: 100%;
+    font-size: cssvar(font-m);
+    font-weight: 400;
+    .mission-results {
+        //height: 100%;
+        .content {
+            .menu {
+                @include reset-list();
+                @include mission-style();
+                margin-top: 1rem;
+                padding: 0;
+                list-style: none;
+                .menu-item {
+                    .menu-right {
+                        .menu-content {
+                            margin-bottom: cssvar(padding-15);
+                            line-height: 1.25rem;
+                            .menu-content-scoring {
+                                margin-bottom: 0.8rem;
+                                color: cssvar(dark);
+                                line-height: 1.125rem;
+                                .float {
+                                    margin-right: 0;
+                                    float: right;
+                                }
+                            }
+                            .text {
+                                flex: 1;
+                                word-break: break-word;
+                            }
+                            .mission-date {
+                                color: cssvar(text-color);
+                            }
+                        }
+                        .menu-author {
+                            display: flex;
+                            flex-direction: row;
+                        }
+                    }
+                }
+                .menu-item:last-child {
+                    .menu-left {
+                        .border {
+                            display: none;
+                        }
+                    }
+                }
+                yoo-mission-contents:last-child {
+                    --display-border: none;
+                }
+            }
+           
+        }
+    }
+}
+
+:host(.inline) {
+    display: block;
+    height: initial;
+}
+

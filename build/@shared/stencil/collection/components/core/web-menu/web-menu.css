@@ -1,0 +1,69 @@
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid var(--stable-30, #E6E6E6);
+  background-color: var(--light, #FFFFFF); }
+  :host .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 250px;
+    color: var(--text-color, #807f83);
+    font-size: var(--font-ll, 20px); }
+    :host .container.left {
+      justify-content: flex-start;
+      padding-left: var(--padding-10, 0.625rem); }
+    :host .container.middle {
+      justify-content: center; }
+    :host .container.right {
+      justify-content: flex-end; }
+  :host .menu-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 80%;
+    min-width: 1070px;
+    height: 48px; }
+    :host .menu-container .menu-logo .image {
+      width: 30px;
+      height: 30px; }
+    :host .menu-container .menu-items {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      padding: 0 var(--padding-10, 0.625rem); }
+      :host .menu-container .menu-items .item-container {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0 var(--padding-10, 0.625rem); }
+        :host .menu-container .menu-items .item-container .menu-icon {
+          display: flex; }
+        :host .menu-container .menu-items .item-container .notification {
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 0.3125rem;
+          height: 0.3125rem;
+          margin-right: var(--padding-5, 0.3125rem);
+          border-radius: 0.15625rem;
+          background-color: var(--danger, #ff625f); }
+
+:host(.operations) .selected {
+  color: var(--success, #04CC99); }
+
+:host(.operations) .selected-profile .avatar-container {
+  border: 2px solid var(--success, #04CC99);
+  border-radius: 50%; }
+
+:host(.boost) .selected {
+  color: var(--danger-light, #F46885); }
+
+:host(.boost) .selected-profile .avatar-container {
+  border: 2px solid var(--danger-light, #F46885);
+  border-radius: 50%; }

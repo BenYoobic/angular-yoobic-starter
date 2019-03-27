@@ -1,0 +1,125 @@
+:host(.operations) {
+  --background-message-content: var(--success, #04CC99); }
+
+:host(.boost) {
+  --background-message-content: var(--danger-light, #F46885); }
+
+:host {
+  --icon-total-width: 54px;
+  --message-container-padding-left: 15%; }
+  :host .message {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    max-width: 100%;
+    margin: 0.0625rem 0.2rem; }
+
+@keyframes slide-left {
+  0% {
+    transform: translateX(-0.625rem); }
+  100% {
+    transform: translateY(0); } }
+    :host .message .empty-checkbox {
+      width: var(--padding-15, 0.9375rem);
+      height: var(--padding-15, 0.9375rem);
+      margin: var(--padding-5, 0.3125rem);
+      animation: slide-left 0.4s ease; }
+    :host .message yoo-form-checkbox {
+      --yo-circle-color: var(--stable, #adadad) !important;
+      animation: slide-left 0.4s ease; }
+    :host .message .message-content {
+      display: flex;
+      flex-direction: column;
+      align-self: flex-end;
+      width: fit-content;
+      max-width: 68%;
+      padding: 0.5rem 1rem;
+      border-radius: 1.25rem;
+      white-space: pre-wrap;
+      cursor: pointer;
+      user-select: none;
+      word-wrap: break-word; }
+      :host .message .message-content.img {
+        padding: 0 !important;
+        background-color: transparent !important; }
+      :host .message .message-content .image-container {
+        width: 232px;
+        max-width: 100%;
+        height: 208px;
+        pointer-events: none; }
+        :host .message .message-content .image-container .image {
+          width: 100%;
+          min-width: 150px;
+          height: 100%;
+          min-height: 100px;
+          border-radius: 10px;
+          background: var(--light, #FFFFFF); }
+      :host .message .message-content .text {
+        pointer-events: none; }
+    :host .message .info-container {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      margin: 0.2rem;
+      color: var(--text-color, #807f83);
+      font-size: var(--font-s, 13px);
+      white-space: nowrap; }
+      :host .message .info-container yoo-avatar {
+        margin-right: 0.3rem; }
+      :host .message .info-container.center {
+        justify-content: center; }
+    :host .message.user-message .message-content {
+      max-width: 68%;
+      margin-left: auto;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      background: var(--background-message-content);
+      color: var(--light, #FFFFFF);
+      word-wrap: break-word; }
+      :host .message.user-message .message-content.last {
+        border-bottom-right-radius: 1.25rem; }
+      :host .message.user-message .message-content.first {
+        border-top-right-radius: 1.25rem; }
+    :host .message.user-message .info-container {
+      margin-left: auto; }
+    :host .message.other-message .message-content {
+      align-self: flex-start;
+      width: fit-content;
+      margin-right: auto;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+      background: var(--dark-10, #e6eaf0); }
+      :host .message.other-message .message-content.last {
+        border-bottom-left-radius: 1.25rem; }
+      :host .message.other-message .message-content.first {
+        border-top-left-radius: 1.25rem; }
+    :host .message .username {
+      display: flex;
+      width: 100%;
+      padding-bottom: 3px;
+      padding-left: var(--icon-total-width);
+      color: var(--text-color, #807f83);
+      font-size: var(--font-s, 13px);
+      text-align: left; }
+    :host .message .group-message-container {
+      display: flex;
+      align-items: flex-end;
+      margin-bottom: var(--padding-15, 0.9375rem);
+      padding-right: var(--message-container-padding-left); }
+      :host .message .group-message-container .user-container {
+        min-width: 3.375rem; }
+      :host .message .group-message-container .message-content.next-img {
+        border-radius: 1.25rem; }
+
+:host(.choice) .message.user-message .message-content {
+  align-self: flex-end;
+  width: fit-content;
+  border: var(--border-width, 1px) solid var(--danger-light, #F46885);
+  border-radius: 1.25rem;
+  background: var(--light, #FFFFFF);
+  color: var(--dark, #2b3648); }
+
+:host(.boost) .message .message-content {
+  border-radius: 1.25rem; }

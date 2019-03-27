@@ -1,0 +1,140 @@
+// Refresher
+// --------------------------------------------------
+/// @prop - Height of the refresher
+$refresher-height: 60px !default;
+/// @prop - Font size of the refresher icon
+$refresher-icon-font-size: 30px !default;
+/// @prop - Font size of the refresher content
+$refresher-text-font-size: 16px !default;
+/// @prop - Color of the refresher icon
+$refresher-ios-icon-color: $text-color !default;
+/// @prop - Text color of the refresher content
+$refresher-ios-text-color: $text-color !default;
+yoo-ion-refresher {
+    @include position(0, null, null, 0);
+    display: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: $refresher-height;
+    z-index: $z-index-refresher;
+    &.refresher-active {
+        display: block;
+    }
+    &.transparent {
+        yoo-ion-refresher-content {
+            background-color: transparent;
+        }
+    }
+}
+
+// Refresher Content
+// --------------------------------------------------
+yoo-ion-refresher-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    background-color: cssvar(light-card-background);
+}
+
+.refresher-pulling,
+.refresher-refreshing {
+    display: none;
+    width: 100%;
+}
+
+.refresher-pulling-icon,
+.refresher-refreshing-icon {
+    @include transform-origin(center);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: 200ms;
+    font-size: $refresher-icon-font-size;
+    text-align: center;
+}
+
+.refresher-pulling-text,
+.refresher-refreshing-text {
+    font-size: $refresher-text-font-size;
+    text-align: center;
+}
+
+// Refresher Content States
+// --------------------------------------------------
+.refresher-pulling yoo-ion-refresher-content {
+    .refresher-pulling {
+        display: block;
+    }
+}
+
+.refresher-ready yoo-ion-refresher-content {
+    .refresher-pulling {
+        display: block;
+    }
+    .refresher-pulling-icon {
+        transform: rotate(180deg);
+    }
+}
+
+.refresher-refreshing yoo-ion-refresher-content {
+    .refresher-refreshing {
+        display: block;
+    }
+}
+
+.refresher-cancelling yoo-ion-refresher-content {
+    .refresher-pulling {
+        display: block;
+    }
+    .refresher-pulling-icon {
+        transform: scale(0);
+    }
+}
+
+.refresher-completing yoo-ion-refresher-content {
+    .refresher-refreshing {
+        display: block;
+    }
+    .refresher-refreshing-icon {
+        transform: scale(0);
+    }
+}
+
+// Refresher Content
+// --------------------------------------------------
+.refresher-ios .refresher-pulling-icon,
+.refresher-ios .refresher-refreshing-icon {
+    color: $refresher-ios-icon-color;
+}
+
+.refresher-ios .refresher-pulling-text,
+.refresher-ios .refresher-refreshing-text {
+    color: $refresher-ios-text-color;
+}
+
+.refresher-ios .refresher-refreshing .spinner-lines-ios line,
+.refresher-ios .refresher-refreshing .spinner-lines-small-ios line,
+.refresher-ios .refresher-refreshing .spinner-crescent circle {
+    stroke: $refresher-ios-icon-color;
+}
+
+.refresher-ios .refresher-refreshing .spinner-bubbles circle,
+.refresher-ios .refresher-refreshing .spinner-circles circle,
+.refresher-ios .refresher-refreshing .spinner-dots circle {
+    fill: $refresher-ios-icon-color;
+}
+
+.refresher-pulling-icon {
+    yoo-icon {
+        font-size: cssvar(font-s);
+    }
+}
+
+.refresher-refreshing-icon {
+    img {
+        width: 25px;
+    }
+}

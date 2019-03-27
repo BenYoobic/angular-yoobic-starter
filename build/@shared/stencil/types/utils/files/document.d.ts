@@ -1,0 +1,13 @@
+export declare const videos: string[];
+export declare const audios: string[];
+export declare const images: string[];
+export declare const documents: string[];
+export declare function getExtension(file: File | any): any;
+export declare function isImage(file: File | any): boolean;
+export declare function isVideo(file: File | any): boolean;
+export declare function isAudio(file: File | any): boolean;
+export declare function isDocument(file: File | any): boolean;
+export declare function getType(file: File | any): "audio" | "video" | "image" | "unknown" | "document";
+export declare function downloadFile(url: string, fileName: string): void;
+export declare function downloadFileMobile(url: string, fileName: string): Promise<HTMLYooToastElement>;
+export declare function downloadFileWeb(url: string, fileName: string): void;

@@ -1,0 +1,70 @@
+:host {
+  --display-border: inherit; }
+
+:host .menu-item {
+  display: flex;
+  flex-direction: row; }
+  :host .menu-item .menu-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    :host .menu-item .menu-left .menu-icon {
+      height: 1.875rem;
+      width: 1.875rem; }
+      :host .menu-item .menu-left .menu-icon yoo-icon {
+        height: 1.1875rem;
+        width: 1.1875rem;
+        font-size: var(--font-l, 17px);
+        display: flex;
+        justify-content: center;
+        background-color: var(--light, #FFFFFF);
+        border: solid 0.03125rem #d0d0d0;
+        border-radius: 50%;
+        padding: 0.34375rem; }
+    :host .menu-item .menu-left .border {
+      width: 1px;
+      height: 100%;
+      background-color: #d0d0d0; }
+  :host .menu-item .menu-right {
+    margin-left: 0.625rem;
+    width: 100%;
+    overflow: hidden; }
+    :host .menu-item .menu-right .menu-title {
+      font-weight: 600;
+      line-height: 1.125rem;
+      margin-top: 0.375rem; }
+    :host .menu-item .menu-right .menu-content {
+      margin-top: 0.25rem;
+      margin-bottom: 1.25rem; }
+
+:host .menu-item .menu-right .menu-title {
+  margin-bottom: 0.625rem; }
+
+:host .menu-item .menu-right .menu-content span {
+  margin-right: 1.25rem; }
+
+:host .menu-item .menu-right .menu-content yoo-avatar {
+  margin-right: 0.3125rem; }
+
+:host .menu-item .menu-right .menu-content .badge {
+  display: flex;
+  flex-direction: column;
+  width: 60px;
+  font-size: var(--font-xs, 10px); }
+  :host .menu-item .menu-right .menu-content .badge yoo-img {
+    max-width: 60px;
+    min-height: 50px;
+    max-height: 60px;
+    margin: var(--padding-10, 0.625rem) 0; }
+  :host .menu-item .menu-right .menu-content .badge .badge-title {
+    text-align: center; }
+
+:host .menu-item .menu-left .border {
+  display: var(--display-border); }
+
+:host .menu-item .menu-left .menu-icon yoo-icon {
+  align-items: center;
+  border: solid 0.03125 var(--danger-light, #F46885);
+  background-color: var(--danger-light, #F46885);
+  color: var(--always-light, #FFFFFF);
+  font-size: var(--font-m, 15px); }

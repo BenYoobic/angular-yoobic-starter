@@ -1,0 +1,47 @@
+@mixin icon-color($gradient, $width, $iconName) {
+  :host {
+    .outer-container {
+      .#{$iconName} {
+        @include text-gradient($gradient, $width);
+        font-size: $width;
+        line-height: 11px;
+      }
+    }
+  }
+}
+
+:host {
+  .outer-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 10.3125rem;
+    height: 8rem;
+    padding: 0.625rem 0 0.625rem 1.25rem;
+    border-radius: 0.5rem;
+    background-color: cssvar(light);
+    box-shadow: cssvar(tile-shadow);
+    yoo-icon {
+      margin-bottom: cssvar(padding-15);
+      font-size: cssvar(font-xl);
+      &.yo-no-data {
+        height: 1rem;
+      }
+    }
+    .tile-text {
+      margin-top: 0.125rem;
+      color: cssvar(stable);
+      font-size: cssvar(font-m);
+      letter-spacing: 1px;
+      line-height: 1.0625rem;
+      text-transform: uppercase;
+    }
+    .tile-value {
+      font-size: cssvar(font-l);
+      font-weight: 300;
+      line-height: 1.8125rem;
+    }
+  }
+}
+@include icon-color(gradient-success, 50px, yo-chart-up);
+@include icon-color(gradient-danger, 50px, yo-chart-down);

@@ -1,0 +1,12 @@
+:host {
+  --height: 250px; }
+
+:host {
+  display: block; }
+  :host .container {
+    position: relative;
+    width: 100%;
+    height: var(--height); }
+
+.highcharts-credits {
+  display: none; }

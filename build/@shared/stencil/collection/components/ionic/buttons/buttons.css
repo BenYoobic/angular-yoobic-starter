@@ -1,0 +1,69 @@
+:host {
+  display: flex;
+  align-items: center;
+  transform: translateZ(0);
+  z-index: 99;
+  pointer-events: none; }
+
+::slotted(*) yoo-ion-button {
+  --margin-top: 0;
+  --margin-bottom: 0;
+  --margin-start: 0;
+  --margin-end: 0;
+  --padding-top: 0;
+  --padding-bottom: 0;
+  --padding-start: 0;
+  --padding-end: 0;
+  --box-shadow: none;
+  pointer-events: auto; }
+
+::slotted(*) yoo-ion-button {
+  --padding-top: 0;
+  --pading-bottom: 0;
+  --padding-start: var(--padding-10, 0.625rem);
+  --padding-end: var(--padding-10, 0.625rem);
+  --border-radius: 4px;
+  --height: 32px;
+  font-size: 17px;
+  font-weight: 400; }
+
+:host-context(.ion-color)::slotted(*) .button {
+  --ion-color-base: currentColor; }
+
+::slotted(*) yoo-ion-button.button-clear {
+  --height: 35px; }
+
+::slotted(*) yoo-ion-button.button-solid-ios:hover {
+  opacity: .4; }
+
+.button-menutoggle-ios {
+  --margin-top: 0;
+  --margin-bottom: 0;
+  --margin-start: 6px;
+  --margin-end: 6px;
+  --padding-top: 0;
+  --padding-bottom: 0;
+  --padding-start: 0;
+  --padding-end: 0;
+  order: 1;
+  min-width: 36px; }
+
+:host([slot="start"]) {
+  order: 2; }
+
+:host([slot="secondary"]) {
+  order: 3; }
+
+:host([slot="primary"]) {
+  order: 5;
+  text-align: end; }
+
+:host([slot="end"]) {
+  order: 6;
+  text-align: end; }
+
+:host(.iphone-x) {
+  padding-bottom: 2px; }
+
+:host(.pointer-events) {
+  pointer-events: unset; }

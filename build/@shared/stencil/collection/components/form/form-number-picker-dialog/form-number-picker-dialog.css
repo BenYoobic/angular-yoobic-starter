@@ -1,0 +1,51 @@
+:host .outer-container {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  height: 100%; }
+  :host .outer-container yoo-ion-toolbar {
+    max-height: 44px;
+    box-shadow: var(--toolbar-shadow, 0 1px 10px 0 rgba(0, 0, 0, 0.15)); }
+  :host .outer-container .content {
+    position: relative;
+    height: calc(100% - 44px);
+    background-color: var(--light, #FFFFFF); }
+    :host .outer-container .content yoo-ion-scroll {
+      top: auto;
+      height: 100%;
+      transition: 0.3s; }
+  :host .outer-container .item-selected {
+    color: var(--success, #04CC99); }
+
+:host .center {
+  padding-top: 0.5rem;
+  text-align: center; }
+
+:host .lastElement {
+  padding-bottom: 5rem; }
+
+:host .footer-background {
+  top: auto;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  z-index: 1; }
+  :host .footer-background.bottom {
+    height: 2.875rem;
+    border: var(--border);
+    border-radius: var(--border-radius, 1px);
+    background: var(--light, #FFFFFF); }
+  :host .footer-background.middle {
+    bottom: 2.875rem;
+    height: 1.4375rem;
+    background-image: var(--footer-background-middle, linear-gradient(to bottom, rgba(255, 255, 255, 0.7), white)); }
+    :host .footer-background.middle.web {
+      height: 2.875rem; }
+  :host .footer-background.top {
+    bottom: 4.3125rem;
+    height: 1.4375rem;
+    background-image: var(--footer-background-top, linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.7))); }
+    :host .footer-background.top.web {
+      bottom: 5.75rem;
+      height: 2.875rem; }

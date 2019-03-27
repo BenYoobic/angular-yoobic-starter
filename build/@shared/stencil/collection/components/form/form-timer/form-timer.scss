@@ -1,0 +1,14 @@
+:host {
+  .outer-container {
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+    padding: 0.5rem;
+    .column-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}

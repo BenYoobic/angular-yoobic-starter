@@ -1,0 +1,77 @@
+:host .container {
+  padding: 0.5rem; }
+  :host .container .title {
+    font-size: var(--font-l, 17px); }
+  :host .container .description html,
+  :host .container .description body,
+  :host .container .description div,
+  :host .container .description span,
+  :host .container .description applet,
+  :host .container .description object,
+  :host .container .description iframe,
+  :host .container .description h1,
+  :host .container .description h2,
+  :host .container .description h3,
+  :host .container .description h4,
+  :host .container .description h5,
+  :host .container .description h6,
+  :host .container .description p,
+  :host .container .description blockquote,
+  :host .container .description pre,
+  :host .container .description a,
+  :host .container .description abbr,
+  :host .container .description acronym,
+  :host .container .description address,
+  :host .container .description big,
+  :host .container .description cite,
+  :host .container .description code,
+  :host .container .description del,
+  :host .container .description dfn,
+  :host .container .description em,
+  :host .container .description font,
+  :host .container .description img,
+  :host .container .description ins,
+  :host .container .description kbd,
+  :host .container .description q,
+  :host .container .description s,
+  :host .container .description samp,
+  :host .container .description small,
+  :host .container .description strike,
+  :host .container .description strong,
+  :host .container .description sub,
+  :host .container .description sup,
+  :host .container .description tt,
+  :host .container .description var,
+  :host .container .description dl,
+  :host .container .description dt,
+  :host .container .description dd,
+  :host .container .description ol,
+  :host .container .description ul,
+  :host .container .description li,
+  :host .container .description fieldset,
+  :host .container .description form,
+  :host .container .description label,
+  :host .container .description legend,
+  :host .container .description table,
+  :host .container .description caption,
+  :host .container .description tbody,
+  :host .container .description tfoot,
+  :host .container .description thead,
+  :host .container .description tr,
+  :host .container .description th,
+  :host .container .description td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: 100%;
+    font-family: inherit;
+    vertical-align: baseline;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    -webkit-margin-start: 0;
+    -webkit-margin-end: 0; }
+  :host .container .date {
+    color: var(--text-color, #807f83); }

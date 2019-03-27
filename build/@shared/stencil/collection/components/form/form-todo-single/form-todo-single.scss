@@ -1,0 +1,71 @@
+:host {
+    .outer-container {
+        .todo-container {
+            margin-bottom: 1.5625rem;
+            .content {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                margin: 0.6875rem 0 0.5rem 0;
+                .content-left {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    yoo-icon {
+                        margin-top: 0.2rem;
+                        margin-right: cssvar(padding-10);
+                        font-size: cssvar(font-ll);
+                        &.stable-alt {
+                            color: cssvar(text-color);
+                        }
+                    }
+                    yoo-form-checkbox {
+                        margin-right: cssvar(padding-10);
+                    }
+                    .break-line {
+                        text-decoration: line-through;
+                    }
+                }
+                .content-right {
+                    display: flex;
+                    align-items: center;
+                    .date {
+                        color: cssvar(text-color);
+                        font-size: 13px;
+                        font-weight: 300;
+                    }
+                }
+            }
+            .comments {
+                margin-bottom: cssvar(padding-15);
+                color: cssvar(text-color);
+                font-size: 14px;
+                font-weight: 300;
+            }
+            .photo-container {
+                margin-bottom: 0.875rem;
+            }
+            .comment-container {
+                margin-top: 0.875rem;
+                .yo-comment {
+                    font-size: 1.25rem;
+                }
+            }
+            .textarea-container {
+                margin-top: cssvar(padding-10);
+            }
+            .border {
+                @include border-profile();
+                margin-bottom: cssvar(padding-10);
+            }
+
+            .menu {
+                @include reset-list();
+                @include mission-style();
+                margin: 0.5rem;
+                padding: 0;
+                list-style: none;
+            }
+        }
+    }
+}

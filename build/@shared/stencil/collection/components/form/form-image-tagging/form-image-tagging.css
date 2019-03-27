@@ -1,0 +1,50 @@
+:host .outer-container .top-container .image {
+  border-radius: 0.5rem; }
+
+:host .outer-container .top-container .annotation {
+  position: absolute;
+  width: var(--padding-20, 1.25rem);
+  height: var(--padding-20, 1.25rem);
+  border-radius: 50%;
+  background-color: var(--light, #FFFFFF);
+  box-shadow: 0 0.25rem 0.625rem 0 rgba(0, 0, 0, 0.5); }
+  :host .outer-container .top-container .annotation.drop-target {
+    background-color: var(--energized, #fed05b); }
+
+:host .outer-container .top-container .drop-zone {
+  position: absolute;
+  width: 3.75rem;
+  height: 3.75rem;
+  border-radius: 50%; }
+
+:host .outer-container .top-container yoo-badge {
+  --font-size-inner-container: var(--font-m, 15px);
+  --inner-container-default-padding: 0.375rem 0.625rem;
+  position: absolute;
+  margin: 0 0.3125rem 0.3125rem 0.3125rem;
+  cursor: pointer;
+  touch-action: none;
+  z-index: 1; }
+  :host .outer-container .top-container yoo-badge.transparent {
+    --color-inner-text: var(--stable-alt, #d0d0d0); }
+
+:host .outer-container .bottom-container .instructions {
+  margin: 1.875rem auto 0.625rem;
+  color: var(--stable, #adadad);
+  font-size: var(--font-m, 15px);
+  letter-spacing: normal; }
+
+:host .outer-container .bottom-container .suggestions {
+  background: var(--light, #FFFFFF);
+  font-size: var(--font-l, 17px); }
+  :host .outer-container .bottom-container .suggestions yoo-badge {
+    --font-size-inner-container: var(--font-m, 15px);
+    --inner-container-default-padding: 0.375rem 0.625rem;
+    margin: 0 0.3125rem 0.3125rem 0.3125rem;
+    cursor: pointer;
+    touch-action: none; }
+    :host .outer-container .bottom-container .suggestions yoo-badge.transparent {
+      --color-inner-text: var(--stable-alt, #d0d0d0); }
+  :host .outer-container .bottom-container .suggestions.drop-target {
+    padding: 0.25rem;
+    border: 0.0625rem dashed var(--stable-alt-to-dark, #d0d0d0); }

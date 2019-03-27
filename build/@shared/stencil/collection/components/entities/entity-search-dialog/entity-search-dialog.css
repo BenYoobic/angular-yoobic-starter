@@ -1,0 +1,12 @@
+:host .spacer {
+  height: 5.75rem; }
+
+:host .footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-top: 1.25rem;
+  padding-bottom: 1.4rem;
+  background-color: var(--light, #FFFFFF);
+  width: 100%;
+  bottom: 0; }

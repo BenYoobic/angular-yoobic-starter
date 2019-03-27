@@ -1,0 +1,62 @@
+:host {
+  height: 100%; }
+  :host .legend-toggle-container {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 0 var(--padding-15, 0.9375rem) var(--padding-15, 0.9375rem) 0;
+    font-size: 1.875rem;
+    z-index: 2; }
+  :host .map-legend-container {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    width: auto;
+    height: calc(100% - 1.875rem);
+    margin: var(--padding-15, 0.9375rem);
+    border-radius: 0.5rem;
+    background: var(--light, #FFFFFF);
+    box-shadow: 0 5px 15px 0 rgba(10, 47, 54, 0.08);
+    z-index: 2; }
+    :host .map-legend-container .legend-header-container {
+      display: flex;
+      padding: var(--padding-20, 1.25rem) var(--padding-20, 1.25rem);
+      font-size: var(--font-m, 15px);
+      font-weight: bold; }
+      :host .map-legend-container .legend-header-container .legend-header {
+        flex: 1; }
+      :host .map-legend-container .legend-header-container .close {
+        font-size: var(--icon-m, 20px); }
+    :host .map-legend-container .filter-group {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      height: 100%; }
+      :host .map-legend-container .filter-group .filter {
+        display: flex;
+        margin: 0 var(--padding-20, 1.25rem) 0 var(--padding-20, 1.25rem); }
+        :host .map-legend-container .filter-group .filter .filter-count {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 1.25rem;
+          height: 1.25rem;
+          margin-right: var(--padding-10, 0.625rem);
+          border-radius: 50%;
+          color: var(--light, #FFFFFF);
+          font-size: var(--font-xs, 10px); }
+        :host .map-legend-container .filter-group .filter .filter-title {
+          flex: 1; }
+
+:host(.open) {
+  width: 100%; }
+
+:host(.web.open) {
+  width: 200px;
+  height: 170px; }
+
+:host(.web) .legend-toggle-container {
+  bottom: var(--padding-10, 0.625rem);
+  width: 1.5rem;
+  height: 1.5rem;
+  font-size: 1.5rem; }

@@ -1,0 +1,73 @@
+:host {
+  --width-dropdown-content: 9.375rem; }
+
+:host {
+  display: block; }
+
+:host([hidden]) {
+  display: none; }
+
+:host .dropdown-toggle ::slotted(*) {
+  cursor: pointer; }
+
+:host .dropdown-content {
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  position: absolute;
+  width: var(--width-dropdown-content);
+  max-width: var(--width-dropdown-content);
+  transform: translateY(-2em);
+  transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
+  border-radius: 4px;
+  background: var(--light, #FFFFFF);
+  font-size: var(--font-s, 13px);
+  box-shadow: 0 5px 13px 0 rgba(40, 47, 54, 0.08);
+  /* hides sub-menu */
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1; }
+  :host .dropdown-content .content {
+    padding: var(--padding-5, 0.3125rem) var(--padding-10, 0.625rem); }
+    :host .dropdown-content .content:first-child {
+      padding-top: var(--padding-10, 0.625rem); }
+    :host .dropdown-content .content:last-child {
+      padding-bottom: var(--padding-10, 0.625rem); }
+    :host .dropdown-content .content:hover {
+      background: var(--success-light, rgba(46, 219, 183, 0.1)); }
+    :host .dropdown-content .content .content-detail yoo-icon {
+      padding-right: var(--padding-5, 0.3125rem); }
+
+:host .dropdown-content.show {
+  transform: translateY(0%);
+  transition-delay: 0s, 0s, 0.3s;
+  /* shows sub-menu */
+  opacity: 1;
+  visibility: visible;
+  z-index: 10000;
+  /* this removes the transition delay so the menu will be visible while the other styles transition */ }
+
+:host(.flex-column) .dropdown-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; }
+
+:host(.tab-vertical) .dropdown-content {
+  transform: translateY(-100%) translateX(5.5rem); }
+
+:host(.tab-vertical) .tab-title-other .yo-right {
+  padding-left: 0.2rem; }
+
+:host(.tab-vertical) .tab-title-other:hover {
+  border-bottom-width: 0rem; }
+
+:host(.tab) {
+  display: inline-block; }
+  :host(.tab) .tab-title-other {
+    display: flex;
+    align-items: center; }
+    :host(.tab) .tab-title-other .yo-arrow-dropdown {
+      padding-left: 0.2rem; }
+    :host(.tab) .tab-title-other:hover {
+      color: var(--success, #04CC99); }

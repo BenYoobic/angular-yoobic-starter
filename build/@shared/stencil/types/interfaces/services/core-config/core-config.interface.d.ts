@@ -1,0 +1,37 @@
+export interface ICoreConfig {
+    isWeb(): boolean;
+    isIonic(): boolean;
+    isCordova(): boolean;
+    isElectron(): boolean;
+    isFirefox(): boolean;
+    isIE(): boolean;
+    isIE11(): boolean;
+    isUniversal(): boolean;
+    getPlatform(): string;
+    getPlatformClean(): string;
+    isIOS(): boolean;
+    isIOS9(): boolean;
+    isIphoneX(): boolean;
+    isIphone5(): boolean;
+    isIphoneSE(): boolean;
+    isAndroid(): boolean;
+    isWKWebView(): boolean;
+    isTablet(): boolean;
+    isSamsung(): boolean;
+    isZebraScanner(): boolean;
+    isSurface(): boolean;
+    reload(): void;
+    isFullScreenEnabled(): boolean;
+    isFullScreen(): boolean;
+    requestFullScreen(): void;
+    exitFullScreen(): void;
+    getProtocol(): string;
+    getAppId(): string;
+    getAppVersion(): string;
+    getKey(name: string): string;
+    getWebUrl(): string;
+    getCssPublicUrl(): string;
+    getAppName(): string;
+    getFullAppName(): string;
+    getMode(): string;
+}

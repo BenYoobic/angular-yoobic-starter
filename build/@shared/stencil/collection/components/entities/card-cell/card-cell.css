@@ -1,0 +1,290 @@
+:host {
+  --display-after-image: none;
+  --position-image-container: unset;
+  --opacity-image: 1; }
+
+:host {
+  cursor: pointer; }
+  :host .outer-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--padding-10, 0.625rem) 0.5rem;
+    border: 0; }
+    :host .outer-container .image-container {
+      position: var(--position-image-container);
+      align-self: center;
+      width: 7rem;
+      max-width: 80px;
+      height: 7rem;
+      max-height: 80px;
+      text-align: center;
+      box-shadow: var(--card-shadow, 0 2px 4px 0 rgba(40, 47, 54, 0.08)); }
+      :host .outer-container .image-container .image {
+        display: inline-block;
+        width: 100%;
+        max-width: 80px;
+        height: 100%;
+        max-height: 80px;
+        border-radius: 4px;
+        opacity: var(--opacity-image); }
+      :host .outer-container .image-container.badge {
+        width: 60px;
+        height: 60px;
+        box-shadow: none; }
+        :host .outer-container .image-container.badge .image {
+          border-radius: none;
+          box-shadow: none; }
+      :host .outer-container .image-container .image-overlay {
+        top: 15%;
+        right: 15%;
+        bottom: auto;
+        left: auto;
+        position: absolute;
+        display: var(--display-after-image);
+        transform: translate(50%, -50%);
+        color: var(--success, #04CC99);
+        font-family: "yoobicons";
+        font-size: var(--checkbox-size, 20px);
+        font-weight: 600;
+        clip-path: circle(12px at center); }
+      :host .outer-container .image-container .icon-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        border: solid 0.5px var(--stable-light, #f1f1f1);
+        border-radius: 50%;
+        font-size: var(--font-xl, 36px); }
+    :host .outer-container .text-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-top: 0.5625rem;
+      color: var(--black, #000000);
+      font-size: var(--font-s, 13px); }
+      :host .outer-container .text-container .text,
+      :host .outer-container .text-container .subheading,
+      :host .outer-container .text-container .text-truncate,
+      :host .outer-container .text-container .date-label {
+        text-align: center; }
+      :host .outer-container .text-container .text.badge {
+        font-size: var(--font-xs, 10px); }
+      :host .outer-container .text-container .text-truncate,
+      :host .outer-container .text-container .subheading {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 5rem; }
+      :host .outer-container .text-container .subheading {
+        color: var(--stable, #adadad); }
+      :host .outer-container .text-container .date-label {
+        color: var(--danger-light, #F46885); }
+    :host .outer-container .action-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: var(--padding-5, 0.3125rem);
+      color: var(--control-icon-color, #adadad);
+      font-size: var(--font-xs, 10px); }
+      :host .outer-container .action-container .icon-action {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 0.875rem;
+        height: 0.875rem;
+        border: solid 0.5px var(--stable-light, #f1f1f1);
+        border-radius: 50%; }
+    :host .outer-container .icon-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--light, #FFFFFF);
+      font-size: 2rem; }
+      :host .outer-container .icon-overlay.top-right {
+        top: var(--padding-5, 0.3125rem);
+        right: var(--padding-5, 0.3125rem);
+        align-items: flex-start;
+        justify-content: flex-end;
+        font-size: 0.5rem; }
+      :host .outer-container .icon-overlay.bottom-left, :host .outer-container .icon-overlay.bottom-right {
+        bottom: var(--padding-5, 0.3125rem);
+        align-items: flex-end;
+        font-size: 0.5rem; }
+      :host .outer-container .icon-overlay.bottom-left {
+        left: var(--padding-5, 0.3125rem);
+        justify-content: flex-start; }
+      :host .outer-container .icon-overlay.bottom-right {
+        right: var(--padding-5, 0.3125rem);
+        justify-content: flex-end; }
+      :host .outer-container .icon-overlay .icon-overlay-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 1.0625rem;
+        height: 1.0625rem;
+        border-radius: 50%;
+        background-color: var(--backdrop, rgba(4, 4, 15, 0.4)); }
+    :host .outer-container .validated {
+      top: 5px;
+      right: auto;
+      bottom: auto;
+      left: 5px;
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border: 3px solid var(--light, #FFFFFF);
+      border-radius: 50%;
+      background-color: var(--success, #04CC99);
+      box-sizing: border-box; }
+      :host .outer-container .validated.danger {
+        background-color: var(--danger, #ff625f); }
+
+@media only screen and (max-width: 370px) {
+  :host(.files) .outer-container .image-container {
+    position: var(--position-image-container);
+    align-self: center;
+    width: 5rem !important;
+    height: 5rem !important; } }
+
+:host(.files) .outer-container {
+  margin-bottom: 1rem;
+  padding: 0 .5rem 0 .5rem;
+  border-radius: 4px;
+  overflow: hidden; }
+  :host(.files) .outer-container .text-container {
+    color: var(--black, #000000); }
+
+:host(.filesFolders) .outer-container .image-container .image {
+  background-size: contain !important;
+  background-position-y: 50%; }
+
+:host(.apps) {
+  display: block;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  box-shadow: var(--tile-shadow, 0 5px 15px 3px rgba(40, 47, 54, 0.08)); }
+  :host(.apps) .outer-container .image-container .image {
+    width: 50%;
+    height: 50%;
+    margin: auto;
+    margin-top: 2rem; }
+
+:host(.photos) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  border-radius: 0.5rem;
+  cursor: pointer; }
+  :host(.photos) .outer-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0; }
+    :host(.photos) .outer-container .image-container {
+      position: var(--position-image-container);
+      align-self: center;
+      width: 100%;
+      max-width: 120px;
+      height: 100%;
+      max-height: 120px; }
+      :host(.photos) .outer-container .image-container .image {
+        width: 100%;
+        max-width: 120px;
+        height: 100%;
+        max-height: 120px;
+        border-radius: 0.5rem;
+        background: var(--stable-light, #f1f1f1);
+        opacity: var(--opacity-image); }
+      :host(.photos) .outer-container .image-container .image-overlay {
+        top: 15%;
+        right: 15%;
+        bottom: auto;
+        left: auto;
+        position: absolute;
+        display: var(--display-after-image);
+        transform: translate(50%, -50%);
+        color: var(--success, #04CC99);
+        font-family: "yoobicons";
+        font-size: var(--font-l, 17px);
+        font-weight: 600;
+        clip-path: circle(12px at center); }
+      :host(.photos) .outer-container .image-container .icon-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        border: solid 0.5px var(--stable-light, #f1f1f1);
+        border-radius: 0.5rem;
+        font-size: var(--font-xl, 36px); }
+    :host(.photos) .outer-container .text-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 0.5625rem;
+      font-size: var(--font-xs, 10px); }
+      :host(.photos) .outer-container .text-container .text {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 5rem;
+        text-align: center; }
+    :host(.photos) .outer-container .action-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: var(--padding-10, 0.625rem);
+      color: var(--stable, #adadad);
+      font-size: var(--font-xs, 10px); }
+      :host(.photos) .outer-container .action-container .icon-action {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 0.875rem;
+        height: 0.875rem;
+        border: solid 0.5px var(--stable-light, #f1f1f1);
+        border-radius: 50%; }
+
+:host(.photos.web) .outer-container {
+  position: unset; }
+
+:host(.photos.web) .icon-overlay .icon-overlay-container {
+  width: var(--padding-20, 1.25rem);
+  height: var(--padding-20, 1.25rem); }
+
+:host(.courses) .outer-container,
+:host(.plans) .outer-container {
+  width: 6.125rem; }
+  :host(.courses) .outer-container .image-container,
+  :host(.plans) .outer-container .image-container {
+    max-width: unset;
+    height: 10.125rem;
+    max-height: unset;
+    border-radius: 4px;
+    object-fit: contain; }
+    :host(.courses) .outer-container .image-container yoo-img,
+    :host(.plans) .outer-container .image-container yoo-img {
+      max-width: unset !important;
+      max-height: unset !important; }
+      :host(.courses) .outer-container .image-container yoo-img yoo-icon,
+      :host(.plans) .outer-container .image-container yoo-img yoo-icon {
+        position: absolute;
+        right: var(--padding-10, 0.625rem);
+        bottom: var(--padding-10, 0.625rem);
+        padding: 0.5rem;
+        border: none;
+        border-radius: 50%;
+        background: var(--stable, #adadad);
+        color: var(--light, #FFFFFF);
+        font-size: var(--font-l, 17px); }
+
+:host(.badges) .outer-container {
+  width: 80px; }

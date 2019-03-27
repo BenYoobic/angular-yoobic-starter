@@ -1,0 +1,48 @@
+:host .outer-container,
+:host .readonly {
+  touch-action: none; }
+  :host .outer-container .title,
+  :host .readonly .title {
+    color: var(--black, #000000);
+    font-size: var(--font-lx, 27px);
+    font-weight: bold; }
+  :host .outer-container .placeholder,
+  :host .readonly .placeholder {
+    color: var(--stable, #adadad);
+    font-size: var(--font-l, 17px); }
+  :host .outer-container .words-container,
+  :host .readonly .words-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-top: var(--padding-40, 2.5rem); }
+    :host .outer-container .words-container .left-container,
+    :host .outer-container .words-container .right-container,
+    :host .readonly .words-container .left-container,
+    :host .readonly .words-container .right-container {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      text-align: center; }
+      :host .outer-container .words-container .left-container yoo-badge,
+      :host .outer-container .words-container .right-container yoo-badge,
+      :host .readonly .words-container .left-container yoo-badge,
+      :host .readonly .words-container .right-container yoo-badge {
+        --color-inner-text: var(--black, #000000);
+        --font-size-inner-container: var(--font-m, 15px);
+        --inner-container-default-padding: 0.375rem 0.625rem;
+        margin: 0 0.3125rem 0.3125rem 0.3125rem;
+        touch-action: none; }
+        :host .outer-container .words-container .left-container yoo-badge.drag-target,
+        :host .outer-container .words-container .right-container yoo-badge.drag-target,
+        :host .readonly .words-container .left-container yoo-badge.drag-target,
+        :host .readonly .words-container .right-container yoo-badge.drag-target {
+          --shadow: var(--button-shadow, 0 2px 6px rgba(0, 0, 0, 0.1));
+          --background: var(--light, #FFFFFF);
+          position: relative;
+          z-index: 50; }
+        :host .outer-container .words-container .left-container yoo-badge.drop-target,
+        :host .outer-container .words-container .right-container yoo-badge.drop-target,
+        :host .readonly .words-container .left-container yoo-badge.drop-target,
+        :host .readonly .words-container .right-container yoo-badge.drop-target {
+          --background: var(--stable-30, #E6E6E6); }

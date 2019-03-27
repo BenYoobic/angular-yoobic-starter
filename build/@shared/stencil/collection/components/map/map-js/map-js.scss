@@ -1,0 +1,143 @@
+@mixin cluster-color($class, $color) {
+    .#{$class}-cluster {
+
+        padding: 0.3125rem 0.125rem;
+        border-radius: cssvar(padding-25);
+        border-color: cssvar($color);
+        background-color: cssvar($color);
+
+        color: cssvar(light);
+        text-align: center;
+        opacity: 0.7;
+    }
+}
+@mixin marker-color($class) {
+    &.#{$class} {
+        &.marker {
+            background-color: transparent;
+            background-image: url("/assets/markers/marker_#{$class}.svg");
+            background-size: cover;
+        }
+    }
+}
+@mixin directions-layout {
+    position: absolute;
+    width: 33.3333%;
+    min-width: 200px;
+    max-width: 300px;
+}
+
+:host {
+    @import "../../../../../../shared/styles/map/_mapbox-js.scss";
+    @import "../../../../../../shared/styles/map/_mapbox-js-directions.scss";
+
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    .column-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+            yoo-map-legend {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+            }
+        #inputs {
+            @include directions-layout();
+            bottom: 10px;
+            left: 10px;
+            z-index: 99;
+        }
+        .directions-container {
+            @include directions-layout();
+            top: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, .8);
+            overflow: auto;
+            z-index: 99;
+        }
+        .map-container {
+            display: flex;
+            position: absolute;
+            flex-direction: row;
+            width: 100%;
+            height: 100%;
+            border: cssvar(border-width) solid cssvar(stable-30);
+            background: cssvar(dark);
+            z-index: 1;
+        }
+        .marker-info {
+            padding-bottom: cssvar(padding-10);
+            border-top: cssvar(border-width) solid cssvar(border-color);
+            background: cssvar(light);
+            text-align: center;
+            .title {
+                margin-top: cssvar(padding-10);
+                font-weight: 500;
+            }
+        }
+        .leaflet-control-container {
+            .leaflet-bottom {
+                &.leaflet-left {
+                    display: none;
+                }
+                &.leaflet-right {
+                    display: none;
+                }
+            }
+            .leaflet-top {
+                &.leaflet-left {
+                    display: none;
+                }
+            }
+        }
+        .leaflet-marker-icon {
+            @include cluster-color(booked,
+            warning);
+            @include cluster-color(tobevalidated,
+            info);
+            @include cluster-color(rejected,
+            danger);
+            @include cluster-color(validated,
+            success);
+            @include cluster-color(archived,
+            dark);
+            @include cluster-color(dark,
+            dark);
+            @include cluster-color(available,
+            accent);
+            @include marker-color(danger);
+            @include marker-color(energized);
+            @include marker-color(gradient_success);
+            @include marker-color(plain);
+            @include marker-color(info);
+            @include marker-color(success);
+            @include marker-color(warning);
+            width: 1.875rem !important;
+            height: 1.875rem !important;
+            &.marker {
+                width: 2.3rem !important;
+                height: 2.8rem !important;
+            }
+            &.dark {
+                &.marker {
+                    background-color: cssvar(dark);
+                    background-color: transparent;
+                    background-size: cover;
+                }
+            }
+        }
+        img.leaflet-marker-draggable {
+            width: 1.875rem !important;
+            height: 4.375rem !important;
+        }
+        .mapbox-marker-drag-icon {
+            width: 0.75rem !important;
+            height: 0.75rem !important;
+        }
+    }
+}

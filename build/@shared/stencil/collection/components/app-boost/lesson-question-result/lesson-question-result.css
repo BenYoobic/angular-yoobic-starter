@@ -1,0 +1,104 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--light, #FFFFFF); }
+  :host yoo-ion-toolbar {
+    --background: transparent; }
+  :host yoo-ion-scroll {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    :host yoo-ion-scroll .wall {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+      min-height: 14.8125rem;
+      margin-bottom: 10rem;
+      mix-blend-mode: multiply;
+      background-image: linear-gradient(53deg, var(--light-to-dark-two, #FFFFFF), var(--light_grey-to-dark-two, #eaedf0)); }
+      :host yoo-ion-scroll .wall.with-header {
+        margin-top: -44px; }
+      :host yoo-ion-scroll .wall yoo-img {
+        position: absolute;
+        top: 3.75rem;
+        align-self: center;
+        min-width: 10rem;
+        min-height: 14rem; }
+    :host yoo-ion-scroll .result-title {
+      margin: 0.5rem 0 0.9375rem 0;
+      font-size: var(--font-xl, 36px);
+      font-weight: 600;
+      line-height: var(--font-xl, 36px);
+      text-align: center; }
+    :host yoo-ion-scroll .result-text {
+      margin: 0 3.75rem;
+      color: var(--text-color, #807f83);
+      line-height: 1.5625rem;
+      text-align: center; }
+      :host yoo-ion-scroll .result-text.explanation {
+        margin-top: 0.9375rem; }
+    :host yoo-ion-scroll .result-badge {
+      margin-top: 1.875rem; }
+      :host yoo-ion-scroll .result-badge span {
+        color: var(--black, #000000);
+        font-size: var(--font-m, 15px); }
+      :host yoo-ion-scroll .result-badge .badge {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        font-size: var(--font-xs, 10px); }
+        :host yoo-ion-scroll .result-badge .badge yoo-img {
+          min-height: 50px;
+          max-height: 60px;
+          margin: var(--padding-10, 0.625rem) 0; }
+        :host yoo-ion-scroll .result-badge .badge .badge-title {
+          text-align: center; }
+    :host yoo-ion-scroll .document-title {
+      margin-top: 1.875rem;
+      font-size: var(--font-m, 15px);
+      text-align: center; }
+    :host yoo-ion-scroll yoo-form-document {
+      --outer-container-padding: 0.9375rem 0.9375rem;
+      width: calc(100% - 0.9375rem); }
+    :host yoo-ion-scroll .scroll-spacer {
+      min-height: 5.75rem; }
+
+:host(.validated) .wall {
+  margin-bottom: 9rem; }
+  :host(.validated) .wall yoo-img {
+    min-width: 11rem;
+    min-height: 16rem; }
+
+:host(.validated) .result-title {
+  color: var(--energized, #fed05b); }
+
+:host(.question.validated) .wall yoo-img {
+  top: 4.5rem;
+  min-width: 12rem;
+  min-height: 18rem; }
+
+:host(.failed) .wall yoo-img {
+  min-width: 21.25rem; }
+
+:host(.failed) .result-title {
+  color: var(--danger-light, #F46885); }
+
+:host(.question.failed) .wall {
+  margin-bottom: 11.7rem; }
+  :host(.question.failed) .wall yoo-img {
+    top: 8rem; }
+
+:host(.lesson.failed) .wall yoo-img {
+  top: 6.5rem; }
+
+:host(.timedout) .result-title {
+  color: var(--danger-light, #F46885); }
+
+:host(.absolute) {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; }

@@ -1,0 +1,694 @@
+:host {
+  --display-invalid-message: block;
+  --input-text-color: cssvar(text-color);
+  --input-icon-color: cssvar(input-icon-color); }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+:host {
+  display: block; }
+  :host .input-container {
+    display: flex;
+    border: 1px solid var(--input-container-border-color, #E6E6E6);
+    border-radius: var(--border-radius-input, 5px); }
+    :host .input-container.noborder {
+      border: none !important; }
+    :host .input-container.valid {
+      border: 1px solid var(--success, #04CC99); }
+    :host .input-container.invalid {
+      border: 1px solid var(--danger, #ff625f); }
+      :host .input-container.invalid .valid-icon {
+        color: var(--danger, #ff625f); }
+    :host .input-container.focused {
+      border: 1px solid var(--dark, #2b3648); }
+      :host .input-container.focused .valid-icon {
+        display: none; }
+    :host .input-container .icon-prefix,
+    :host .input-container .icon-suffix {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 0.5rem 1rem;
+      color: var(--stable, #adadad);
+      font-size: var(--icon-m, 20px); }
+      :host .input-container .icon-prefix .yo-down,
+      :host .input-container .icon-prefix .yo-up,
+      :host .input-container .icon-suffix .yo-down,
+      :host .input-container .icon-suffix .yo-up {
+        margin: 0 0 0 -0.8rem;
+        font-size: var(--font-xs, 10px); }
+      :host .input-container .icon-prefix .yo-cross,
+      :host .input-container .icon-suffix .yo-cross {
+        margin: 0 0 0 -0.8rem; }
+    :host .input-container .icon-prefix {
+      border-right: 1px solid var(--input-container-border-color, #E6E6E6);
+      color: csscolor(stable); }
+    :host .input-container .icon-suffix {
+      border-left: 1px solid var(--input-container-border-color, #E6E6E6); }
+    :host .input-container .valid-icon,
+    :host .input-container .icon-suffix-focus {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 0.5rem 1rem;
+      color: var(--stable, #adadad);
+      font-size: var(--icon-m, 20px);
+      display: none;
+      padding-right: var(--padding-10, 0.625rem); }
+      :host .input-container .valid-icon .yo-down,
+      :host .input-container .valid-icon .yo-up,
+      :host .input-container .icon-suffix-focus .yo-down,
+      :host .input-container .icon-suffix-focus .yo-up {
+        margin: 0 0 0 -0.8rem;
+        font-size: var(--font-xs, 10px); }
+      :host .input-container .valid-icon .yo-cross,
+      :host .input-container .icon-suffix-focus .yo-cross {
+        margin: 0 0 0 -0.8rem; }
+    :host .input-container .valid-icon {
+      display: flex;
+      flex-direction: row;
+      color: var(--success, #04CC99); }
+      :host .input-container .valid-icon.valid {
+        color: var(--success, #04CC99); }
+      :host .input-container .valid-icon.invalid {
+        color: var(--danger, #ff625f); }
+    :host .input-container .icon-close {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 0.5rem 1rem;
+      color: var(--stable, #adadad);
+      font-size: var(--icon-m, 20px); }
+      :host .input-container .icon-close .yo-down,
+      :host .input-container .icon-close .yo-up {
+        margin: 0 0 0 -0.8rem;
+        font-size: var(--font-xs, 10px); }
+      :host .input-container .icon-close .yo-cross {
+        margin: 0 0 0 -0.8rem; }
+    :host .input-container .icon-suffix-focus {
+      display: flex;
+      flex-direction: row; }
+    :host .input-container .warning-icon {
+      width: 0.375rem;
+      height: 0.375rem;
+      margin-top: 1.0625rem;
+      margin-right: 1.25rem;
+      border: none;
+      border-radius: 50%;
+      background-color: var(--warning, #ff6402); }
+    :host .input-container input {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      display: block;
+      position: relative;
+      flex: 1;
+      width: 100%;
+      min-width: 0;
+      padding: 0.5rem;
+      border: none;
+      border-radius: var(--border-radius-input, 5px);
+      caret-color: var(--success, #04CC99);
+      background: transparent;
+      background: var(--light, #FFFFFF);
+      color: var(--black, #000000);
+      font-family: "Lato" !important;
+      font-size: var(--font-m, 15px);
+      font-weight: 400;
+      line-height: 1.5;
+      text-align: left;
+      box-shadow: var(--light, #FFFFFF) 0px 0px 0px 1000px inset !important;
+      -webkit-appearance: none; }
+      :host .input-container input::placeholder {
+        color: var(--dark-40, #9cabc4);
+        font-family: "Lato" !important !important;
+        font-weight: 300; }
+      :host .input-container input::-webkit-input-placeholder {
+        color: var(--dark-40, #9cabc4);
+        font-family: "Lato" !important !important;
+        font-weight: 300; }
+      :host .input-container input:-moz-placeholder {
+        color: var(--dark-40, #9cabc4);
+        font-family: "Lato" !important !important;
+        font-weight: 300; }
+      :host .input-container input::-moz-placeholder {
+        color: var(--dark-40, #9cabc4);
+        font-family: "Lato" !important !important;
+        font-weight: 300; }
+      :host .input-container input:-ms-input-placeholder {
+        color: var(--dark-40, #9cabc4);
+        font-family: "Lato" !important !important;
+        font-weight: 300; }
+      :host .input-container input:focus {
+        outline: none; }
+    :host .input-container .readonly {
+      padding: 0.5rem;
+      padding-left: 0;
+      padding-bottom: 0;
+      display: block;
+      position: relative;
+      flex: 1;
+      width: 100%;
+      border: none;
+      border-radius: var(--border-radius-input, 5px);
+      color: var(--black, #000000);
+      font-weight: 400;
+      line-height: 1.5;
+      text-align: left; }
+  :host .placeholderlabel {
+    margin-top: 0.5rem; }
+    :host .placeholderlabel.active {
+      margin-top: 0rem; }
+  :host .label {
+    margin-bottom: 0.25rem;
+    padding-left: 0.5rem;
+    transform: translateY(1.875rem);
+    transition: transform 0.2s ease-in;
+    color: var(--input-text-color);
+    font-size: var(--font-m, 15px);
+    letter-spacing: 2px;
+    line-height: 1.5;
+    text-align: left; }
+    :host .label.active {
+      margin-top: 0.25rem;
+      transform: translateY(0rem); }
+    :host .label .label-required {
+      margin-left: 0.25rem;
+      color: var(--danger, #ff625f); }
+  :host .invalid-message {
+    display: none;
+    min-height: 15px;
+    color: var(--danger, #ff625f);
+    font-size: var(--font-xs, 10px);
+    text-align: right; }
+    :host .invalid-message.invalid {
+      display: var(--display-invalid-message);
+      color: var(--danger, #ff625f); }
+
+:host(.noborder) .input-container {
+  border: none !important; }
+
+:host(.translucent) .input-container {
+  border: none !important; }
+  :host(.translucent) .input-container .icon-prefix,
+  :host(.translucent) .input-container .icon-suffix,
+  :host(.translucent) .input-container .valid-icon,
+  :host(.translucent) .input-container .icon-suffix-focus {
+    background-color: rgba(255, 255, 255, 0.3); }
+    :host(.translucent) .input-container .icon-prefix.icon-close,
+    :host(.translucent) .input-container .icon-suffix.icon-close,
+    :host(.translucent) .input-container .valid-icon.icon-close,
+    :host(.translucent) .input-container .icon-suffix-focus.icon-close {
+      color: var(--always-light, #FFFFFF); }
+    :host(.translucent) .input-container .icon-prefix yoo-icon.yo-eye.stable-alt,
+    :host(.translucent) .input-container .icon-suffix yoo-icon.yo-eye.stable-alt,
+    :host(.translucent) .input-container .valid-icon yoo-icon.yo-eye.stable-alt,
+    :host(.translucent) .input-container .icon-suffix-focus yoo-icon.yo-eye.stable-alt {
+      color: var(--always-light, #FFFFFF); }
+    :host(.translucent) .input-container .icon-prefix yoo-icon.yo-eye.black,
+    :host(.translucent) .input-container .icon-suffix yoo-icon.yo-eye.black,
+    :host(.translucent) .input-container .valid-icon yoo-icon.yo-eye.black,
+    :host(.translucent) .input-container .icon-suffix-focus yoo-icon.yo-eye.black {
+      color: var(--stable-alt, #d0d0d0); }
+  :host(.translucent) .input-container .icon-prefix {
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-top-left-radius: var(--border-radius-input, 5px);
+    border-bottom-left-radius: var(--border-radius-input, 5px);
+    color: var(--always-light, #FFFFFF); }
+  :host(.translucent) .input-container input {
+    margin: 0;
+    border-radius: 0;
+    background-color: rgba(255, 255, 255, 0.3);
+    color: var(--always-light, #FFFFFF);
+    box-shadow: none !important; }
+  :host(.translucent) .input-container input.last,
+  :host(.translucent) .input-container .icon-suffix.last,
+  :host(.translucent) .input-container .icon-suffix-focus.last,
+  :host(.translucent) .input-container .icon-close {
+    border-top-right-radius: var(--border-radius-input, 5px);
+    border-bottom-right-radius: var(--border-radius-input, 5px); }
+
+:host(.small) .input-container input {
+  padding: 0.1875rem 1rem; }
+
+:host(.small) .input-container .icon-prefix,
+:host(.small) .input-container .icon-suffix {
+  padding: 0.1875rem 1rem; }
+
+:host(.simple) .input-container {
+  border: none;
+  border-bottom: 1px solid var(--input-container-border-color, #E6E6E6); }
+  :host(.simple) .input-container input {
+    padding: 0.5rem 0; }
+  :host(.simple) .input-container .icon-suffix {
+    padding: 0rem;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    border: none;
+    background: var(--light, #FFFFFF);
+    color: var(--stable, #adadad);
+    font-size: var(--icon-m, 20px); }
+  :host(.simple) .input-container .icon-prefix {
+    padding: 0rem;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    border: none;
+    background: var(--light, #FFFFFF);
+    color: var(--stable, #adadad);
+    font-size: var(--icon-m, 20px); }
+
+:host(.simple-icon) .input-container .icon-suffix {
+  padding: 0rem;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  border: none;
+  background: var(--light, #FFFFFF);
+  color: var(--stable, #adadad);
+  font-size: var(--icon-m, 20px); }
+
+:host(.simple-icon) .input-container .icon-prefix {
+  padding: 0rem;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  border: none;
+  background: var(--light, #FFFFFF);
+  color: var(--stable, #adadad);
+  font-size: var(--icon-m, 20px); }
+
+:host(.round) .input-container {
+  border-radius: 1.5rem; }
+  :host(.round) .input-container .icon-prefix {
+    border-top-left-radius: 1.5rem;
+    border-bottom-left-radius: 1.5rem; }
+  :host(.round) .input-container .icon-suffix {
+    border-top-right-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem; }
+  :host(.round) .input-container input {
+    border-radius: 1.5rem; }
+
+:host(.search) .input-container {
+  animation: fadeIn 0.6s forwards;
+  width: 100%;
+  height: 2.25rem;
+  transition: all 0.3s;
+  border: none;
+  border: 1px solid var(--input-container-border-color, #E6E6E6);
+  border-radius: 0.5rem;
+  background: var(--light, #FFFFFF);
+  overflow: hidden; }
+  :host(.search) .input-container.focused {
+    border: 1px solid var(--dark, #2b3648); }
+  :host(.search) .input-container .icon-prefix {
+    transition: all 0.3s;
+    border-right: none;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    color: var(--control-icon-color, #adadad); }
+  :host(.search) .input-container .icon-suffix {
+    transition: all 0.3s;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem; }
+  :host(.search) .input-container input {
+    padding: 0.1875rem 0;
+    padding-right: 1rem;
+    padding-left: var(--padding-10, 0.625rem);
+    transition: all 0.3s;
+    border-radius: 0.5rem;
+    border-top-left-radius: 0rem;
+    border-bottom-left-radius: 0rem;
+    background: var(--light, #FFFFFF);
+    box-shadow: var(--light, #FFFFFF) 0px 0px 0px 1000px inset !important; }
+    :host(.search) .input-container input::placeholder {
+      color: var(--stable, #adadad);
+      opacity: 1; }
+    :host(.search) .input-container input::-webkit-input-placeholder {
+      color: var(--stable, #adadad);
+      opacity: 1; }
+    :host(.search) .input-container input:-moz-placeholder {
+      color: var(--stable, #adadad);
+      opacity: 1; }
+    :host(.search) .input-container input::-moz-placeholder {
+      color: var(--stable, #adadad);
+      opacity: 1; }
+    :host(.search) .input-container input:-ms-input-placeholder {
+      color: var(--stable, #adadad);
+      opacity: 1; }
+  :host(.search) .input-container .icon-prefix,
+  :host(.search) .input-container .icon-suffix {
+    padding: 0.1875rem 0;
+    padding-left: 0.75rem;
+    background: var(--light, #FFFFFF); }
+  :host(.search) .input-container .valid-icon {
+    display: none !important; }
+
+:host(.search.disabled) .input-container {
+  border: 1px solid var(--stable-ultralight, #F5F5F5); }
+  :host(.search.disabled) .input-container .icon-prefix,
+  :host(.search.disabled) .input-container .icon-suffix {
+    opacity: 0.6; }
+  :host(.search.disabled) .input-container input {
+    opacity: 0.6; }
+
+:host(.with-toggle) {
+  width: calc(100% - 4rem) !important; }
+
+:host(.grid-search) {
+  width: 100%; }
+
+:host(.has-invalid-format) {
+  margin-top: var(--padding-5, 0.3125rem); }
+
+:host(.web-menu) .input-container {
+  width: 250px;
+  height: 24px;
+  border: none;
+  background: var(--stable-light, #f1f1f1);
+  color: var(--stable, #adadad); }
+  :host(.web-menu) .input-container input {
+    background: var(--stable-light, #f1f1f1);
+    font-size: var(--font-s, 13px);
+    box-shadow: none !important; }
+  :host(.web-menu) .input-container .icon-prefix,
+  :host(.web-menu) .input-container .icon-suffix {
+    background: transparent;
+    font-size: var(--font-s, 13px); }
+
+:host(.history) {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important; }
+  :host(.history) .readonly {
+    padding: 0 !important;
+    text-align: left; }
+
+:host(.photos-tab) {
+  padding-left: 2.5rem !important; }
+
+:host(.boost) .input-container input {
+  caret-color: var(--danger-light, #F46885); }
+
+:host(.web) .input-container input {
+  font-size: var(--font-m, 15px); }
+
+:host(.full-width) {
+  width: 100%; }
+  :host(.full-width) .input-container {
+    width: 100%; }
+
+:host(.accent) .input-container {
+  border-color: var(--accent, #1FB6FF); }
+  :host(.accent) .input-container .icon-prefix {
+    border-right: none;
+    color: var(--accent, #1FB6FF); }
+  :host(.accent) .input-container .icon-suffix {
+    border-left: none;
+    color: var(--accent, #1FB6FF); }
+  :host(.accent) .input-container input {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    display: inline-block;
+    vertical-align: middle;
+    white-space: normal;
+    background: none;
+    line-height: 1;
+    font-size: var(--font-m, 15px);
+    font-family: "Lato" !important;
+    min-width: 0;
+    box-sizing: content-box;
+    color: var(--accent, #1FB6FF); }
+    :host(.accent) .input-container input::placeholder {
+      color: var(--accent, #1FB6FF); }
+    :host(.accent) .input-container input::-webkit-input-placeholder {
+      color: var(--accent, #1FB6FF); }
+    :host(.accent) .input-container input:-moz-placeholder {
+      color: var(--accent, #1FB6FF); }
+    :host(.accent) .input-container input::-moz-placeholder {
+      color: var(--accent, #1FB6FF); }
+    :host(.accent) .input-container input:-ms-input-placeholder {
+      color: var(--accent, #1FB6FF); }
+    :host(.accent) .input-container input:focus {
+      outline: 0; }
+    :host(.accent) .input-container input[type=reset], :host(.accent) .input-container input[type=button], :host(.accent) .input-container input[type=submit], :host(.accent) .input-container input[type=checkbox], :host(.accent) .input-container input[type=radio] {
+      box-sizing: border-box; }
+    :host(.accent) .input-container input[type=search] {
+      -webkit-appearance: textfield;
+      box-sizing: content-box; }
+  :host(.accent) .input-container .label {
+    color: var(--accent, #1FB6FF); }
+
+:host(.success) .input-container {
+  border-color: var(--success, #04CC99); }
+  :host(.success) .input-container .icon-prefix {
+    border-right: none;
+    color: var(--success, #04CC99); }
+  :host(.success) .input-container .icon-suffix {
+    border-left: none;
+    color: var(--success, #04CC99); }
+  :host(.success) .input-container input {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    display: inline-block;
+    vertical-align: middle;
+    white-space: normal;
+    background: none;
+    line-height: 1;
+    font-size: var(--font-m, 15px);
+    font-family: "Lato" !important;
+    min-width: 0;
+    box-sizing: content-box;
+    color: var(--success, #04CC99); }
+    :host(.success) .input-container input::placeholder {
+      color: var(--success, #04CC99); }
+    :host(.success) .input-container input::-webkit-input-placeholder {
+      color: var(--success, #04CC99); }
+    :host(.success) .input-container input:-moz-placeholder {
+      color: var(--success, #04CC99); }
+    :host(.success) .input-container input::-moz-placeholder {
+      color: var(--success, #04CC99); }
+    :host(.success) .input-container input:-ms-input-placeholder {
+      color: var(--success, #04CC99); }
+    :host(.success) .input-container input:focus {
+      outline: 0; }
+    :host(.success) .input-container input[type=reset], :host(.success) .input-container input[type=button], :host(.success) .input-container input[type=submit], :host(.success) .input-container input[type=checkbox], :host(.success) .input-container input[type=radio] {
+      box-sizing: border-box; }
+    :host(.success) .input-container input[type=search] {
+      -webkit-appearance: textfield;
+      box-sizing: content-box; }
+  :host(.success) .input-container .label {
+    color: var(--success, #04CC99); }
+
+:host(.info) .input-container {
+  border-color: var(--info, #fc459e); }
+  :host(.info) .input-container .icon-prefix {
+    border-right: none;
+    color: var(--info, #fc459e); }
+  :host(.info) .input-container .icon-suffix {
+    border-left: none;
+    color: var(--info, #fc459e); }
+  :host(.info) .input-container input {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    display: inline-block;
+    vertical-align: middle;
+    white-space: normal;
+    background: none;
+    line-height: 1;
+    font-size: var(--font-m, 15px);
+    font-family: "Lato" !important;
+    min-width: 0;
+    box-sizing: content-box;
+    color: var(--info, #fc459e); }
+    :host(.info) .input-container input::placeholder {
+      color: var(--info, #fc459e); }
+    :host(.info) .input-container input::-webkit-input-placeholder {
+      color: var(--info, #fc459e); }
+    :host(.info) .input-container input:-moz-placeholder {
+      color: var(--info, #fc459e); }
+    :host(.info) .input-container input::-moz-placeholder {
+      color: var(--info, #fc459e); }
+    :host(.info) .input-container input:-ms-input-placeholder {
+      color: var(--info, #fc459e); }
+    :host(.info) .input-container input:focus {
+      outline: 0; }
+    :host(.info) .input-container input[type=reset], :host(.info) .input-container input[type=button], :host(.info) .input-container input[type=submit], :host(.info) .input-container input[type=checkbox], :host(.info) .input-container input[type=radio] {
+      box-sizing: border-box; }
+    :host(.info) .input-container input[type=search] {
+      -webkit-appearance: textfield;
+      box-sizing: content-box; }
+  :host(.info) .input-container .label {
+    color: var(--info, #fc459e); }
+
+:host(.warning) .input-container {
+  border-color: var(--warning, #ff6402); }
+  :host(.warning) .input-container .icon-prefix {
+    border-right: none;
+    color: var(--warning, #ff6402); }
+  :host(.warning) .input-container .icon-suffix {
+    border-left: none;
+    color: var(--warning, #ff6402); }
+  :host(.warning) .input-container input {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    display: inline-block;
+    vertical-align: middle;
+    white-space: normal;
+    background: none;
+    line-height: 1;
+    font-size: var(--font-m, 15px);
+    font-family: "Lato" !important;
+    min-width: 0;
+    box-sizing: content-box;
+    color: var(--warning, #ff6402); }
+    :host(.warning) .input-container input::placeholder {
+      color: var(--warning, #ff6402); }
+    :host(.warning) .input-container input::-webkit-input-placeholder {
+      color: var(--warning, #ff6402); }
+    :host(.warning) .input-container input:-moz-placeholder {
+      color: var(--warning, #ff6402); }
+    :host(.warning) .input-container input::-moz-placeholder {
+      color: var(--warning, #ff6402); }
+    :host(.warning) .input-container input:-ms-input-placeholder {
+      color: var(--warning, #ff6402); }
+    :host(.warning) .input-container input:focus {
+      outline: 0; }
+    :host(.warning) .input-container input[type=reset], :host(.warning) .input-container input[type=button], :host(.warning) .input-container input[type=submit], :host(.warning) .input-container input[type=checkbox], :host(.warning) .input-container input[type=radio] {
+      box-sizing: border-box; }
+    :host(.warning) .input-container input[type=search] {
+      -webkit-appearance: textfield;
+      box-sizing: content-box; }
+  :host(.warning) .input-container .label {
+    color: var(--warning, #ff6402); }
+
+:host(.danger) .input-container {
+  border-color: var(--danger, #ff625f); }
+  :host(.danger) .input-container .icon-prefix {
+    border-right: none;
+    color: var(--danger, #ff625f); }
+  :host(.danger) .input-container .icon-suffix {
+    border-left: none;
+    color: var(--danger, #ff625f); }
+  :host(.danger) .input-container input {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    display: inline-block;
+    vertical-align: middle;
+    white-space: normal;
+    background: none;
+    line-height: 1;
+    font-size: var(--font-m, 15px);
+    font-family: "Lato" !important;
+    min-width: 0;
+    box-sizing: content-box;
+    color: var(--danger, #ff625f); }
+    :host(.danger) .input-container input::placeholder {
+      color: var(--danger, #ff625f); }
+    :host(.danger) .input-container input::-webkit-input-placeholder {
+      color: var(--danger, #ff625f); }
+    :host(.danger) .input-container input:-moz-placeholder {
+      color: var(--danger, #ff625f); }
+    :host(.danger) .input-container input::-moz-placeholder {
+      color: var(--danger, #ff625f); }
+    :host(.danger) .input-container input:-ms-input-placeholder {
+      color: var(--danger, #ff625f); }
+    :host(.danger) .input-container input:focus {
+      outline: 0; }
+    :host(.danger) .input-container input[type=reset], :host(.danger) .input-container input[type=button], :host(.danger) .input-container input[type=submit], :host(.danger) .input-container input[type=checkbox], :host(.danger) .input-container input[type=radio] {
+      box-sizing: border-box; }
+    :host(.danger) .input-container input[type=search] {
+      -webkit-appearance: textfield;
+      box-sizing: content-box; }
+  :host(.danger) .input-container .label {
+    color: var(--danger, #ff625f); }
+
+:host(.dark) .input-container {
+  border-color: var(--dark, #2b3648); }
+  :host(.dark) .input-container .icon-prefix {
+    border-right: none;
+    color: var(--dark, #2b3648); }
+  :host(.dark) .input-container .icon-suffix {
+    border-left: none;
+    color: var(--dark, #2b3648); }
+  :host(.dark) .input-container input {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    display: inline-block;
+    vertical-align: middle;
+    white-space: normal;
+    background: none;
+    line-height: 1;
+    font-size: var(--font-m, 15px);
+    font-family: "Lato" !important;
+    min-width: 0;
+    box-sizing: content-box;
+    color: var(--dark, #2b3648); }
+    :host(.dark) .input-container input::placeholder {
+      color: var(--dark, #2b3648); }
+    :host(.dark) .input-container input::-webkit-input-placeholder {
+      color: var(--dark, #2b3648); }
+    :host(.dark) .input-container input:-moz-placeholder {
+      color: var(--dark, #2b3648); }
+    :host(.dark) .input-container input::-moz-placeholder {
+      color: var(--dark, #2b3648); }
+    :host(.dark) .input-container input:-ms-input-placeholder {
+      color: var(--dark, #2b3648); }
+    :host(.dark) .input-container input:focus {
+      outline: 0; }
+    :host(.dark) .input-container input[type=reset], :host(.dark) .input-container input[type=button], :host(.dark) .input-container input[type=submit], :host(.dark) .input-container input[type=checkbox], :host(.dark) .input-container input[type=radio] {
+      box-sizing: border-box; }
+    :host(.dark) .input-container input[type=search] {
+      -webkit-appearance: textfield;
+      box-sizing: content-box; }
+  :host(.dark) .input-container .label {
+    color: var(--dark, #2b3648); }
+
+:host(.control-icon-color) .input-container {
+  border-color: var(--input-container-border-color, #E6E6E6); }
+  :host(.control-icon-color) .input-container .icon-prefix {
+    border-right: none;
+    color: var(--text-color, #807f83); }
+  :host(.control-icon-color) .input-container .icon-suffix {
+    border-left: none;
+    color: var(--text-color, #807f83); }
+  :host(.control-icon-color) .input-container input {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    display: inline-block;
+    vertical-align: middle;
+    white-space: normal;
+    background: none;
+    line-height: 1;
+    font-size: var(--font-m, 15px);
+    font-family: "Lato" !important;
+    min-width: 0;
+    box-sizing: content-box;
+    color: var(--text-color, #807f83); }
+    :host(.control-icon-color) .input-container input::placeholder {
+      color: var(--text-color, #807f83); }
+    :host(.control-icon-color) .input-container input::-webkit-input-placeholder {
+      color: var(--text-color, #807f83); }
+    :host(.control-icon-color) .input-container input:-moz-placeholder {
+      color: var(--text-color, #807f83); }
+    :host(.control-icon-color) .input-container input::-moz-placeholder {
+      color: var(--text-color, #807f83); }
+    :host(.control-icon-color) .input-container input:-ms-input-placeholder {
+      color: var(--text-color, #807f83); }
+    :host(.control-icon-color) .input-container input:focus {
+      outline: 0; }
+    :host(.control-icon-color) .input-container input[type=reset], :host(.control-icon-color) .input-container input[type=button], :host(.control-icon-color) .input-container input[type=submit], :host(.control-icon-color) .input-container input[type=checkbox], :host(.control-icon-color) .input-container input[type=radio] {
+      box-sizing: border-box; }
+    :host(.control-icon-color) .input-container input[type=search] {
+      -webkit-appearance: textfield;
+      box-sizing: content-box; }
+  :host(.control-icon-color) .input-container .label {
+    color: var(--text-color, #807f83); }

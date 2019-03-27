@@ -1,0 +1,256 @@
+:host {
+  --scroll-container-color: unset;
+  --scroll-container-margin: unset; }
+  :host yoo-context-menu {
+    --width-dropdown-content: 11.25rem; }
+
+:host .scroll-container {
+  position: relative;
+  height: 5rem;
+  margin: var(--scroll-container-margin);
+  padding-bottom: var(--padding-10, 0.625rem);
+  transition: 0.3s;
+  background-color: var(--scroll-container-color); }
+  :host .scroll-container yoo-ion-scroll {
+    padding: 0 var(--padding-15, 0.9375rem); }
+
+:host .outer-container {
+  display: flex;
+  position: relative;
+  flex-direction: row; }
+  :host .outer-container .step-container {
+    position: relative;
+    width: 5rem;
+    padding-top: 0.75rem;
+    cursor: pointer; }
+    :host .outer-container .step-container.last {
+      width: auto;
+      margin-right: var(--padding-15, 0.9375rem); }
+    :host .outer-container .step-container.active {
+      padding-top: 0.5625rem; }
+    :host .outer-container .step-container .step-title {
+      display: flex;
+      position: absolute;
+      justify-content: center;
+      padding: var(--padding-10, 0.625rem) 0;
+      font-size: var(--font-s, 13px);
+      overflow: visible; }
+    :host .outer-container .step-container .step-circle-outer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.5rem;
+      height: 2.5rem; }
+      :host .outer-container .step-container .step-circle-outer.active {
+        border: 2px solid var(--black, #000000);
+        border-radius: 50%; }
+    :host .outer-container .step-container .step-circle {
+      border-radius: 50%;
+      display: flex;
+      position: relative;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      background-color: var(--dark-10, #e6eaf0);
+      color: var(--light, #FFFFFF);
+      font-size: var(--font-m, 15px);
+      overflow: hidden;
+      z-index: 1; }
+      :host .outer-container .step-container .step-circle.more {
+        padding: 5.5px 8.5px;
+        cursor: context-menu; }
+      :host .outer-container .step-container .step-circle.completed {
+        background-color: var(--stable-30, #E6E6E6);
+        color: var(--accent, #1FB6FF); }
+      :host .outer-container .step-container .step-circle .percentage-fill {
+        top: auto;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        transition: 0.3s all; }
+    :host .outer-container .step-container .progress-line {
+      top: 1.9375rem;
+      right: -4px;
+      bottom: auto;
+      left: 1rem;
+      position: absolute;
+      height: 1px;
+      background-color: var(--stable-light, #f1f1f1); }
+      :host .outer-container .step-container .progress-line.first {
+        left: 4px; }
+      :host .outer-container .step-container .progress-line.last {
+        right: 50%; }
+      :host .outer-container .step-container .progress-line.active {
+        left: 44px; }
+      :host .outer-container .step-container .progress-line.active-next {
+        right: 0; }
+  :host .outer-container .context-container {
+    display: flex;
+    flex-direction: column; }
+    :host .outer-container .context-container span {
+      position: relative;
+      width: 100%;
+      padding: 0.5rem 1rem;
+      border-bottom: 1px solid var(--stable-30, #E6E6E6);
+      line-height: 1.5; }
+      :host .outer-container .context-container span:last-child {
+        border-bottom: none; }
+      :host .outer-container .context-container span:hover {
+        background: var(--accent-05, #f4fbff);
+        color: var(--dark, #2b3648); }
+      :host .outer-container .context-container span.context-current {
+        font-weight: bold; }
+      :host .outer-container .context-container span yoo-icon {
+        top: 0.75rem;
+        right: 0.625rem;
+        bottom: auto;
+        left: auto;
+        position: absolute; }
+
+:host(.vertical) .outer-container {
+  flex-direction: column;
+  max-width: 2rem; }
+  :host(.vertical) .outer-container .step-container {
+    position: relative;
+    padding-right: 0rem;
+    padding-bottom: 2.8125rem; }
+    :host(.vertical) .outer-container .step-container .step-title {
+      position: relative;
+      top: 2.3125rem;
+      right: 0px;
+      bottom: 0px;
+      left: 2.8125rem; }
+    :host(.vertical) .outer-container .step-container .step-circle {
+      padding: 4.5px 0.5px;
+      text-align: center; }
+      :host(.vertical) .outer-container .step-container .step-circle.completed .completed-icon {
+        text-align: center; }
+  :host(.vertical) .outer-container .progress-line {
+    top: 2.6875rem;
+    right: 0.875rem;
+    bottom: auto;
+    left: auto;
+    position: absolute;
+    width: 5px;
+    height: 8.45rem;
+    background-color: var(--stable-30, #E6E6E6);
+    z-index: -1; }
+    :host(.vertical) .outer-container .progress-line.faded {
+      background-color: var(--dark-10, #e6eaf0);
+      z-index: -2; }
+
+:host(.success) .outer-container .step-container .step-circle {
+  background-color: var(--success, #04CC99); }
+  :host(.success) .outer-container .step-container .step-circle.current {
+    border: 1px solid var(--success, #04CC99);
+    color: var(--success, #04CC99); }
+
+:host(.success) .outer-container .progress-line-container .progress-line {
+  background-color: var(--success, #04CC99); }
+
+:host(.success) .outer-container .step-container .step-circle.completed {
+  color: var(--success, #04CC99); }
+
+:host(.danger) .outer-container .step-container .step-circle {
+  background-color: var(--danger, #ff625f); }
+  :host(.danger) .outer-container .step-container .step-circle.current {
+    border: 1px solid var(--danger, #ff625f);
+    color: var(--danger, #ff625f); }
+
+:host(.danger) .outer-container .progress-line-container .progress-line {
+  background-color: var(--danger, #ff625f); }
+
+:host(.danger) .outer-container .step-container .step-circle.completed {
+  color: var(--danger, #ff625f); }
+
+:host(.warning) .outer-container .step-container .step-circle {
+  background-color: var(--warning, #ff6402); }
+  :host(.warning) .outer-container .step-container .step-circle.current {
+    border: 1px solid var(--warning, #ff6402);
+    color: var(--warning, #ff6402); }
+
+:host(.warning) .outer-container .progress-line-container .progress-line {
+  background-color: var(--warning, #ff6402); }
+
+:host(.warning) .outer-container .step-container .step-circle.completed {
+  color: var(--warning, #ff6402); }
+
+:host(.info) .outer-container .step-container .step-circle {
+  background-color: var(--info, #fc459e); }
+  :host(.info) .outer-container .step-container .step-circle.current {
+    border: 1px solid var(--info, #fc459e);
+    color: var(--info, #fc459e); }
+
+:host(.info) .outer-container .progress-line-container .progress-line {
+  background-color: var(--info, #fc459e); }
+
+:host(.info) .outer-container .step-container .step-circle.completed {
+  color: var(--info, #fc459e); }
+
+:host(.gradient-success) .outer-container .step-container .step-circle {
+  border: 1px solid var(--success, #04CC99);
+  background-color: var(--light, #FFFFFF);
+  color: var(--success, #04CC99); }
+  :host(.gradient-success) .outer-container .step-container .step-circle.completed {
+    background: var(--gradient-success, #04CC99);
+    color: var(--light, #FFFFFF) !important; }
+    :host(.gradient-success) .outer-container .step-container .step-circle.completed span {
+      color: var(--light, #FFFFFF); }
+  :host(.gradient-success) .outer-container .step-container .step-circle.invalid {
+    border: 1px solid var(--danger, #ff625f);
+    background-color: var(--danger, #ff625f);
+    color: var(--light, #FFFFFF) !important; }
+    :host(.gradient-success) .outer-container .step-container .step-circle.invalid span {
+      color: var(--light, #FFFFFF); }
+  :host(.gradient-success) .outer-container .step-container .step-circle.current-invalid {
+    border: 1px solid var(--danger, #ff625f);
+    color: var(--danger, #ff625f); }
+  :host(.gradient-success) .outer-container .step-container .step-circle.locked {
+    border: 1px solid var(--stable, #adadad);
+    background-color: var(--stable, #adadad);
+    color: var(--light, #FFFFFF); }
+  :host(.gradient-success) .outer-container .step-container .step-circle .percentage-fill {
+    background: var(--gradient-success, #04CC99); }
+
+:host(.gradient-success) .outer-container .step-container .progress-line.completed {
+  background-color: var(--success, #04CC99); }
+
+:host(.gradient-success) .outer-container .step-container .step-circle.completed {
+  border: 1px solid var(--success, #04CC99);
+  color: var(--gradient-success, #04CC99); }
+
+:host(.gradient-danger) .outer-container .step-container .step-circle {
+  border: 1px solid var(--danger, #ff625f);
+  background-color: var(--light, #FFFFFF);
+  color: var(--danger, #ff625f); }
+  :host(.gradient-danger) .outer-container .step-container .step-circle.completed {
+    background: var(--gradient-danger, #ff625f);
+    color: var(--light, #FFFFFF) !important; }
+    :host(.gradient-danger) .outer-container .step-container .step-circle.completed span {
+      color: var(--light, #FFFFFF); }
+  :host(.gradient-danger) .outer-container .step-container .step-circle.invalid {
+    border: 1px solid var(--danger, #ff625f);
+    background-color: var(--danger, #ff625f);
+    color: var(--light, #FFFFFF) !important; }
+    :host(.gradient-danger) .outer-container .step-container .step-circle.invalid span {
+      color: var(--light, #FFFFFF); }
+  :host(.gradient-danger) .outer-container .step-container .step-circle.current-invalid {
+    border: 1px solid var(--danger, #ff625f);
+    color: var(--danger, #ff625f); }
+  :host(.gradient-danger) .outer-container .step-container .step-circle.locked {
+    border: 1px solid var(--stable, #adadad);
+    background-color: var(--stable, #adadad);
+    color: var(--light, #FFFFFF); }
+  :host(.gradient-danger) .outer-container .step-container .step-circle .percentage-fill {
+    background: var(--gradient-danger, #ff625f); }
+
+:host(.gradient-danger) .outer-container .step-container .progress-line.completed {
+  background-color: var(--danger, #ff625f); }
+
+:host(.gradient-danger) .outer-container .step-container .step-circle.completed {
+  color: var(--gradient-danger, #ff625f); }
+
+:host(.more-stable) yoo-text-truncate {
+  --current-background-color: var(--stable-ultralight, #F5F5F5); }

@@ -1,0 +1,112 @@
+:host {
+  display: block;
+  opacity: 1; }
+  :host .flex {
+    display: flex;
+    flex: 1; }
+  :host .calendar-picker-container {
+    margin-top: var(--padding-10, 0.625rem);
+    margin-bottom: 0.1875rem;
+    padding-top: var(--padding-10, 0.625rem);
+    border-radius: 5px;
+    box-shadow: 0 5px 15px 0 rgba(40, 47, 54, 0.08); }
+    :host .calendar-picker-container yoo-calendar {
+      --date-picker-margin: var(--padding-5, 0.3125rem);
+      min-height: 28.75rem; }
+    :host .calendar-picker-container yoo-form-time {
+      margin-top: var(--padding-15, 0.9375rem); }
+      :host .calendar-picker-container yoo-form-time.time-only {
+        --margin: 0 var(--padding-15, 0.9375rem)
+            ; }
+  :host .outer-container {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid var(--input-container-border-color, #E6E6E6);
+    border-radius: var(--border-radius-input, 5px); }
+    :host .outer-container.hidden {
+      display: none; }
+    :host .outer-container.valid {
+      border: 1px solid var(--success, #04CC99); }
+    :host .outer-container.invalid {
+      border: 1px solid var(--danger, #ff625f); }
+    :host .outer-container.focused {
+      border: 1px solid var(--dark, #2b3648); }
+    :host .outer-container .input-container input {
+      margin: 0;
+      border: 0;
+      padding: 0;
+      display: inline-block;
+      vertical-align: middle;
+      white-space: normal;
+      background: none;
+      line-height: 1;
+      font-size: var(--font-m, 15px);
+      font-family: "Lato" !important;
+      min-width: 0;
+      box-sizing: content-box;
+      width: 100%;
+      height: 2.5rem;
+      padding-left: var(--padding-15, 0.9375rem);
+      border: none;
+      border-radius: var(--border-radius-input, 5px);
+      background: var(--light, #FFFFFF);
+      color: var(--black, #000000);
+      font-size: var(--font-m, 15px);
+      line-height: 1.5;
+      vertical-align: unset; }
+      :host .outer-container .input-container input:focus {
+        outline: 0; }
+      :host .outer-container .input-container input[type=reset], :host .outer-container .input-container input[type=button], :host .outer-container .input-container input[type=submit], :host .outer-container .input-container input[type=checkbox], :host .outer-container .input-container input[type=radio] {
+        box-sizing: border-box; }
+      :host .outer-container .input-container input[type=search] {
+        -webkit-appearance: textfield;
+        box-sizing: content-box; }
+      :host .outer-container .input-container input.native {
+        padding: 0rem 1rem; }
+    :host .outer-container .icon-prefix,
+    :host .outer-container .icon-suffix {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 0.5rem 1rem;
+      color: var(--stable, #adadad);
+      font-size: var(--icon-m, 20px); }
+      :host .outer-container .icon-prefix .yo-down,
+      :host .outer-container .icon-prefix .yo-up,
+      :host .outer-container .icon-suffix .yo-down,
+      :host .outer-container .icon-suffix .yo-up {
+        margin: 0 0 0 -0.8rem;
+        font-size: var(--font-xs, 10px); }
+      :host .outer-container .icon-prefix .yo-cross,
+      :host .outer-container .icon-suffix .yo-cross {
+        margin: 0 0 0 -0.8rem; }
+      :host .outer-container .icon-prefix.invalid,
+      :host .outer-container .icon-suffix.invalid {
+        color: var(--danger, #ff625f); }
+    :host .outer-container .icon-suffix {
+      color: var(--control-icon-color, #adadad); }
+    :host .outer-container .icon-prefix {
+      border-right: 1px solid var(--input-container-border-color, #E6E6E6);
+      color: csscolor(stable); }
+    :host .outer-container .icon-close {
+      color: var(--stable, #adadad); }
+  :host .readonly {
+    padding: 0.5rem;
+    padding-left: 0;
+    padding-bottom: 0; }
+
+:host(.schedule) .calendar-picker-container {
+  height: 100%; }
+
+:host(.ios) .outer-container .input-container input {
+  caret-color: transparent; }
+
+:host(.history) {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important; }
+  :host(.history) .readonly {
+    padding: 0 !important; }
+
+:host(.x-large) .readonly {
+  font-size: var(--font-xl, 36px); }

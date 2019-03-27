@@ -1,0 +1,71 @@
+import '../../../stencil.core';
+import { EventEmitter } from '../../../stencil.core';
+import { ValidatorEntry, AsyncValidator, Validator } from '../../../interfaces';
+export declare class YooFormMissingWordComponent {
+    sentence: string;
+    answer: Array<any>;
+    value: Array<any>;
+    values: Array<string>;
+    validity: boolean;
+    validators: Array<Validator<string> | ValidatorEntry>;
+    asyncValidators: Array<AsyncValidator<string>>;
+    placeholder: string;
+    required: boolean;
+    readonly: boolean;
+    type: string;
+    slideIndex: number;
+    validityChanged: EventEmitter<boolean>;
+    inputBlurred: EventEmitter<any>;
+    inputFocused: EventEmitter<any>;
+    inputChanged: EventEmitter<any>;
+    isRendered: boolean;
+    host: HTMLStencilElement;
+    words: Array<{
+        value: string;
+        hidden: boolean;
+        displayedValue?: string;
+        dynamic?: boolean;
+    }>;
+    sentenceAnswer: Array<{
+        value: string;
+        hidden: boolean;
+        displayedValue?: string;
+        dynamic?: boolean;
+    }>;
+    valueAsSentence: Array<{
+        value: string;
+        answer: string;
+        valid?: boolean;
+        dynamic?: boolean;
+    }>;
+    originalValues: Array<string>;
+    missingWordWidth: number;
+    sentenceEl: HTMLDivElement;
+    isValid(): Promise<boolean>;
+    componentWillLoad(): void;
+    componentDidLoad(): void;
+    setMissingWordsWidth(): void;
+    getMissingOrDroppedWordWidth(word: string, droppedWord?: boolean): number;
+    getWordClass(word: string): "invalid" | "valid";
+    getWordText(word: string): any;
+    initInteract(): void;
+    initInteractDraggable(): void;
+    initInteractDroppable(): void;
+    findDroppedWord(word: string): {
+        value: string;
+        hidden: boolean;
+        displayedValue?: string;
+        dynamic?: boolean;
+    };
+    isDropped(word: string): boolean;
+    updateAnswer(): void;
+    onDropWord(event: any): void;
+    onClickOrDropWord(word: string): void;
+    onClickSuggestionsWord(word: string): void;
+    clearInteractEvents(): void;
+    dragMoveListener(event: any): void;
+    dragEndListener(event: any): void;
+    renderReadonly(): JSX.Element;
+    renderEditable(): JSX.Element;
+    render(): JSX.Element;
+}

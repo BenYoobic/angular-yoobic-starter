@@ -1,0 +1,42 @@
+import { EventEmitter } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Session } from '../session/session.service';
+import { Config } from '../config/config.service';
+import { LoadingBar } from '../loading-bar/loading-bar.service';
+import { CoreConfig } from '@shared/common';
+import { Observable } from 'rxjs';
+export declare class Requestor {
+    protected http: HttpClient;
+    session: Session;
+    protected config: Config;
+    protected loadingBar: LoadingBar;
+    protected coreConfig: CoreConfig;
+    static unauthorizedEmitter: EventEmitter<any>;
+    static payloadTooBigEmitter: EventEmitter<any>;
+    constructor(http: HttpClient, session: Session, config: Config, loadingBar: LoadingBar, coreConfig: CoreConfig);
+    fetch(url: string, options: any): any;
+    post(url: string, body: any, token?: string, withCount?: boolean, isTempToken?: boolean, looseCount?: boolean, partialUrl?: boolean): Observable<any>;
+    patch(url: string, body: any, token?: string, withCount?: boolean, isTempToken?: boolean, looseCount?: boolean, partialUrl?: boolean): Observable<any>;
+    postRaw(url: string, body: any, blob?: boolean, includeToken?: boolean): Observable<any>;
+    postMultiPart(url: string, data: Object): Observable<any>;
+    postFile(url: string, file: File): Observable<any>;
+    get(url: string, withCount?: boolean, token?: string, params?: Array<{
+        name: string;
+        value: any;
+    }>, suppressToken?: boolean): Observable<any>;
+    getBinaryContent(url: string): Observable<any>;
+    put(url: string, body: any): Observable<any>;
+    delete(url: string, body?: any): Observable<any>;
+    downloadFile(filename: string, mediaType: string, url: string, options: any): Promise<any>;
+    saveBlob(blob: Blob, filename: string): void;
+    saveArrayBuffer(array: ArrayBuffer, filename: string): void;
+    getFilenameSuffix(): string;
+    private errorHandler;
+    private formatResponse;
+    private buildHeaders;
+    private buildFetchHeaders;
+    private buildFetchHeadersFallback;
+    private updateToken;
+    private slimbarStart;
+    private slimbarComplete;
+}

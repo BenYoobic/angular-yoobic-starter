@@ -1,0 +1,246 @@
+:host {
+  cursor: pointer; }
+  :host .outer-container {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    width: 300px;
+    height: 209px;
+    border-radius: 5px;
+    background-position: center;
+    overflow: hidden; }
+    :host .outer-container .image-container {
+      width: 100%;
+      height: 90%;
+      border-radius: 5px;
+      background: var(--stable-light, #f1f1f1);
+      box-shadow: 0 2px 5px 0 rgba(40, 47, 54, 0.08); }
+    :host .outer-container .gradient-container {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 5px;
+      background: linear-gradient(90deg, var(--light_const, #FFFFFF), var(--light_const, #FFFFFF) 40%, rgba(255, 255, 255, 0)); }
+      :host .outer-container .gradient-container .text-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 40%;
+        height: 100%;
+        margin-left: 1.25rem;
+        text-align: left; }
+        :host .outer-container .gradient-container .text-container .category {
+          color: var(--success, #04CC99);
+          font-size: var(--font-s, 13px); }
+        :host .outer-container .gradient-container .text-container .title {
+          margin-top: 1.25rem;
+          font-size: var(--font-l, 17px); }
+          :host .outer-container .gradient-container .text-container .title html,
+          :host .outer-container .gradient-container .text-container .title body,
+          :host .outer-container .gradient-container .text-container .title div,
+          :host .outer-container .gradient-container .text-container .title span,
+          :host .outer-container .gradient-container .text-container .title applet,
+          :host .outer-container .gradient-container .text-container .title object,
+          :host .outer-container .gradient-container .text-container .title iframe,
+          :host .outer-container .gradient-container .text-container .title h1,
+          :host .outer-container .gradient-container .text-container .title h2,
+          :host .outer-container .gradient-container .text-container .title h3,
+          :host .outer-container .gradient-container .text-container .title h4,
+          :host .outer-container .gradient-container .text-container .title h5,
+          :host .outer-container .gradient-container .text-container .title h6,
+          :host .outer-container .gradient-container .text-container .title p,
+          :host .outer-container .gradient-container .text-container .title blockquote,
+          :host .outer-container .gradient-container .text-container .title pre,
+          :host .outer-container .gradient-container .text-container .title a,
+          :host .outer-container .gradient-container .text-container .title abbr,
+          :host .outer-container .gradient-container .text-container .title acronym,
+          :host .outer-container .gradient-container .text-container .title address,
+          :host .outer-container .gradient-container .text-container .title big,
+          :host .outer-container .gradient-container .text-container .title cite,
+          :host .outer-container .gradient-container .text-container .title code,
+          :host .outer-container .gradient-container .text-container .title del,
+          :host .outer-container .gradient-container .text-container .title dfn,
+          :host .outer-container .gradient-container .text-container .title em,
+          :host .outer-container .gradient-container .text-container .title font,
+          :host .outer-container .gradient-container .text-container .title img,
+          :host .outer-container .gradient-container .text-container .title ins,
+          :host .outer-container .gradient-container .text-container .title kbd,
+          :host .outer-container .gradient-container .text-container .title q,
+          :host .outer-container .gradient-container .text-container .title s,
+          :host .outer-container .gradient-container .text-container .title samp,
+          :host .outer-container .gradient-container .text-container .title small,
+          :host .outer-container .gradient-container .text-container .title strike,
+          :host .outer-container .gradient-container .text-container .title strong,
+          :host .outer-container .gradient-container .text-container .title sub,
+          :host .outer-container .gradient-container .text-container .title sup,
+          :host .outer-container .gradient-container .text-container .title tt,
+          :host .outer-container .gradient-container .text-container .title var,
+          :host .outer-container .gradient-container .text-container .title dl,
+          :host .outer-container .gradient-container .text-container .title dt,
+          :host .outer-container .gradient-container .text-container .title dd,
+          :host .outer-container .gradient-container .text-container .title ol,
+          :host .outer-container .gradient-container .text-container .title ul,
+          :host .outer-container .gradient-container .text-container .title li,
+          :host .outer-container .gradient-container .text-container .title fieldset,
+          :host .outer-container .gradient-container .text-container .title form,
+          :host .outer-container .gradient-container .text-container .title label,
+          :host .outer-container .gradient-container .text-container .title legend,
+          :host .outer-container .gradient-container .text-container .title table,
+          :host .outer-container .gradient-container .text-container .title caption,
+          :host .outer-container .gradient-container .text-container .title tbody,
+          :host .outer-container .gradient-container .text-container .title tfoot,
+          :host .outer-container .gradient-container .text-container .title thead,
+          :host .outer-container .gradient-container .text-container .title tr,
+          :host .outer-container .gradient-container .text-container .title th,
+          :host .outer-container .gradient-container .text-container .title td {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            outline: 0;
+            font-weight: inherit;
+            font-style: inherit;
+            font-size: 100%;
+            font-family: inherit;
+            vertical-align: baseline;
+            -webkit-margin-before: 0;
+            -webkit-margin-after: 0;
+            -webkit-margin-start: 0;
+            -webkit-margin-end: 0; }
+        :host .outer-container .gradient-container .text-container .description {
+          color: var(--stable, #adadad);
+          font-size: var(--font-xs, 10px); }
+          :host .outer-container .gradient-container .text-container .description html,
+          :host .outer-container .gradient-container .text-container .description body,
+          :host .outer-container .gradient-container .text-container .description div,
+          :host .outer-container .gradient-container .text-container .description span,
+          :host .outer-container .gradient-container .text-container .description applet,
+          :host .outer-container .gradient-container .text-container .description object,
+          :host .outer-container .gradient-container .text-container .description iframe,
+          :host .outer-container .gradient-container .text-container .description h1,
+          :host .outer-container .gradient-container .text-container .description h2,
+          :host .outer-container .gradient-container .text-container .description h3,
+          :host .outer-container .gradient-container .text-container .description h4,
+          :host .outer-container .gradient-container .text-container .description h5,
+          :host .outer-container .gradient-container .text-container .description h6,
+          :host .outer-container .gradient-container .text-container .description p,
+          :host .outer-container .gradient-container .text-container .description blockquote,
+          :host .outer-container .gradient-container .text-container .description pre,
+          :host .outer-container .gradient-container .text-container .description a,
+          :host .outer-container .gradient-container .text-container .description abbr,
+          :host .outer-container .gradient-container .text-container .description acronym,
+          :host .outer-container .gradient-container .text-container .description address,
+          :host .outer-container .gradient-container .text-container .description big,
+          :host .outer-container .gradient-container .text-container .description cite,
+          :host .outer-container .gradient-container .text-container .description code,
+          :host .outer-container .gradient-container .text-container .description del,
+          :host .outer-container .gradient-container .text-container .description dfn,
+          :host .outer-container .gradient-container .text-container .description em,
+          :host .outer-container .gradient-container .text-container .description font,
+          :host .outer-container .gradient-container .text-container .description img,
+          :host .outer-container .gradient-container .text-container .description ins,
+          :host .outer-container .gradient-container .text-container .description kbd,
+          :host .outer-container .gradient-container .text-container .description q,
+          :host .outer-container .gradient-container .text-container .description s,
+          :host .outer-container .gradient-container .text-container .description samp,
+          :host .outer-container .gradient-container .text-container .description small,
+          :host .outer-container .gradient-container .text-container .description strike,
+          :host .outer-container .gradient-container .text-container .description strong,
+          :host .outer-container .gradient-container .text-container .description sub,
+          :host .outer-container .gradient-container .text-container .description sup,
+          :host .outer-container .gradient-container .text-container .description tt,
+          :host .outer-container .gradient-container .text-container .description var,
+          :host .outer-container .gradient-container .text-container .description dl,
+          :host .outer-container .gradient-container .text-container .description dt,
+          :host .outer-container .gradient-container .text-container .description dd,
+          :host .outer-container .gradient-container .text-container .description ol,
+          :host .outer-container .gradient-container .text-container .description ul,
+          :host .outer-container .gradient-container .text-container .description li,
+          :host .outer-container .gradient-container .text-container .description fieldset,
+          :host .outer-container .gradient-container .text-container .description form,
+          :host .outer-container .gradient-container .text-container .description label,
+          :host .outer-container .gradient-container .text-container .description legend,
+          :host .outer-container .gradient-container .text-container .description table,
+          :host .outer-container .gradient-container .text-container .description caption,
+          :host .outer-container .gradient-container .text-container .description tbody,
+          :host .outer-container .gradient-container .text-container .description tfoot,
+          :host .outer-container .gradient-container .text-container .description thead,
+          :host .outer-container .gradient-container .text-container .description tr,
+          :host .outer-container .gradient-container .text-container .description th,
+          :host .outer-container .gradient-container .text-container .description td {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            outline: 0;
+            font-weight: inherit;
+            font-style: inherit;
+            font-size: 100%;
+            font-family: inherit;
+            vertical-align: baseline;
+            -webkit-margin-before: 0;
+            -webkit-margin-after: 0;
+            -webkit-margin-start: 0;
+            -webkit-margin-end: 0; }
+        :host .outer-container .gradient-container .text-container yoo-button {
+          margin-top: 1.25rem; }
+    :host .outer-container.feeds {
+      display: flex;
+      flex-direction: column;
+      width: 310px;
+      height: 210px;
+      box-shadow: var(--card-shadow, 0 2px 4px 0 rgba(40, 47, 54, 0.08));
+      box-shadow: 0 var(--padding-5, 0.3125rem) var(--padding-15, 0.9375rem) 0 rgba(40, 47, 54, 0.08); }
+      :host .outer-container.feeds .image-container {
+        height: 50%;
+        border-radius: 0;
+        box-shadow: none; }
+      :host .outer-container.feeds .bottom-container {
+        height: 50%;
+        background-color: white;
+        color: black;
+        line-height: normal;
+        text-align: left; }
+        :host .outer-container.feeds .bottom-container div {
+          margin: var(--padding-15, 0.9375rem); }
+        :host .outer-container.feeds .bottom-container .text-wrapper {
+          margin-bottom: 0px; }
+          :host .outer-container.feeds .bottom-container .text-wrapper yoo-text-truncate {
+            --text-color: cssvar(always-black); }
+        :host .outer-container.feeds .bottom-container .subheading {
+          margin-top: var(--padding-5, 0.3125rem);
+          color: var(--stable, #adadad);
+          font-size: var(--font-s, 13px); }
+    :host .outer-container.courses {
+      display: flex;
+      flex-direction: column;
+      width: 117px;
+      height: 240px;
+      margin-right: var(--padding-15, 0.9375rem); }
+      :host .outer-container.courses yoo-img {
+        min-height: 180px;
+        max-height: 180px; }
+        :host .outer-container.courses yoo-img yoo-icon {
+          position: absolute;
+          right: var(--padding-10, 0.625rem);
+          bottom: var(--padding-10, 0.625rem);
+          padding: 0.5rem;
+          border: none;
+          border-radius: 50%;
+          background: var(--stable, #adadad);
+          color: var(--light, #FFFFFF);
+          font-size: var(--font-l, 17px); }
+      :host .outer-container.courses .bottom-container {
+        margin-top: var(--padding-10, 0.625rem);
+        background-color: transparent; }
+        :host .outer-container.courses .bottom-container .text-wrapper {
+          max-height: 35px;
+          overflow-y: auto;
+          color: var(--balck); }
+        :host .outer-container.courses .bottom-container .subheading {
+          color: var(--stable, #adadad); }
+
+@media only screen and (max-width: 320px) {
+  :host .outer-container.feeds {
+    width: 280px !important; } }
+
+:host(.web) .outer-container {
+  width: auto; }

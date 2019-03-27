@@ -1,0 +1,463 @@
+@mixin simple-icon() {
+    padding: 0rem;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    border: none;
+    background: cssvar(light);
+    color: cssvar(stable);
+    font-size: cssvar(icon-m);
+}
+@mixin icon() {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0.5rem 1rem; //background: cssvar(dark-10);
+    color: cssvar(stable);
+    font-size: cssvar(icon-m);
+    .yo-down,
+    .yo-up {
+        margin: 0 0 0 -0.8rem;
+        font-size: cssvar(font-xs);
+    }
+    .yo-cross {
+        margin: 0 0 0 -0.8rem;
+    }
+}
+@mixin input-color($class, $color: $class, $border-color: $color) {
+    :host(.#{$class}) {
+        .input-container {
+            border-color: cssvar($border-color);
+            .icon-prefix {
+                border-right: none;
+                color: cssvar($color);
+            }
+            .icon-suffix {
+                border-left: none;
+                color: cssvar($color);
+            }
+            input {
+                @include placeholder {
+                    color: cssvar($color);
+                }
+                @include reset-input();
+                color: cssvar($color);
+            }
+            .label {
+                color: cssvar($color);
+            }
+        }
+    }
+}
+
+:host {
+    --display-invalid-message: block;
+    --input-text-color: cssvar(text-color);
+    --input-icon-color: cssvar(input-icon-color);
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+}
+
+:host {
+    display: block; //margin-bottom: 1.5rem;
+    .input-container {
+        display: flex;
+        border: 1px solid cssvar(input-container-border-color);
+        border-radius: cssvar(border-radius-input);
+        &.noborder {
+            border: none !important;
+        }
+        &.valid {
+            border: 1px solid cssvar(success);
+        }
+        &.invalid {
+            border: 1px solid cssvar(danger);
+            .valid-icon {
+                color: cssvar(danger);
+            }
+        }
+        &.focused {
+            border: 1px solid cssvar(dark);
+            .valid-icon {
+                display: none;
+            }
+        }
+        .icon-prefix,
+        .icon-suffix {
+            @include icon();
+        }
+        .icon-prefix {
+            border-right: 1px solid cssvar(input-container-border-color);
+            color: csscolor(stable);
+        }
+        .icon-suffix {
+            border-left: 1px solid cssvar(input-container-border-color);
+        }
+        .valid-icon,
+        .icon-suffix-focus {
+            @include icon();
+            display: none;
+            padding-right: cssvar(padding-10);
+        }
+        .valid-icon {
+            display: flex;
+            flex-direction: row;
+            color: cssvar(success);
+            &.valid {
+                color: cssvar(success);
+            }
+            &.invalid {
+                color: cssvar(danger);
+            }
+        }
+        .icon-close {
+            @include icon();
+        }
+        .icon-suffix-focus {
+            display: flex;
+            flex-direction: row;
+        }
+        .warning-icon {
+            width: 0.375rem;
+            height: 0.375rem;
+            margin-top: 1.0625rem;
+            margin-right: 1.25rem;
+            border: none;
+            border-radius: 50%;
+            background-color: cssvar(warning);
+        }
+        input {
+            @include box-sizing(border-box);
+            @include placeholder {
+                color: cssvar(dark-40);
+                font-family: $font-family !important;
+                font-weight: 300;
+            }
+            display: block;
+            position: relative;
+            flex: 1;
+            width: 100%;
+            min-width: 0;
+            padding: 0.5rem;
+            border: none;
+            border-radius: cssvar(border-radius-input);
+            caret-color: cssvar(success);
+            background: transparent;
+            background: cssvar(light);
+            color: cssvar(black);
+            font-family: $font-family;
+            font-size: cssvar(font-m);
+            font-weight: 400;
+            line-height: 1.5;
+            text-align: left;
+            box-shadow: cssvar(light) 0px 0px 0px 1000px inset !important;
+            -webkit-appearance: none;
+            &:focus {
+                outline: none;
+            }
+        }
+        .readonly {
+            @include form-readonly-padding();
+            display: block;
+            position: relative;
+            flex: 1;
+            width: 100%;
+            border: none; //padding: 0.5rem 1rem;
+            border-radius: cssvar(border-radius-input);
+            color: cssvar(black); //box-shadow: white 0px 0px 0px 1000px inset !important;
+            font-weight: 400;
+            line-height: 1.5;
+            text-align: left;
+        }
+    }
+    .placeholderlabel {
+        margin-top: 0.5rem;
+        &.active {
+            margin-top: 0rem;
+        }
+    }
+    .label {
+        margin-bottom: 0.25rem;
+        padding-left: 0.5rem;
+        transform: translateY(1.875rem);
+        transition: transform 0.2s ease-in;
+        color: cssvar(input-text-color);
+        font-size: cssvar(font-m);
+        letter-spacing: 2px;
+        line-height: 1.5;
+        text-align: left;
+        &.active {
+            margin-top: 0.25rem;
+            transform: translateY(0rem);
+        }
+        .label-required {
+            margin-left: 0.25rem;
+            color: cssvar(danger);
+        }
+    }
+    .invalid-message {
+        display: none;
+        min-height: 15px;
+        color: cssvar(danger);
+        font-size: cssvar(font-xs);
+        text-align: right;
+        &.invalid {
+            display: cssvar(display-invalid-message);
+            color: cssvar(danger);
+        }
+    }
+}
+
+:host(.noborder) {
+    .input-container {
+        border: none !important;
+    }
+}
+
+:host(.translucent) {
+    .input-container {
+        border: none !important;
+        .icon-prefix,
+        .icon-suffix,
+        .valid-icon,
+        .icon-suffix-focus {
+            background-color: rgba(255, 255, 255, 0.3);
+            &.icon-close {
+                color: cssvar(always-light);
+            }
+            yoo-icon.yo-eye.stable-alt {
+                color: cssvar(always-light);
+            }
+            yoo-icon.yo-eye.black {
+                color: cssvar(stable-alt);
+            }
+        }
+        .icon-prefix {
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+            border-top-left-radius: cssvar(border-radius-input);
+            border-bottom-left-radius: cssvar(border-radius-input);
+            color: cssvar(always-light);
+        }
+        input {
+            margin: 0;
+            border-radius: 0;
+            background-color: rgba(255, 255, 255, 0.3);
+            color: cssvar(always-light);
+            box-shadow: none !important;
+        }
+        input.last,
+        .icon-suffix.last,
+        .icon-suffix-focus.last,
+        .icon-close {
+            border-top-right-radius: cssvar(border-radius-input);
+            border-bottom-right-radius: cssvar(border-radius-input);
+        }
+    }
+}
+
+:host(.small) {
+    .input-container {
+        input {
+            padding: 0.1875rem 1rem;
+        }
+        .icon-prefix,
+        .icon-suffix {
+            padding: 0.1875rem 1rem;
+        }
+    }
+}
+
+:host(.simple) {
+    .input-container {
+        border: none;
+        border-bottom: 1px solid cssvar(input-container-border-color);
+        input {
+            padding: 0.5rem 0;
+        }
+        .icon-suffix {
+            @include simple-icon();
+        }
+        .icon-prefix {
+            @include simple-icon();
+        }
+    }
+}
+
+:host(.simple-icon) {
+    .input-container {
+        .icon-suffix {
+            @include simple-icon();
+        }
+        .icon-prefix {
+            @include simple-icon();
+        }
+    }
+}
+
+:host(.round) {
+    .input-container {
+        border-radius: 1.5rem;
+        .icon-prefix {
+            border-top-left-radius: 1.5rem;
+            border-bottom-left-radius: 1.5rem;
+        }
+        .icon-suffix {
+            border-top-right-radius: 1.5rem;
+            border-bottom-right-radius: 1.5rem;
+        }
+        input {
+            border-radius: 1.5rem;
+        }
+    }
+}
+
+:host(.search) {
+    .input-container {
+        animation: fadeIn 0.6s forwards;
+        width: 100%;
+        height: 2.25rem;
+        transition: all 0.3s;
+        border: none;
+        border: 1px solid cssvar(input-container-border-color);
+        border-radius: 0.5rem;
+        background: cssvar(light);
+        overflow: hidden;
+        &.focused {
+            border: 1px solid cssvar(dark);
+        }
+        .icon-prefix {
+            transition: all 0.3s;
+            border-right: none;
+            border-top-left-radius: 0.5rem;
+            border-bottom-left-radius: 0.5rem;
+            color: cssvar(control-icon-color);
+        }
+        .icon-suffix {
+            transition: all 0.3s;
+            border-top-right-radius: 0.5rem;
+            border-bottom-right-radius: 0.5rem;
+        }
+        input {
+            @include placeholder() {
+                color: cssvar(stable);
+                opacity: 1;
+            }
+            padding: 0.1875rem 0;
+            padding-right: 1rem;
+            padding-left: cssvar(padding-10);
+            transition: all 0.3s;
+            border-radius: 0.5rem;
+            border-top-left-radius: 0rem;
+            border-bottom-left-radius: 0rem;
+            background: cssvar(light);
+            box-shadow: cssvar(light) 0px 0px 0px 1000px inset !important;
+        }
+        .icon-prefix,
+        .icon-suffix {
+            padding: 0.1875rem 0;
+            padding-left: 0.75rem;
+            background: cssvar(light);
+        }
+        .valid-icon {
+            display: none !important;
+        }
+    }
+}
+
+:host(.search.disabled) {
+    .input-container {
+        //background: cssvar(stable-light);
+        border: 1px solid cssvar(stable-ultralight);
+        .icon-prefix,
+        .icon-suffix {
+            //background: cssvar(stable-light);
+            opacity: 0.6;
+        }
+        input {
+            //background: cssvar(stable-light);
+            //box-shadow: cssvar(stable-light) 0px 0px 0px 1000px inset !important;
+            opacity: 0.6;
+        }
+    }
+}
+
+:host(.with-toggle) {
+    width: calc(100% - 4rem) !important;
+}
+
+:host(.grid-search) {
+    width: 100%;
+}
+
+:host(.has-invalid-format) {
+    margin-top: cssvar(padding-5);
+}
+
+:host(.web-menu) {
+    .input-container {
+        width: 250px;
+        height: 24px;
+        border: none;
+        background: cssvar(stable-light);
+        color: cssvar(stable);
+        input {
+            background: cssvar(stable-light);
+            font-size: cssvar(font-s);
+            box-shadow: none !important;
+        }
+        .icon-prefix,
+        .icon-suffix {
+            background: transparent;
+            font-size: cssvar(font-s);
+        }
+    }
+}
+
+:host(.history) {
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    .readonly {
+        padding: 0 !important;
+        text-align: left;
+    }
+}
+
+:host(.photos-tab) {
+    padding-left: 2.5rem !important;
+}
+
+:host(.boost) {
+    .input-container {
+        input {
+            caret-color: cssvar(danger-light);
+        }
+    }
+}
+
+:host(.web) {
+    .input-container {
+        input {
+            font-size: cssvar(font-m); 
+        }
+    }
+}
+
+:host(.full-width) {
+    width: 100%;
+    .input-container {
+        width: 100%;
+    }
+}
+@include input-color("accent");
+@include input-color("success");
+@include input-color("info");
+@include input-color("warning");
+@include input-color("danger");
+@include input-color("dark");
+@include input-color("control-icon-color", "text-color", "input-container-border-color");

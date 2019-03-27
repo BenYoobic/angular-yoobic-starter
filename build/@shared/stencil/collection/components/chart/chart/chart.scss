@@ -1,0 +1,17 @@
+:host {
+    --height: 250px;
+}
+
+:host {
+    display: block;
+
+    .container {
+        position: relative;
+        width: 100%;
+        height: cssvar(height);
+    }
+}
+
+.highcharts-credits {
+    display: none;
+}

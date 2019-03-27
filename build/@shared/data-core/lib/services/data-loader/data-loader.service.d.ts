@@ -1,0 +1,31 @@
+import { Translate } from '@shared/translate';
+import { Broker } from '../broker/broker.service';
+import { ResponseObject } from '../../interfaces/response-object/response-object.interface';
+import { Query } from '@shared/stencil';
+import { Observable } from 'rxjs';
+export declare class DataLoader {
+    private broker;
+    pageSize: number;
+    readonly currentPage: number;
+    total: number;
+    readonly totalPage: number;
+    readonly loading: boolean;
+    loadingPageCount: boolean;
+    private _currentPage;
+    private _total;
+    private _collectionName;
+    private _loading;
+    private _pageSize;
+    private _items;
+    private _translate;
+    private filterPipe;
+    private _looseCount;
+    private _loadingPageCount;
+    constructor(broker: Broker, collectionName: string, items?: Array<any>, pageSize?: number, translate?: boolean, translateService?: Translate, looseCount?: boolean);
+    loadWithSearch(currentPage?: number, search?: string, filters?: any[], sortModel?: any, mapTransform?: any, mapTransformAsync?: boolean, tag?: boolean, subQuery?: any, fields?: string[], include?: string[], aggregateOptions?: (skip: any, limit: any, sorts: any, search: any, filters: any) => Array<any>, aggregateOptionsOffline?: (skip: any, limit: any, sorts: any, search: any, filters: any) => Array<any>, cacheId?: string, customFilter?: any, includeCount?: boolean): Observable<any>;
+    loadWithSearchDebounce(start?: number, search?: Observable<string>, filters?: any[], sortModel?: any, mapTransform?: any, mapTransformAsync?: boolean, tag?: boolean, subQuery?: any, fields?: string[], include?: string[], aggregateOptions?: (skip: any, limit: any, sorts: any, search: any, filters: any) => Array<any>, aggregateOptionsOffline?: (skip: any, limit: any, sorts: any, search: any, filters: any) => Array<any>, cacheId?: string, customFilter?: any, includeCount?: boolean): Observable<any>;
+    load(currentPage?: number, search?: string, filters?: any[], sortModel?: any, mapTransform?: any, mapTransformAsync?: boolean, tag?: boolean, subQuery?: any, fields?: string[], include?: string[], aggregateOptions?: (skip: any, limit: any, sorts: any, search: any, filters: any) => Array<any>, aggregateOptionsOffline?: (skip: any, limit: any, sorts: any, search: any, filters: any) => Array<any>, cacheId?: string, customFilter?: any, includeCount?: boolean): Observable<any>;
+    getQuery(currentPage: number, search: string, filters?: any[], sortModel?: any, subQuery?: any, fields?: string[], include?: string[], customFilter?: any, includeCount?: boolean): Query;
+    getCount(search?: string, filters?: any, subQuery?: any, customFilter?: any): Observable<ResponseObject>;
+    convertItem(value: any): any;
+}

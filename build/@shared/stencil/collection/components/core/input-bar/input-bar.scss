@@ -1,0 +1,188 @@
+@mixin background-color($nameColor, $color) {
+  :host(.#{$nameColor}) {
+    .outer-container {
+      .input-container {
+        background-color: $color;
+        .input-zone {
+            border: 1px solid cssvar($nameColor);
+        }
+      }
+    }
+  }
+}
+@mixin shape-border($shape, $border-radius) {
+  :host(.#{$shape}) {
+    .outer-container {
+      .input-container {
+        .input-zone {
+            border-radius: $border-radius;
+        }
+      }
+    }
+  }
+}
+
+:host {
+  --padding-input-container: 0.5625rem #{cssvar(padding-15)} 1rem #{cssvar(padding-15)};
+  --input-bar-placeholder-font-size: #{cssvar(font-m)};
+}
+
+:host {
+  .outer-container {
+    display: flex;
+
+    position: relative;
+    flex-direction: column;
+    align-items: flex-end;
+    background: cssvar(light);
+    .indications-container {
+      @include text-truncate();
+      display: flex;
+      align-items: center;
+      width: 100%;
+      padding-left: cssvar(padding-15);
+      background: cssvar(stable-light);
+      color: cssvar(text-color);
+      font-size: cssvar(font-xs);
+      .close-reply {
+        padding-right: cssvar(padding-15);
+        yoo-icon {
+          color: cssvar(black);
+          font-weight: 600;
+        }
+      }
+      .indications-inner{
+        flex: 1;
+        padding-left: cssvar(padding-15);
+
+        .user-indication {
+          flex: 1;
+          color: cssvar(black);
+          font-weight: 600;
+        }
+      }
+    }
+    .input-container {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      padding: cssvar(padding-input-container);
+      padding: 0;
+      .icon-container {
+        align-self: center;
+        margin-right: 0.5rem;
+        margin-left: cssvar(padding-15);
+        .capture-icon {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          width: 2rem;
+          height: 2rem;
+          border: 1px solid cssvar(success);
+          border-radius: 50%;
+          background-color: cssvar(light);
+          color: cssvar(success);
+        }
+      }
+      .input-zone {
+        display: flex;
+        // min-height: 2rem;
+        position: relative;
+        align-items: center;
+        width: 100%; // padding: 0.5rem 4rem 0.5rem 0rem;
+        margin-right: 0.875rem;
+        padding: 0 0.75rem 0 0.8125rem;
+        border: 1px solid cssvar(control-icon-color);
+        border-radius: 1.03125rem;
+        background-color: cssvar(light);
+        yoo-form-text-area {
+          --textarea-placeholder-font-size: #{cssvar(input-bar-placeholder-font-size)};
+          padding-right: 4rem;
+        }
+        .input-action {
+          @include abs-pos(auto, 0.8125rem, 7px, auto);
+          color: cssvar(success);
+          div {
+            &.text {
+              margin-bottom: 0.2rem;
+            }
+            span {
+              display: inline-block;
+            }
+          }
+          .invisible {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 70px;
+            margin-left: -50px;
+            border-radius: 50%;
+            outline: none;
+            background: white;
+            text-align: right;
+            cursor: inherit;
+            opacity: 0;
+            filter: alpha(opacity=0);
+          }
+          yoo-icon {
+            font-size: cssvar(font-m);;
+          }
+          input[type=file] {
+            pointer-events: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+:host(.footer) {
+  .outer-container {
+
+    display: flex;
+    justify-content: center;
+    min-height: 3rem;
+    box-shadow: cssvar(footer-shadow);
+    .input-container {
+      .input-zone {
+        margin: 0.5rem 0.875rem 0.5rem 0;
+      }
+    }
+  }
+}
+
+:host(.iphone-x-padding) {
+  .outer-container {
+    justify-content: flex-start;
+    min-height: 4.375rem;
+  }
+}
+
+:host(.boost){
+  .outer-container{
+    .input-container{
+      .icon-container{
+        .capture-icon{
+          border: 1px solid cssvar(danger-light);
+          background-color: cssvar(danger-light);
+          color: cssvar(always-light);
+        }
+      }
+      .input-zone{
+        .input-action{
+          color: cssvar(danger-light);
+        }
+      }
+    }
+  }
+}
+@include background-color(accent, cssvar(accent));
+@include background-color(info, cssvar(info));
+@include background-color(dark, cssvar(dark));
+@include background-color(danger, cssvar(danger));
+@include background-color(warning, cssvar(warning));
+@include background-color(success, rgba(46,219,183,0.5));
+@include shape-border(squared, 0.25rem);
+// @include shape-border(rounded, 0.5rem);

@@ -1,0 +1,21 @@
+:host {
+    $pell-actionbar-color: cssvar(light);
+    $pell-border-color: cssvar(input-container-border-color);
+    $pell-button-selected-color: cssvar(success);
+    $pell-content-height: 180px;
+    $pell-content-padding: 1rem;
+    @import "../../../../../../node_modules/pell/src/pell";
+    .container {
+        width: 100%;
+        border: 1px solid cssvar(input-container-border-color);
+        border-radius: cssvar(border-radius-input); // border-top-left-radius: 0;
+        // border-top-right-radius: 0;
+        .pell-actionbar {
+            border-top-left-radius: cssvar(border-radius-input);
+            border-top-right-radius: cssvar(border-radius-input);
+            .pell-button {
+                color: cssvar(black);
+            }
+        }
+    }
+}
